@@ -1,0 +1,25 @@
+.orange {
+  color: orange !important;
+  font-weight: 600 !important;
+}
+
+.btn-search:hover {
+  background-color: orange !important  ;
+}
+
+@media screen and (max-width: 900px) {
+  .input-group {
+    width: 50% !important;
+    margin-top: 40px !important;
+    margin-bottom: 50px !important;
+  }
+}
+@media screen and (max-width: 550px) {
+  .input-group {
+    width: 75% !important;
+    display: flex !important;
+    margin: auto !important;
+    margin-top: 30px !important;
+    margin-bottom: 40px !important;
+  }
+}

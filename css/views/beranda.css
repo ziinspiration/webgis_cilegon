@@ -1,0 +1,35 @@
+/* Hero */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 500px !important;
+}
+
+.hero h2 {
+  font-size: 48px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.hero h2 span {
+  display: inline-block;
+  position: relative;
+}
+
+@media screen and (max-width: 550px) {
+  .hero h2 {
+    font-size: 25px !important;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}

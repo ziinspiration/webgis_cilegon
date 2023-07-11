@@ -1,0 +1,127 @@
+.container {
+  margin-top: 100px !important;
+}
+
+.card {
+  background-color: rgba(246, 246, 246, 0.5);
+  border: 3px solid orange;
+  transition: all 0.3s ease-in;
+  box-shadow: 2px 2px 5px rgba(159, 159, 159, 0.8) !important;
+  margin-bottom: 70px !important;
+  border-radius: 10px !important;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+.card:hover {
+  /* border: 3px solid orange; */
+  outline: 5px solid rgba(255, 165, 0, 0.5);
+}
+
+.icon-card {
+  font-size: 50px !important;
+  width: 130px !important;
+  height: 130px !important   ;
+  display: flex;
+  background-color: rgba(246, 246, 246, 1);
+  border: 4px solid orange !important;
+  margin-top: -45px;
+  margin-left: -45px;
+  z-index: 1;
+  transition: all 0.4s ease-in;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.7) !important;
+}
+
+.card:hover .icon-card {
+  transform: scale(1.1);
+  outline: 5px solid rgba(255, 165, 0, 0.5);
+  transition: all 0.4s ease-in;
+  /* border-radius: 100px 30px 100px 30px !important; */
+}
+
+.accordion {
+  transition: all 0.4s ease-in;
+  border-radius: 10px !important;
+}
+
+.accordion-body {
+  box-shadow: 0 0 5px orange !important;
+}
+
+.card:hover .accordion {
+  transform: scale(0.9);
+}
+
+.accordion-button {
+  outline: 2px solid orange !important;
+  box-shadow: 0 0 3px orange !important;
+}
+
+.accordion-button:not(.collapsed):focus,
+.accordion-button:not(.collapsed):active {
+  background-color: rgba(255, 165, 0, 0.5) !important;
+  outline: 4px solid rgba(255, 165, 0, 0.5);
+}
+
+.header {
+  margin-left: 10px !important;
+  margin-top: 10px !important;
+  transition: all 0.4s ease-in;
+}
+
+.header h3 {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.card:hover .header {
+  margin-left: 15px !important;
+}
+
+.orange {
+  color: orange !important;
+}
+
+.icon-card i {
+  margin: auto !important;
+}
+
+/* List card */
+.parent-list {
+  margin-top: 30px !important;
+  text-align: center !important;
+}
+
+.parent-list li {
+  list-style: none !important;
+  margin-left: -30px !important;
+}
+
+@media screen and (max-width: 500px) {
+  .parent-list li {
+    font-size: 12px !important;
+  }
+}
+
+.list-card {
+  margin-bottom: 10px !important;
+  font-size: 16px !important;
+}
+
+.list-card a {
+  text-decoration: none !important;
+  color: grey !important;
+  transition: 0.3s;
+}
+
+.list-card a:hover {
+  text-decoration: underline !important;
+  color: orange !important;
+  transition: 0.3s;
+}
