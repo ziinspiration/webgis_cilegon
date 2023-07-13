@@ -63,7 +63,7 @@ checkboxGroup.forEach(function (checkbox) {
         var url;
         var customIcon;
 
-        // Cek id checkbox yang terpilih
+        // AMBIL DATA BY GEOJSON FILE
         // Jalan
         if (checkbox.id === "jaringanJalanCheckbox") {
           url = "assets/geojson/JARINGAN_JALAN.geojson";
@@ -122,16 +122,22 @@ checkboxGroup.forEach(function (checkbox) {
   });
 });
 
+// LAYER SETTING
 function addGeoJsonLayer(url, checkbox, customIcon) {
   $.getJSON(url, function (data) {
     var layer = L.geoJson(data, {
       style: function (feature) {
         var color = feature.properties.color;
+        var darray = feature.properties.dasharray;
+        var doffset = feature.properties.dashoffset;
+
         return {
           fillColor: color,
           fillOpacity: 0.5,
           color: color,
-          weight: 2,
+          weight: 2.5,
+          dashArray: darray,
+          dashOffset: doffset,
         };
       },
       pointToLayer: function (feature, latlng) {
@@ -185,7 +191,7 @@ function highlightFeature(e) {
   var layer = e.target;
 
   layer.setStyle({
-    weight: 1,
+    weight: 3,
     color: "grey",
     dashArray: "",
     fillOpacity: 0.3,
@@ -199,9 +205,11 @@ function highlightFeature(e) {
 function resetHighlight(e) {
   var layer = e.target;
   layer.setStyle({
-    weight: 2,
+    weight: 2.5,
     color: layer.feature.properties.color,
     fillOpacity: 0.5,
+    dashArray: layer.feature.properties.dasharray,
+    dashOffset: layer.feature.properties.dashoffset,
   });
 }
 
@@ -209,6 +217,7 @@ function zoomToFeature(e) {
   map.fitBounds(e.target.getBounds());
 }
 
+// POP UP INFORMASI
 function showPopup(feature, layer) {
   var popupContent = "<h3>Informasi Wilayah</h3>";
   if (feature.properties) {
@@ -244,6 +253,7 @@ function showPopup(feature, layer) {
   layer.bindPopup(popupContent);
 }
 
+// CUSTOM ICON
 // Perkantoran icon
 function createCustomIconPemerintahan() {
   var customIcon = L.icon({
@@ -368,8 +378,7 @@ function createCustomIconKlinik() {
   return customIcon;
 }
 
-// Change maps
-
+// CHANGE BASE MAPS
 const satelliteCheckbox = document.getElementById("satelliteCheckbox");
 const terrainCheckbox = document.getElementById("terrainCheckbox");
 const roadCheckbox = document.getElementById("roadCheckbox");

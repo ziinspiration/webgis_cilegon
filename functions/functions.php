@@ -1,7 +1,7 @@
 <?php
 function connect()
 {
-    $conn = mysqli_connect("localhost", "root", "", "cilegon_gis");
+    $conn = mysqli_connect("localhost", "root", "", "webgis-cilegon");
 
     return $conn;
 }

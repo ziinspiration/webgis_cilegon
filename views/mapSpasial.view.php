@@ -2,7 +2,8 @@
 
 <div class="map-container">
     <div class="map-overlay">
-        <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" style="border: none; background: none;">
+        <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar"
+            style="border: none; background: none;">
             <i class="bi bi-list"></i>
         </button>
     </div>
@@ -11,11 +12,13 @@
 
 <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
     <div style="background: url(assets/index/batik2remake.jpg);" class="back p-2">
-        <a class="back-arrow ms-1 text-decoration-none" href="index.php"><i class="bi bi-arrow-left me-1"><span>Beranda</span></i></a>
+        <a class="back-arrow ms-1 text-decoration-none" href="index.php"><i
+                class="bi bi-arrow-left me-1"><span>Beranda</span></i></a>
     </div>
     <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="sidebarLabel">Layer Service</h5>
-        <button type="button" class="btn-c btn-close-canvas" data-bs-dismiss="offcanvas" aria-label="Close"><i class="bi bi-x-circle shake"></i></button>
+        <button type="button" class="btn-c btn-close-canvas" data-bs-dismiss="offcanvas" aria-label="Close"><i
+                class="bi bi-x-circle shake"></i></button>
     </div>
     <div class="img-nav d-flex">
         <img src="assets/logo/cilegon.png" style="height: 50px; width:50px;" class="ms-3 me-2">
