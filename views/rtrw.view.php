@@ -6,8 +6,10 @@
         <div class="col">
             <!-- Search -->
             <div class="input-group mb-5 mt-5 w-25">
-                <input type="search" class="form-control input-search" placeholder="Cari disini" aria-label="Cari disini" aria-describedby="button-addon2">
-                <button class="btn btn-search btn-outline-secondary" type="submit" id="cari"><i class="bi bi-search"></i></button>
+                <input type="search" class="form-control input-search" placeholder="Cari disini"
+                    aria-label="Cari disini" aria-describedby="button-addon2">
+                <button class="btn btn-search btn-outline-secondary" type="submit" id="cari"><i
+                        class="bi bi-search"></i></button>
             </div>
             <!-- Table -->
             <table class="table table-striped table-hover mb-5">
@@ -82,4 +84,5 @@
     </div>
 </div>
 <?php include 'partials/footer.php' ?>
+<?php include 'partials/script.php' ?>
 <?php include 'partials/starter-foot.php' ?>
