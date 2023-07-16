@@ -1,0 +1,31 @@
+* {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.sidebar {
+  padding: 20px !important;
+  height: 100vh !important;
+}
+
+.orange {
+  color: orange;
+}
+
+.bg-orange {
+  background-color: orange !important;
+}
+
+.content {
+  padding: 20px !important;
+}
+
+.nav-link:hover {
+  background-color: grey;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    height: auto;
+  }
+}

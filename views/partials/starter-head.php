@@ -381,6 +381,10 @@ require 'functions/functions.php'
         .footer {
             background-image: url(assets/index/footer2.jpg);
         }
+
+        .bg-orange {
+            background-color: orange !important;
+        }
     </style>
 </head>
 

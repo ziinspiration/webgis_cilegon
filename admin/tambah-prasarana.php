@@ -10,6 +10,6 @@ require 'functions/functions.php';
 
 $conn = koneksi();
 
-$nama_halaman = 'Dashboard admin';
-$linkcss = 'index.css';
-require 'views/index.view.php';
+$nama_halaman = 'Tambah prasarana';
+$linkcss = 'tambah-prasarana.css';
+require 'views/tambah-prasarana.view.php';

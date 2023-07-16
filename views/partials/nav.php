@@ -44,7 +44,7 @@
                         <li><a class="dropdown-item border-bottom" href="kJalan.php">Kemantapan Jalan</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown me-3   ">
                     <a class="nav-link dropdown-toggle mb-2" href="#" id="publikasiDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Publikasi
@@ -53,6 +53,10 @@
                         <li><a class="dropdown-item border-bottom" href="rtrw.php">RTRW Kota Cilegon</a></li>
                         <li><a class="dropdown-item" href="lakip.php">LAKIP Kota Cilegon</a></li>
                     </ul>
+                </li>
+                <li class="nav-item ">
+                    <a class="btn bg-orange" aria-current="page" href="admin/index.php"><i
+                            class="bi bi-door-open-fill"></i> as admin</a>
                 </li>
             </ul>
         </div>

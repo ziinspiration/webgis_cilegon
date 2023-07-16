@@ -24,31 +24,36 @@ if ($jam >= 3 && $jam < 10) {
                 </div>
                 <img src="../assets/logo/cilegon.png" alt="" class="d-flex m-auto mt-3 mb-3 w-25">
                 <h5 class="text-center">Di Dashboard <span class="orange">WEB GIS CILEGON</span></h5>
-                <!-- <p class="text-center small">Silahkan login terlebih dahulu</p> -->
             </div>
+            <?php if (isset($_SESSION['error'])) : ?>
+                <div id="alert" class="alert alert-danger error mb-3 text-center px-2 py-3" role="alert">
+                    <p><b>Proses login gagal !</b> <br> NIK atau Password yang dimasukkan tidak valid</p>
+                </div>
+            <?php endif; ?>
             <form action="" method="post" class="card p-4 bg-dark rounded-4">
                 <div class="form-group mb-3">
                     <label for="nik" class="orange mb-1">NIK Pegawai</label>
                     <div class="d-flex align-items-center">
                         <i class="bi icon bi-person-fill me-1 text-secondary"></i>
-                        <input type="text" class="form-control" id="nik" name="nik" placeholder="Masukkan NIK Pegawai">
+                        <input type="text" class="form-control pt-1 pb-1" id="nik" name="nik" placeholder="Masukkan NIK Pegawai">
                     </div>
                 </div>
                 <div class="form-group mb-5">
                     <label for="password" class="orange mb-1">Password</label>
                     <div class="d-flex align-items-center">
                         <i class="bi icon bi-lock-fill me-1 text-secondary"></i>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan Password">
+                        <input type="password" class="form-control pt-1 pb-1" id="password" name="password" placeholder="Masukkan Password">
                         <div class="input-icon text-secondary ms-2">
                             <i class="bi bi-eye-fill toggle-password"></i>
                         </div>
                     </div>
                 </div>
-                <button type="submit" name="login" class="btn btn-primary btn-block">Login</button>
+                <button type="submit" name="login" class="btn btn-primary btn-block p-2">Login</button>
             </form>
         </div>
     </div>
 </div>
+
 <script>
     var greetings = ["Datang", "<?= $salam; ?>"];
     var index = 0;
