@@ -10,10 +10,11 @@ require 'functions/functions.php';
 
 $conn = koneksi();
 
-$getdata = query("SELECT * FROM sarana");
+$id = $_GET["id"];
+$getdata = query("SELECT * FROM sarana WHERE id = $id")[0];
 
 $i = 0;
 
 $nama_halaman = 'Daftar sarana';
-$linkcss = 'daftar-sarana.css';
-require 'views/daftar-sarana.view.php';
+$linkcss = 'detail-sarana.css';
+require 'views/detail-sarana.view.php';

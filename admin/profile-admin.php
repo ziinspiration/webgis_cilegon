@@ -18,6 +18,6 @@ if (isset($_SESSION["nama_pegawai"])) {
     $nama = $_COOKIE["nama_pegawai"];
 }
 
-$nama_halaman = 'Dashboard admin';
-$linkcss = 'index.css';
-require 'views/index.view.php';
+$nama_halaman = 'Profile admin';
+$linkcss = 'profile-admin.css';
+require 'views/profile-admin.view.php';

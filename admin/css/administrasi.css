@@ -23,3 +23,9 @@
   color: orange;
   opacity: 0.7;
 }
+
+@media screen and (max-width: 550px) {
+  .content {
+    flex-direction: column !important;
+  }
+}

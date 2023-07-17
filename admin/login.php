@@ -25,7 +25,8 @@ if (isset($_POST["login"])) {
             $_SESSION["id"] = $row["id"];
 
             // set cookie
-            setcookie("nik", $nik, time() + 3600);
+            $nama = $row["nama_pegawai"];
+            setcookie("nama_pegawai", $nama, time() + 3600);
 
             header("location: index.php");
             exit;

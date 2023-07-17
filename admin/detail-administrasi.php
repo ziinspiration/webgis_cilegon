@@ -10,10 +10,11 @@ require 'functions/functions.php';
 
 $conn = koneksi();
 
-$getdata = query("SELECT * FROM administrasi");
+$id = $_GET["id"];
+$getdata = query("SELECT * FROM administrasi WHERE id = $id")[0];
 
 $i = 0;
 
 $nama_halaman = 'Daftar administrasi';
-$linkcss = 'daftar-administrasi.css';
-require 'views/daftar-administrasi.view.php';
+$linkcss = 'detail-administrasi.css';
+require 'views/detail-administrasi.view.php';

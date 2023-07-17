@@ -26,4 +26,5 @@
         </div>
     </div>
 </div>
+<?php include 'views/partials/script.php' ?>
 <?php include 'views/partials/starter-foot.php' ?>

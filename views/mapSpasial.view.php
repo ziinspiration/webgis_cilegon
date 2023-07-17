@@ -62,7 +62,7 @@
             </ul>
             <!-- Prasarana -->
             <ul class="list-unstyled">
-                <h5 class="mb-3">Wilayah Administrasi</h3>
+                <h5 class="mb-3">Prasarana</h3>
                     <?php foreach ($JSONprasarana as $j) : ?>
                     <li class="ms-3">
                         <div class="form-check form-switch">
@@ -219,7 +219,7 @@ checkboxGroup.forEach(function(checkbox) {
 
                 <?php foreach ($getAdmin as $a) : ?>
                 if (checkbox.id === "<?= $a['checkbox_id']; ?>") {
-                    url = "assets/geojson/<?= $a['file_json']; ?>";
+                    url = "assets/geojson/administrasi/<?= $a['file_json']; ?>";
                 }
                 <?php endforeach; ?>
 
@@ -237,7 +237,7 @@ checkboxGroup.forEach(function(checkbox) {
                 // Jalan
                 <?php foreach ($JSONprasarana as $jj) : ?>
                 if (checkbox.id === "<?= $jj['checkbox_id']; ?>") {
-                    url = "assets/geojson/<?= $jj['file_json']; ?>";
+                    url = "assets/geojson/prasarana/<?= $jj['file_json']; ?>";
                 }
                 <?php endforeach; ?>
 

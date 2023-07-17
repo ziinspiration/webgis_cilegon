@@ -10,10 +10,11 @@ require 'functions/functions.php';
 
 $conn = koneksi();
 
-$getdata = query("SELECT * FROM prasarana");
+$id = $_GET["id"];
+$getdata = query("SELECT * FROM prasarana WHERE id = $id")[0];
 
 $i = 0;
 
 $nama_halaman = 'Daftar prasarana';
-$linkcss = 'daftar-prasarana.css';
-require 'views/daftar-prasarana.view.php';
+$linkcss = 'detail-prasarana.css';
+require 'views/detail-prasarana.view.php';
