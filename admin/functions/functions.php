@@ -56,3 +56,80 @@ function registrasi($data)
 
     return mysqli_affected_rows($conn);
 }
+
+
+// Hitung data administrasi
+function countAdministrasi()
+{
+    $conn = koneksi();
+
+    $query = "SELECT COUNT(*) AS total FROM administrasi";
+    $result = query($query);
+
+    // Periksa hasil query
+    if ($result && isset($result[0]['total'])) {
+        return $result[0]['total'];
+    } else {
+        return 0;
+    }
+}
+
+// Hitung data prasarana
+function countPrasarana()
+{
+    $conn = koneksi();
+
+    $query = "SELECT COUNT(*) AS total FROM prasarana";
+    $result = query($query);
+
+    // Periksa hasil query
+    if ($result && isset($result[0]['total'])) {
+        return $result[0]['total'];
+    } else {
+        return 0;
+    }
+}
+
+// Hitung data sarana
+function countSarana()
+{
+    $conn = koneksi();
+
+    $query = "SELECT COUNT(*) AS total FROM sarana";
+    $result = query($query);
+
+    // Periksa hasil query
+    if ($result && isset($result[0]['total'])) {
+        return $result[0]['total'];
+    } else {
+        return 0;
+    }
+}
+
+
+// Hapus data administrasi
+function deleteAdministrasi($id)
+{
+    $conn = koneksi();
+    mysqli_query($conn, "DELETE FROM administrasi WHERE id = $id");
+
+    return mysqli_affected_rows($conn);
+}
+
+// Hapus data prasarana
+function deletePrasarana($id)
+{
+    $conn = koneksi();
+    mysqli_query($conn, "DELETE FROM prasarana WHERE id = $id");
+
+    return mysqli_affected_rows($conn);
+}
+
+// Hapus data sarana
+function deleteSarana($id)
+{
+    $conn = koneksi();
+    mysqli_query($conn, "DELETE FROM sarana WHERE id = $id");
+
+    return mysqli_affected_rows($conn);
+}
