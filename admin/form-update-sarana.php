@@ -16,6 +16,8 @@ $id = $_GET["id"];
 // query data sarana berdasarkan id
 $getdata = query("SELECT * FROM sarana WHERE id = $id")[0];
 
+$getkategori = query("SELECT DISTINCT kategori FROM sarana");
+
 $nama_halaman = 'Form update sarana';
 $linkcss = 'form-update-sarana.css';
 require 'views/form-update-sarana.view.php';

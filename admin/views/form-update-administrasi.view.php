@@ -7,14 +7,13 @@
 
             <div class="mb-3">
                 <label for="nama_adm" class="form-label">Nama data</label>
-                <input type="text" class="form-control" id="nama_adm" name="nama_adm"
-                    value="<?= $getdata['nama_adm']; ?>" required />
+                <input type="text" class="form-control" id="nama_adm" name="nama_adm" value="<?= $getdata['nama_adm']; ?>" required />
             </div>
 
             <div class="mb-3">
                 <div class="file-now">
                     <?php if (!empty($getdata['file_json'])) : ?>
-                    <p><?= basename($getdata['file_json']); ?></p>
+                        <p><?= basename($getdata['file_json']); ?></p>
                     <?php endif; ?>
                 </div>
                 <label for="file_json" class="form-label">File geojson</label>
@@ -26,12 +25,10 @@
 
             <div class="mb-3">
                 <label for="checkbox_id" class="form-label">Checkbox ID</label>
-                <input type="text" class="form-control" id="checkbox_id" name="checkbox_id"
-                    value="<?= $getdata['checkbox_id']; ?>" required />
+                <input type="text" class="form-control" id="checkbox_id" name="checkbox_id" value="<?= $getdata['checkbox_id']; ?>" required />
             </div>
 
-            <button type="submit" name="submit" class="btn btn-primary mt-3 mb-2"><i
-                    class="fa-solid fa-floppy-disk me-2"></i>Simpan</button>
+            <button type="submit" name="submit" class="btn btn-primary mt-3 mb-2"><i class="fa-solid fa-floppy-disk me-2"></i>Simpan</button>
         </form>
     </div>
 </div>

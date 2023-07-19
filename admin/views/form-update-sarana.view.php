@@ -51,13 +51,9 @@
                 <select name="kategoriSelect" id="kategoriSelect" class="form-select form-control"
                     aria-label="Default select example" onchange="changeKategori()">
                     <option selected disabled>Pilih jenis kategori</option>
-                    <option value="Kantor">Kantor</option>
-                    <option value="Kesehatan">Kesehatan</option>
-                    <option value="Pendidikan">pendidikan</option>
-                    <option value="Pariwisata">Pariwisata</option>
-                    <option value="Transportasi">Transportasi</option>
-                    <option value="Peribadatan">Peribadatan</option>
-                    <option value="Fasilitas umum">Fasilitas umum</option>
+                    <?php foreach ($getkategori as $a) : ?>
+                    <option value="<?= $a['kategori']; ?>"><?= $a['kategori']; ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
 
