@@ -18,6 +18,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,700;1,800&family=Poppins:wght@200;300;400;500;600&family=Roboto:ital,wght@0,400;1,700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="sweetalert2.min.css">
     <link rel="icon" href="../assets/logo/cilegon.png">
     <title><?= $nama_halaman; ?> | CILEGON GIS</title>
     <style>
@@ -61,6 +62,11 @@
             margin-top: 30px !important;
             margin-bottom: 40px !important;
         }
+    }
+
+    .sidebar {
+        padding: 20px !important;
+        height: 100% !important;
     }
     </style>
 </head>

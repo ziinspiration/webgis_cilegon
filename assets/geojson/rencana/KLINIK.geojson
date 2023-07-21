@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "KLINIK",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "OBJECTID": 2854, "JENIS_UTAM": "Fasilitas Umum dan Sosial", "JENIS": "Kesehatan", "KEGIATAN_O": "Klinik", "TOPONIM": "Toko Apotik Keluarga", "SUMBER": "Data Sekunder" }, "geometry": { "type": "Point", "coordinates": [ 106.061230767461737, -6.038058694846522 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 2866, "JENIS_UTAM": "Fasilitas Umum dan Sosial", "JENIS": "Kesehatan", "KEGIATAN_O": "Klinik", "TOPONIM": "Toko Apotik Mulia", "SUMBER": "Data Sekunder" }, "geometry": { "type": "Point", "coordinates": [ 106.063979526160054, -6.037198935085088 ] } }
+]
+}

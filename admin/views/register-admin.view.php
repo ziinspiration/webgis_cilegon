@@ -8,7 +8,7 @@
         </div>
         <div class="col-md-9">
             <div class="content d-flex justify-content-around">
-                <a href="daftar-admin.php" class="card bg-light w-25 text-center text-decoration-none p-5">
+                <a href="daftar-akun.php" class="card bg-light w-25 text-center text-decoration-none p-5">
                     <i class="bi bi-people"></i>
                     <p>Daftar akun</p>
                 </a>
@@ -18,7 +18,7 @@
                     <p>Tambah akun</p>
                 </a>
 
-                <a href="ubah-admin.php" class="card bg-light w-25 text-center text-decoration-none p-5">
+                <a href="ubah-akun.php" class="card bg-light w-25 text-center text-decoration-none p-5">
                     <i class="bi bi-person-gear"></i>
                     <p>Update akun</p>
                 </a>

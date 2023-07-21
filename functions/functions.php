@@ -19,3 +19,5 @@ if (!function_exists('query')) {
         return $rows;
     }
 }
+
+require_once 'get-information.php';

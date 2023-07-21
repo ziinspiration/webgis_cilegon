@@ -16,7 +16,7 @@ if (isset($_POST["register"])) {
     if (registrasi($_POST) > 0) {
         echo "<script>
             alert('Berhasil ditambahkan');
-            window.location = 'index.php';
+            window.location = 'daftar-akun.php';
           </script>";
     } else {
         echo mysqli_error($conn);

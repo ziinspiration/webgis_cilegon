@@ -14,9 +14,25 @@ if ($jam >= 3 && $jam < 10) {
     $salam = 'Selamat Malam';
 }
 
+$jamSekarang = date('H:i:s');
+
 ?>
 <?php include 'partials/nav.php' ?>
+
 <div class="container-fluid p-0">
+    <div class="running-text">
+        <div class="running-left text-center bg-orange text-dark">
+            <p id="clock"></p>
+        </div>
+        <div class="running-right bg-dark text-light">
+            <marquee behavior="scroll" direction="left">
+                <?php foreach ($getmarquee as $marque) : ?>
+                <?= $marque['informasi']; ?>
+                <i class="fa-solid fa-circle orange ms-4 me-4"></i>
+                <?php endforeach; ?>
+            </marquee>
+        </div>
+    </div>
     <div class="hero" id="hero">
         <div class="hero-content">
             <h2 class="text-light"><span id="greeting" class="text-light"></span> <br> Di Website <span
@@ -62,7 +78,26 @@ function changeBackground() {
 changeGreeting();
 changeBackground();
 setInterval(changeBackground, 4000);
+
+// Update jam
+function updateClock() {
+    const serverTime = new Date("<?php echo date('Y-m-d H:i:s'); ?>");
+    const clientTime = new Date();
+    const timeDifference = serverTime.getTime() - clientTime.getTime();
+
+    setInterval(() => {
+        const currentTime = new Date(new Date().getTime() + timeDifference);
+        const hours = currentTime.getHours().toString().padStart(2, '0');
+        const minutes = currentTime.getMinutes().toString().padStart(2, '0');
+        const seconds = currentTime.getSeconds().toString().padStart(2, '0');
+        document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+    }, 1000);
+}
+
+window.onload = updateClock;
 </script>
+
+
 <?php include 'partials/footer.php' ?>
 <?php include 'partials/script.php' ?>
 <?php include 'partials/starter-foot.php' ?>

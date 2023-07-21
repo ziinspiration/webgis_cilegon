@@ -41,7 +41,7 @@ L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
     attribution: '&copy; Google Maps'
 }).addTo(map);
 
-// ACEH
+// Get data
 $.getJSON("../assets/geojson/prasarana/<?= $getdata['file_json']; ?>", function(data) {
     getLayer = L.geoJson(data, {
         style: function(feature) {

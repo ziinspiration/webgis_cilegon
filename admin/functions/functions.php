@@ -20,6 +20,17 @@ if (!function_exists('query')) {
     }
 }
 
+// Fungsi untuk menghindari potensi serangan XSS (Cross-Site Scripting)
+function clean_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+require_once 'get-information.php';
+
 // REGISTRASI
 function registrasi($data)
 {
@@ -107,6 +118,54 @@ function countSarana()
 }
 
 
+// Hitung data admin
+function countAkun()
+{
+    $conn = koneksi();
+
+    $query = "SELECT COUNT(*) AS total FROM admin";
+    $result = query($query);
+
+    // Periksa hasil query
+    if ($result && isset($result[0]['total'])) {
+        return $result[0]['total'];
+    } else {
+        return 0;
+    }
+}
+
+// Hitung data rencana
+function countRencana()
+{
+    $conn = koneksi();
+
+    $query = "SELECT COUNT(*) AS total FROM rencana";
+    $result = query($query);
+
+    // Periksa hasil query
+    if ($result && isset($result[0]['total'])) {
+        return $result[0]['total'];
+    } else {
+        return 0;
+    }
+}
+
+// Hitung data tematik
+function countTematik()
+{
+    $conn = koneksi();
+
+    $query = "SELECT COUNT(*) AS total FROM tematik";
+    $result = query($query);
+
+    // Periksa hasil query
+    if ($result && isset($result[0]['total'])) {
+        return $result[0]['total'];
+    } else {
+        return 0;
+    }
+}
+
 // Hapus data administrasi
 function deleteAdministrasi($id)
 {
@@ -130,6 +189,33 @@ function deleteSarana($id)
 {
     $conn = koneksi();
     mysqli_query($conn, "DELETE FROM sarana WHERE id = $id");
+
+    return mysqli_affected_rows($conn);
+}
+
+// Hapus data admin
+function deleteAkun($id)
+{
+    $conn = koneksi();
+    mysqli_query($conn, "DELETE FROM admin WHERE id = $id");
+
+    return mysqli_affected_rows($conn);
+}
+
+// Hapus data rencana
+function deleteRencana($id)
+{
+    $conn = koneksi();
+    mysqli_query($conn, "DELETE FROM rencana WHERE id = $id");
+
+    return mysqli_affected_rows($conn);
+}
+
+// Hapus data tematik
+function deleteTematik($id)
+{
+    $conn = koneksi();
+    mysqli_query($conn, "DELETE FROM tematik WHERE id = $id");
 
     return mysqli_affected_rows($conn);
 }

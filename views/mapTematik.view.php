@@ -91,6 +91,7 @@ var googleLayer = L.tileLayer(
     }
 ).addTo(map);
 
+
 var currentLayers = []; // Menyimpan semua layer yang sedang ditampilkan
 
 
@@ -98,113 +99,49 @@ const checkboxGroup = document.querySelectorAll(".form-check-input");
 
 checkboxGroup.forEach(function(checkbox) {
     checkbox.addEventListener("change", function() {
-        // Cek apakah checkbox yang terpilih adalah salah satu dari keempat checkbox yang tidak boleh dibuka bersamaan
-        if (
-            checkbox.id === "provinsiCheckbox" ||
-            checkbox.id === "kabupatenCheckbox" ||
-            checkbox.id === "kecamatanCheckbox" ||
-            checkbox.id === "kelurahanCheckbox"
-        ) {
-            // Untuk keempat checkbox tersebut, cek status terbaru
+        <?php foreach ($getTematik as $a) : ?>
+        if (checkbox.id === "<?= $a['checkbox_id']; ?>") {
             if (this.checked) {
-                // Checkbox terpilih, matikan checkbox lainnya
                 checkboxGroup.forEach(function(otherCheckbox) {
-                    if (
-                        otherCheckbox !== checkbox &&
-                        (otherCheckbox.id === "provinsiCheckbox" ||
-                            otherCheckbox.id === "kabupatenCheckbox" ||
-                            otherCheckbox.id === "kecamatanCheckbox" ||
-                            otherCheckbox.id === "kelurahanCheckbox")
-                    ) {
+                    <?php foreach ($getTematik as $other) : ?>
+                    if (otherCheckbox !== checkbox && otherCheckbox.id ===
+                        "<?= $other['checkbox_id']; ?>") {
                         otherCheckbox.checked = false;
                         removeGeoJsonLayer(otherCheckbox);
                     }
+                    <?php endforeach; ?>
                 });
 
-                var url;
-
-                // Cek id checkbox yang terpilih
-
-                <?php foreach ($getAdmin as $a) : ?>
-                if (checkbox.id === "<?= $a['checkbox_id']; ?>") {
-                    url = "assets/geojson/<?= $a['file_json']; ?>";
-                }
-                <?php endforeach; ?>
-
+                var url = "assets/geojson/tematik/<?= $a['file_json']; ?>";
                 addGeoJsonLayer(url, checkbox);
             } else {
                 removeGeoJsonLayer(checkbox);
             }
-        } else {
-            // Checkbox selain keempat checkbox tersebut
+        }
+        <?php endforeach; ?>
+
+        // Checkbox selain keempat checkbox tersebut
+        if (!(
+                <?php foreach ($getTematik as $a) : ?> checkbox.id === "<?= $a['checkbox_id']; ?>"
+                <?php if (end($getTematik) !== $a) echo "||"; ?> <?php endforeach; ?>
+            )) {
             if (this.checked) {
                 var url;
 
-                // Ambil URL GeoJSON berdasarkan ID checkbox
-
-                // Jalan
-                <?php foreach ($JSONprasarana as $jj) : ?>
-                if (checkbox.id === "<?= $jj['checkbox_id']; ?>") {
-                    url = "assets/geojson/<?= $jj['file_json']; ?>";
+                <?php foreach ($getRencana as $r) : ?>
+                if (checkbox.id === "<?= $r['checkbox_id']; ?>") {
+                    url = "assets/geojson/rencana/<?= $r['file_json']; ?>";
+                    addGeoJsonLayer(url, checkbox);
                 }
                 <?php endforeach; ?>
 
-                // Perkantoran
-                <?php foreach ($JSONkantor as $jk) : ?>
-                else if (checkbox.id === "<?= $jk['checkbox_id']; ?>") {
-                    url = "assets/geojson/sarana/<?= $jk['file_json']; ?>";
-                }
-                <?php endforeach; ?>
-
-                // Pendidikan
-                <?php foreach ($JSONpendidikan as $pendidikan) : ?>
-                else if (checkbox.id === "<?= $pendidikan['checkbox_id']; ?>") {
-                    url = "assets/geojson/sarana/<?= $pendidikan['file_json']; ?>";
-                }
-                <?php endforeach; ?>
-
-                // Kesehatan
-                <?php foreach ($JSONkesehatan as $kesehatan) : ?>
-                else if (checkbox.id === "<?= $kesehatan['checkbox_id']; ?>") {
-                    url = "assets/geojson/sarana/<?= $kesehatan['file_json']; ?>";
-                }
-                <?php endforeach; ?>
-
-                // Pariwisata 
-                <?php foreach ($JSONpariwisata as $pariwisata) : ?>
-                else if (checkbox.id === "<?= $pariwisata['checkbox_id']; ?>") {
-                    url = "assets/geojson/sarana/<?= $pariwisata['file_json']; ?>";
-                }
-                <?php endforeach; ?>
-
-                // Peribadatan
-                <?php foreach ($JSONperibadatan as $peribadatan) : ?>
-                else if (checkbox.id === "<?= $peribadatan['checkbox_id']; ?>") {
-                    url = "assets/geojson/sarana/<?= $peribadatan['file_json']; ?>";
-                }
-                <?php endforeach; ?>
-
-                // Transportasi
-                <?php foreach ($JSONtransportasi as $transportasi) : ?>
-                else if (checkbox.id === "<?= $transportasi['checkbox_id']; ?>") {
-                    url = "assets/geojson/sarana/<?= $transportasi['file_json']; ?>";
-                }
-                <?php endforeach; ?>
-
-                // Fasilitas umum
-                <?php foreach ($JSONfasilitasumum as $fasilitasumum) : ?>
-                else if (checkbox.id === "<?= $fasilitasumum['checkbox_id']; ?>") {
-                    url = "assets/geojson/sarana/<?= $fasilitasumum['file_json']; ?>";
-                }
-                <?php endforeach; ?>
-
-                addGeoJsonLayer(url, checkbox);
             } else {
                 removeGeoJsonLayer(checkbox);
             }
         }
     });
 });
+
 
 // LAYER SETTING
 function addGeoJsonLayer(url, checkbox) {
@@ -231,46 +168,10 @@ function addGeoJsonLayer(url, checkbox) {
                     var customIcon = null;
                     // Cek jenis checkbox untuk menentukan ikon kustom yang akan digunakan
 
-                    // Kantor
-                    <?php foreach ($JSONkantor as $jk) : ?>
-                    if (checkbox.id === "<?= $jk['checkbox_id']; ?>") {
-                        customIcon = createCustomIcon<?= $jk['icon_id']; ?>();
-                    }
-                    <?php endforeach; ?>
-                    // Pendidikan
-                    <?php foreach ($JSONpendidikan as $pendidikan) : ?>
-                    if (checkbox.id === "<?= $pendidikan['checkbox_id']; ?>") {
-                        customIcon = createCustomIcon<?= $pendidikan['icon_id']; ?>();
-                    }
-                    <?php endforeach; ?>
-                    // Kesehatan
-                    <?php foreach ($JSONkesehatan as $kesehatan) : ?>
-                    if (checkbox.id === "<?= $kesehatan['checkbox_id']; ?>") {
-                        customIcon = createCustomIcon<?= $kesehatan['icon_id']; ?>();
-                    }
-                    <?php endforeach; ?>
-                    // pariwisata
-                    <?php foreach ($JSONpariwisata as $pariwisata) : ?>
-                    if (checkbox.id === "<?= $pariwisata['checkbox_id']; ?>") {
-                        customIcon = createCustomIcon<?= $pariwisata['icon_id']; ?>();
-                    }
-                    <?php endforeach; ?>
-                    // peribadatan
-                    <?php foreach ($JSONperibadatan as $peribadatan) : ?>
-                    if (checkbox.id === "<?= $peribadatan['checkbox_id']; ?>") {
-                        customIcon = createCustomIcon<?= $peribadatan['icon_id']; ?>();
-                    }
-                    <?php endforeach; ?>
-                    // transportasi
-                    <?php foreach ($JSONtransportasi as $transportasi) : ?>
-                    if (checkbox.id === "<?= $transportasi['checkbox_id']; ?>") {
-                        customIcon = createCustomIcon<?= $transportasi['icon_id']; ?>();
-                    }
-                    <?php endforeach; ?>
-                    // fasilitasumum
-                    <?php foreach ($JSONfasilitasumum as $fasilitasumum) : ?>
-                    if (checkbox.id === "<?= $fasilitasumum['checkbox_id']; ?>") {
-                        customIcon = createCustomIcon<?= $fasilitasumum['icon_id']; ?>();
+                    // Rencana
+                    <?php foreach ($getRencana as $r) : ?>
+                    if (checkbox.id === "<?= $r['checkbox_id']; ?>") {
+                        customIcon = createCustomIcon<?= $r['icon_id']; ?>();
                     }
                     <?php endforeach; ?>
 
@@ -414,12 +315,12 @@ function onEachFeature(feature, layer) {
 
 // CUSTOM ICON
 
-// Perkantoran icon
-<?php foreach ($JSONkantor as $jk) : ?>
+// Rencana icon
+<?php foreach ($getRencana as $r) : ?>
 
-function createCustomIcon<?= $jk['icon_id']; ?>() {
+function createCustomIcon<?= $r['icon_id']; ?>() {
     var customIcon = L.icon({
-        iconUrl: "assets/icon/<?= $jk['icon']; ?>",
+        iconUrl: "assets/icon/<?= $r['icon']; ?>",
         iconSize: [20, 20],
         iconAnchor: [16, 32],
         popupAnchor: [0, -32],

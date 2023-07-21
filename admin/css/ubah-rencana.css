@@ -1,0 +1,35 @@
+* {
+  font-family: Montserrat;
+}
+
+th {
+  padding: 10px !important;
+}
+
+td {
+  padding: 10px !important;
+}
+
+#map {
+  height: 350px !important;
+  border: 2px solid orange;
+}
+
+.informasi {
+  width: 85%;
+}
+
+@media screen and (max-width: 990px) {
+  .kolom {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .spase {
+    display: none !important;
+  }
+
+  .bdg-a {
+    margin-bottom: 3px !important;
+  }
+}

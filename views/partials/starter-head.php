@@ -388,6 +388,35 @@ require 'functions/functions.php'
     .bg-orange {
         background-color: orange !important;
     }
+
+    .running-text {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        height: 30px !important;
+        font-family: "Montserrat", sans-serif !important;
+    }
+
+    .running-left {
+        flex: 1;
+        height: 100% !important;
+    }
+
+    .running-right {
+        flex: 3;
+        overflow: hidden;
+        height: 100% !important;
+    }
+
+    #clock {
+        font-size: 21px;
+        margin: 0;
+    }
+
+    marquee {
+        font-size: 18px;
+        white-space: nowrap;
+    }
     </style>
 </head>
 
