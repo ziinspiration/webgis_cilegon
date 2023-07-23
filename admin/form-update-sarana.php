@@ -14,9 +14,10 @@ $conn = koneksi();
 $id = $_GET["id"];
 
 // query data sarana berdasarkan id
-$getdata = query("SELECT * FROM sarana WHERE id = $id")[0];
+$getdata = query("SELECT * FROM sarana JOIN kategori_data ON sarana.kategori_id = kategori_data.id_kategori WHERE id = $id")[0];
 
-$getkategori = query("SELECT DISTINCT kategori FROM sarana");
+$getkategori = query("SELECT * FROM kategori_data");
+
 
 $nama_halaman = 'Form update sarana';
 $linkcss = 'form-update-sarana.css';

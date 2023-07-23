@@ -1,7 +1,13 @@
 <?php
 require '../functions/functions.php';
 $keyword = $_GET['keyword'];
-$query = "SELECT * FROM sarana WHERE nama_sarana LIKE '%$keyword%' OR kategori LIKE '%$keyword%'  OR file_json LIKE '%$keyword%'";
+$query = "SELECT s.*, kd.nama_kategori 
+          FROM sarana s 
+          JOIN kategori_data kd ON s.kategori_id = kd.id_kategori
+          WHERE s.nama_sarana LIKE '%$keyword%' 
+             OR kd.nama_kategori LIKE '%$keyword%' 
+             OR s.file_json LIKE '%$keyword%'";
+
 $getdata = query($query);
 ?>
 
@@ -23,7 +29,7 @@ $getdata = query($query);
                         <th class="text-center" scope="row"><?= $i + 1; ?></th>
                         <td><?= $a['nama_sarana']; ?></td>
                         <td><?= $a['file_json']; ?></td>
-                        <td><?= $a['kategori']; ?></td>
+                        <td><?= $a['nama_kategori']; ?></td>
                         <td class="text-center"><a href="detail-sarana.php?id=<?= $a["id"] ?>"><i class="bi bi-eye-fill"></i></a></td>
                     </tr>
                 <?php endforeach; ?>

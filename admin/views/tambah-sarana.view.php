@@ -15,11 +15,11 @@
                 </div>
                 <!-- Kategori -->
                 <div class="mb-3">
-                    <label for="kategori" class="form-label">Kategori</label>
-                    <select name="kategori" id="kategori" class="form-select form-control">
+                    <label for="kategori_id" class="form-label">Kategori</label>
+                    <select name="kategori_id" id="kategori_id" class="form-select form-control">
                         <option selected disabled>Pilih jenis kategori</option>
                         <?php foreach ($getkategori as $a) : ?>
-                            <option value="<?= $a['kategori']; ?>"><?= $a['kategori']; ?></option>
+                            <option value="<?= $a['id_kategori']; ?>"><?= $a['nama_kategori']; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>

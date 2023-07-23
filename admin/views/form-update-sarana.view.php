@@ -45,17 +45,19 @@
             </div>
 
             <div class="mb-3">
-                <label for="kategori" class="form-label">Kategori</label>
-                <input type="text" class="form-control mb-1 w-25" id="kategoriInput" name="kategori"
-                    value="<?= $getdata['kategori']; ?>" required />
-                <select name="kategoriSelect" id="kategoriSelect" class="form-select form-control"
-                    aria-label="Default select example" onchange="changeKategori()">
+                <label for="kategoriSelect" class="form-label">Kategori</label>
+                <input type="hidden" name="kategori_id" value="<?= $getdata['kategori_id']; ?>">
+                <select name="kategori_id" id="kategoriSelect" class="form-select form-control"
+                    aria-label="Default select example">
                     <option selected disabled>Pilih jenis kategori</option>
                     <?php foreach ($getkategori as $a) : ?>
-                    <option value="<?= $a['kategori']; ?>"><?= $a['kategori']; ?></option>
+                    <option value="<?= $a['id_kategori']; ?>">
+                        <?= $a['nama_kategori']; ?>
+                    </option>
                     <?php endforeach; ?>
                 </select>
             </div>
+
 
             <button type="submit" name="submit" class="btn btn-primary mt-3 mb-2"><i
                     class="fa-solid fa-floppy-disk me-2"></i>Simpan</button>
@@ -76,12 +78,12 @@ function previewImage(event) {
     reader.readAsDataURL(event.target.files[0]);
 }
 
-function changeKategori() {
-    var select = document.getElementById("kategoriSelect");
-    var input = document.getElementById("kategoriInput");
-    var selectedValue = select.value;
-    input.value = selectedValue;
-}
+// function changeKategori() {
+//     var select = document.getElementById("kategoriSelect");
+//     var input = document.getElementById("CatNow");
+//     var selectedId = select.id;
+//     input.id = selectedId;
+// }
 </script>
 
 <?php
@@ -91,14 +93,14 @@ if (isset($_POST["submit"])) {
     $nama_sarana = $_POST["nama_sarana"];
     $icon_id = $_POST["icon_id"];
     $checkbox_id = $_POST["checkbox_id"];
-    $kategori = $_POST["kategori"];
+    $kategori_id = $_POST["kategori_id"];
 
     // query update data sarana
     $query = "UPDATE sarana SET
             nama_sarana = '$nama_sarana',
             checkbox_id = '$checkbox_id',
             icon_id = '$icon_id',
-            kategori = '$kategori'";
+            kategori_id = '$kategori_id'";
 
     // cek apakah ada file yang diupload
     if (!empty($_FILES['file_json']['name'])) {

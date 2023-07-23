@@ -10,7 +10,7 @@ require 'functions/functions.php';
 
 $conn = koneksi();
 
-$getdata = query("SELECT * FROM sarana");
+$getdata = query("SELECT * FROM sarana JOIN kategori_data ON sarana.kategori_id = kategori_data.id_kategori");
 
 $i = 0;
 

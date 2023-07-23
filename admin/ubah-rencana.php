@@ -10,7 +10,9 @@ require 'functions/functions.php';
 
 $conn = koneksi();
 
-$getdata = query("SELECT * FROM rencana");
+$getdata = query("SELECT r.*, j.nama_jenis
+                 FROM rencana AS r
+                 JOIN jenis_file AS j ON r.id_jenis_file = j.id;");
 
 $i = 0;
 

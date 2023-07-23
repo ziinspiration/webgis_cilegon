@@ -1,9 +1,0 @@
-{
-"type": "FeatureCollection",
-"name": "STASIUN",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { "OBJECTID": 2216, "JENIS_UTAM": "Fasilitas Umum dan Sosial", "JENIS": "Transportasi", "KEGIATAN_O": "Stasiun", "TOPONIM": "Stasiun Kereta Api Merak", "SUMBER": "Data Sekunder" }, "geometry": { "type": "Point", "coordinates": [ 105.996857250460167, -5.930174517905158 ] } },
-{ "type": "Feature", "properties": { "OBJECTID": 3130, "JENIS_UTAM": "Fasilitas Umum dan Sosial", "JENIS": "Transportasi", "KEGIATAN_O": "Stasiun", "TOPONIM": "Stasiun Kereta Api", "SUMBER": "Data Sekunder" }, "geometry": { "type": "Point", "coordinates": [ 106.05252762213091, -6.018577282109782 ] } }
-]
-}

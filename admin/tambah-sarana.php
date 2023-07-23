@@ -10,12 +10,12 @@ require 'functions/functions.php';
 
 $conn = koneksi();
 
-$getkategori = query("SELECT DISTINCT kategori FROM sarana");
+$getkategori = query("SELECT * FROM kategori_data");
 
 if (isset($_POST['send'])) {
     // Mendapatkan data dari form
     $nama_sarana = htmlspecialchars($_POST['nama_sarana']);
-    $kategori = $_POST['kategori'];
+    $kategori_id = $_POST['kategori_id'];
     $icon_id = htmlspecialchars($_POST['icon_id']);
     $checkbox_id = htmlspecialchars($_POST['checkbox_id']);
 
@@ -48,10 +48,10 @@ if (isset($_POST['send'])) {
                     $upload_icon_path = $upload_icon_dir . $file_icon_name;
                     if (move_uploaded_file($file_icon_tmp, $upload_icon_path)) {
                         // Memasukkan data ke tabel sarana
-                        $query = "INSERT INTO sarana (nama_sarana, file_json, icon, icon_id, checkbox_id, kategori) VALUES (?, ?, ?, ?, ?, ?)";
+                        $query = "INSERT INTO sarana (nama_sarana, file_json, icon, icon_id, checkbox_id, kategori_id) VALUES (?, ?, ?, ?, ?, ?)";
 
                         $stmt = mysqli_prepare($conn, $query);
-                        mysqli_stmt_bind_param($stmt, 'ssssss', $nama_sarana, $file_name, $file_icon_name, $icon_id, $checkbox_id, $kategori);
+                        mysqli_stmt_bind_param($stmt, 'ssssss', $nama_sarana, $file_name, $file_icon_name, $icon_id, $checkbox_id, $kategori_id);
 
                         // Menjalankan query
                         if (mysqli_stmt_execute($stmt)) {

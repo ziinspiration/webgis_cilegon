@@ -25,7 +25,7 @@
                             <th class="text-center" scope="row"><?= $i + 1; ?></th>
                             <td><a class="text-dark text-decoration-none" href="detail-rencana.php?id=<?= $a["id"] ?>"><?= $a['nama_rencana']; ?></a></td>
                             <td><?= $a['file_json']; ?></td>
-                            <td><?= $a['jenis_file']; ?></td>
+                            <td><?= $a['nama_jenis']; ?></td>
                             <td class="text-center">
                                 <a class="text-decoration-none" href="form-update-rencana.php?id=<?= $a["id"] ?>">
                                     <span class="badge bdg-a text-bg-warning p-2"><i class="fa-regular fa-pen-to-square"></i>Ubah</span>

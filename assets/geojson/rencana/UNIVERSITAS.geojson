@@ -1,8 +1,0 @@
-{
-"type": "FeatureCollection",
-"name": "UNIVERSITAS",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { "OBJECTID": 2806, "JENIS_UTAM": "Fasilitas Umum dan Sosial", "JENIS": "Pendidikan", "KEGIATAN_O": "Pendidikan Tinggi", "TOPONIM": "Universitas Sultan Ageng Tirtayasa", "SUMBER": "Data Sekunder" }, "geometry": { "type": "Point", "coordinates": [ 106.031689495806702, -5.997572045618247 ] } }
-]
-}

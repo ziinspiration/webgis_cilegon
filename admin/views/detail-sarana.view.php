@@ -21,11 +21,14 @@
                             </tr>
                             <tr class="kolom">
                                 <th>Kategori :</th>
-                                <td><?= $getdata['kategori']; ?></td>
+                                <td><?= $getdata['nama_kategori']; ?></td>
                             </tr>
                             <tr class="kolom">
                                 <th>Icon :</th>
-                                <td><?= $getdata['icon']; ?></td>
+                                <td>
+                                    <img class="w-25 align-content-center" src="../assets/icon/<?= $getdata['icon']; ?>"
+                                        alt="">
+                                </td>
                             </tr>
                             <tr class="kolom">
                                 <th>Icon id :</th>

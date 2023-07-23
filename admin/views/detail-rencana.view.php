@@ -21,7 +21,7 @@
                             </tr>
                             <tr class="kolom">
                                 <th>Jenis file :</th>
-                                <td><?= $getdata['jenis_file']; ?></td>
+                                <td><?= $getdata['nama_jenis']; ?></td>
                             </tr>
                             <tr class="kolom">
                                 <th>Icon :</th>
@@ -45,56 +45,56 @@
 
 <?php include 'views/partials/script.php' ?>
 <script>
-var map = L.map('map').setView([-5.992735076420852, 106.02561279458], 11);
+    var map = L.map('map').setView([-5.992735076420852, 106.02561279458], 11);
 
-L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-    maxZoom: 20,
-    subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-    attribution: '&copy; Google Maps'
-}).addTo(map);
+    L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+        attribution: '&copy; Google Maps'
+    }).addTo(map);
 
-// Load data geoJSON
-$.getJSON("../assets/geojson/rencana/<?= $getdata['file_json']; ?>", function(data) {
-    // Tambahkan geoJSON layer ke peta jika jenis file adalah "marker"
-    if ("<?= $getdata['jenis_file']; ?>" === "Marker") {
-        // Tambahkan marker cluster group
-        var markers = L.markerClusterGroup();
+    // Load data geoJSON
+    $.getJSON("../assets/geojson/rencana/<?= $getdata['file_json']; ?>", function(data) {
+        // Tambahkan geoJSON layer ke peta jika jenis file adalah "marker"
+        if ("<?= $getdata['jenis_file']; ?>" === "Marker") {
+            // Tambahkan marker cluster group
+            var markers = L.markerClusterGroup();
 
-        // Tambahkan geoJSON layer ke peta
-        L.geoJSON(data, {
-            style: function(feature) {
-                var color = feature.properties.color;
-                return {
-                    fillColor: color,
-                    fillOpacity: 0.5,
-                    color: color,
-                    weight: 1.5,
-                };
-            },
-            pointToLayer: function(feature, latlng) {
-                // Membuat marker untuk setiap fitur dan tambahkan ke marker cluster group
-                var marker = L.marker(latlng);
-                markers.addLayer(marker);
-                return marker;
-            }
-        });
+            // Tambahkan geoJSON layer ke peta
+            L.geoJSON(data, {
+                style: function(feature) {
+                    var color = feature.properties.color;
+                    return {
+                        fillColor: color,
+                        fillOpacity: 0.5,
+                        color: color,
+                        weight: 1.5,
+                    };
+                },
+                pointToLayer: function(feature, latlng) {
+                    // Membuat marker untuk setiap fitur dan tambahkan ke marker cluster group
+                    var marker = L.marker(latlng);
+                    markers.addLayer(marker);
+                    return marker;
+                }
+            });
 
-        // Tambahkan marker cluster group ke peta
-        map.addLayer(markers);
-    } else {
-        // Jika jenis file bukan "marker", tambahkan geoJSON layer langsung ke peta tanpa cluster
-        L.geoJSON(data, {
-            style: function(feature) {
-                var color = feature.properties.color;
-                return {
-                    fillColor: color,
-                    fillOpacity: 0.5,
-                    color: color,
-                    weight: 1.5,
-                };
-            }
-        }).addTo(map);
-    }
-});
+            // Tambahkan marker cluster group ke peta
+            map.addLayer(markers);
+        } else {
+            // Jika jenis file bukan "marker", tambahkan geoJSON layer langsung ke peta tanpa cluster
+            L.geoJSON(data, {
+                style: function(feature) {
+                    var color = feature.properties.color;
+                    return {
+                        fillColor: color,
+                        fillOpacity: 0.5,
+                        color: color,
+                        weight: 1.5,
+                    };
+                }
+            }).addTo(map);
+        }
+    });
 </script>
 <?php include 'views/partials/starter-foot.php' ?>
