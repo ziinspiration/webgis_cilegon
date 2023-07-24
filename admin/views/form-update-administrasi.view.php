@@ -1,35 +1,101 @@
 <?php include 'views/partials/starter-head.php' ?>
+<style>
+* {
+    font-family: montserrat;
+}
 
+body {
+    background-image: url(../assets/index/footer2.jpg);
+}
+
+.orange {
+    color: orange !important;
+}
+
+.bg-orange {
+    background-color: orange;
+}
+
+form {
+    border: 2px solid orange !important;
+}
+
+@media screen and (max-width:550px) {
+    .formulir {
+        flex-direction: column;
+    }
+
+    .left,
+    .right {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .file-now {
+        font-size: 9px !important;
+        margin-top: 5px !important;
+    }
+
+    .btn-primary {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width:990px) {
+    .file-now {
+        font-size: 11px !important;
+        margin-top: 5px !important;
+    }
+}
+
+.row {
+    margin-top: 100px !important;
+    margin-bottom: 100px !important;
+}
+</style>
 <div class="container-fluid">
-    <div class="row">
-        <form class="form p-5 m-auto" action="" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="id" value="<?= $getdata['id']; ?>" />
-
-            <div class="mb-3">
-                <label for="nama_adm" class="form-label">Nama data</label>
-                <input type="text" class="form-control" id="nama_adm" name="nama_adm" value="<?= $getdata['nama_adm']; ?>" required />
-            </div>
-
-            <div class="mb-3">
-                <div class="file-now">
-                    <?php if (!empty($getdata['file_json'])) : ?>
-                        <p><?= basename($getdata['file_json']); ?></p>
-                    <?php endif; ?>
+    <div class="row justify-content-center">
+        <div class="w-75 align-content-center">
+            <form class="px-5 py-4 bg-dark rounded-4" action="" method="POST" enctype="multipart/form-data">
+                <h2 class="text-center text-light mb-5 mt-2">Update data administrasi</h2>
+                <input type="hidden" name="id" value="<?= $getdata['id']; ?>" />
+                <div class="formulir d-flex justify-content-between">
+                    <div class="left w-50 me-3">
+                        <div class="mb-3">
+                            <label for="nama_adm" class="form-label orange ps-1 pe-1">Nama data</label>
+                            <input type="text" class="form-control p-2" id="nama_adm" name="nama_adm"
+                                value="<?= $getdata['nama_adm']; ?>" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="file_json" class="form-label orange ps-1 pe-1">File geojson</label>
+                            <div class="input-group">
+                                <input type="file" class="form-control p-2" id="file_json" name="file_json"
+                                    accept=".geojson" />
+                                <label class="input-group-text p-2" for="file_json"><i
+                                        class="fa-solid fa-magnifying-glass"></i></label>
+                            </div>
+                            <div class="file-now text-light p-2">
+                                <?php if (!empty($getdata['file_json'])) : ?>
+                                <p><small>File sekarang = <?= basename($getdata['file_json']); ?></small></p>
+                                <p class="text-danger"><small>*Jangan buat nama file sama dengan sebelumnya</small></p>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right w-50 me-3">
+                        <div class="mb-3">
+                            <label for="checkbox_id" class="form-label orange ps-1 pe-1">Checkbox ID</label>
+                            <input type="text" class="form-control p-2" id="checkbox_id" name="checkbox_id"
+                                value="<?= $getdata['checkbox_id']; ?>" required />
+                        </div>
+                    </div>
                 </div>
-                <label for="file_json" class="form-label">File geojson</label>
-                <div class="input-group">
-                    <input type="file" class="form-control" id="file_json" name="file_json" accept=".geojson" />
-                    <label class="input-group-text" for="file_json">Pilih file</label>
+                <div class="btn-kirim d-flex justify-content-end">
+                    <button type="submit" name="submit" class="btn btn-primary w-25 p-2 mt-4"><i
+                            class="fa-solid fa-floppy-disk me-2"></i>Simpan</button>
                 </div>
-            </div>
-
-            <div class="mb-3">
-                <label for="checkbox_id" class="form-label">Checkbox ID</label>
-                <input type="text" class="form-control" id="checkbox_id" name="checkbox_id" value="<?= $getdata['checkbox_id']; ?>" required />
-            </div>
-
-            <button type="submit" name="submit" class="btn btn-primary mt-3 mb-2"><i class="fa-solid fa-floppy-disk me-2"></i>Simpan</button>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
 
