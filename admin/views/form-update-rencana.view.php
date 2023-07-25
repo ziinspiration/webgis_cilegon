@@ -1,84 +1,84 @@
 <?php include 'views/partials/starter-head.php'; ?>
 <style>
-* {
-    font-family: montserrat;
-}
-
-body {
-    background-image: url(../assets/index/footer2.jpg);
-}
-
-.orange {
-    color: orange !important;
-}
-
-.bg-orange {
-    background-color: orange;
-}
-
-form {
-    border: 2px solid orange !important;
-}
-
-@media screen and (max-width:550px) {
-    .content {
-        width: 95% !important;
+    * {
+        font-family: montserrat;
     }
 
-    .formulir {
-        flex-direction: column;
+    body {
+        background-image: url(../assets/index/footer2.jpg);
     }
 
-    .left,
-    .right,
-    .center {
-        width: 100% !important;
-        margin: 0 !important;
-        flex-direction: column !important;
+    .orange {
+        color: orange !important;
     }
 
-    .file-now {
-        font-size: 9px !important;
-        margin-top: 5px !important;
+    .bg-orange {
+        background-color: orange;
     }
 
-    .btn-primary {
-        width: 100% !important;
+    form {
+        border: 2px solid orange !important;
     }
 
-    .kolom {
-        width: 100% !important;
-        margin: 0 !important;
-        margin-bottom: 50px !important;
+    @media screen and (max-width:550px) {
+        .content {
+            width: 95% !important;
+        }
+
+        .formulir {
+            flex-direction: column;
+        }
+
+        .left,
+        .right,
+        .center {
+            width: 100% !important;
+            margin: 0 !important;
+            flex-direction: column !important;
+        }
+
+        .file-now {
+            font-size: 9px !important;
+            margin-top: 5px !important;
+        }
+
+        .btn-primary {
+            width: 100% !important;
+        }
+
+        .kolom {
+            width: 100% !important;
+            margin: 0 !important;
+            margin-bottom: 50px !important;
+        }
+
+        .img-preview {
+            display: none !important;
+        }
+
+        .preview-image {
+            display: block !important;
+            width: 30% !important;
+            margin: auto !important;
+        }
+    }
+
+    @media screen and (max-width:990px) {
+        .file-now {
+            font-size: 11px !important;
+            margin-top: 5px !important;
+        }
+    }
+
+    .row {
+        margin-top: 100px !important;
+        margin-bottom: 100px !important;
     }
 
     .img-preview {
-        display: none !important;
-    }
-
-    .preview-image {
-        display: block !important;
-        width: 30% !important;
+        width: 10% !important;
         margin: auto !important;
     }
-}
-
-@media screen and (max-width:990px) {
-    .file-now {
-        font-size: 11px !important;
-        margin-top: 5px !important;
-    }
-}
-
-.row {
-    margin-top: 100px !important;
-    margin-bottom: 100px !important;
-}
-
-.img-preview {
-    width: 10% !important;
-    margin: auto !important;
-}
 </style>
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -93,61 +93,53 @@ form {
                         <!-- Nama data -->
                         <div class="w-50 me-3 kolom">
                             <label for="nama_rencana" class="form-label orange ps-1 pe-1">Nama data</label>
-                            <input type="text" class="form-control p-2" id="nama_rencana" name="nama_rencana"
-                                value="<?= $getdata['nama_rencana']; ?>" required />
+                            <input type="text" class="form-control p-2" id="nama_rencana" name="nama_rencana" value="<?= $getdata['nama_rencana']; ?>" required />
                         </div>
                         <!-- File geojson -->
                         <div class="w-50 ms-3 kolom">
                             <label for="file_json" class="form-label orange ps-1 pe-1">File geojson</label>
                             <div class="input-group">
-                                <input type="file" class="form-control p-2" id="file_json" name="file_json"
-                                    accept=".geojson" />
+                                <input type="file" class="form-control p-2" id="file_json" name="file_json" accept=".geojson" />
                                 <label class="input-group-text p-2" for="file_json">Pilih file</label>
                             </div>
                             <div class="file-now text-light p-2">
                                 <?php if (!empty($getdata['file_json'])) : ?>
-                                <p><small>File sekarang = <?= basename($getdata['file_json']); ?></small></p>
-                                <p class="text-danger"><small>*Jangan buat nama file sama dengan sebelumnya</small></p>
+                                    <p><small>File sekarang = <?= basename($getdata['file_json']); ?></small></p>
+                                    <p class="text-danger"><small>*Jangan buat nama file sama dengan sebelumnya</small></p>
                                 <?php endif; ?>
                             </div>
                         </div>
 
                     </div>
                     <?php if ($getdata['id_jenis_file'] === '1') : ?>
-                    <div class="center w-100 mb-5 d-flex justify-content-between">
-                        <!-- Icon ID -->
-                        <div class="w-50 me-3 kolom">
-                            <label for="icon_id" class="form-label orange ps-1 pe-1">Icon ID</label>
-                            <input type="text" class="form-control p-2" id="icon_id" name="icon_id"
-                                value="<?= $getdata['icon_id']; ?>" required />
+                        <div class="center w-100 mb-5 d-flex justify-content-between">
+                            <!-- Icon ID -->
+                            <div class="w-50 me-3 kolom">
+                                <label for="icon_id" class="form-label orange ps-1 pe-1">Icon ID</label>
+                                <input type="text" class="form-control p-2" id="icon_id" name="icon_id" value="<?= $getdata['icon_id']; ?>" required />
+                            </div>
+                            <img class="img-preview" src="../assets/icon/<?= $getdata["icon"]; ?>" alt="Preview" id="preview" />
                         </div>
-                        <img class="img-preview" src="../assets/icon/<?= $getdata["icon"]; ?>" alt="Preview"
-                            id="preview" />
-                    </div>
                 </div>
-                <?php endif; ?>
-                <div class="right w-100 mb-5 d-flex justify-content-between">
-                    <!-- Checkbox ID -->
-                    <div class="w-50 me-3 kolom">
-                        <label for="checkbox_id" class="form-label orange ps-1 pe-1">Checkbox ID</label>
-                        <input type="text" class="form-control p-2" id="checkbox_id" name="checkbox_id"
-                            value="<?= $getdata['checkbox_id']; ?>" required />
-                    </div>
-                    <!-- Icon -->
-                    <?php if ($getdata['id_jenis_file'] === '1') : ?>
-                    <img class="preview-image d-none" src="../assets/icon/<?= $getdata["icon"]; ?>" alt="Preview"
-                        id="preview" />
+            <?php endif; ?>
+            <div class="right w-100 mb-5 d-flex justify-content-between">
+                <!-- Checkbox ID -->
+                <div class="w-50 me-3 kolom">
+                    <label for="checkbox_id" class="form-label orange ps-1 pe-1">Checkbox ID</label>
+                    <input type="text" class="form-control p-2" id="checkbox_id" name="checkbox_id" value="<?= $getdata['checkbox_id']; ?>" required />
+                </div>
+                <!-- Icon -->
+                <?php if ($getdata['id_jenis_file'] === '1') : ?>
+                    <img class="preview-image d-none" src="../assets/icon/<?= $getdata["icon"]; ?>" alt="Preview" id="preview" />
                     <div class="w-50 ms-3 kolom">
                         <label for="icon" class="form-label orange ps-1 pe-1">File icon</label>
-                        <input type="file" onchange="previewImage(event)" class="form-control p-2" id="icon" name="icon"
-                            accept=".jpg, .jpeg, .png" />
+                        <input type="file" onchange="previewImage(event)" class="form-control p-2" id="icon" name="icon" accept=".jpg, .jpeg, .png" />
                     </div>
-                    <?php endif; ?>
-                </div>
-                <div class="btn-kirim d-flex justify-content-end">
-                    <button type="submit" name="submit" class="btn btn-primary w-25 p-2 mt-4"><i
-                            class="fa-solid fa-floppy-disk me-2"></i>Simpan</button>
-                </div>
+                <?php endif; ?>
+            </div>
+            <div class="btn-kirim d-flex justify-content-end">
+                <button type="submit" name="submit" class="btn btn-primary w-25 p-2 mt-4 mb-4"><i class="fa-solid fa-floppy-disk me-2"></i>Simpan</button>
+            </div>
             </form>
         </div>
     </div>
@@ -156,15 +148,15 @@ form {
 <?php include 'views/partials/script.php'; ?>
 
 <script>
-function previewImage(event) {
-    var reader = new FileReader();
-    reader.onload = function() {
-        var output = document.getElementById('preview');
-        output.src = reader.result;
-        output.style.display = 'block';
-    };
-    reader.readAsDataURL(event.target.files[0]);
-}
+    function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function() {
+            var output = document.getElementById('preview');
+            output.src = reader.result;
+            output.style.display = 'block';
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
 </script>
 
 <?php

@@ -1,57 +1,57 @@
 <?php include 'views/partials/starter-head.php' ?>
 <style>
-    * {
-        font-family: montserrat;
+* {
+    font-family: montserrat;
+}
+
+body {
+    background-image: url(../assets/index/footer2.jpg);
+}
+
+.orange {
+    color: orange !important;
+}
+
+.bg-orange {
+    background-color: orange;
+}
+
+form {
+    border: 2px solid orange !important;
+}
+
+@media screen and (max-width:550px) {
+    .formulir {
+        flex-direction: column;
     }
 
-    body {
-        background-image: url(../assets/index/footer2.jpg);
+    .left,
+    .right {
+        width: 100% !important;
+        margin: 0 !important;
     }
 
-    .orange {
-        color: orange !important;
+    .file-now {
+        font-size: 9px !important;
+        margin-top: 5px !important;
     }
 
-    .bg-orange {
-        background-color: orange;
+    .btn-primary {
+        width: 100% !important;
     }
+}
 
-    form {
-        border: 2px solid orange !important;
+@media screen and (max-width:990px) {
+    .file-now {
+        font-size: 11px !important;
+        margin-top: 5px !important;
     }
+}
 
-    @media screen and (max-width:550px) {
-        .formulir {
-            flex-direction: column;
-        }
-
-        .left,
-        .right {
-            width: 100% !important;
-            margin: 0 !important;
-        }
-
-        .file-now {
-            font-size: 9px !important;
-            margin-top: 5px !important;
-        }
-
-        .btn-primary {
-            width: 100% !important;
-        }
-    }
-
-    @media screen and (max-width:990px) {
-        .file-now {
-            font-size: 11px !important;
-            margin-top: 5px !important;
-        }
-    }
-
-    .row {
-        margin-top: 100px !important;
-        margin-bottom: 100px !important;
-    }
+.row {
+    margin-top: 100px !important;
+    margin-bottom: 100px !important;
+}
 </style>
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -63,18 +63,21 @@
                     <div class="left w-50 me-3">
                         <div class="mb-3">
                             <label for="nama_tematik" class="form-label orange ps-1 pe-1">Nama data</label>
-                            <input type="text" class="form-control p-2" id="nama_tematik" name="nama_tematik" value="<?= $getdata['nama_tematik']; ?>" required />
+                            <input type="text" class="form-control p-2" id="nama_tematik" name="nama_tematik"
+                                value="<?= $getdata['nama_tematik']; ?>" required />
                         </div>
                         <div class="mb-3">
                             <label for="file_json" class="form-label orange ps-1 pe-1">File geojson</label>
                             <div class="input-group">
-                                <input type="file" class="form-control p-2" id="file_json" name="file_json" accept=".geojson" />
-                                <label class="input-group-text p-2" for="file_json"><i class="fa-solid fa-magnifying-glass"></i></label>
+                                <input type="file" class="form-control p-2" id="file_json" name="file_json"
+                                    accept=".geojson" />
+                                <label class="input-group-text p-2" for="file_json"><i
+                                        class="fa-solid fa-magnifying-glass"></i></label>
                             </div>
                             <div class="file-now text-light p-2">
                                 <?php if (!empty($getdata['file_json'])) : ?>
-                                    <p><small>File sekarang = <?= basename($getdata['file_json']); ?></small></p>
-                                    <p class="text-danger"><small>*Jangan buat nama file sama dengan sebelumnya</small></p>
+                                <p><small>File sekarang = <?= basename($getdata['file_json']); ?></small></p>
+                                <p class="text-danger"><small>*Jangan buat nama file sama dengan sebelumnya</small></p>
                                 <?php endif; ?>
                             </div>
                         </div>
@@ -82,12 +85,14 @@
                     <div class="right w-50 me-3">
                         <div class="mb-3">
                             <label for="checkbox_id" class="form-label orange ps-1 pe-1">Checkbox ID</label>
-                            <input type="text" class="form-control p-2" id="checkbox_id" name="checkbox_id" value="<?= $getdata['checkbox_id']; ?>" required />
+                            <input type="text" class="form-control p-2" id="checkbox_id" name="checkbox_id"
+                                value="<?= $getdata['checkbox_id']; ?>" required />
                         </div>
                     </div>
                 </div>
                 <div class="btn-kirim d-flex justify-content-end">
-                    <button type="submit" name="submit" class="btn btn-primary w-25 p-2 mt-4"><i class="fa-solid fa-floppy-disk me-2"></i>Simpan</button>
+                    <button type="submit" name="submit" class="btn btn-primary w-25 p-2 mt-4 mb-4"><i
+                            class="fa-solid fa-floppy-disk me-2"></i>Simpan</button>
                 </div>
             </form>
         </div>

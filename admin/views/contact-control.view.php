@@ -38,20 +38,16 @@
 
 
     /* Warna Ikon */
-    .instagram {
-        color: #E1306C;
-    }
-
-    .facebook {
+    .alamat {
         color: #1877F2;
     }
 
-    .youtube {
-        color: #FF0000;
+    .email {
+        color: #1877F2;
     }
 
-    .twitter {
-        color: #1DA1F2;
+    .telphone {
+        color: #1877F2;
     }
 
     /* Efek Hover pada Ikon */
@@ -74,30 +70,30 @@
     <div class="row justify-content-center">
         <div class="w-75 content align-content-center">
             <form class="px-5 py-4 bg-dark rounded-4" action="" method="post">
-                <h2 class="text-center text-light mb-5 mt-2">Update link media sosial</h2>
+                <h2 class="text-center text-light mb-5 mt-2">Update kontak</h2>
                 <div class="mb-3 input-group input-group">
-                    <span class="input-group-text p-2 instagram" id="instagram"><i class="fa-brands fa-instagram"></i></span>
-                    <input type="text" class="form-control p-1 px-2" name="informasi" id="input-instagram" data-type="instagram" value="https://www.instagram.com/" readonly aria-describedby="instagram">
-                    <i class="fa-regular fa-pen-to-square ms-2 iFunction" onclick="enableEdit('input-instagram')"></i>
-                    <i class="fa-solid fa-floppy-disk ms-2 iFunction" onclick="saveChanges('instagram')"></i>
+                    <span class="input-group-text p-2 alamat" id="alamat"><i class="fa-solid fa-location-dot"></i></span>
+                    <?php foreach ($getAlamat as $a) : ?>
+                        <input type="text" class="form-control p-1 px-2" name="informasi" id="input-alamat" data-type="alamat" value="<?= $a['informasi']; ?>" readonly aria-describedby="alamat">
+                    <?php endforeach; ?>
+                    <i class="fa-regular fa-pen-to-square ms-2 iFunction" onclick="enableEdit('input-alamat')"></i>
+                    <i class="fa-solid fa-floppy-disk ms-2 iFunction" onclick="saveChanges('alamat')"></i>
                 </div>
                 <div class="mb-3 input-group">
-                    <span class="input-group-text p-2 facebook" id="facebook"><i class="fa-brands fa-facebook"></i></span>
-                    <input type="text" class="form-control p-1 px-2" name="informasi" id="input-facebook" data-type="facebook" value="https://www.facebook.com/" readonly aria-describedby="facebook">
-                    <i class="fa-regular fa-pen-to-square ms-2 iFunction" onclick="enableEdit('input-facebook')"></i>
-                    <i class="fa-solid fa-floppy-disk ms-2 iFunction" onclick="saveChanges('facebook')"></i>
+                    <span class="input-group-text p-2 email" id="email"><i class="fa-solid fa-envelope"></i></span>
+                    <?php foreach ($getEmail as $a) : ?>
+                        <input type="text" class="form-control p-1 px-2" name="informasi" id="input-email" data-type="email" value="<?= $a['informasi']; ?>" readonly aria-describedby="email">
+                    <?php endforeach; ?>
+                    <i class="fa-regular fa-pen-to-square ms-2 iFunction" onclick="enableEdit('input-email')"></i>
+                    <i class="fa-solid fa-floppy-disk ms-2 iFunction" onclick="saveChanges('email')"></i>
                 </div>
                 <div class="mb-3 input-group">
-                    <span class="input-group-text p-2 youtube" id="youtube"><i class="fa-brands fa-youtube"></i></span>
-                    <input type="text" class="form-control p-1 px-2" name="informasi" id="input-youtube" data-type="youtube" value="https://www.youtube.com/" readonly aria-describedby="youtube">
-                    <i class="fa-regular fa-pen-to-square ms-2 iFunction" onclick="enableEdit('input-youtube')"></i>
-                    <i class="fa-solid fa-floppy-disk ms-2 iFunction" onclick="saveChanges('youtube')"></i>
-                </div>
-                <div class="mb-3 input-group">
-                    <span class="input-group-text p-2 twitter" id="twitter"><i class="fa-brands fa-twitter"></i></span>
-                    <input type="text" class="form-control p-1 px-2" name="informasi" id="input-twitter" data-type="twitter" value="https://twitter.com/" readonly aria-describedby="twitter">
-                    <i class="fa-regular fa-pen-to-square ms-2 iFunction" onclick="enableEdit('input-twitter')"></i>
-                    <i class="fa-solid fa-floppy-disk ms-2 iFunction" onclick="saveChanges('twitter')"></i>
+                    <span class="input-group-text p-2 telphone" id="telphone"><i class="fa-solid fa-phone"></i></span>
+                    <?php foreach ($getPhone as $a) : ?>
+                        <input type="text" class="form-control p-1 px-2" name="informasi" id="input-telphone" data-type="telphone" value="<?= $a['informasi']; ?>" readonly aria-describedby="telphone">
+                    <?php endforeach; ?>
+                    <i class="fa-regular fa-pen-to-square ms-2 iFunction" onclick="enableEdit('input-telphone')"></i>
+                    <i class="fa-solid fa-floppy-disk ms-2 iFunction" onclick="saveChanges('telphone')"></i>
                 </div>
             </form>
         </div>

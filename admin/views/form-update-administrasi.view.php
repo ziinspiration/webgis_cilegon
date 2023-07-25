@@ -91,7 +91,7 @@ form {
                     </div>
                 </div>
                 <div class="btn-kirim d-flex justify-content-end">
-                    <button type="submit" name="submit" class="btn btn-primary w-25 p-2 mt-4"><i
+                    <button type="submit" name="submit" class="btn btn-primary w-25 p-2 mt-4 mb-4"><i
                             class="fa-solid fa-floppy-disk me-2"></i>Simpan</button>
                 </div>
             </form>

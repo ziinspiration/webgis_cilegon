@@ -89,17 +89,18 @@ form {
                 <div class="mb-3">
                     <label for="nama_rencana" class="form-label orange ps-1 pe-1">Nama data</label>
                     <input type="text" name="nama_rencana" class="form-control p-2" id="nama_rencana"
-                        placeholder="Masukkan nama data" />
+                        placeholder="Masukkan nama data" required />
                 </div>
                 <!-- File GeoJSON -->
                 <div class=" mb-3">
                     <label for="file_json" class="form-label orange ps-1 pe-1">File GeoJSON</label>
-                    <input type="file" class="form-control p-2" id="file_json" name="file_json" accept=".geojson" />
+                    <input type="file" class="form-control p-2" id="file_json" name="file_json" accept=".geojson"
+                        required />
                 </div>
                 <!-- Jenis file -->
                 <div class="mb-3">
                     <label for="id_jenis_file" class="form-label orange ps-1 pe-1">Jenis file</label>
-                    <select name="id_jenis_file" id="id_jenis_file" class="form-select form-control p-2">
+                    <select name="id_jenis_file" id="id_jenis_file" class="form-select form-control p-2" required>
                         <option selected disabled>Pilih jenis file</option>
                         <?php foreach ($getjenisfile as $a) : ?>
                         <option value="<?= $a['id']; ?>"><?= $a['nama_jenis']; ?></option>
@@ -124,7 +125,7 @@ form {
                 <div class=" mb-3">
                     <label for="checkbox_id" class="form-label orange ps-1 pe-1">Checkbox ID</label>
                     <input type="text" name="checkbox_id" class="form-control p-2" id="checkbox_id"
-                        placeholder="*Wajib di isi untuk pembuatan checkbox" />
+                        placeholder="*Wajib di isi untuk pembuatan checkbox" required />
                     <p class="text-danger ms-3"><small>Contoh : RencanaACheckbox</small></p>
                 </div>
                 <div class="btn-kirim d-flex justify-content-end mt-5 p-4">

@@ -29,23 +29,27 @@ if ($jam >= 3 && $jam < 10) {
                 <!-- Nama -->
                 <div class="mb-3">
                     <label for="nama_pegawai" class="form-label user-label orange ps-1 pe-1">Nama pegawai</label>
-                    <input type="text" name="nama_pegawai" class="form-control username-input border-orange" id="nama_pegawai" placeholder="Masukkan nama_pegawai" />
+                    <input type="text" name="nama_pegawai" class="form-control username-input border-orange"
+                        id="nama_pegawai" placeholder="Masukkan nama_pegawai" required />
                 </div>
                 <!-- NIK -->
                 <div class="mb-3">
                     <label for="nik" class="form-label user-label orange ps-1 pe-1">NIK</label>
-                    <input type="text" name="nik" class="form-control username-input border-orange" id="nik" placeholder="Masukkan nik" />
+                    <input type="text" name="nik" class="form-control username-input border-orange" id="nik"
+                        placeholder="Masukkan nik" required />
                 </div>
                 <!-- Password -->
                 <div class="mb-3">
                     <label for="password" class="form-label password-label orange ps-1 pe-1">Password</label>
-                    <input type="password" name="password" class="form-control password-input border-orange" id="password" placeholder="Masukkan Password" />
+                    <input type="password" name="password" class="form-control password-input border-orange"
+                        id="password" placeholder="Masukkan Password" required />
                 </div>
                 <!-- Repeat Password -->
                 <div class="mb-3">
                     <label for="password2" class="form-label password-label orange ps-1 pe-1">Konfirmasi
                         Password</label>
-                    <input type="text" name="password2" class="form-control password-input border-orange" id="password2" placeholder="Masukkan Password" />
+                    <input type="text" name="password2" class="form-control password-input border-orange" id="password2"
+                        placeholder="Masukkan Password" required />
                 </div>
                 <button type="submit" name="register" class="btn btn-primary m-auto w-50 p-2">
                     Daftar
@@ -56,28 +60,28 @@ if ($jam >= 3 && $jam < 10) {
 </div>
 <?php include 'views/partials/script.php' ?>
 <script>
-    var greetings = ["Datang", "<?= $salam; ?>"];
-    var index = 0;
-    var greetingElement = document.getElementById("greeting");
+var greetings = ["Datang", "<?= $salam; ?>"];
+var index = 0;
+var greetingElement = document.getElementById("greeting");
 
-    function changeGreeting() {
-        var greeting = greetings[index];
-        var characters = greeting.split("");
-        greetingElement.textContent = ""; // Menghapus konten sebelumnya
+function changeGreeting() {
+    var greeting = greetings[index];
+    var characters = greeting.split("");
+    greetingElement.textContent = ""; // Menghapus konten sebelumnya
 
-        var interval = setInterval(function() {
-            greetingElement.textContent += characters.shift();
+    var interval = setInterval(function() {
+        greetingElement.textContent += characters.shift();
 
-            if (characters.length === 0) {
-                clearInterval(interval);
-                setTimeout(function() {
-                    index = (index + 1) % greetings.length;
-                    changeGreeting();
-                }, 2500);
-            }
-        }, 150);
-    }
+        if (characters.length === 0) {
+            clearInterval(interval);
+            setTimeout(function() {
+                index = (index + 1) % greetings.length;
+                changeGreeting();
+            }, 2500);
+        }
+    }, 150);
+}
 
-    changeGreeting(); // Memanggil fungsi untuk memulai perubahan salam secara otomatis
+changeGreeting(); // Memanggil fungsi untuk memulai perubahan salam secara otomatis
 </script>
 <?php include 'views/partials/starter-foot.php' ?>

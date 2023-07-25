@@ -31,12 +31,12 @@
                         <p>Tambah akun</p>
                     </a>
                 </div>
-                <div class="child-content">
+                <!-- <div class="child-content">
                     <a href="ubah-akun.php" class="card bg-light text-center text-decoration-none p-5">
                         <i class="bi bi-person-gear"></i>
                         <p>Update akun</p>
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

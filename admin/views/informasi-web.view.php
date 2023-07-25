@@ -32,7 +32,7 @@
                     </a>
                 </div>
                 <div class="child-content">
-                    <a href="information-control.php" class="card bg-light text-center text-decoration-none p-5">
+                    <a href="contact-control.php" class="card bg-light text-center text-decoration-none p-5">
                         <i class="fa-solid fa-phone mb-3"></i>
                         <p>Informasi kontak</p>
                     </a>
