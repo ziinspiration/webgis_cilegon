@@ -12,7 +12,7 @@ $conn = koneksi();
 
 $id = $_GET["id"];
 
-$getdata = query("SELECT * FROM rencana JOIN jenis_file ON rencana.id_jenis_file = jenis_file.id WHERE rencana.id = $id")[0];
+$getdata = query("SELECT * FROM rencana JOIN jenis_file ON rencana.id_jenis_file = jenis_file.jenis_file_id WHERE rencana.id = $id")[0];
 
 
 $i = 0;

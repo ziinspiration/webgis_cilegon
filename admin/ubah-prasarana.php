@@ -10,7 +10,7 @@ require 'functions/functions.php';
 
 $conn = koneksi();
 
-$getdata = query("SELECT * FROM prasarana");
+$getdata = query("SELECT * FROM prasarana ORDER BY prasarana.nama_prasarana ASC");
 
 $i = 0;
 

@@ -10,7 +10,7 @@ require 'functions/functions.php';
 
 $conn = koneksi();
 
-$getdata = query("SELECT * FROM tematik");
+$getdata = query("SELECT * FROM tematik JOIN kategori_tematik ON tematik.kategori = kategori_tematik.id_kategori ORDER BY tematik.nama_tematik ASC");
 
 $i = 0;
 

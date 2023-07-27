@@ -15,7 +15,7 @@ if (isset($_POST["login"])) {
 
     $result = mysqli_query($conn, "SELECT * FROM admin WHERE nik = '$nik'");
 
-    // CEK USERNAME
+    // CEK NIK
     if (mysqli_num_rows($result) === 1) {
         // CEK PASSWORD
         $row = mysqli_fetch_assoc($result);
@@ -28,14 +28,22 @@ if (isset($_POST["login"])) {
             $nama = $row["nama_pegawai"];
             setcookie("nama_pegawai", $nama, time() + 3600);
 
-            header("location: index.php");
+            // Periksa rolenya apakah "master" atau "non-master"
+            $role = $row["role"];
+            setcookie("role_admin", $role, time() + 3600);
+
+            // Periksa apakah rolenya adalah "master", jika ya, arahkan ke halaman admin-setting.php
+            if ($role === "master") {
+                header("location: admin-setting.php");
+            } else {
+                header("location: index.php");
+            }
             exit;
         }
     }
 
     $_SESSION['error'] = true;
 }
-
 
 $nama_halaman = 'Login admin';
 $linkcss = 'login.css';

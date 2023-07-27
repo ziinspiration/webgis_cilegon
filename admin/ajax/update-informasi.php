@@ -10,11 +10,9 @@ require '../functions/functions.php';
 
 $conn = koneksi();
 
-
 $informasi = $_POST['informasi'];
 $id = $_POST['id'];
 $type = $_POST['type'];
-
 
 $table = "";
 switch ($type) {
@@ -30,7 +28,6 @@ switch ($type) {
     default:
         break;
 }
-
 
 $query = "UPDATE $table SET informasi = ? WHERE id = ?";
 $stmt = mysqli_prepare($conn, $query);

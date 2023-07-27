@@ -10,7 +10,8 @@ require 'functions/functions.php';
 
 $conn = koneksi();
 
-$getdata = query("SELECT * FROM admin");
+$getdata = query("SELECT * FROM admin WHERE id <> 1");
+
 
 $i = 0;
 

@@ -72,6 +72,26 @@
                         </div>
                     </li>
                     <?php endforeach; ?>
+                    <p class="text-secondary"><small>Persampahan</small></p>
+                    <?php foreach ($JSONprasaranaPersampahan as $j) : ?>
+                    <li class="ms-3">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="<?= $j['checkbox_id']; ?>">
+                            <label class="form-check-label"
+                                for="<?= $j['checkbox_id']; ?>"><?= $j['nama_prasarana']; ?></label>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
+                    <p class="text-secondary"><small>Air bersih</small></p>
+                    <?php foreach ($JSONprasaranaAirbersih as $j) : ?>
+                    <li class="ms-3">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="<?= $j['checkbox_id']; ?>">
+                            <label class="form-check-label"
+                                for="<?= $j['checkbox_id']; ?>"><?= $j['nama_prasarana']; ?></label>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
             </ul>
             <!-- Sarana -->
             <ul class="list-unstyled">
@@ -88,10 +108,33 @@
                         </div>
                     </li>
                     <?php endforeach; ?>
+                    <?php foreach ($ZONASIkantor as $jp) : ?>
+                    <p class="text-secondary"><small>Zonasi perkantoran</small></p>
+                    <li class="ms-5">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="<?= $jp['checkbox_id']; ?>">
+                            <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
+                                <?= $jp['nama_sarana']; ?>
+                            </label>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
+
                     <!-- Pendidikan -->
                     <p class="head-sarana mb-2 mt-3 ms-2">Pendidikan</p>
                     <?php foreach ($JSONpendidikan as $jp) : ?>
                     <li class="ms-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="<?= $jp['checkbox_id']; ?>">
+                            <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
+                                <?= $jp['nama_sarana']; ?>
+                            </label>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
+                    <?php foreach ($ZONASIpendidikan as $jp) : ?>
+                    <p class="text-secondary"><small>Zonasi pendidikan</small></p>
+                    <li class="ms-5">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="<?= $jp['checkbox_id']; ?>">
                             <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
@@ -113,6 +156,17 @@
                         </div>
                     </li>
                     <?php endforeach; ?>
+                    <?php foreach ($ZONASIkesehatan as $jp) : ?>
+                    <p class="text-secondary"><small>Zonasi kesehatan</small></p>
+                    <li class="ms-5">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="<?= $jp['checkbox_id']; ?>">
+                            <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
+                                <?= $jp['nama_sarana']; ?>
+                            </label>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
 
                     <!-- Pariwisata & Hiburan -->
                     <p class="head-sarana mb-2 mt-3 ms-2">Pariwisata & Hiburan</p>
@@ -122,6 +176,17 @@
                             <input class="form-check-input" type="checkbox" value="" id="<?= $p['checkbox_id']; ?>">
                             <label class="form-check-label" for="<?= $p['checkbox_id']; ?>">
                                 <?= $p['nama_sarana']; ?>
+                            </label>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
+                    <?php foreach ($ZONASIpariwisata as $jp) : ?>
+                    <p class="text-secondary"><small>Zonasi pariwisata</small></p>
+                    <li class="ms-5">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="<?= $jp['checkbox_id']; ?>">
+                            <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
+                                <?= $jp['nama_sarana']; ?>
                             </label>
                         </div>
                     </li>
@@ -139,9 +204,20 @@
                         </div>
                     </li>
                     <?php endforeach; ?>
+                    <?php foreach ($ZONASIperibadatan as $jp) : ?>
+                    <p class="text-secondary"><small>Zonasi peribadatan</small></p>
+                    <li class="ms-5">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="<?= $jp['checkbox_id']; ?>">
+                            <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
+                                <?= $jp['nama_sarana']; ?>
+                            </label>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
 
                     <!-- Transportasi -->
-                    <p class="head-sarana mb-2 mt-3 ms-2">Transportasi</p>
+                    <p class="head-sarana mb-2 mt-3 ms-2">Sistem transportasi</p>
                     <?php foreach ($JSONtransportasi as $jt) : ?>
                     <li class="ms-3">
                         <div class="form-check">
@@ -152,15 +228,85 @@
                         </div>
                     </li>
                     <?php endforeach; ?>
+                    <?php foreach ($ZONASItransportasi as $jp) : ?>
+                    <p class="text-secondary"><small>Zonasi sistem transportasi</small></p>
+                    <li class="ms-5">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="<?= $jp['checkbox_id']; ?>">
+                            <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
+                                <?= $jp['nama_sarana']; ?>
+                            </label>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
 
                     <!-- Fasilitas umum -->
-                    <p class="head-sarana mb-2 mt-3 ms-2">Fasilitas umum</p>
-                    <?php foreach ($JSONfasilitasumum as $fu) : ?>
+                    <p class="head-sarana mb-2 mt-3 ms-2">Fasilitas olahraga</p>
+                    <?php foreach ($JSONfasilitasolahraga as $fu) : ?>
                     <li class="ms-3">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="<?= $fu['checkbox_id']; ?>">
                             <label class="form-check-label" for="<?= $fu['checkbox_id']; ?>">
                                 <?= $fu['nama_sarana']; ?>
+                            </label>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
+                    <?php foreach ($ZONASIfasilitasolahraga as $jp) : ?>
+                    <p class="text-secondary"><small>Zonasi fasilitas olahraga</small></p>
+                    <li class="ms-5">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="<?= $jp['checkbox_id']; ?>">
+                            <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
+                                <?= $jp['nama_sarana']; ?>
+                            </label>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
+
+                    <!-- Perdagangan -->
+                    <p class="head-sarana mb-2 mt-3 ms-2">Perdagangan & perniagaan</p>
+                    <?php foreach ($JSONperdagangan as $fu) : ?>
+                    <li class="ms-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="<?= $fu['checkbox_id']; ?>">
+                            <label class="form-check-label" for="<?= $fu['checkbox_id']; ?>">
+                                <?= $fu['nama_sarana']; ?>
+                            </label>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
+                    <?php foreach ($ZONASIperdagangan as $jp) : ?>
+                    <p class="text-secondary"><small>Zonasi perdagangan & perniagaan</small></p>
+                    <li class="ms-5">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="<?= $jp['checkbox_id']; ?>">
+                            <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
+                                <?= $jp['nama_sarana']; ?>
+                            </label>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
+
+                    <!-- Pemakaman -->
+                    <p class="head-sarana mb-2 mt-3 ms-2">Tempat pemakaman umum</p>
+                    <?php foreach ($JSONpemakaman as $fu) : ?>
+                    <li class="ms-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="<?= $fu['checkbox_id']; ?>">
+                            <label class="form-check-label" for="<?= $fu['checkbox_id']; ?>">
+                                <?= $fu['nama_sarana']; ?>
+                            </label>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
+                    <?php foreach ($ZONASIpemakaman as $jp) : ?>
+                    <p class="text-secondary"><small>Zonasi tempat pemakaman umum</small></p>
+                    <li class="ms-5">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="<?= $jp['checkbox_id']; ?>">
+                            <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
+                                <?= $jp['nama_sarana']; ?>
                             </label>
                         </div>
                     </li>
@@ -227,6 +373,19 @@ checkboxGroup.forEach(function(checkbox) {
                 }
                 <?php endforeach; ?>
 
+                <?php foreach ($JSONprasaranaAirbersih as $jj) : ?>
+                if (checkbox.id === "<?= $jj['checkbox_id']; ?>") {
+                    url = "assets/geojson/prasarana/<?= $jj['file_json']; ?>";
+                    addGeoJsonLayer(url, checkbox);
+                }
+                <?php endforeach; ?>
+                <?php foreach ($JSONprasaranaPersampahan as $jj) : ?>
+                if (checkbox.id === "<?= $jj['checkbox_id']; ?>") {
+                    url = "assets/geojson/prasarana/<?= $jj['file_json']; ?>";
+                    addGeoJsonLayer(url, checkbox);
+                }
+                <?php endforeach; ?>
+
                 <?php foreach ($JSONkantor as $jk) : ?>
                 else if (checkbox.id === "<?= $jk['checkbox_id']; ?>") {
                     url = "assets/geojson/sarana/<?= $jk['file_json']; ?>";
@@ -269,9 +428,23 @@ checkboxGroup.forEach(function(checkbox) {
                 }
                 <?php endforeach; ?>
 
-                <?php foreach ($JSONfasilitasumum as $fasilitasumum) : ?>
-                else if (checkbox.id === "<?= $fasilitasumum['checkbox_id']; ?>") {
-                    url = "assets/geojson/sarana/<?= $fasilitasumum['file_json']; ?>";
+                <?php foreach ($JSONfasilitasolahraga as $fasilitasolahraga) : ?>
+                else if (checkbox.id === "<?= $fasilitasolahraga['checkbox_id']; ?>") {
+                    url = "assets/geojson/sarana/<?= $fasilitasolahraga['file_json']; ?>";
+                    addGeoJsonLayer(url, checkbox);
+                }
+                <?php endforeach; ?>
+
+                <?php foreach ($JSONperdagangan as $perdagangan) : ?>
+                else if (checkbox.id === "<?= $perdagangan['checkbox_id']; ?>") {
+                    url = "assets/geojson/sarana/<?= $perdagangan['file_json']; ?>";
+                    addGeoJsonLayer(url, checkbox);
+                }
+                <?php endforeach; ?>
+
+                <?php foreach ($JSONpemakaman as $pemakaman) : ?>
+                else if (checkbox.id === "<?= $pemakaman['checkbox_id']; ?>") {
+                    url = "assets/geojson/sarana/<?= $pemakaman['file_json']; ?>";
                     addGeoJsonLayer(url, checkbox);
                 }
                 <?php endforeach; ?>
@@ -308,6 +481,22 @@ function addGeoJsonLayer(url, checkbox) {
                     var customIcon = null;
                     // Cek jenis checkbox untuk menentukan ikon kustom yang akan digunakan
 
+                    // Prasarana
+                    <?php foreach ($JSONprasarana as $jk) : ?>
+                    if (checkbox.id === "<?= $jk['checkbox_id']; ?>") {
+                        customIcon = createCustomIcon<?= $jk['icon_id']; ?>();
+                    }
+                    <?php endforeach; ?>
+                    <?php foreach ($JSONprasaranaAirbersih as $jk) : ?>
+                    if (checkbox.id === "<?= $jk['checkbox_id']; ?>") {
+                        customIcon = createCustomIcon<?= $jk['icon_id']; ?>();
+                    }
+                    <?php endforeach; ?>
+                    <?php foreach ($JSONprasaranaPersampahan as $jk) : ?>
+                    if (checkbox.id === "<?= $jk['checkbox_id']; ?>") {
+                        customIcon = createCustomIcon<?= $jk['icon_id']; ?>();
+                    }
+                    <?php endforeach; ?>
                     // Kantor
                     <?php foreach ($JSONkantor as $jk) : ?>
                     if (checkbox.id === "<?= $jk['checkbox_id']; ?>") {
@@ -344,10 +533,22 @@ function addGeoJsonLayer(url, checkbox) {
                         customIcon = createCustomIcon<?= $transportasi['icon_id']; ?>();
                     }
                     <?php endforeach; ?>
-                    // fasilitasumum
-                    <?php foreach ($JSONfasilitasumum as $fasilitasumum) : ?>
-                    if (checkbox.id === "<?= $fasilitasumum['checkbox_id']; ?>") {
-                        customIcon = createCustomIcon<?= $fasilitasumum['icon_id']; ?>();
+                    // fasilitasolahraga
+                    <?php foreach ($JSONfasilitasolahraga as $fasilitasolahraga) : ?>
+                    if (checkbox.id === "<?= $fasilitasolahraga['checkbox_id']; ?>") {
+                        customIcon = createCustomIcon<?= $fasilitasolahraga['icon_id']; ?>();
+                    }
+                    <?php endforeach; ?>
+                    // perdagangan
+                    <?php foreach ($JSONperdagangan as $perdagangan) : ?>
+                    if (checkbox.id === "<?= $perdagangan['checkbox_id']; ?>") {
+                        customIcon = createCustomIcon<?= $perdagangan['icon_id']; ?>();
+                    }
+                    <?php endforeach; ?>
+                    // pemakaman
+                    <?php foreach ($JSONpemakaman as $pemakaman) : ?>
+                    if (checkbox.id === "<?= $pemakaman['checkbox_id']; ?>") {
+                        customIcon = createCustomIcon<?= $pemakaman['icon_id']; ?>();
                     }
                     <?php endforeach; ?>
 
@@ -441,6 +642,14 @@ function zoomToFeature(e) {
 function showPopup(feature, layer) {
     var popupContent = "<h3>Informasi Wilayah</h3>";
     if (feature.properties) {
+        if (feature.properties.TOPONIMI) {
+            popupContent +=
+                "<p>Toponim : " + feature.properties.TOPONIMI + "</p>";
+        }
+        if (feature.properties.TOPONIM) {
+            popupContent +=
+                "<p>Toponim : " + feature.properties.TOPONIM + "</p>";
+        }
         if (feature.properties.KABUPATEN) {
             popupContent += "<p>Kabupaten : " + feature.properties.KABUPATEN + "</p>";
         }
@@ -451,13 +660,21 @@ function showPopup(feature, layer) {
             popupContent += "<p>Kelurahan : " + feature.properties.KELURAHAN + "</p>";
         }
         if (feature.properties.JENIS) {
-            popupContent += "<p>Jenis Jalan : " + feature.properties.JENIS + "</p>";
+            popupContent += "<p>Jenis : " + feature.properties.JENIS + "</p>";
         }
         if (feature.properties.FUNGSI) {
-            popupContent += "<p>Fungsi Jalan : " + feature.properties.FUNGSI + "</p>";
+            popupContent += "<p>Fungsi : " + feature.properties.FUNGSI + "</p>";
         }
         if (feature.properties.SUMBER) {
             popupContent += "<p>Sumber : " + feature.properties.SUMBER + "</p>";
+        }
+        if (feature.properties.KETERANGAN) {
+            popupContent +=
+                "<p>Keterangan : " + feature.properties.KETERANGAN + "</p>";
+        }
+        if (feature.properties.BUFF_DIST) {
+            popupContent +=
+                "<p>Radius pelayanan : " + feature.properties.BUFF_DIST + "</p>";
         }
         if (feature.properties.LUAS) {
             popupContent += "<p>Luas : " + feature.properties.LUAS + "</p>";
@@ -466,9 +683,13 @@ function showPopup(feature, layer) {
             popupContent +=
                 "<p>Kode unsur : " + feature.properties.KODE_UNSUR + "</p>";
         }
-        if (feature.properties.TOPONIM) {
+        if (feature.properties.X) {
             popupContent +=
-                "<p>Toponim : " + feature.properties.TOPONIM + "</p>";
+                "<p>X : " + feature.properties.X + "</p>";
+        }
+        if (feature.properties.Y) {
+            popupContent +=
+                "<p>Y : " + feature.properties.Y + "</p>";
         }
 
         // Set konten pop-up pada layer
@@ -491,12 +712,53 @@ function onEachFeature(feature, layer) {
 
 // CUSTOM ICON
 
+// Prasarana icon
+<?php foreach ($JSONprasarana as $jk) : ?>
+
+function createCustomIcon<?= $jk['icon_id']; ?>() {
+    var customIcon = L.icon({
+        iconUrl: "assets/icon/prasarana/<?= $jk['icon']; ?>",
+        iconSize: [20, 20],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32],
+    });
+
+    return customIcon;
+}
+<?php endforeach; ?>
+<?php foreach ($JSONprasaranaPersampahan as $jk) : ?>
+
+function createCustomIcon<?= $jk['icon_id']; ?>() {
+    var customIcon = L.icon({
+        iconUrl: "assets/icon/prasarana/<?= $jk['icon']; ?>",
+        iconSize: [20, 20],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32],
+    });
+
+    return customIcon;
+}
+<?php endforeach; ?>
+<?php foreach ($JSONprasaranaAirbersih as $jk) : ?>
+
+function createCustomIcon<?= $jk['icon_id']; ?>() {
+    var customIcon = L.icon({
+        iconUrl: "assets/icon/prasarana/<?= $jk['icon']; ?>",
+        iconSize: [20, 20],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32],
+    });
+
+    return customIcon;
+}
+<?php endforeach; ?>
+
 // Perkantoran icon
 <?php foreach ($JSONkantor as $jk) : ?>
 
 function createCustomIcon<?= $jk['icon_id']; ?>() {
     var customIcon = L.icon({
-        iconUrl: "assets/icon/<?= $jk['icon']; ?>",
+        iconUrl: "assets/icon/sarana/<?= $jk['icon']; ?>",
         iconSize: [20, 20],
         iconAnchor: [16, 32],
         popupAnchor: [0, -32],
@@ -511,7 +773,7 @@ function createCustomIcon<?= $jk['icon_id']; ?>() {
 
 function createCustomIcon<?= $pendidikan['icon_id']; ?>() {
     var customIcon = L.icon({
-        iconUrl: "assets/icon/<?= $pendidikan['icon']; ?>",
+        iconUrl: "assets/icon/sarana/<?= $pendidikan['icon']; ?>",
         iconSize: [20, 20],
         iconAnchor: [16, 32],
         popupAnchor: [0, -32],
@@ -526,7 +788,7 @@ function createCustomIcon<?= $pendidikan['icon_id']; ?>() {
 
 function createCustomIcon<?= $kesehatan['icon_id']; ?>() {
     var customIcon = L.icon({
-        iconUrl: "assets/icon/<?= $kesehatan['icon']; ?>",
+        iconUrl: "assets/icon/sarana/<?= $kesehatan['icon']; ?>",
         iconSize: [20, 20],
         iconAnchor: [16, 32],
         popupAnchor: [0, -32],
@@ -541,7 +803,7 @@ function createCustomIcon<?= $kesehatan['icon_id']; ?>() {
 
 function createCustomIcon<?= $peribadatan['icon_id']; ?>() {
     var customIcon = L.icon({
-        iconUrl: "assets/icon/<?= $peribadatan['icon']; ?>",
+        iconUrl: "assets/icon/sarana/<?= $peribadatan['icon']; ?>",
         iconSize: [20, 20],
         iconAnchor: [16, 32],
         popupAnchor: [0, -32],
@@ -556,7 +818,7 @@ function createCustomIcon<?= $peribadatan['icon_id']; ?>() {
 
 function createCustomIcon<?= $pariwisata['icon_id']; ?>() {
     var customIcon = L.icon({
-        iconUrl: "assets/icon/<?= $pariwisata['icon']; ?>",
+        iconUrl: "assets/icon/sarana/<?= $pariwisata['icon']; ?>",
         iconSize: [20, 20],
         iconAnchor: [16, 32],
         popupAnchor: [0, -32],
@@ -571,7 +833,7 @@ function createCustomIcon<?= $pariwisata['icon_id']; ?>() {
 
 function createCustomIcon<?= $transportasi['icon_id']; ?>() {
     var customIcon = L.icon({
-        iconUrl: "assets/icon/<?= $transportasi['icon']; ?>",
+        iconUrl: "assets/icon/sarana/<?= $transportasi['icon']; ?>",
         iconSize: [20, 20],
         iconAnchor: [16, 32],
         popupAnchor: [0, -32],
@@ -581,12 +843,42 @@ function createCustomIcon<?= $transportasi['icon_id']; ?>() {
 }
 <?php endforeach; ?>
 
-// Fasilitas umum icon
-<?php foreach ($JSONfasilitasumum as $fasilitasumum) : ?>
+// Fasilitas olahraga icon
+<?php foreach ($JSONfasilitasolahraga as $fasilitasolahraga) : ?>
 
-function createCustomIcon<?= $fasilitasumum['icon_id']; ?>() {
+function createCustomIcon<?= $fasilitasolahraga['icon_id']; ?>() {
     var customIcon = L.icon({
-        iconUrl: "assets/icon/<?= $fasilitasumum['icon']; ?>",
+        iconUrl: "assets/icon/sarana/<?= $fasilitasolahraga['icon']; ?>",
+        iconSize: [20, 20],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32],
+    });
+
+    return customIcon;
+}
+<?php endforeach; ?>
+
+// Perdagangan icon
+<?php foreach ($JSONperdagangan as $perdagangan) : ?>
+
+function createCustomIcon<?= $perdagangan['icon_id']; ?>() {
+    var customIcon = L.icon({
+        iconUrl: "assets/icon/sarana/<?= $perdagangan['icon']; ?>",
+        iconSize: [20, 20],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32],
+    });
+
+    return customIcon;
+}
+<?php endforeach; ?>
+
+// Pemakaman icon
+<?php foreach ($JSONpemakaman as $pemakaman) : ?>
+
+function createCustomIcon<?= $pemakaman['icon_id']; ?>() {
+    var customIcon = L.icon({
+        iconUrl: "assets/icon/sarana/<?= $pemakaman['icon']; ?>",
         iconSize: [20, 20],
         iconAnchor: [16, 32],
         popupAnchor: [0, -32],

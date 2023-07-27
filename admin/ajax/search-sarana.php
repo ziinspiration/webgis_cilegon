@@ -6,7 +6,8 @@ $query = "SELECT s.*, kd.nama_kategori
           JOIN kategori_data kd ON s.kategori_id = kd.id_kategori
           WHERE s.nama_sarana LIKE '%$keyword%' 
              OR kd.nama_kategori LIKE '%$keyword%' 
-             OR s.file_json LIKE '%$keyword%'";
+             OR s.file_json LIKE '%$keyword%'
+             OR s.jenis_data LIKE '%$keyword%'";
 
 $getdata = query($query);
 ?>

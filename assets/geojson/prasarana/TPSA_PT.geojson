@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "TPSA_PT",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "JENIS": "PERSAMPAHAN", "TOPONIMI": "TPSA BAGENDUNG", "KETERANGAN": "TPSA", "X": "106,0245007", "Y": "-6,06314509999993" }, "geometry": { "type": "Point", "coordinates": [ 106.024500700000033, -6.063145099999929, 0.0 ] } }
+]
+}

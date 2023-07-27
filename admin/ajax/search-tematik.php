@@ -1,7 +1,7 @@
 <?php
 require '../functions/functions.php';
 $keyword = $_GET['keyword'];
-$query = "SELECT * FROM tematik WHERE nama_tematik LIKE '%$keyword%' OR file_json LIKE '%$keyword%'";
+$query = "SELECT * FROM tematik JOIN kategori_tematik ON tematik.kategori = kategori_tematik.id_kategori WHERE nama_tematik LIKE '%$keyword%' OR file_json LIKE '%$keyword%' OR nama_kategori LIKE '%$keyword%'";
 $getdata = query($query);
 ?>
 
@@ -13,6 +13,7 @@ $getdata = query($query);
                     <th scope="col">No</th>
                     <th scope="col">Nama data</th>
                     <th scope="col">File geojson</th>
+                    <th scope="col">Kategori</th>
                     <th class="text-center" scope="col">Detail</th>
                 </tr>
             </thead>
@@ -22,6 +23,7 @@ $getdata = query($query);
                         <th class="text-center" scope="row"><?= $i + 1; ?></th>
                         <td><?= $a['nama_tematik']; ?></td>
                         <td><?= $a['file_json']; ?></td>
+                        <td><?= $a['nama_kategori']; ?></td>
                         <td class="text-center"><a href="detail-tematik.php?id=<?= $a["id"] ?>"><i class="bi bi-eye-fill"></i></a></td>
                     </tr>
                 <?php endforeach; ?>

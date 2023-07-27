@@ -18,7 +18,7 @@ if (isset($_POST['send'])) {
     $id_jenis_file = $_POST['id_jenis_file'];
 
     // Atur nilai icon dan icon_id menjadi 0 jika jenis file adalah "marker" (ID 1)
-    $icon = ($id_jenis_file == 1) ? htmlspecialchars($_POST['icon']) : '0';
+    $icon = ($id_jenis_file == 1 && isset($_POST['icon'])) ? htmlspecialchars($_POST['icon']) : '0';
     $icon_id = ($id_jenis_file == 1) ? htmlspecialchars($_POST['icon_id']) : '0';
 
     $checkbox_id = htmlspecialchars($_POST['checkbox_id']);
@@ -48,7 +48,7 @@ if (isset($_POST['send'])) {
                 // Periksa apakah ekstensi file icon valid
                 if (in_array($file_icon_ext, $allowed_icon_exts)) {
                     // Pindahkan file icon ke direktori tujuan
-                    $upload_icon_dir = '../assets/icon/';
+                    $upload_icon_dir = '../assets/icon/rencana/';
                     $upload_icon_path = $upload_icon_dir . $file_icon_name;
                     if (move_uploaded_file($file_icon_tmp, $upload_icon_path)) {
                         $icon = $file_icon_name;

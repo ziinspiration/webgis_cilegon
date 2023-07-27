@@ -45,9 +45,11 @@
                 </a>
             </li>
         </ul>
-        <a class="register-button text-decoration-none text-dark bg-orange nav-link p-1 text-center mt-3" href="register-admin.php">
+        <a class="register-button text-decoration-none text-dark bg-orange nav-link p-1 text-center mt-3"
+            href="register-admin.php">
             <li class="mb-3 mt-2"><i class="bi bi-person-plus me-2 fw-bold"></i>Registrasi admin baru </li>
         </a>
-        <a href="logout.php" class="btn btn-danger p-2 mt-2">Logout</a>
+        <a href="logout.php" class="btn btn-danger p-2 mt-2"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        <a href="admin-setting.php" class="btn btn-warning p-2 mt-2"><i class="fa-solid fa-gear"></i> Setting</a>
     </ul>
 </div>

@@ -3,7 +3,7 @@ require '../functions/functions.php';
 $keyword = $_GET['keyword'];
 $query = "SELECT r.*, j.nama_jenis
           FROM rencana AS r
-          JOIN jenis_file AS j ON r.id_jenis_file = j.id
+          JOIN jenis_file AS j ON r.id_jenis_file = j.jenis_file_id
           WHERE r.nama_rencana LIKE '%$keyword%'
           OR r.file_json LIKE '%$keyword%'
           OR j.nama_jenis LIKE '%$keyword%'";

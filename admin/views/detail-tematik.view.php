@@ -23,6 +23,14 @@
                                 <th>Checkbox id :</th>
                                 <td><?= $getdata['checkbox_id']; ?></td>
                             </tr>
+                            <tr class="kolom">
+                                <th>Kategori :</th>
+                                <td><?= $getdata['nama_kategori']; ?></td>
+                            </tr>
+                            <tr class="kolom">
+                                <th>Jenis file :</th>
+                                <td><?= $getdata['nama_jenis']; ?></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

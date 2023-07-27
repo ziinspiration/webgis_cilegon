@@ -12,7 +12,7 @@ $conn = koneksi();
 
 $getdata = query("SELECT r.*, j.nama_jenis
                  FROM rencana AS r
-                 JOIN jenis_file AS j ON r.id_jenis_file = j.id;");
+                 JOIN jenis_file AS j ON r.id_jenis_file = j.jenis_file_id ORDER BY r.nama_rencana ASC;");
 
 $i = 0;
 

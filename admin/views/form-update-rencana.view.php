@@ -118,7 +118,7 @@
                                 <label for="icon_id" class="form-label orange ps-1 pe-1">Icon ID</label>
                                 <input type="text" class="form-control p-2" id="icon_id" name="icon_id" value="<?= $getdata['icon_id']; ?>" required />
                             </div>
-                            <img class="img-preview" src="../assets/icon/<?= $getdata["icon"]; ?>" alt="Preview" id="preview" />
+                            <img class="img-preview" src="../assets/icon/rencana/<?= $getdata["icon"]; ?>" alt="Preview" id="preview" />
                         </div>
                 </div>
             <?php endif; ?>
@@ -130,7 +130,7 @@
                 </div>
                 <!-- Icon -->
                 <?php if ($getdata['id_jenis_file'] === '1') : ?>
-                    <img class="preview-image d-none" src="../assets/icon/<?= $getdata["icon"]; ?>" alt="Preview" id="preview" />
+                    <img class="preview-image d-none" src="../assets/icon/rencana/<?= $getdata["icon"]; ?>" alt="Preview" id="preview" />
                     <div class="w-50 ms-3 kolom">
                         <label for="icon" class="form-label orange ps-1 pe-1">File icon</label>
                         <input type="file" onchange="previewImage(event)" class="form-control p-2" id="icon" name="icon" accept=".jpg, .jpeg, .png" />
@@ -210,7 +210,7 @@ if (isset($_POST["submit"])) {
 
         // Cek apakah file icon berhasil diupload dan tidak ada error
         if ($icon_error === UPLOAD_ERR_OK) {
-            $icon_destination = '../assets/icon/' . $icon_name;
+            $icon_destination = '../assets/icon/rencana/' . $icon_name;
 
             // Cek ekstensi file icon
             $icon_extension = pathinfo($icon_name, PATHINFO_EXTENSION);

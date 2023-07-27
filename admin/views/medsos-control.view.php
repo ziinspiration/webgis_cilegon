@@ -75,34 +75,48 @@
         <div class="w-75 content align-content-center">
             <form class="px-5 py-4 bg-dark rounded-4" action="" method="post">
                 <h2 class="text-center text-light mb-5 mt-2">Update link media sosial</h2>
-                <div class="mb-3 input-group input-group">
-                    <span class="input-group-text p-2 instagram" id="instagram"><i class="fa-brands fa-instagram"></i></span>
-                    <input type="text" class="form-control p-1 px-2" name="informasi" id="input-instagram" data-type="instagram" value="https://www.instagram.com/" readonly aria-describedby="instagram">
-                    <i class="fa-regular fa-pen-to-square ms-2 iFunction" onclick="enableEdit('input-instagram')"></i>
-                    <i class="fa-solid fa-floppy-disk ms-2 iFunction" onclick="saveChanges('instagram')"></i>
-                </div>
-                <div class="mb-3 input-group">
-                    <span class="input-group-text p-2 facebook" id="facebook"><i class="fa-brands fa-facebook"></i></span>
-                    <input type="text" class="form-control p-1 px-2" name="informasi" id="input-facebook" data-type="facebook" value="https://www.facebook.com/" readonly aria-describedby="facebook">
-                    <i class="fa-regular fa-pen-to-square ms-2 iFunction" onclick="enableEdit('input-facebook')"></i>
-                    <i class="fa-solid fa-floppy-disk ms-2 iFunction" onclick="saveChanges('facebook')"></i>
-                </div>
-                <div class="mb-3 input-group">
-                    <span class="input-group-text p-2 youtube" id="youtube"><i class="fa-brands fa-youtube"></i></span>
-                    <input type="text" class="form-control p-1 px-2" name="informasi" id="input-youtube" data-type="youtube" value="https://www.youtube.com/" readonly aria-describedby="youtube">
-                    <i class="fa-regular fa-pen-to-square ms-2 iFunction" onclick="enableEdit('input-youtube')"></i>
-                    <i class="fa-solid fa-floppy-disk ms-2 iFunction" onclick="saveChanges('youtube')"></i>
-                </div>
-                <div class="mb-3 input-group">
-                    <span class="input-group-text p-2 twitter" id="twitter"><i class="fa-brands fa-twitter"></i></span>
-                    <input type="text" class="form-control p-1 px-2" name="informasi" id="input-twitter" data-type="twitter" value="https://twitter.com/" readonly aria-describedby="twitter">
-                    <i class="fa-regular fa-pen-to-square ms-2 iFunction" onclick="enableEdit('input-twitter')"></i>
-                    <i class="fa-solid fa-floppy-disk ms-2 iFunction" onclick="saveChanges('twitter')"></i>
-                </div>
+
+                <?php foreach ($getinstagram as $a) : ?>
+                    <div class="mb-3 input-group input-group">
+                        <span class="input-group-text p-2 instagram"><i class="fa-brands fa-instagram"></i></span>
+                        <input type="text" class="form-control p-1 px-2" name="informasi" value="<?= $a['informasi']; ?>" id="input-instagram-<?= $a['id']; ?>" data-id="<?= $a['id']; ?>" data-type="instagram" readonly aria-describedby="<?= $a['nama_data']; ?>">
+                        <i class="fa-regular fa-pen-to-square ms-2 iFunction" onclick="enableEdit('input-instagram-<?= $a['id']; ?>')"></i>
+                        <i class="fa-solid fa-floppy-disk ms-2 iFunction" onclick="saveChanges('<?= $a['id']; ?>', 'instagram')"></i>
+                    </div>
+                <?php endforeach; ?>
+
+                <?php foreach ($getfacebook as $a) : ?>
+                    <div class="mb-3 input-group">
+                        <span class="input-group-text p-2 facebook"><i class="fa-brands fa-facebook"></i></span>
+                        <input type="text" class="form-control p-1 px-2" name="informasi" value="<?= $a['informasi']; ?>" id="input-facebook-<?= $a['id']; ?>" data-id="<?= $a['id']; ?>" data-type="facebook" readonly aria-describedby="<?= $a['nama_data']; ?>">
+                        <i class="fa-regular fa-pen-to-square ms-2 iFunction" onclick="enableEdit('input-facebook-<?= $a['id']; ?>')"></i>
+                        <i class="fa-solid fa-floppy-disk ms-2 iFunction" onclick="saveChanges('<?= $a['id']; ?>', 'facebook')"></i>
+                    </div>
+                <?php endforeach; ?>
+
+                <?php foreach ($getyoutube as $a) : ?>
+                    <div class="mb-3 input-group">
+                        <span class="input-group-text p-2 youtube"><i class="fa-brands fa-youtube"></i></span>
+                        <input type="text" class="form-control p-1 px-2" name="informasi" value="<?= $a['informasi']; ?>" id="input-youtube-<?= $a['id']; ?>" data-id="<?= $a['id']; ?>" data-type="youtube" readonly aria-describedby="<?= $a['nama_data']; ?>">
+                        <i class="fa-regular fa-pen-to-square ms-2 iFunction" onclick="enableEdit('input-youtube-<?= $a['id']; ?>')"></i>
+                        <i class="fa-solid fa-floppy-disk ms-2 iFunction" onclick="saveChanges('<?= $a['id']; ?>', 'youtube')"></i>
+                    </div>
+                <?php endforeach; ?>
+
+                <?php foreach ($gettwitter as $a) : ?>
+                    <div class="mb-3 input-group">
+                        <span class="input-group-text p-2 twitter"><i class="fa-brands fa-twitter"></i></span>
+                        <input type="text" class="form-control p-1 px-2" name="informasi" value="<?= $a['informasi']; ?>" id="input-twitter-<?= $a['id']; ?>" data-id="<?= $a['id']; ?>" data-type="twitter" readonly aria-describedby="<?= $a['nama_data']; ?>">
+                        <i class="fa-regular fa-pen-to-square ms-2 iFunction" onclick="enableEdit('input-twitter-<?= $a['id']; ?>')"></i>
+                        <i class="fa-solid fa-floppy-disk ms-2 iFunction" onclick="saveChanges('<?= $a['id']; ?>', 'twitter')"></i>
+                    </div>
+                <?php endforeach; ?>
+
             </form>
         </div>
     </div>
 </div>
+
 <?php include 'views/partials/script.php'; ?>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="sweetalert2.min.js"></script>
@@ -118,13 +132,14 @@
         inputField.focus();
     }
 
-    function saveChanges(type) {
-        var informasi = document.getElementById(`input-${type}`).value;
+    function saveChanges(id, type) {
+        var informasi = document.getElementById(`input-${type}-${id}`).value;
 
         $.ajax({
-            url: "ajax/update-informasi.php",
+            url: "ajax/update-medsos.php",
             type: "POST",
             data: {
+                id: id, // Tambahkan id ke data yang dikirimkan
                 type: type,
                 informasi: informasi
             },

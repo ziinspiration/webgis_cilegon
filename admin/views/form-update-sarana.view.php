@@ -108,170 +108,171 @@
                     </div>
                 </div>
 
-                <div class="view-change-img mb-3 d-flex align-items-center justify-content-center p-5 rounded-circle bg-light">
-                    <img class="img-preview" src="../assets/icon/<?= $getdata["icon"]; ?>" alt="Preview" id="preview" />
-                </div>
+                <?php if ($getdata['jenis_data'] === 'Point') : ?>
+                    <div class="view-change-img mb-3 d-flex align-items-center justify-content-center p-5 rounded-circle bg-light">
+                        <img class="img-preview" src="../assets/icon/sarana/<?= $getdata["icon"]; ?>" alt="Preview" id="preview" />
+                    </div>
+                <?php endif; ?>
 
+                <?php if ($getdata['jenis_data'] === 'Point') : ?>
+                    <div class="center w-100 mb-5 d-flex justify-content-between">
+                        <div class="w-50 me-3 kolom">
+                            <label for="icon" class="form-label orange ps-1 pe-1">Icon file</label>
+                            <input type="file" onchange="previewImage(event)" class="form-control p-2" id="icon" name="icon" accept=".jpg, .jpeg, .png" />
+                        </div>
 
+                        <div class="w-50 ms-3 kolom">
+                            <label for="icon_id" class="form-label orange ps-1 pe-1">Icon ID</label>
+                            <input type="text" class="form-control p-2" id="icon_id" name="icon_id" value="<?= $getdata['icon_id']; ?>" required />
+                        </div>
+                    </div>
+                <?php endif; ?>
                 <div class="right w-100 mb-5 d-flex justify-content-between">
-                    <div class="w-50 me-3 kolom">
-                        <label for="icon" class="form-label orange ps-1 pe-1">Icon file</label>
-                        <input type="file" onchange="previewImage(event)" class="form-control p-2" id="icon" name="icon" accept=".jpg, .jpeg, .png" />
+                    <div class="w-100 mb-5 me-3 kolom mb-5">
+                        <label for="checkbox_id" class="form-label orange ps-1 pe-1">Checkbox ID</label>
+                        <input type="text" class="form-control p-2" id="checkbox_id" name="checkbox_id" value="<?= $getdata['checkbox_id']; ?>" required />
                     </div>
 
-                    <div class="w-50 ms-3 kolom">
-                        <label for="icon_id" class="form-label orange ps-1 pe-1">Icon ID</label>
-                        <input type="text" class="form-control p-2" id="icon_id" name="icon_id" value="<?= $getdata['icon_id']; ?>" required />
+                    <div class="w-100 mb-5 ms-3 kolom">
+                        <label for="kategoriSelect" class="form-label orange ps-1 pe-1">Kategori</label>
+                        <input type="hidden" name="kategori_id" value="<?= $getdata['kategori_id']; ?>">
+                        <select name="kategori_id" id="kategoriSelect" class="form-select form-control p-2" aria-label="Default select example">
+                            <option selected disabled>Pilih jenis kategori</option>
+                            <?php foreach ($getkategori as $a) : ?>
+                                <option value="<?= $a['id_kategori']; ?>">
+                                    <?= $a['nama_kategori']; ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
                 </div>
-
-                <div class="w-100 mb-5 kolom mb-5">
-                    <label for="checkbox_id" class="form-label orange ps-1 pe-1">Checkbox ID</label>
-                    <input type="text" class="form-control p-2" id="checkbox_id" name="checkbox_id" value="<?= $getdata['checkbox_id']; ?>" required />
-                </div>
-
-                <div class="w-100 mb-5 kolom">
-                    <label for="kategoriSelect" class="form-label orange ps-1 pe-1">Kategori</label>
-                    <input type="hidden" name="kategori_id" value="<?= $getdata['kategori_id']; ?>">
-                    <select name="kategori_id" id="kategoriSelect" class="form-select form-control p-2" aria-label="Default select example">
-                        <option selected disabled>Pilih jenis kategori</option>
-                        <?php foreach ($getkategori as $a) : ?>
-                            <option value="<?= $a['id_kategori']; ?>">
-                                <?= $a['nama_kategori']; ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-
-
                 <div class="btn-kirim d-flex justify-content-end">
                     <button type="submit" name="submit" class="btn btn-primary w-25 p-2 mt-4 mb-4"><i class="fa-solid fa-floppy-disk me-2"></i>Simpan</button>
                 </div>
+            </form>
         </div>
-        </form>
     </div>
-</div>
 
-<?php include 'views/partials/script.php' ?>
+    <?php include 'views/partials/script.php' ?>
 
-<script>
-    function previewImage(event) {
-        var reader = new FileReader();
-        reader.onload = function() {
-            var output = document.getElementById('preview');
-            output.src = reader.result;
-            output.style.display = 'block'; // Tampilkan gambar pratinjau
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                var output = document.getElementById('preview');
+                output.src = reader.result;
+                output.style.display = 'block'; // Tampilkan gambar pratinjau
+            }
+            reader.readAsDataURL(event.target.files[0]);
         }
-        reader.readAsDataURL(event.target.files[0]);
-    }
-</script>
+    </script>
 
-<?php
-if (isset($_POST["submit"])) {
-    // ambil data dari form
-    $id = $_POST["id"];
-    $nama_sarana = $_POST["nama_sarana"];
-    $icon_id = $_POST["icon_id"];
-    $checkbox_id = $_POST["checkbox_id"];
-    $kategori_id = $_POST["kategori_id"];
+    <?php
+    if (isset($_POST["submit"])) {
+        // ambil data dari form
+        $id = $_POST["id"];
+        $nama_sarana = $_POST["nama_sarana"];
+        $icon_id = $_POST["icon_id"];
+        $checkbox_id = $_POST["checkbox_id"];
+        $kategori_id = $_POST["kategori_id"];
 
-    // query update data sarana
-    $query = "UPDATE sarana SET
+        // query update data sarana
+        $query = "UPDATE sarana SET
             nama_sarana = '$nama_sarana',
             checkbox_id = '$checkbox_id',
             icon_id = '$icon_id',
             kategori_id = '$kategori_id'";
 
-    // cek apakah ada file yang diupload
-    if (!empty($_FILES['file_json']['name'])) {
-        // Proses upload file
-        $file_name = $_FILES["file_json"]["name"];
-        $file_tmp = $_FILES["file_json"]["tmp_name"];
-        $file_error = $_FILES["file_json"]["error"];
+        // cek apakah ada file yang diupload
+        if (!empty($_FILES['file_json']['name'])) {
+            // Proses upload file
+            $file_name = $_FILES["file_json"]["name"];
+            $file_tmp = $_FILES["file_json"]["tmp_name"];
+            $file_error = $_FILES["file_json"]["error"];
 
-        // Cek apakah file berhasil diupload dan tidak ada error
-        if ($file_error === UPLOAD_ERR_OK) {
-            $file_destination = '../assets/geojson/sarana/' . $file_name;
+            // Cek apakah file berhasil diupload dan tidak ada error
+            if ($file_error === UPLOAD_ERR_OK) {
+                $file_destination = '../assets/geojson/sarana/' . $file_name;
 
-            // Pindahkan file ke folder tujuan
-            move_uploaded_file($file_tmp, $file_destination);
+                // Pindahkan file ke folder tujuan
+                move_uploaded_file($file_tmp, $file_destination);
 
-            // Tambahkan query untuk update file
-            $query .= ", file_json = '$file_name'";
-        } else {
-            // Error saat upload file
-            echo "
+                // Tambahkan query untuk update file
+                $query .= ", file_json = '$file_name'";
+            } else {
+                // Error saat upload file
+                echo "
                <script>
                 alert('Terjadi kesalahan saat upload file!');
                 document.location.href = 'ubah-sarana.php';
                </script>
             ";
-            exit;
+                exit;
+            }
         }
-    }
 
-    // cek apakah ada file icon yang diupload
-    if (!empty($_FILES['icon']['name'])) {
-        // Proses upload icon
-        $icon_name = $_FILES["icon"]["name"];
-        $icon_tmp = $_FILES["icon"]["tmp_name"];
-        $icon_error = $_FILES["icon"]["error"];
+        // cek apakah ada file icon yang diupload
+        if (!empty($_FILES['icon']['name'])) {
+            // Proses upload icon
+            $icon_name = $_FILES["icon"]["name"];
+            $icon_tmp = $_FILES["icon"]["tmp_name"];
+            $icon_error = $_FILES["icon"]["error"];
 
-        // Cek apakah file icon berhasil diupload dan tidak ada error
-        if ($icon_error === UPLOAD_ERR_OK) {
-            $icon_destination = '../assets/icon/' . $icon_name;
+            // Cek apakah file icon berhasil diupload dan tidak ada error
+            if ($icon_error === UPLOAD_ERR_OK) {
+                $icon_destination = '../assets/icon/sarana/' . $icon_name;
 
-            // Cek ekstensi file icon
-            $icon_extension = pathinfo($icon_name, PATHINFO_EXTENSION);
-            $allowed_extensions = ['jpg', 'jpeg', 'png'];
+                // Cek ekstensi file icon
+                $icon_extension = pathinfo($icon_name, PATHINFO_EXTENSION);
+                $allowed_extensions = ['jpg', 'jpeg', 'png'];
 
-            if (in_array($icon_extension, $allowed_extensions)) {
-                // Pindahkan file icon ke folder tujuan
-                move_uploaded_file($icon_tmp, $icon_destination);
+                if (in_array($icon_extension, $allowed_extensions)) {
+                    // Pindahkan file icon ke folder tujuan
+                    move_uploaded_file($icon_tmp, $icon_destination);
 
-                // Tambahkan query untuk update icon
-                $query .= ", icon = '$icon_name'";
-            } else {
-                // Ekstensi file icon tidak valid
-                echo "
+                    // Tambahkan query untuk update icon
+                    $query .= ", icon = '$icon_name'";
+                } else {
+                    // Ekstensi file icon tidak valid
+                    echo "
                    <script>
                     alert('Ekstensi file icon tidak valid. Harap pilih file dengan ekstensi JPG, JPEG, atau PNG.');
                     document.location.href = 'ubah-sarana.php';
                    </script>
                 ";
-                exit;
-            }
-        } else {
-            // Error saat upload file icon
-            echo "
+                    exit;
+                }
+            } else {
+                // Error saat upload file icon
+                echo "
                <script>
                 alert('Terjadi kesalahan saat upload file icon!');
                 document.location.href = 'ubah-sarana.php';
                </script>
             ";
-            exit;
+                exit;
+            }
         }
-    }
 
-    $query .= " WHERE id = $id";
+        $query .= " WHERE id = $id";
 
-    // cek apakah data berhasil diubah atau tidak
-    if (mysqli_query($conn, $query)) {
-        echo "
+        // cek apakah data berhasil diubah atau tidak
+        if (mysqli_query($conn, $query)) {
+            echo "
            <script> 
             alert('Data berhasil diupdate!');
             document.location.href = 'ubah-sarana.php';
            </script>
         ";
-    } else {
-        echo "
+        } else {
+            echo "
            <script>
             alert('Data gagal diupdate!');
             document.location.href = 'ubah-sarana.php';
            </script>
         ";
+        }
     }
-}
-?>
+    ?>
 
-<?php include 'views/partials/starter-foot.php' ?>
+    <?php include 'views/partials/starter-foot.php' ?>

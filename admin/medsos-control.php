@@ -6,32 +6,15 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 
-require 'functions/functions.php';
+require_once 'functions/functions.php';
 
 $conn = koneksi();
 
-if (isset($_POST["kirim_marque"])) {
-
-    $nama_data = $_POST["nama_data"];
-    $informasi = $_POST["informasi"];
-    $jenis_informasi = $_POST["jenis_informasi"];
-
-    // Insert the data into the "informasi_bappeda" table
-    $query = "INSERT INTO informasi_bappeda (nama_data, informasi, jenis_informasi) VALUES (?, ?, ?)";
-    $stmt = mysqli_prepare($conn, $query);
-    mysqli_stmt_bind_param($stmt, "sss", $nama_data, $informasi, $jenis_informasi);
-
-    if (mysqli_stmt_execute($stmt)) {
-        header("Location: medsos-control.php");
-        exit;
-    } else {
-        header("Location: medsos-control.php");
-        exit;
-    }
-
-    mysqli_stmt_close($stmt);
-    mysqli_close($conn);
-}
+$getinstagram = query("SELECT * FROM informasi_bappeda WHERE nama_data = 'instagram'");
+$getyoutube = query("SELECT * FROM informasi_bappeda WHERE nama_data = 'youtube'");
+$gettwitter = query("SELECT * FROM informasi_bappeda WHERE nama_data = 'twitter'");
+$getfacebook = query("SELECT * FROM informasi_bappeda WHERE nama_data = 'facebook'");
+$getmarquee = query("SELECT * FROM informasi_bappeda WHERE jenis_informasi ='marquee'");
 
 $nama_halaman = 'Media sosial control';
 $linkcss = 'medsos-control.css';
