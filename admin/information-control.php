@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION["login"])) {
-    header("location: login.php");
+    header("location: login");
     exit;
 }
 
@@ -20,7 +20,7 @@ if (isset($_POST['kirim_marque'])) {
     if (mysqli_query($conn, $query)) {
         echo "<script>
         alert('Data berhasil ditambahkan.');
-        window.location = 'information-control.php';
+        window.location = 'information-control';
       </script>";
     } else {
         echo "Terjadi kesalahan: " . mysqli_error($conn);

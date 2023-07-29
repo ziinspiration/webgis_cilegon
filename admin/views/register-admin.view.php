@@ -20,13 +20,13 @@
         <div class="col-md-9">
             <div class="content d-flex justify-content-around mt-5">
                 <div class="child-content">
-                    <a href="daftar-akun.php" class="card bg-light text-center text-decoration-none p-5">
+                    <a href="daftar-akun" class="card bg-light text-center text-decoration-none p-5">
                         <i class="bi bi-people"></i>
                         <p>Daftar akun</p>
                     </a>
                 </div>
                 <div class="child-content">
-                    <a href="tambah-admin.php" class="card bg-light text-center text-decoration-none p-5">
+                    <a href="tambah-admin" class="card bg-light text-center text-decoration-none p-5">
                         <i class="bi bi-person-add"></i>
                         <p>Tambah akun</p>
                     </a>

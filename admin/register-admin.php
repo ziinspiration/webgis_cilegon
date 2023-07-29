@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-require 'functions/functions.php';
-
 if (!isset($_SESSION["login"])) {
-    header("location: login.php");
+    header("location: login");
     exit;
 }
+
+require 'functions/functions.php';
 
 $conn = koneksi();
 

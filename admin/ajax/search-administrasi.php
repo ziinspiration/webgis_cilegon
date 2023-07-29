@@ -21,7 +21,8 @@ $getdata = query($query);
                     <th class="text-center" scope="row"><?= $i + 1; ?></th>
                     <td><?= $a['nama_adm']; ?></td>
                     <td><?= $a['file_json']; ?></td>
-                    <td class="text-center"><a href="detail-administrasi.php?id=<?= $a["id"] ?>"><i class="bi bi-eye-fill"></i></a></td>
+                    <td class="text-center"><a href="detail-administrasi?id=<?= $a["id"] ?>"><i class="bi bi-eye-fill"></i></a>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

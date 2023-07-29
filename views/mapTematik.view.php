@@ -1,5 +1,43 @@
 <?php include 'partials/starter-head.php' ?>
 
+<style>
+    .leaflet-popup-content-wrapper hr {
+        opacity: 1;
+    }
+
+    .leaflet-popup-content-wrapper h3 {
+        color: orange;
+        margin-top: 40px !important;
+        text-align: center !important;
+    }
+
+    .leaflet-popup-content-wrapper p b {
+        color: orange !important;
+    }
+
+    .leaflet-popup-content-wrapper {
+        background-color: #222 !important;
+        color: #fff;
+    }
+
+    .leaflet-popup-tip {
+        background-color: orange;
+    }
+
+    a.leaflet-popup-close-button {
+        color: white !important;
+        font-size: 25px !important;
+        padding: 5px !important;
+        margin-right: 10px !important;
+        margin-bottom: 10px !important;
+        transition: all .3s;
+    }
+
+    a.leaflet-popup-close-button :hover {
+        color: red !important;
+    }
+</style>
+
 <div class="map-container">
     <div class="map-overlay">
         <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" style="border: none; background: none;">
@@ -11,7 +49,7 @@
 
 <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
     <div style="background: url(assets/index/batik2remake.jpg);" class="back p-2">
-        <a class="back-arrow ms-1 text-decoration-none" href="index.php"><i class="bi bi-arrow-left me-1"><span>Beranda</span></i></a>
+        <a class="back-arrow ms-1 text-decoration-none" href="index"><i class="bi bi-arrow-left me-1"><span>Beranda</span></i></a>
     </div>
     <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="sidebarLabel">Layer Service</h5>
@@ -173,10 +211,10 @@
 
                         return {
                             fillColor: color,
-                            fillOpacity: 0.5,
-                            opacity: 0.3,
+                            fillOpacity: 0.8,
+                            opacity: 1,
                             color: color,
-                            weight: 2.5,
+                            weight: 2,
                             dashArray: darray,
                             dashOffset: doffset,
                         };
@@ -216,6 +254,8 @@
                 console.log('Error:', error);
             });
     }
+
+    displayRegionNames();
 
     function removeGeoJsonLayer(checkbox) {
         var indexToRemove = currentLayers.findIndex(function(layerObj) {
@@ -280,84 +320,84 @@
 
     // POP UP INFORMASI
     function showPopup(feature, layer) {
-        var popupContent = "<h3>Informasi Wilayah</h3>";
+        var popupContent = "<h3>Informasi Wilayah</h3> <hr>";
         if (feature.properties) {
             if (feature.properties.NAMA) {
                 popupContent +=
-                    "<p>Nama : " + feature.properties.NAMA + "</p>";
+                    "<p><>Nama :</b> " + feature.properties.NAMA + "</p>";
             }
             if (feature.properties.TOPONIM) {
                 popupContent +=
-                    "<p>Toponim : " + feature.properties.TOPONIM + "</p>";
+                    "<p><b>Toponim :</b> " + feature.properties.TOPONIM + "</p>";
             }
             if (feature.properties.CURAH_HUJAN) {
                 popupContent +=
-                    "<p>Curah hujan : " + feature.properties.CURAH_HUJAN + "</p>";
+                    "<p><b>Curah hujan :</b> " + feature.properties.CURAH_HUJAN + "</p>";
             }
             if (feature.properties.POLA_RUANG) {
                 popupContent +=
-                    "<p>Pola ruang : " + feature.properties.POLA_RUANG + "</p>";
+                    "<p><b>Pola ruang :</b> " + feature.properties.POLA_RUANG + "</p>";
             }
             if (feature.properties.KABUPATEN) {
-                popupContent += "<p>Kabupaten : " + feature.properties.KABUPATEN + "</p>";
+                popupContent += "<p><b>Kabupaten :</b> " + feature.properties.KABUPATEN + "</p>";
             }
             if (feature.properties.KECAMATAN) {
-                popupContent += "<p>Kecamatan : " + feature.properties.KECAMATAN + "</p>";
+                popupContent += "<p><b>Kecamatan :</b> " + feature.properties.KECAMATAN + "</p>";
             }
             if (feature.properties.KELURAHAN) {
-                popupContent += "<p>Kelurahan : " + feature.properties.KELURAHAN + "</p>";
+                popupContent += "<p><b>Kelurahan :</b> " + feature.properties.KELURAHAN + "</p>";
             }
             if (feature.properties.FUNGSI) {
-                popupContent += "<p>Fungsi : " + feature.properties.FUNGSI + "</p>";
+                popupContent += "<p><b>Fungsi :</b> " + feature.properties.FUNGSI + "</p>";
             }
             if (feature.properties.KODE_UNSUR) {
                 popupContent +=
-                    "<p>Kode unsur : " + feature.properties.KODE_UNSUR + "</p>";
+                    "<p><b>Kode unsur :</b> " + feature.properties.KODE_UNSUR + "</p>";
             }
             if (feature.properties.KETERANGAN) {
                 popupContent +=
-                    "<p>Keterangan : " + feature.properties.KETERANGAN + "</p>";
+                    "<p><b>Keterangan :</b> " + feature.properties.KETERANGAN + "</p>";
             }
             if (feature.properties.ZONASI) {
                 popupContent +=
-                    "<p>Zonasi : " + feature.properties.ZONASI + "</p>";
+                    "<p><b>Zonasi :</b> " + feature.properties.ZONASI + "</p>";
             }
             if (feature.properties.SYS_AQ) {
                 popupContent +=
-                    "<p>SYS AQ : " + feature.properties.SYS_AQ + "</p>";
+                    "<p><b>SYS AQ :</b> " + feature.properties.SYS_AQ + "</p>";
             }
             if (feature.properties.PROD) {
                 popupContent +=
-                    "<p>Produktivitas : " + feature.properties.PROD + "</p>";
+                    "<p><b>Produktivitas :</b> " + feature.properties.PROD + "</p>";
             }
             if (feature.properties.KETERUSAN) {
                 popupContent +=
-                    "<p>Keterusan : " + feature.properties.KETERUSAN + "</p>";
+                    "<p><b>Keterusan :</b> " + feature.properties.KETERUSAN + "</p>";
             }
             if (feature.properties.DEBIT) {
                 popupContent +=
-                    "<p>Debit : " + feature.properties.DEBIT + "</p>";
+                    "<p><b>Debit :</b> " + feature.properties.DEBIT + "</p>";
             }
             if (feature.properties.LERENG) {
                 popupContent +=
-                    "<p>Lereng : " + feature.properties.LERENG + "</p>";
+                    "<p><b>Lereng :</b> " + feature.properties.LERENG + "</p>";
             }
             if (feature.properties.TEMA) {
                 popupContent +=
-                    "<p>Tema : " + feature.properties.TEMA + "</p>";
+                    "<p><b>Tema :</b> " + feature.properties.TEMA + "</p>";
             }
             if (feature.properties.JENIS) {
-                popupContent += "<p>Jenis : " + feature.properties.JENIS + "</p>";
+                popupContent += "<p><b>Jenis :</b> " + feature.properties.JENIS + "</p>";
             }
             if (feature.properties.KETINGGIAN) {
                 popupContent +=
-                    "<p>Ketinggian : " + feature.properties.KETINGGIAN + "</p>";
+                    "<p><b>Ketinggian :</b> " + feature.properties.KETINGGIAN + "</p>";
             }
             if (feature.properties.SUMBER) {
-                popupContent += "<p>Sumber : " + feature.properties.SUMBER + "</p>";
+                popupContent += "<p><b>Sumber :</b> " + feature.properties.SUMBER + "</p>";
             }
             if (feature.properties.LUAS) {
-                popupContent += "<p>Luas : " + feature.properties.LUAS + "</p>";
+                popupContent += "<p><b>Luas :</b> " + feature.properties.LUAS + "</p>";
             }
 
             // Set konten pop-up pada layer

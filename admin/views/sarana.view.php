@@ -20,19 +20,19 @@
         <div class="col-md-9">
             <div class="content d-flex justify-content-around mt-5">
                 <div class="child-content">
-                    <a href="daftar-sarana.php" class="card bg-light text-center text-decoration-none p-5">
+                    <a href="daftar-sarana" class="card bg-light text-center text-decoration-none p-5">
                         <i class="bi bi-card-list"></i>
                         <p>Daftar data</p>
                     </a>
                 </div>
                 <div class="child-content">
-                    <a href="tambah-sarana.php" class="card bg-light text-center text-decoration-none p-5">
+                    <a href="tambah-sarana" class="card bg-light text-center text-decoration-none p-5">
                         <i class="bi bi-folder-plus"></i>
                         <p>Tambah data</p>
                     </a>
                 </div>
                 <div class="child-content">
-                    <a href="ubah-sarana.php" class="card bg-light text-center text-decoration-none p-5">
+                    <a href="ubah-sarana" class="card bg-light text-center text-decoration-none p-5">
                         <i class="bi bi-gear"></i>
                         <p>Update data</p>
                     </a>

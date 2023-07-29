@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION["login"])) {
-    header("location: login.php");
+    header("location: login");
     exit;
 }
 
@@ -74,7 +74,7 @@ if (isset($_POST['send'])) {
                     mysqli_stmt_close($stmt);
                     mysqli_close($conn);
                     echo "<script>alert('Data berhasil ditambahkan ke tabel sarana');</script>";
-                    // echo "<script>window.location.href = 'daftar-sarana.php';</script>";
+                    // echo "<script>window.location.href = 'daftar-sarana';</script>";
                     exit;
                 } else {
                     echo "<script>alert('Error: " . mysqli_stmt_error($stmt) . "');</script>";

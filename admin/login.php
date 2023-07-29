@@ -4,7 +4,7 @@ session_start();
 require 'functions/functions.php';
 
 if (isset($_SESSION["login"])) {
-    header("location: index.php");
+    header("location: index");
     exit;
 }
 
@@ -34,9 +34,9 @@ if (isset($_POST["login"])) {
 
             // Periksa apakah rolenya adalah "master", jika ya, arahkan ke halaman admin-setting.php
             if ($role === "master") {
-                header("location: admin-setting.php");
+                header("location: admin-setting");
             } else {
-                header("location: index.php");
+                header("location: index");
             }
             exit;
         }

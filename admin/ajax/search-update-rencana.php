@@ -29,7 +29,7 @@ $getdata = query($query);
                         <td><?= $a['nama_rencana']; ?></td>
                         <td><?= $a['file_json']; ?></td>
                         <td><?= $a['nama_jenis']; ?></td>
-                        <td class="text-center"><a href="form-update-rencana.php?id=<?= $a["id"] ?>"><span class="badge bdg-a text-bg-warning p-2"><i class="fa-regular fa-pen-to-square"></i>
+                        <td class="text-center"><a href="form-update-rencana?id=<?= $a["id"] ?>"><span class="badge bdg-a text-bg-warning p-2"><i class="fa-regular fa-pen-to-square"></i>
                                     Ubah</span></a> <span class="fw-bold spase">|</span> <a href="functions/delete-rencana.php?id=<?= $a["id"] ?>"><span class="badge text-bg-danger p-2"><i class="fa-solid fa-trash"></i> Hapus</span></a>
                         </td>
                     </tr>

@@ -20,19 +20,19 @@
         <div class="col-md-9">
             <div class="content d-flex justify-content-around mt-5">
                 <div class="child-content">
-                    <a href="medsos-control.php" class="card bg-light text-center text-decoration-none p-5">
+                    <a href="medsos-control" class="card bg-light text-center text-decoration-none p-5">
                         <i class="fa-solid fa-link mb-3"></i>
                         <p>Media sosial</p>
                     </a>
                 </div>
                 <div class="child-content">
-                    <a href="information-control.php" class="card bg-light text-center text-decoration-none p-5">
+                    <a href="information-control" class="card bg-light text-center text-decoration-none p-5">
                         <i class="fa-solid fa-circle-info mb-3"></i>
                         <p>Informasi text</p>
                     </a>
                 </div>
                 <div class="child-content">
-                    <a href="contact-control.php" class="card bg-light text-center text-decoration-none p-5">
+                    <a href="contact-control" class="card bg-light text-center text-decoration-none p-5">
                         <i class="fa-solid fa-phone mb-3"></i>
                         <p>Informasi kontak</p>
                     </a>

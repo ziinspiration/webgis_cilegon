@@ -24,7 +24,8 @@ $getdata = query($query);
                         <td><?= $a['nama_tematik']; ?></td>
                         <td><?= $a['file_json']; ?></td>
                         <td><?= $a['nama_kategori']; ?></td>
-                        <td class="text-center"><a href="detail-tematik.php?id=<?= $a["id"] ?>"><i class="bi bi-eye-fill"></i></a></td>
+                        <td class="text-center"><a href="detail-tematik?id=<?= $a["id"] ?>"><i class="bi bi-eye-fill"></i></a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

@@ -30,7 +30,8 @@ $getdata = query($query);
                         <td><?= $a['nama_rencana']; ?></td>
                         <td><?= $a['file_json']; ?></td>
                         <td><?= $a['nama_jenis']; ?></td>
-                        <td class="text-center"><a href="detail-rencana.php?id=<?= $a["id"] ?>"><i class="bi bi-eye-fill"></i></a></td>
+                        <td class="text-center"><a href="detail-rencana?id=<?= $a["id"] ?>"><i class="bi bi-eye-fill"></i></a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

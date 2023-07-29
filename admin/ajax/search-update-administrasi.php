@@ -22,7 +22,7 @@ $getdata = query($query);
                         <th class="text-center" scope="row"><?= $i + 1; ?></th>
                         <td><?= $a['nama_adm']; ?></td>
                         <td><?= $a['file_json']; ?></td>
-                        <td class="text-center"><a href="form-update-administrasi.php?id=<?= $a["id"] ?>"><span class="badge bdg-a text-bg-warning p-2"><i class="fa-regular fa-pen-to-square"></i>
+                        <td class="text-center"><a href="form-update-administrasi?id=<?= $a["id"] ?>"><span class="badge bdg-a text-bg-warning p-2"><i class="fa-regular fa-pen-to-square"></i>
                                     Ubah</span></a> <span class="fw-bold spase">|</span> <a href="functions/delete-administrasi.php?id=<?= $a["id"] ?>"><span class="badge text-bg-danger p-2"><i class="fa-solid fa-trash"></i> Hapus</span></a>
                         </td>
                     </tr>

@@ -1,0 +1,6 @@
+Options -MultiViews
+RewriteEngine On
+
+# Aturan untuk menyembunyikan ekstensi .php
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^ %{REQUEST_URI}.php [L]

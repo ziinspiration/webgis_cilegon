@@ -2,13 +2,13 @@
 session_start();
 
 if (!isset($_SESSION["login"])) {
-    header("location: login.php");
+    header("location: login");
     exit;
 }
 
 // Pastikan hanya admin dengan role "master" yang bisa mengakses halaman ini
 if (!isset($_COOKIE["role_admin"]) || $_COOKIE["role_admin"] !== "master") {
-    header("location: index.php");
+    header("location: index");
     exit;
 }
 
