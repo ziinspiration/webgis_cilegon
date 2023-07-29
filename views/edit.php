@@ -1,380 +1,3 @@
-<?php include 'partials/starter-head.php' ?>
-<style>
-.custom-popup hr {
-    opacity: 1;
-}
-
-.leaflet-popup-content-wrapper {
-    border: 2px solid orange;
-}
-
-.leaflet-popup-content-wrapper h3 {
-    color: orange;
-    margin-top: 40px !important;
-    text-align: center !important;
-}
-
-.leaflet-popup-content-wrapper p b {
-    color: orange !important;
-}
-
-.leaflet-popup-content-wrapper p {
-    color: grey !important;
-}
-
-.leaflet-popup-content-wrapper {
-    background-color: #222 !important;
-    color: #fff;
-}
-
-.leaflet-popup-tip {
-    background-color: orange;
-}
-
-a.leaflet-popup-close-button {
-    color: white !important;
-    font-size: 25px !important;
-    padding: 5px !important;
-    margin-right: 10px !important;
-    margin-bottom: 10px !important;
-    transition: all .3s;
-}
-
-a.leaflet-popup-close-button :hover {
-    color: red !important;
-}
-
-
-.leaflet-tooltip {
-    background: rgba(255, 255, 255, 0);
-    border: 0;
-    border-radius: 0px;
-    box-shadow: 0 0px 0px;
-    font-size: 1em;
-    color: black;
-    text-shadow: 2px 2px 5px orange;
-    font-weight: bold;
-    text-align: center;
-}
-</style>
-<div class="map-container">
-    <div class="map-overlay">
-        <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar"
-            style="border: none; background: none;">
-            <i class="bi bi-list"></i>
-        </button>
-    </div>
-    <div id="map"></div>
-</div>
-
-<div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
-    <div style="background: url(assets/index/batik2remake.jpg);" class="back p-2">
-        <a class="back-arrow ms-1 text-decoration-none" href="index"><i
-                class="bi bi-arrow-left me-1"><span>Beranda</span></i></a>
-    </div>
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="sidebarLabel">Layer Service</h5>
-        <button type="button" class="btn-c btn-close-canvas" data-bs-dismiss="offcanvas" aria-label="Close"><i
-                class="bi bi-x-circle shake"></i></button>
-    </div>
-    <div class="img-nav d-flex">
-        <img src="assets/logo/cilegon.png" style="height: 50px; width:50px;" class="ms-3 me-2">
-        <p>Pemerintah Kota Cilegon <br> Badan Perencanaan Pembangunan Daerah</p>
-    </div>
-    <div class="offcanvas-body">
-        <div class="sidebar-content">
-            <ul class="list-unstyled">
-                <h5 class="mb-3">Pilih Jenis Maps</h3>
-                    <li class="ms-3">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="satelliteCheckbox">
-                            <label class="form-check-label" for="satelliteCheckbox">Satellite</label>
-                        </div>
-                    </li>
-                    <li class="ms-3">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="terrainCheckbox">
-                            <label class="form-check-label" for="terrainCheckbox">Terrain</label>
-                        </div>
-                    </li>
-                    <li class="ms-3">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="roadCheckbox" checked>
-                            <label class="form-check-label" for="roadCheckbox">Road</label>
-                        </div>
-                    </li>
-            </ul>
-            <hr>
-            <ul class="list-unstyled">
-                <h5 class="mb-3">Wilayah Administrasi</h3>
-                    <?php foreach ($getAdmin as $a) : ?>
-                    <li class="ms-3">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="<?= $a['checkbox_id']; ?>">
-                            <label class="form-check-label"
-                                for="<?= $a['checkbox_id']; ?>"><?= $a['nama_adm']; ?></label>
-                        </div>
-                    </li>
-                    <?php endforeach; ?>
-            </ul>
-            <!-- Prasarana -->
-            <ul class="list-unstyled">
-                <h5 class="mb-3">Prasarana</h3>
-                    <?php foreach ($JSONprasarana as $j) : ?>
-                    <li class="ms-3">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="<?= $j['checkbox_id']; ?>">
-                            <label class="form-check-label"
-                                for="<?= $j['checkbox_id']; ?>"><?= $j['nama_prasarana']; ?></label>
-                        </div>
-                    </li>
-                    <?php endforeach; ?>
-                    <p class="text-secondary"><small>Persampahan</small></p>
-                    <?php foreach ($JSONprasaranaPersampahan as $j) : ?>
-                    <li class="ms-3">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="<?= $j['checkbox_id']; ?>">
-                            <label class="form-check-label"
-                                for="<?= $j['checkbox_id']; ?>"><?= $j['nama_prasarana']; ?></label>
-                        </div>
-                    </li>
-                    <?php endforeach; ?>
-                    <p class="text-secondary"><small>Air bersih</small></p>
-                    <?php foreach ($JSONprasaranaAirbersih as $j) : ?>
-                    <li class="ms-3">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="<?= $j['checkbox_id']; ?>">
-                            <label class="form-check-label"
-                                for="<?= $j['checkbox_id']; ?>"><?= $j['nama_prasarana']; ?></label>
-                        </div>
-                    </li>
-                    <?php endforeach; ?>
-            </ul>
-            <!-- Sarana -->
-            <ul class="list-unstyled">
-                <h5 class="mb-3">Sarana</h3>
-                    <!-- Perkantoran -->
-                    <p class="head-sarana mb-2 mt-3 ms-2">Perkantoran</p>
-                    <?php foreach ($JSONkantor as $jk) : ?>
-                    <li class="ms-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="<?= $jk['checkbox_id']; ?>">
-                            <label class="form-check-label" for="<?= $jk['checkbox_id']; ?>">
-                                <?= $jk['nama_sarana']; ?>
-                            </label>
-                        </div>
-                    </li>
-                    <?php endforeach; ?>
-                    <?php foreach ($ZONASIkantor as $jp) : ?>
-                    <p class="text-secondary"><small>Zonasi perkantoran</small></p>
-                    <li class="ms-5">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="<?= $jp['checkbox_id']; ?>">
-                            <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
-                                <?= $jp['nama_sarana']; ?>
-                            </label>
-                        </div>
-                    </li>
-                    <?php endforeach; ?>
-
-                    <!-- Pendidikan -->
-                    <p class="head-sarana mb-2 mt-3 ms-2">Pendidikan</p>
-                    <?php foreach ($JSONpendidikan as $jp) : ?>
-                    <li class="ms-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="<?= $jp['checkbox_id']; ?>">
-                            <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
-                                <?= $jp['nama_sarana']; ?>
-                            </label>
-                        </div>
-                    </li>
-                    <?php endforeach; ?>
-                    <?php foreach ($ZONASIpendidikan as $jp) : ?>
-                    <p class="text-secondary"><small>Zonasi pendidikan</small></p>
-                    <li class="ms-5">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="<?= $jp['checkbox_id']; ?>">
-                            <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
-                                <?= $jp['nama_sarana']; ?>
-                            </label>
-                        </div>
-                    </li>
-                    <?php endforeach; ?>
-
-                    <!-- Kesehatan -->
-                    <p class="head-sarana mb-2 mt-3 ms-2">Kesehatan</p>
-                    <?php foreach ($JSONkesehatan as $js) : ?>
-                    <li class="ms-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="<?= $js['checkbox_id']; ?>">
-                            <label class="form-check-label" for="<?= $js['checkbox_id']; ?>">
-                                <?= $js['nama_sarana']; ?>
-                            </label>
-                        </div>
-                    </li>
-                    <?php endforeach; ?>
-                    <?php foreach ($ZONASIkesehatan as $jp) : ?>
-                    <p class="text-secondary"><small>Zonasi kesehatan</small></p>
-                    <li class="ms-5">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="<?= $jp['checkbox_id']; ?>">
-                            <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
-                                <?= $jp['nama_sarana']; ?>
-                            </label>
-                        </div>
-                    </li>
-                    <?php endforeach; ?>
-
-                    <!-- Pariwisata & Hiburan -->
-                    <p class="head-sarana mb-2 mt-3 ms-2">Pariwisata & Hiburan</p>
-                    <?php foreach ($JSONpariwisata as $p) : ?>
-                    <li class="ms-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="<?= $p['checkbox_id']; ?>">
-                            <label class="form-check-label" for="<?= $p['checkbox_id']; ?>">
-                                <?= $p['nama_sarana']; ?>
-                            </label>
-                        </div>
-                    </li>
-                    <?php endforeach; ?>
-                    <?php foreach ($ZONASIpariwisata as $jp) : ?>
-                    <p class="text-secondary"><small>Zonasi pariwisata</small></p>
-                    <li class="ms-5">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="<?= $jp['checkbox_id']; ?>">
-                            <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
-                                <?= $jp['nama_sarana']; ?>
-                            </label>
-                        </div>
-                    </li>
-                    <?php endforeach; ?>
-
-                    <!-- Peribadatan -->
-                    <p class="head-sarana mb-2 mt-3 ms-2">Peribadatan</p>
-                    <?php foreach ($JSONperibadatan as $p) : ?>
-                    <li class="ms-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="<?= $p['checkbox_id']; ?>">
-                            <label class="form-check-label" for="<?= $p['checkbox_id']; ?>">
-                                <?= $p['nama_sarana']; ?>
-                            </label>
-                        </div>
-                    </li>
-                    <?php endforeach; ?>
-                    <?php foreach ($ZONASIperibadatan as $jp) : ?>
-                    <p class="text-secondary"><small>Zonasi peribadatan</small></p>
-                    <li class="ms-5">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="<?= $jp['checkbox_id']; ?>">
-                            <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
-                                <?= $jp['nama_sarana']; ?>
-                            </label>
-                        </div>
-                    </li>
-                    <?php endforeach; ?>
-
-                    <!-- Transportasi -->
-                    <p class="head-sarana mb-2 mt-3 ms-2">Sistem transportasi</p>
-                    <?php foreach ($JSONtransportasi as $jt) : ?>
-                    <li class="ms-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="<?= $jt['checkbox_id']; ?>">
-                            <label class="form-check-label" for="<?= $jt['checkbox_id']; ?>">
-                                <?= $jt['nama_sarana']; ?>
-                            </label>
-                        </div>
-                    </li>
-                    <?php endforeach; ?>
-                    <?php foreach ($ZONASItransportasi as $jp) : ?>
-                    <p class="text-secondary"><small>Zonasi sistem transportasi</small></p>
-                    <li class="ms-5">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="<?= $jp['checkbox_id']; ?>">
-                            <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
-                                <?= $jp['nama_sarana']; ?>
-                            </label>
-                        </div>
-                    </li>
-                    <?php endforeach; ?>
-
-                    <!-- Fasilitas umum -->
-                    <p class="head-sarana mb-2 mt-3 ms-2">Fasilitas olahraga</p>
-                    <?php foreach ($JSONfasilitasolahraga as $fu) : ?>
-                    <li class="ms-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="<?= $fu['checkbox_id']; ?>">
-                            <label class="form-check-label" for="<?= $fu['checkbox_id']; ?>">
-                                <?= $fu['nama_sarana']; ?>
-                            </label>
-                        </div>
-                    </li>
-                    <?php endforeach; ?>
-                    <?php foreach ($ZONASIfasilitasolahraga as $jp) : ?>
-                    <p class="text-secondary"><small>Zonasi fasilitas olahraga</small></p>
-                    <li class="ms-5">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="<?= $jp['checkbox_id']; ?>">
-                            <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
-                                <?= $jp['nama_sarana']; ?>
-                            </label>
-                        </div>
-                    </li>
-                    <?php endforeach; ?>
-
-                    <!-- Perdagangan -->
-                    <p class="head-sarana mb-2 mt-3 ms-2">Perdagangan & perniagaan</p>
-                    <?php foreach ($JSONperdagangan as $fu) : ?>
-                    <li class="ms-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="<?= $fu['checkbox_id']; ?>">
-                            <label class="form-check-label" for="<?= $fu['checkbox_id']; ?>">
-                                <?= $fu['nama_sarana']; ?>
-                            </label>
-                        </div>
-                    </li>
-                    <?php endforeach; ?>
-                    <?php foreach ($ZONASIperdagangan as $jp) : ?>
-                    <p class="text-secondary"><small>Zonasi perdagangan & perniagaan</small></p>
-                    <li class="ms-5">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="<?= $jp['checkbox_id']; ?>">
-                            <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
-                                <?= $jp['nama_sarana']; ?>
-                            </label>
-                        </div>
-                    </li>
-                    <?php endforeach; ?>
-
-                    <!-- Pemakaman -->
-                    <p class="head-sarana mb-2 mt-3 ms-2">Tempat pemakaman umum</p>
-                    <?php foreach ($JSONpemakaman as $fu) : ?>
-                    <li class="ms-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="<?= $fu['checkbox_id']; ?>">
-                            <label class="form-check-label" for="<?= $fu['checkbox_id']; ?>">
-                                <?= $fu['nama_sarana']; ?>
-                            </label>
-                        </div>
-                    </li>
-                    <?php endforeach; ?>
-                    <?php foreach ($ZONASIpemakaman as $jp) : ?>
-                    <p class="text-secondary"><small>Zonasi tempat pemakaman umum</small></p>
-                    <li class="ms-5">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="<?= $jp['checkbox_id']; ?>">
-                            <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
-                                <?= $jp['nama_sarana']; ?>
-                            </label>
-                        </div>
-                    </li>
-                    <?php endforeach; ?>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<?php include 'partials/script.php' ?>
-
 <script>
 var map = L.map("map").setView([-5.992735076420852, 106.02561279458], 12);
 
@@ -386,9 +9,7 @@ var googleLayer = L.tileLayer(
     }
 ).addTo(map);
 
-
 var currentLayers = []; // Menyimpan semua layer yang sedang ditampilkan
-
 
 const checkboxGroup = document.querySelectorAll(".form-check-input");
 
@@ -524,13 +145,12 @@ checkboxGroup.forEach(function(checkbox) {
     });
 });
 
-
 // LAYER SETTING
+
 function addGeoJsonLayer(url, checkbox) {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-
             var layer = L.geoJson(data, {
                 style: function(feature) {
                     var color = feature.properties.color;
@@ -621,21 +241,12 @@ function addGeoJsonLayer(url, checkbox) {
                         customIcon = createCustomIcon<?= $pemakaman['icon_id']; ?>();
                     }
                     <?php endforeach; ?>
-
-
-                    // Buat marker dengan ikon kustom
                     return L.marker(latlng, {
                         icon: customIcon
                     });
                 },
-                onEachFeature: function(feature, layer) {
-                    // Panggil fungsi showPopup untuk menampilkan popup saat di klik
-                    showPopup(feature, layer);
-                    // Panggil fungsi addTooltip untuk menambahkan tooltips pada setiap layer polygon
-                    addTooltip(feature, layer);
-                },
+                onEachFeature: onEachFeature,
             });
-
 
             currentLayers.push({
                 checkbox: checkbox,
@@ -662,6 +273,56 @@ function removeGeoJsonLayer(checkbox) {
         map.removeLayer(layerObj.layer);
     }
 }
+
+function onEachFeature(feature, layer) {
+    layer.on({
+        click: function(e) {
+            showPopup(feature, layer);
+        },
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+    });
+
+    var content = 'Kec. ' + layer.feature.properties.KABUPATEN.toString();
+    layer.bindTooltip(content, {
+        direction: 'center',
+        permanent: true,
+        className: 'styleLabelkabupaten'
+    });
+}
+
+function resetLabels(layers) {
+    layers.forEach(layer => {
+        if (layer.getLayers().length > 0) {
+            layer.eachLayer(function(subLayer) {
+                var content = 'Kec. ' + subLayer.feature.properties.KABUPATEN.toString();
+                subLayer.setTooltipContent(content);
+            });
+        }
+    });
+}
+
+resetLabels([kabupaten]);
+
+map.on("zoomend", function() {
+    if (map.getZoom() <= 12) {
+        resetLabels([bataskecamatan]);
+    } else if (map.getZoom() > 12) {
+        resetLabels([kabupaten]);
+    }
+});
+
+map.on("move", function() {
+    resetLabels([kabupaten]);
+});
+
+map.on("layeradd", function() {
+    resetLabels([kabupaten]);
+});
+
+map.on("layerremove", function() {
+    resetLabels([kabupaten]);
+});
 
 var info = L.control();
 
@@ -762,39 +423,6 @@ function showPopup(feature, layer) {
     } else {
         popupContent += "Informasi tidak tersedia";
         layer.bindPopup(popupContent);
-    }
-}
-
-function addTooltip(feature, layer) {
-    if (feature.properties && feature.properties.KABUPATEN) {
-        layer.bindTooltip(feature.properties.KABUPATEN, {
-            permanent: true,
-            direction: 'center',
-            className: 'leaflet-tooltip',
-        }).openTooltip();
-    }
-
-    if (feature.properties && feature.properties.KOTA) {
-        layer.bindTooltip(feature.properties.KOTA, {
-            permanent: true,
-            direction: 'center',
-            className: 'leaflet-tooltip',
-        }).openTooltip();
-    }
-
-    if (feature.properties && feature.properties.KECAMATAN) {
-        layer.bindTooltip(feature.properties.KECAMATAN, {
-            permanent: true,
-            direction: 'center',
-            className: 'leaflet-tooltip',
-        }).openTooltip();
-    }
-    if (feature.properties && feature.properties.KELURAHAN) {
-        layer.bindTooltip(feature.properties.KELURAHAN, {
-            permanent: true,
-            direction: 'center',
-            className: 'leaflet-tooltip',
-        }).openTooltip();
     }
 }
 
@@ -1063,6 +691,3 @@ roadCheckbox.addEventListener("change", function() {
     }
 });
 </script>
-
-
-<?php include 'partials/starter-foot.php' ?>
