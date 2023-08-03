@@ -1,0 +1,14 @@
+{
+"type": "FeatureCollection",
+"name": "PELABUHAN_PT",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "PELABUHAN MERAK", "KETERANGAN": "PELABUHAN", "X": "105,996352280134", "Y": "-5,93102479106119" }, "geometry": { "type": "Point", "coordinates": [ 105.996352280133692, -5.931024791061191, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "DERMAGA PELABUHAN KIAT CILEGON", "KETERANGAN": "PELABUHAN", "X": "105,997473081817", "Y": "-5,92132653898852" }, "geometry": { "type": "Point", "coordinates": [ 105.997473081817304, -5.921326538988524, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "DERMAGA PELABUHAN CIWANDAN", "KETERANGAN": "PELABUHAN", "X": "105,95246486696", "Y": "-6,01834199468726" }, "geometry": { "type": "Point", "coordinates": [ 105.952464866960099, -6.018341994687262, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "TERSUS PT MERAK BANGUN SAMUDERA", "KETERANGAN": "PELABUHAN", "X": "106,009980191832", "Y": "-5,90419987512411" }, "geometry": { "type": "Point", "coordinates": [ 106.009980191832426, -5.904199875124107, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "TERSUS PT ORBIT MERAK", "KETERANGAN": "PELABUHAN", "X": "106,003859396094", "Y": "-5,91119368324183" }, "geometry": { "type": "Point", "coordinates": [ 106.003859396094299, -5.911193683241834, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "TERSUS PELABUHAN CILEGON MANDIRI", "KETERANGAN": "PELABUHAN", "X": "105,996654964955", "Y": "-5,96367666004977" }, "geometry": { "type": "Point", "coordinates": [ 105.996654964954757, -5.963676660049771, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "TERSUS CIGADING DELTA 2", "KETERANGAN": "PELABUHAN", "X": "105,959021456175", "Y": "-6,01158289343573" }, "geometry": { "type": "Point", "coordinates": [ 105.959021456175321, -6.01158289343573, 0.0 ] } }
+]
+}

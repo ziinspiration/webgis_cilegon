@@ -11,7 +11,7 @@ require 'functions/functions.php';
 $conn = koneksi();
 
 $id = $_GET["id"];
-$getdata = query("SELECT * FROM sarana JOIN kategori_data ON sarana.kategori_id = kategori_data.id_kategori WHERE sarana.id = $id")[0];
+$getdata = query("SELECT * FROM sarana JOIN kategori_data ON sarana.kategori_id = kategori_data.id_kategori JOIN jenis_sarana ON sarana.id_jenis_sarana = jenis_sarana.id_jenis WHERE sarana.id = $id")[0];
 
 $i = 0;
 

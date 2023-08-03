@@ -11,7 +11,7 @@ require 'functions/functions.php';
 $conn = koneksi();
 
 $id = $_GET["id"];
-$getdata = query("SELECT * FROM prasarana WHERE id = $id")[0];
+$getdata = query("SELECT * FROM prasarana JOIN jenis_file ON prasarana.id_jenis = jenis_file.jenis_file_id WHERE id = $id")[0];
 
 $i = 0;
 

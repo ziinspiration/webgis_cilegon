@@ -1,7 +1,7 @@
 <?php
 require '../functions/functions.php';
 $keyword = $_GET['keyword'];
-$query = "SELECT * FROM prasarana WHERE nama_prasarana LIKE '%$keyword%' OR file_json LIKE '%$keyword%'";
+$query = "SELECT * FROM prasarana JOIN jenis_file ON prasarana.id_jenis = jenis_file.jenis_file_id WHERE nama_prasarana LIKE '%$keyword%' OR file_json LIKE '%$keyword%' OR nama_jenis LIKE '%$keyword%' ORDER BY nama_prasarana ASC";
 $getdata = query($query);
 ?>
 

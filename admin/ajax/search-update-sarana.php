@@ -4,10 +4,14 @@ $keyword = $_GET['keyword'];
 $query = "SELECT s.*, kd.nama_kategori 
           FROM sarana s 
           JOIN kategori_data kd ON s.kategori_id = kd.id_kategori
+          JOIN jenis_sarana js ON s.id_jenis_sarana = js.id_jenis
           WHERE s.nama_sarana LIKE '%$keyword%' 
              OR kd.nama_kategori LIKE '%$keyword%' 
              OR s.file_json LIKE '%$keyword%'
-             OR s.jenis_data LIKE '%$keyword%'";
+             OR js.nama_jenis LIKE '%$keyword%'
+             ORDER BY s.nama_sarana ASC
+             ";
+
 $getdata = query($query);
 ?>
 

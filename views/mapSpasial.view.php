@@ -189,8 +189,9 @@ a.leaflet-popup-close-button :hover {
                         </div>
                     </li>
                     <?php endforeach; ?>
-                    <?php foreach ($ZONASIpendidikan as $jp) : ?>
+
                     <p class="text-secondary"><small>Zonasi pendidikan</small></p>
+                    <?php foreach ($ZONASIpendidikan as $jp) : ?>
                     <li class="ms-5">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="<?= $jp['checkbox_id']; ?>">
@@ -213,8 +214,8 @@ a.leaflet-popup-close-button :hover {
                         </div>
                     </li>
                     <?php endforeach; ?>
-                    <?php foreach ($ZONASIkesehatan as $jp) : ?>
                     <p class="text-secondary"><small>Zonasi kesehatan</small></p>
+                    <?php foreach ($ZONASIkesehatan as $jp) : ?>
                     <li class="ms-5">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="<?= $jp['checkbox_id']; ?>">
@@ -754,6 +755,14 @@ function showPopup(feature, layer) {
         if (feature.properties.Y) {
             popupContent +=
                 "<p><b>Y :</b> " + feature.properties.Y + "</p>";
+        }
+        if (feature.properties.name) {
+            popupContent +=
+                "<p><b>name :</b> " + feature.properties.name + "</p>";
+        }
+        if (feature.properties.Description) {
+            popupContent +=
+                "<p><b>Description :</b> " + feature.properties.Description + "</p>";
         }
 
         popupContent += "</div>";

@@ -6,7 +6,8 @@ $query = "SELECT r.*, j.nama_jenis
           JOIN jenis_file AS j ON r.id_jenis_file = j.jenis_file_id
           WHERE r.nama_rencana LIKE '%$keyword%'
           OR r.file_json LIKE '%$keyword%'
-          OR j.nama_jenis LIKE '%$keyword%'";
+          OR j.nama_jenis LIKE '%$keyword%'
+          ORDER BY r.nama_rencana ASC";
 
 $getdata = query($query);
 ?>

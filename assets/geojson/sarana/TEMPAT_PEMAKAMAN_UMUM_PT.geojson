@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "TEMPAT_PEMAKAMAN_UMUM_PT",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "JENIS": "RTH DAN SEJENIS", "TOPONIM": "PEMAKAMAN UMUM KARANG ANYAR", "KETERANGAN": "TEMPAT PEMAKAMAN UMUM", "X": "106,077010050895", "Y": "-6,03532706666488" }, "geometry": { "type": "Point", "coordinates": [ 106.077010050894842, -6.035327066664878 ] } },
+{ "type": "Feature", "properties": { "JENIS": "RTH DAN SEJENIS", "TOPONIM": "PEMAKAMAN UMUM", "KETERANGAN": "TEMPAT PEMAKAMAN UMUM", "X": "106,062729229386", "Y": "-6,02207294950131" }, "geometry": { "type": "Point", "coordinates": [ 106.062729229385923, -6.022072949501315 ] } }
+]
+}

@@ -72,7 +72,7 @@ if (isset($_POST['send'])) {
                 mysqli_stmt_close($stmt);
                 mysqli_close($conn);
                 echo "<script>alert('Data berhasil ditambahkan ke tabel sarana');</script>";
-                // echo "<script>window.location.href = 'daftar-sarana';</script>";
+                echo "<script>window.location.href = 'daftar-sarana';</script>";
                 exit;
             } else {
                 echo "<script>alert('Error: " . mysqli_error($conn) . "');</script>";

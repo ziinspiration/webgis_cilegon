@@ -12,7 +12,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. PULOMERAK",
-        "KELURAHAN": "KEL. SURALAYA",
+        "KELURAHAN_": "KEL. SURALAYA",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 696.71640439099997,
         "color": "#B6FCEC"
@@ -723,7 +723,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CILEGON",
-        "KELURAHAN": "KEL. BAGENDUNG",
+        "KELURAHAN_": "KEL. BAGENDUNG",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 376.62793811199998,
         "color": "#F6FCBD"
@@ -1772,7 +1772,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CIWANDAN",
-        "KELURAHAN": "KEL. BANJARNEGARA",
+        "KELURAHAN_": "KEL. BANJARNEGARA",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 236.46852003800001,
         "color": "#D4B3FC"
@@ -2641,7 +2641,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CILEGON",
-        "KELURAHAN": "KEL. BENDUNGAN",
+        "KELURAHAN_": "KEL. BENDUNGAN",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 96.486972120999994,
         "color": "#CAEBFC"
@@ -2874,7 +2874,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CIBEBER",
-        "KELURAHAN": "KEL. BULAKAN",
+        "KELURAHAN_": "KEL. BULAKAN",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 395.08283309699999,
         "color": "#FCBCB8"
@@ -4102,7 +4102,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CIBEBER",
-        "KELURAHAN": "KEL. CIBEBER",
+        "KELURAHAN_": "KEL. CIBEBER",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 257.98091967,
         "color": "#B3FCC7"
@@ -4635,7 +4635,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CIBEBER",
-        "KELURAHAN": "KEL. CIKERAI",
+        "KELURAHAN_": "KEL. CIKERAI",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 325.63996800299998,
         "color": "#FCCCF0"
@@ -5348,7 +5348,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CITANGKIL",
-        "KELURAHAN": "KEL. CITANGKIL",
+        "KELURAHAN_": "KEL. CITANGKIL",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 191.15508477500001,
         "color": "#FCDFC0"
@@ -5653,7 +5653,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CILEGON",
-        "KELURAHAN": "KEL. CIWADUK",
+        "KELURAHAN_": "KEL. CIWADUK",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 112.330405724,
         "color": "#CCFCEC"
@@ -5862,7 +5862,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CILEGON",
-        "KELURAHAN": "KEL. CIWEDUS",
+        "KELURAHAN_": "KEL. CIWEDUS",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 148.344103671,
         "color": "#B8CDFC"
@@ -6300,7 +6300,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CITANGKIL",
-        "KELURAHAN": "KEL. DERINGO",
+        "KELURAHAN_": "KEL. DERINGO",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 234.94423832000001,
         "color": "#D3FCB6"
@@ -6922,7 +6922,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. JOMBANG",
-        "KELURAHAN": "KEL. GEDONG DALEM",
+        "KELURAHAN_": "KEL. GEDONG DALEM",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 172.51578977599999,
         "color": "#FCDCD7"
@@ -7430,7 +7430,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. GROGOL",
-        "KELURAHAN": "KEL. GEREM",
+        "KELURAHAN_": "KEL. GEREM",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 1179.05317982,
         "color": "#FCB6EA"
@@ -8411,7 +8411,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. GROGOL",
-        "KELURAHAN": "KEL. GROGOL",
+        "KELURAHAN_": "KEL. GROGOL",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 364.36085423999998,
         "color": "#DCCAFC"
@@ -8634,7 +8634,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CIWANDAN",
-        "KELURAHAN": "KEL. GUNUNG SUGIH",
+        "KELURAHAN_": "KEL. GUNUNG SUGIH",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 737.41305841999997,
         "color": "#E8FCD7"
@@ -9324,7 +9324,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. JOMBANG",
-        "KELURAHAN": "KEL. JOMBANG WETAN",
+        "KELURAHAN_": "KEL. JOMBANG WETAN",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 137.39155051099999,
         "color": "#D4DBFC"
@@ -9619,7 +9619,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CIBEBER",
-        "KELURAHAN": "KEL. KALITIMBANG",
+        "KELURAHAN_": "KEL. KALITIMBANG",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 328.889458859,
         "color": "#FCBDD1"
@@ -10358,7 +10358,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CIBEBER",
-        "KELURAHAN": "KEL. KARANGASEM",
+        "KELURAHAN_": "KEL. KARANGASEM",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 254.17551926300001,
         "color": "#EFC2FC"
@@ -11010,7 +11010,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. PURWAKARTA",
-        "KELURAHAN": "KEL. KEBON DALEM",
+        "KELURAHAN_": "KEL. KEBON DALEM",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 262.86121541799997,
         "color": "#D1FCCA"
@@ -11383,7 +11383,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CITANGKIL",
-        "KELURAHAN": "KEL. KEBONSARI",
+        "KELURAHAN_": "KEL. KEBONSARI",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 210.01612392800001,
         "color": "#FCF6CC"
@@ -11618,7 +11618,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CIBEBER",
-        "KELURAHAN": "KEL. KEDALEMAN",
+        "KELURAHAN_": "KEL. KEDALEMAN",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 318.01606675099998,
         "color": "#BCB8FC"
@@ -12307,7 +12307,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CIWANDAN",
-        "KELURAHAN": "KEL. KEPUH",
+        "KELURAHAN_": "KEL. KEPUH",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 809.31640347899997,
         "color": "#B8FCFC"
@@ -13157,7 +13157,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CILEGON",
-        "KELURAHAN": "KEL. KETILENG",
+        "KELURAHAN_": "KEL. KETILENG",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 87.199788723500006,
         "color": "#FCD4E2"
@@ -13487,7 +13487,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. PURWAKARTA",
-        "KELURAHAN": "KEL. KOTABUMI",
+        "KELURAHAN_": "KEL. KOTABUMI",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 406.910999199,
         "color": "#F0D7FC"
@@ -13771,7 +13771,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. GROGOL",
-        "KELURAHAN": "KEL. KOTASARI",
+        "KELURAHAN_": "KEL. KOTASARI",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 352.93989776500001,
         "color": "#C2FCDB"
@@ -14061,7 +14061,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CIWANDAN",
-        "KELURAHAN": "KEL. KUBANGSARI",
+        "KELURAHAN_": "KEL. KUBANGSARI",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 498.18631824099998,
         "color": "#FCCEBD"
@@ -14856,7 +14856,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CITANGKIL",
-        "KELURAHAN": "KEL. LEBAK DENOK",
+        "KELURAHAN_": "KEL. LEBAK DENOK",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 309.69502764100002,
         "color": "#FCEAB3"
@@ -15384,7 +15384,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. PULOMERAK",
-        "KELURAHAN": "KEL. LEBAKGEDE",
+        "KELURAHAN_": "KEL. LEBAKGEDE",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 783.049416275,
         "color": "#F4B3FC"
@@ -16245,7 +16245,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. JOMBANG",
-        "KELURAHAN": "KEL. MASIGIT",
+        "KELURAHAN_": "KEL. MASIGIT",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 171.94706939899999,
         "color": "#BCFCB3"
@@ -16793,7 +16793,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. PULOMERAK",
-        "KELURAHAN": "KEL. MEKARSARI",
+        "KELURAHAN_": "KEL. MEKARSARI",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 705.61777868000001,
         "color": "#FCCCCA"
@@ -17506,7 +17506,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. PURWAKARTA",
-        "KELURAHAN": "KEL. PABEAN",
+        "KELURAHAN_": "KEL. PABEAN",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 438.94334443999998,
         "color": "#FCB6D8"
@@ -18117,7 +18117,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. JOMBANG",
-        "KELURAHAN": "KEL. PANGGUNG RAWI",
+        "KELURAHAN_": "KEL. PANGGUNG RAWI",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 247.62654703600001,
         "color": "#D7FCF9"
@@ -18528,7 +18528,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. PURWAKARTA",
-        "KELURAHAN": "KEL. PURWAKARTA",
+        "KELURAHAN_": "KEL. PURWAKARTA",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 203.849734646,
         "color": "#C7F5FC"
@@ -18954,7 +18954,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. PURWAKARTA",
-        "KELURAHAN": "KEL. RAMANUJU",
+        "KELURAHAN_": "KEL. RAMANUJU",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 158.465090323,
         "color": "#E2FCC0"
@@ -19218,7 +19218,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CIWANDAN",
-        "KELURAHAN": "KEL. RANDAKARI",
+        "KELURAHAN_": "KEL. RANDAKARI",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 477.38370666100002,
         "color": "#BBDFFC"
@@ -20118,7 +20118,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. GROGOL",
-        "KELURAHAN": "KEL. RAWA ARUM",
+        "KELURAHAN_": "KEL. RAWA ARUM",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 475.07142727799999,
         "color": "#CCCCFC"
@@ -20812,7 +20812,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CITANGKIL",
-        "KELURAHAN": "KEL. SAMANGRAYA",
+        "KELURAHAN_": "KEL. SAMANGRAYA",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 569.55915851600002,
         "color": "#D7FCDD"
@@ -21442,7 +21442,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. JOMBANG",
-        "KELURAHAN": "KEL. SUKMAJAYA",
+        "KELURAHAN_": "KEL. SUKMAJAYA",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 301.66128353900001,
         "color": "#B3EAFC"
@@ -21933,7 +21933,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CITANGKIL",
-        "KELURAHAN": "KEL. TAMAN BARU",
+        "KELURAHAN_": "KEL. TAMAN BARU",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 366.48752742800002,
         "color": "#FCF0D2"
@@ -22659,7 +22659,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. PULOMERAK",
-        "KELURAHAN": "KEL. TAMANSARI",
+        "KELURAHAN_": "KEL. TAMANSARI",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 331.23535840300002,
         "color": "#D9C0FC"
@@ -23593,7 +23593,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. PURWAKARTA",
-        "KELURAHAN": "KEL. TEGALBUNDER",
+        "KELURAHAN_": "KEL. TEGALBUNDER",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 188.91714553400001,
         "color": "#F3FCCA"
@@ -23991,7 +23991,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CIWANDAN",
-        "KELURAHAN": "KEL. TEGALRATU",
+        "KELURAHAN_": "KEL. TEGALRATU",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 573.00570776799998,
         "color": "#DDD2FC"
@@ -24808,7 +24808,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CITANGKIL",
-        "KELURAHAN": "KEL. WARNASARI",
+        "KELURAHAN_": "KEL. WARNASARI",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 707.81407531000002,
         "color": "#D1FCC0"
@@ -25789,7 +25789,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. PULOMERAK",
-        "KELURAHAN": "P. MERAK BESAR",
+        "KELURAHAN_": "P. MERAK BESAR",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 47.044891795200002,
         "color": "#B8D7FC"
@@ -25911,7 +25911,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. PULOMERAK",
-        "KELURAHAN": "P. MERAK KECIL",
+        "KELURAHAN_": "P. MERAK KECIL",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 1.04698989455,
         "color": "#FCB6BF"
@@ -25962,7 +25962,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. PULOMERAK",
-        "KELURAHAN": "P. RIDA",
+        "KELURAHAN_": "P. RIDA",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 1.1567580722199999,
         "color": "#FCC5CB"
@@ -26004,7 +26004,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. CIWANDAN",
-        "KELURAHAN": "P. TEMPURUNG",
+        "KELURAHAN_": "P. TEMPURUNG",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 1.21498224719,
         "color": "#DCFCD2"
@@ -26063,7 +26063,7 @@
         "PROVINSI": "PROV. BANTEN",
         "KABUPATEN": "KOTA CILEGON",
         "KECAMATAN": "KEC. PULOMERAK",
-        "KELURAHAN": "P. ULAR",
+        "KELURAHAN_": "P. ULAR",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 3.6704368233300002,
         "color": "#FCDDCA"

@@ -1,7 +1,7 @@
 <?php
 require '../functions/functions.php';
 $keyword = $_GET['keyword'];
-$query = "SELECT * FROM administrasi WHERE nama_adm LIKE '%$keyword%'";
+$query = "SELECT * FROM administrasi WHERE nama_adm LIKE '%$keyword%' ";
 $getdata = query($query);
 ?>
 

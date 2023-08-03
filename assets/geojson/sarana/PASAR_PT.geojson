@@ -1,0 +1,20 @@
+{
+"type": "FeatureCollection",
+"name": "PASAR_PT",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "JENIS": "PERDAGANGAN DAN JASA", "TOPONIM": "PASAR LAMA MERAK", "KETERANGAN": "PASAR", "X": "105,998856157022", "Y": "-5,93066159241399" }, "geometry": { "type": "Point", "coordinates": [ 105.998856157022331, -5.930661592413987, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "PERDAGANGAN DAN JASA", "TOPONIM": "PASAR TRADISIONAL PULORIDA", "KETERANGAN": "PASAR", "X": "106,017022195881", "Y": "-5,90436043415807" }, "geometry": { "type": "Point", "coordinates": [ 106.017022195880898, -5.904360434158068, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "PERDAGANGAN DAN JASA", "TOPONIM": "PASAR WISATA CIGADING", "KETERANGAN": "PASAR", "X": "105,981097653101", "Y": "-6,0130635786542" }, "geometry": { "type": "Point", "coordinates": [ 105.981097653101372, -6.013063578654199, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "PERDAGANGAN DAN JASA", "TOPONIM": "PASAR TRADISIONAL KUBANGSARI", "KETERANGAN": "PASAR", "X": "105,984853245023", "Y": "-6,0138745106158" }, "geometry": { "type": "Point", "coordinates": [ 105.984853245022975, -6.013874510615804, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "PERDAGANGAN DAN JASA", "TOPONIM": "PASAR HEWAN / RPH", "KETERANGAN": "PASAR", "X": "106,08547519493", "Y": "-6,00381072537032" }, "geometry": { "type": "Point", "coordinates": [ 106.085475194929828, -6.003810725370321, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "PERDAGANGAN DAN JASA", "TOPONIM": "PASAR KELAPA", "KETERANGAN": "PASAR", "X": "106,050934782804", "Y": "-6,02436936376079" }, "geometry": { "type": "Point", "coordinates": [ 106.050934782804376, -6.024369363760786, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "PERDAGANGAN DAN JASA", "TOPONIM": "PASAR BARU KRANGGOT (PASAR RAKYAT )", "KETERANGAN": "PASAR", "X": "106,0675709", "Y": "-6,01711449999994" }, "geometry": { "type": "Point", "coordinates": [ 106.067570900000092, -6.017114499999935, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "PERDAGANGAN DAN JASA", "TOPONIM": "PASAR KELAPA", "KETERANGAN": "PASAR", "X": "106,0509", "Y": "-6,02446789999994" }, "geometry": { "type": "Point", "coordinates": [ 106.0509, -6.02446789999994, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "PERDAGANGAN DAN JASA", "TOPONIM": "PASAR PAGEBANGAN CILEGON", "KETERANGAN": "PASAR", "X": "106,0550657", "Y": "-6,02074609999995" }, "geometry": { "type": "Point", "coordinates": [ 106.055065700000071, -6.020746099999945, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "PERDAGANGAN DAN JASA", "TOPONIM": "PASAR BUDAYA CILEGON", "KETERANGAN": "PASAR", "X": "106,0492611", "Y": "-6,01242159999992" }, "geometry": { "type": "Point", "coordinates": [ 106.049261100000095, -6.01242159999992, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "PERDAGANGAN DAN JASA", "TOPONIM": "PASAR TRADISIONAL PASAR BUNDER", "KETERANGAN": "PASAR", "X": "106,0526703", "Y": "-5,97666239999995" }, "geometry": { "type": "Point", "coordinates": [ 106.052670300000059, -5.976662399999949, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "PERDAGANGAN DAN JASA", "TOPONIM": "PASAR TRADISIONAL CIGADING", "KETERANGAN": "PASAR", "X": "105,9847973", "Y": "-6,01389459999995" }, "geometry": { "type": "Point", "coordinates": [ 105.984797300000096, -6.01389459999995, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "PERDAGANGAN DAN JASA", "TOPONIM": "PASAR BARU", "KETERANGAN": "PASAR", "X": "106,0056815", "Y": "-5,93144029999997" }, "geometry": { "type": "Point", "coordinates": [ 106.005681500000051, -5.931440299999971, 0.0 ] } }
+]
+}

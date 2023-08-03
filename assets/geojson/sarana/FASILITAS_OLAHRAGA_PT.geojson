@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "FASILITAS_OLAHRAGA_PT",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "JENIS": "FASILITAS OLAHRAGA", "TOPONIM": "STADION KRAKATAU STEEL", "KETERANGAN": "LAPANGAN OLAHRAGA", "X": "106,03965823168", "Y": "-5,99601485900202" }, "geometry": { "type": "Point", "coordinates": [ 106.03965823167978, -5.99601485900202 ] } },
+{ "type": "Feature", "properties": { "JENIS": "FASILITAS OLAHRAGA", "TOPONIM": "LAPANGAN TENIS", "KETERANGAN": "LAPANGAN OLAHRAGA", "X": "106,040443933734", "Y": "-5,99509577952692" }, "geometry": { "type": "Point", "coordinates": [ 106.040443933734267, -5.995095779526925 ] } },
+{ "type": "Feature", "properties": { "JENIS": "FASILITAS OLAHRAGA", "TOPONIM": "LAPANGAN GOLF COURT", "KETERANGAN": "PADANG GOLF", "X": "106,043416100892", "Y": "-5,99607170373158" }, "geometry": { "type": "Point", "coordinates": [ 106.043416100892401, -5.996071703731583 ] } },
+{ "type": "Feature", "properties": { "JENIS": "FASILITAS OLAHRAGA", "TOPONIM": "LAPANGAN BOLA SUMAMPIR", "KETERANGAN": "LAPANGAN OLAHRAGA", "X": "106,048678186802", "Y": "-5,9968305194303" }, "geometry": { "type": "Point", "coordinates": [ 106.048678186802292, -5.996830519430302 ] } },
+{ "type": "Feature", "properties": { "JENIS": "FASILITAS OLAHRAGA", "TOPONIM": "LAPANGAN BOLA", "KETERANGAN": "LAPANGAN OLAHRAGA", "X": "106,062106098367", "Y": "-6,01614255374753" }, "geometry": { "type": "Point", "coordinates": [ 106.06210609836657, -6.016142553747533 ] } }
+]
+}

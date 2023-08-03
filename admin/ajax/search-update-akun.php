@@ -1,7 +1,7 @@
 <?php
 require '../functions/functions.php';
 $keyword = $_GET['keyword'];
-$query = "SELECT * FROM admin WHERE (nama_pegawai LIKE '%$keyword%' OR nik LIKE '%$keyword%') AND id <> 1";
+$query = "SELECT * FROM admin WHERE (nama_pegawai LIKE '%$keyword%' OR nik LIKE '%$keyword%') AND id <> 1 ";
 $getdata = query($query);
 ?>
 

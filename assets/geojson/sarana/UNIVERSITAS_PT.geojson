@@ -1,0 +1,16 @@
+{
+"type": "FeatureCollection",
+"name": "UNIVERSITAS_PT",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "JENIS": "PENDIDIKAN", "TOPONIM": "UNIVERSITAS SULTAN AGENG TIRTAYASA", "KETERANGAN": "UNIVERSITAS", "X": "106,031689495807", "Y": "-5,99757204561825" }, "geometry": { "type": "Point", "coordinates": [ 106.031689495806702, -5.997572045618246, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "PENDIDIKAN", "TOPONIM": "UNIVERSITAS PRIMAGRAHA CILEGON", "KETERANGAN": "UNIVERSITAS", "X": "106,05588090018", "Y": "-6,01860330030525" }, "geometry": { "type": "Point", "coordinates": [ 106.055880900180341, -6.018603300305248, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "PENDIDIKAN", "TOPONIM": "UNIVERSITAS AL-KHAIRIYAH (UNIVAL)", "KETERANGAN": "UNIVERSITAS", "X": "106,041286999592", "Y": "-6,01582179978212" }, "geometry": { "type": "Point", "coordinates": [ 106.041286999591662, -6.01582179978212, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "PENDIDIKAN", "TOPONIM": "SEKOLAH TINGGI ANALIS KIMIA CILEGON", "KETERANGAN": "UNIVERSITAS", "X": "106,064682800161", "Y": "-6,01769050010729" }, "geometry": { "type": "Point", "coordinates": [ 106.064682800161421, -6.017690500107289, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "PENDIDIKAN", "TOPONIM": "STTIKOM INSAN UNGGUL", "KETERANGAN": "UNIVERSITAS", "X": "106,068000100441", "Y": "-6,00188620030043" }, "geometry": { "type": "Point", "coordinates": [ 106.068000100441253, -6.001886200300429, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "PENDIDIKAN", "TOPONIM": "POLITEKNIK KRAKATAU CILEGON", "KETERANGAN": "UNIVERSITAS", "X": "106,050100099756", "Y": "-6,01130770042262" }, "geometry": { "type": "Point", "coordinates": [ 106.050100099755539, -6.011307700422624, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "PENDIDIKAN", "TOPONIM": "STIKOM AL KHAIRIYAH", "KETERANGAN": "UNIVERSITAS", "X": "106,040176899936", "Y": "-6,01691680009324" }, "geometry": { "type": "Point", "coordinates": [ 106.040176899936128, -6.016916800093235, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "PENDIDIKAN", "TOPONIM": "FAKULTAS TEKNIK UNTIRTA", "KETERANGAN": "UNIVERSITAS", "X": "106,032080300432", "Y": "-5,99634529974262" }, "geometry": { "type": "Point", "coordinates": [ 106.032080300431986, -5.996345299742624, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "PENDIDIKAN", "TOPONIM": "AKADEMI FARMASI AL-ISHLAH CILEGON", "KETERANGAN": "UNIVERSITAS", "X": "106,062195000211", "Y": "-6,01507049957461" }, "geometry": { "type": "Point", "coordinates": [ 106.062195000210693, -6.015070499574611, 0.0 ] } }
+]
+}

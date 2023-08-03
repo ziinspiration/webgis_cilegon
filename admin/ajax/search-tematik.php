@@ -1,7 +1,7 @@
 <?php
 require '../functions/functions.php';
 $keyword = $_GET['keyword'];
-$query = "SELECT * FROM tematik JOIN kategori_tematik ON tematik.kategori = kategori_tematik.id_kategori WHERE nama_tematik LIKE '%$keyword%' OR file_json LIKE '%$keyword%' OR nama_kategori LIKE '%$keyword%'";
+$query = "SELECT * FROM tematik JOIN kategori_tematik ON tematik.kategori = kategori_tematik.id_kategori WHERE nama_tematik LIKE '%$keyword%' OR file_json LIKE '%$keyword%' OR nama_kategori LIKE '%$keyword%' ORDER BY tematik.nama_tematik ASC";
 $getdata = query($query);
 ?>
 
