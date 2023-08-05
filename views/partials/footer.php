@@ -25,10 +25,21 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <h5 class="orange">Hubungi Kami</h5>
-                <p><span>Alamat :</span> JL. Maulana Yusuf RT. 06 RW. 01, Kecamatan Citangkil, Kota
-                    Cilegon, Provinsi Banten, 42441</p>
-                <p><span>Email :</span> BAPPEDA@email.cilegon.go.id</p>
-                <p><span>Telp :</span> (123) 456-7890</p>
+                <?php foreach ($getalamat as $alamat) : ?>
+                <p><span>Alamat :</span>
+                    <?= $alamat['informasi']; ?>
+                </p>
+                <?php endforeach; ?>
+                <?php foreach ($getemail as $email) : ?>
+                <p><span>Email :</span>
+                    <?= $email['informasi']; ?>
+                </p>
+                <?php endforeach; ?>
+                <?php foreach ($gettelp as $telp) : ?>
+                <p><span>Telp :</span>
+                    <?= $telp['informasi']; ?>
+                </p>
+                <?php endforeach; ?>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h5 class="orange">Ikuti Kami</h5>

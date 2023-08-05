@@ -10,14 +10,17 @@ require '../functions/functions.php';
 
 $conn = koneksi();
 
-if (isset($_POST['informasi']) && isset($_POST['new_nama_data'])) {
+if (isset($_POST['informasi']) && isset($_POST['nama_data'])) {
     $informasi = $_POST['informasi'];
-    $namaData = $_POST['new_nama_data'];
+    $namaData = $_POST['nama_data'];
+
+    // Jenis informasi secara default diatur sebagai "marquee"
+    $jenis_informasi = "marquee";
 
     $table = "informasi_bappeda";
-    $query = "INSERT INTO $table (nama_data, informasi) VALUES (?, ?)";
+    $query = "INSERT INTO $table (nama_data, informasi, jenis_informasi) VALUES (?, ?, ?)";
     $stmt = mysqli_prepare($conn, $query);
-    mysqli_stmt_bind_param($stmt, "ss", $namaData, $informasi);
+    mysqli_stmt_bind_param($stmt, "sss", $namaData, $informasi, $jenis_informasi);
 
     if (mysqli_stmt_execute($stmt)) {
         // Berhasil menyimpan data baru
@@ -28,5 +31,8 @@ if (isset($_POST['informasi']) && isset($_POST['new_nama_data'])) {
     }
 
     mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+
+    error_log("Informasi: " . $informasi);
+    error_log("Nama Data: " . $namaData);
 }
-mysqli_close($conn);

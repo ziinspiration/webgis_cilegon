@@ -39,6 +39,12 @@ form {
     .btn-primary {
         width: 100% !important;
     }
+
+
+    .view-change-img {
+        margin: auto !important;
+        margin-bottom: 30px !important;
+    }
 }
 
 @media screen and (max-width:990px) {
@@ -51,6 +57,16 @@ form {
 .row {
     margin-top: 100px !important;
     margin-bottom: 100px !important;
+}
+
+.view-change-img {
+    height: 150px !important;
+    width: 150px !important;
+}
+
+.img-preview {
+    height: 90px !important;
+    width: 90px !important;
 }
 </style>
 <div class="container-fluid">
@@ -82,14 +98,43 @@ form {
                             </div>
                         </div>
                     </div>
-                    <div class="right w-50 me-3">
-                        <div class="mb-3">
+
+
+
+                    <div class="right w-50 me-3 d-flex flex-column">
+                        <div class="mb-5">
                             <label for="checkbox_id" class="form-label orange ps-1 pe-1">Checkbox ID</label>
                             <input type="text" class="form-control p-2" id="checkbox_id" name="checkbox_id"
                                 value="<?= $getdata['checkbox_id']; ?>" required />
                         </div>
+                        <?php if ($getdata['id_jenis'] === '1') : ?>
+                        <div
+                            class="view-change-img mt-5 d-flex m-auto align-items-center justify-content-center p-5 rounded-circle bg-light">
+                            <img class="img-preview" src="../assets/icon/prasarana/<?= $getdata["icon"]; ?>"
+                                alt="Preview" id="preview" />
+                        </div>
+                        <?php endif; ?>
                     </div>
                 </div>
+
+                <div class="bottom d-flex flex-column">
+                    <?php if ($getdata['id_jenis'] === '1') : ?>
+
+                    <div class="w-100 kolom">
+                        <label for="icon" class="form-label orange ps-1 pe-1">Icon file</label>
+                        <input type="file" onchange="previewImage(event)" class="form-control p-2" id="icon" name="icon"
+                            accept=".jpg, .jpeg, .png" />
+                    </div>
+
+                    <div class="w-100 kolom">
+                        <label for="icon_id" class="form-label orange ps-1 pe-1">Icon ID</label>
+                        <input type="text" class="form-control p-2" id="icon_id" name="icon_id"
+                            value="<?= $getdata['icon_id']; ?>" required />
+                    </div>
+
+                    <?php endif; ?>
+                </div>
+
                 <div class="btn-kirim d-flex justify-content-end">
                     <button type="submit" name="submit" class="btn btn-primary w-25 p-2 mt-4 mb-4"><i
                             class="fa-solid fa-floppy-disk me-2"></i>Simpan</button>
@@ -107,10 +152,12 @@ if (isset($_POST["submit"])) {
     $id = $_POST["id"];
     $nama_prasarana = $_POST["nama_prasarana"];
     $checkbox_id = $_POST["checkbox_id"];
+    $icon_id = $_POST["icon_id"];
 
     // query update data prasarana
     $query = "UPDATE prasarana SET
             nama_prasarana = '$nama_prasarana',
+            icon_id = '$icon_id',
             checkbox_id = '$checkbox_id'";
 
     // cek apakah ada file yang diupload
@@ -120,15 +167,22 @@ if (isset($_POST["submit"])) {
         $file_tmp = $_FILES["file_json"]["tmp_name"];
         $file_error = $_FILES["file_json"]["error"];
 
-        // Cek apakah file berhasil diupload dan tidak ada error
         if ($file_error === UPLOAD_ERR_OK) {
             $file_destination = '../assets/geojson/prasarana/' . $file_name;
 
-            // Pindahkan file ke folder tujuan
-            move_uploaded_file($file_tmp, $file_destination);
-
             // Tambahkan query untuk update file
             $query .= ", file_json = '$file_name'";
+            
+            // Pindahkan file ke folder tujuan
+            if (!move_uploaded_file($file_tmp, $file_destination)) {
+                echo "
+                   <script>
+                    alert('Terjadi kesalahan saat upload file!');
+                    document.location.href = 'ubah-prasarana.php';
+                   </script>
+                ";
+                exit;
+            }
         } else {
             // Error saat upload file
             echo "
@@ -137,6 +191,56 @@ if (isset($_POST["submit"])) {
                 document.location.href = 'ubah-prasarana.php';
                </script>
             ";
+            exit;
+        }
+    }
+
+    // cek apakah ada file icon yang diupload
+    if (!empty($_FILES['icon']['name'])) {
+        // Proses upload icon
+        $icon_name = $_FILES["icon"]["name"];
+        $icon_tmp = $_FILES["icon"]["tmp_name"];
+        $icon_error = $_FILES["icon"]["error"];
+
+        if ($icon_error === UPLOAD_ERR_OK) {
+            $icon_destination = '../assets/icon/prasarana/' . $icon_name;
+
+            // Cek ekstensi file icon
+            $icon_extension = pathinfo($icon_name, PATHINFO_EXTENSION);
+            $allowed_extensions = ['jpg', 'jpeg', 'png'];
+
+            if (in_array($icon_extension, $allowed_extensions)) {
+                // Tambahkan query untuk update icon
+                $query .= ", icon = '$icon_name'";
+                
+                // Pindahkan file icon ke folder tujuan
+                if (!move_uploaded_file($icon_tmp, $icon_destination)) {
+                    echo "
+                       <script>
+                        alert('Terjadi kesalahan saat upload file icon!');
+                        document.location.href = 'ubah-prasarana.php';
+                       </script>
+                    ";
+                    exit;
+                }
+            } else {
+                // Ekstensi file icon tidak valid
+                echo "
+               <script>
+                alert('Ekstensi file icon tidak valid. Harap pilih file dengan ekstensi JPG, JPEG, atau PNG.');
+                document.location.href = 'ubah-prasarana.php';
+               </script>
+            ";
+                exit;
+            }
+        } else {
+            // Error saat upload file icon
+            echo "
+           <script>
+            alert('Terjadi kesalahan saat upload file icon!');
+            document.location.href = 'ubah-prasarana.php';
+           </script>
+        ";
             exit;
         }
     }
@@ -161,5 +265,6 @@ if (isset($_POST["submit"])) {
     }
 }
 ?>
+
 
 <?php include 'views/partials/starter-foot.php' ?>
