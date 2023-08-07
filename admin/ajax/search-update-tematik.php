@@ -22,10 +22,10 @@ $getdata = query($query);
                 <th class="text-center" scope="row"><?= $i + 1; ?></th>
                 <td><?= $a['nama_tematik']; ?></td>
                 <td><?= $a['file_json']; ?></td>
-                <td class="text-center"><a href="form-update-tematik?id=<?= $a["id"] ?>"><span
+                <td class="text-center"><a href="form-update-sarana?id=<?= $a["id"] ?>"><span
                             class="badge bdg-a text-bg-warning p-2"><i class="fa-regular fa-pen-to-square"></i>
                             Ubah</span></a> <span class="fw-bold spase">|</span> <a
-                        href="functions/delete-tematik.php?id=<?= $a["id"] ?>"><span class="badge text-bg-danger p-2"><i
+                        href="functions/delete-sarana.php?id=<?= $a["id"] ?>"><span class="badge text-bg-danger p-2"><i
                                 class="fa-solid fa-trash"></i> Hapus</span></a>
                 </td>
             </tr>

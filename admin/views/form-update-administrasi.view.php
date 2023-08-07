@@ -1,4 +1,5 @@
 <?php include 'views/partials/starter-head.php' ?>
+<?php include 'views/partials/alert-tambah-data.php'; ?>
 <style>
 * {
     font-family: montserrat;
@@ -103,10 +104,60 @@ form {
 
 <?php
 if (isset($_POST["submit"])) {
-    // ambil data dari form
+    // Ambil data dari form dan lakukan pembersihan jika perlu
     $id = $_POST["id"];
     $nama_adm = $_POST["nama_adm"];
     $checkbox_id = $_POST["checkbox_id"];
+
+    // cek apakah nama_adm sudah ada dalam database
+    $query_check_nama_adm = "SELECT COUNT(*) FROM administrasi WHERE nama_adm = ? AND id != ?";
+    $stmt_check_nama_adm = mysqli_prepare($conn, $query_check_nama_adm);
+    mysqli_stmt_bind_param($stmt_check_nama_adm, 'si', $nama_adm, $id);
+    mysqli_stmt_execute($stmt_check_nama_adm);
+    mysqli_stmt_bind_result($stmt_check_nama_adm, $nama_adm_count);
+    mysqli_stmt_fetch($stmt_check_nama_adm);
+    mysqli_stmt_close($stmt_check_nama_adm);
+
+    if ($nama_adm_count > 0) {
+        echo "
+           <script>
+            Swal.fire({
+                position: 'center-center',
+                icon: 'error',
+                title: 'Oops :(',
+                text: 'Data gagal diupdate! Nama data sudah ada dalam database.',
+                showConfirmButton: false,
+                timer: 3500
+            });
+           </script>
+        ";
+        exit;
+    }
+
+    // cek apakah checkbox_id sudah ada dalam database
+    $query_check_checkbox_id = "SELECT COUNT(*) FROM administrasi WHERE checkbox_id = ? AND id != ?";
+    $stmt_check_checkbox_id = mysqli_prepare($conn, $query_check_checkbox_id);
+    mysqli_stmt_bind_param($stmt_check_checkbox_id, 'si', $checkbox_id, $id);
+    mysqli_stmt_execute($stmt_check_checkbox_id);
+    mysqli_stmt_bind_result($stmt_check_checkbox_id, $checkbox_id_count);
+    mysqli_stmt_fetch($stmt_check_checkbox_id);
+    mysqli_stmt_close($stmt_check_checkbox_id);
+
+    if ($checkbox_id_count > 0) {
+        echo "
+           <script>
+            Swal.fire({
+                position: 'center-center',
+                icon: 'error',
+                title: 'Oops :(',
+                text: 'Data gagal diupdate! Checkbox ID sudah ada dalam database.',
+                showConfirmButton: false,
+                timer: 3500
+            });
+           </script>
+        ";
+        exit;
+    }
 
     // query update data administrasi
     $query = "UPDATE administrasi SET
@@ -133,8 +184,16 @@ if (isset($_POST["submit"])) {
             // Error saat upload file
             echo "
                <script>
-                alert('Terjadi kesalahan saat upload file!');
-                document.location.href = 'ubah-administrasi.php';
+                Swal.fire({
+                    position: 'center-center',
+                    icon: 'error',
+                    title: 'Oops :(',
+                    text: 'Terjadi kesalahan saat upload file!',
+                    showConfirmButton: false,
+                    timer: 3500
+                }).then(function() {
+                    window.location.href = 'ubah-administrasi';
+                });
                </script>
             ";
             exit;
@@ -147,15 +206,31 @@ if (isset($_POST["submit"])) {
     if (mysqli_query($conn, $query)) {
         echo "
            <script> 
-            alert('Data berhasil diupdate!');
-            document.location.href = 'ubah-administrasi.php';
+            Swal.fire({
+                position: 'center-center',
+                icon: 'success',
+                title: 'Selamat :)',
+                text: 'Perubahan anda berhasil tersimpan',
+                showConfirmButton: false,
+                timer: 3500
+            }).then(function() {
+                window.location.href = 'ubah-administrasi';
+            });
            </script>
         ";
     } else {
         echo "
            <script>
-            alert('Data gagal diupdate!');
-            document.location.href = 'ubah-administrasi.php';
+            Swal.fire({
+                position: 'center-center',
+                icon: 'error',
+                title: 'Oops :(',
+                text: 'Data gagal diupdate!',
+                showConfirmButton: false,
+                timer: 3500
+            }).then(function() {
+                window.location.href = 'ubah-administrasi';
+            });
            </script>
         ";
     }

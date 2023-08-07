@@ -20,6 +20,7 @@ function registrasi($data)
     $password = clean_input(mysqli_real_escape_string($conn, $data["password"]));
     $password2 = clean_input(mysqli_real_escape_string($conn, $data["password2"]));
     $nama_admin = clean_input(mysqli_real_escape_string($conn, $data["nama_pegawai"]));
+    $foto_profile = clean_input(mysqli_real_escape_string($conn, $data["foto_profile"]));
 
     $role = isset($data["role"]) ? clean_input(mysqli_real_escape_string($conn, $data["role"])) : 'basic';
 
@@ -44,9 +45,9 @@ function registrasi($data)
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     // Tambahkan user baru ke database
-    mysqli_query($conn, "INSERT INTO admin VALUES(null,'$nama_admin','$nik', '$password', '$role')");
+    mysqli_query($conn, "INSERT INTO admin VALUES(null,'$foto_profile','$nama_admin','$nik', '$password', '$role')");
 
-    return array('status' => 'success', 'message' => 'Anda telah terdaftar sebagai admin');
+    return array('status' => 'success', 'message' => 'Selamat registrasi admin berhasil !');
 }
 
 

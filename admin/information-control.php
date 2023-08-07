@@ -10,7 +10,7 @@ require 'functions/functions.php';
 
 $conn = koneksi();
 
-// if (isset($_POST['kirim_marque'])) {
+// if (isset($_POST['send'])) {
 //     $nama_data = clean_input($_POST['nama_data']);
 //     $informasi = clean_input($_POST['informasi']);
 //     $jenis_informasi = clean_input($_POST['jenis_informasi']);

@@ -15,6 +15,42 @@ if ($jam >= 3 && $jam < 10) {
 }
 
 ?>
+<style>
+    .container-fluid {
+        background-image: url('../assets/index/dashboard.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top right;
+        background-color: #f0f0f0;
+        min-height: 100vh;
+    }
+
+    .content {
+        background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+        width: 100%;
+    }
+
+    @media screen and (max-width: 576px) {
+        .container-fluid {
+            background-position: center;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        .container-fluid {
+            background-size: 70vh 100%;
+            background-repeat: no-repeat;
+            background-position-y: 350px;
+            background-blend-mode: darken;
+        }
+
+        .col-md-9 {
+            min-height: 70vh;
+        }
+    }
+</style>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-3">

@@ -7,19 +7,41 @@ $count = countAdministrasi();
 
 if ($count == 1) {
     echo "<script>
-            alert('Tidak dapat menghapus data. Minimal harus ada 1 data tersisa.');
-            document.location.href = '../ubah-administrasi.php';
+            Swal.fire({
+                icon: 'warning',
+                title: 'Tidak dapat menghapus data',
+                text: 'Minimal harus ada 1 data tersisa.',
+                showConfirmButton: true,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '../ubah-administrasi';
+                }
+            });
         </script>";
 } else {
     if (deleteAdministrasi($id) > 0) {
         echo "<script>
-                alert('Data Berhasil dihapus');
-                document.location.href = '../ubah-administrasi.php';
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Data Berhasil dihapus',
+                    showConfirmButton: true,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = '../ubah-administrasi';
+                    }
+                });
             </script>";
     } else {
         echo "<script>
-                alert('Data Gagal dihapus');
-                document.location.href = '../ubah-administrasi.php';
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Data Gagal dihapus',
+                    showConfirmButton: true,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = '../ubah-administrasi';
+                    }
+                });
             </script>";
     }
 }

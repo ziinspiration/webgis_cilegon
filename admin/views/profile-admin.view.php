@@ -1,4 +1,5 @@
 <?php include 'views/partials/starter-head.php' ?>
+<?php include 'views/partials/alert-tambah-data.php'; ?>
 <style>
     .content {
         font-family: Poppins;
@@ -44,17 +45,20 @@
                     <?php else : ?>
                         <img src="../assets/index/profile-picture.jpg" class="w-25 rounded-circle" alt="Default Profile Picture">
                     <?php endif; ?>
-                    <input type="file" onchange="updateProfilePicture(this)" class="form-control w-25 p-2 mt-2" name="foto_profile" accept="image/*" onchange="previewImage(this)">
+                    <input type="file" onchange="previewImage(this)" class="form-control w-25 p-2 mt-2" name="new_foto_profile" accept="image/*">
                 </div>
                 <div class="input-group mb-3 w-75 d-flex align-items-center">
                     <span class="input-group-text p-3" id="basic-addon1"><i class="fa-solid fa-user"></i></span>
                     <input type="text" class="form-control p-3" name="nama_pegawai" value="<?= $admin['nama_pegawai']; ?>" aria-describedby="basic-addon1" readonly>
                     <i class="change text-primary fa-solid fa-pen ms-4" onclick="enableEdit('nama_pegawai')"></i>
                 </div>
-                <div class="input-group mb-3 w-75 d-flex align-items-center">
-                    <span class="input-group-text p-3" id="basic-addon1"><i class="fa-solid fa-id-badge"></i></span>
-                    <input type="text" class="form-control p-3" name="nik" value="<?= $admin['nik']; ?>" aria-describedby="basic-addon1" readonly>
-                    <i class="change text-primary fa-solid fa-pen ms-4" onclick="enableEdit('nik')"></i>
+                <div class="input-nik mb-3">
+                    <div class="input-group w-75 d-flex align-items-center">
+                        <span class="input-group-text p-3" id="basic-addon1"><i class="fa-solid fa-id-badge"></i></span>
+                        <input type="text" class="form-control p-3" name="nik" id="nik" value="<?= $admin['nik']; ?>" aria-describedby="basic-addon1" readonly>
+                        <i class="change text-primary fa-solid fa-pen ms-4" onclick="enableEdit('nik')"></i>
+                    </div>
+                    <span id="nik-error" class="text-danger ms-5 mt-1"></span>
                 </div>
                 <p>Apakah anda ingin merubah password ? <a class="text-decoration-none" href="">KLIK
                         DISINI</a></p>
@@ -67,6 +71,18 @@
 </div>
 <?php include 'views/partials/script.php' ?>
 <script>
+    document.getElementById("nik").addEventListener("input", function() {
+        var nikInput = this.value;
+        var errorElement = document.getElementById("nik-error");
+
+        // Lakukan pengecekan dengan regex untuk memastikan input hanya angka
+        if (!/^\d+$/.test(nikInput)) {
+            errorElement.textContent = "*NIK hanya boleh berisi angka";
+        } else {
+            errorElement.textContent = "";
+        }
+    });
+
     function previewImage(input) {
         var imgElement = document.querySelector('.profile-picture img');
         if (input.files && input.files[0]) {
@@ -78,7 +94,6 @@
         }
     }
 
-
     function enableEdit(field) {
         var inputField = document.getElementsByName(field)[0];
         inputField.removeAttribute("readonly");
@@ -88,16 +103,20 @@
     function saveChanges() {
         var nik = document.getElementsByName("nik")[0].value;
         var nama_pegawai = document.getElementsByName("nama_pegawai")[0].value;
-        var foto_profile = document.getElementsByName("foto_profile")[0].value;
+        var new_foto_profile_input = document.getElementsByName("new_foto_profile")[0];
+        var new_foto_profile = new_foto_profile_input.files[0];
+
+        var formData = new FormData();
+        formData.append("nik", nik);
+        formData.append("nama_pegawai", nama_pegawai);
+        formData.append("new_foto_profile", new_foto_profile);
 
         $.ajax({
             url: "ajax/save-profile.php",
             type: "POST",
-            data: {
-                nik: nik,
-                nama_pegawai: nama_pegawai,
-                foto_profile: foto_profile, // Include the new profile picture data
-            },
+            data: formData,
+            processData: false,
+            contentType: false,
             success: function(response) {
                 Swal.fire({
                     position: 'center-center',
@@ -113,6 +132,5 @@
             }
         });
     }
-</script>
 </script>
 <?php include 'views/partials/starter-foot.php' ?>

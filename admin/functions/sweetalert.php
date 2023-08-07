@@ -1,0 +1,2 @@
+<link rel="stylesheet" href="../assets/sweetalert/cdn.jsdelivr.net_npm_sweetalert2@11_dist_sweetalert2.min.css">
+<script src="../assets/sweetalert/cdn.jsdelivr.net_npm_sweetalert2@11_dist_sweetalert2.min.js"></script>

@@ -1,4 +1,37 @@
+<style>
+    #signal-icon {
+        font-size: 19px !important;
+    }
+
+    .icon-koneksi {
+        font-size: 19px !important;
+    }
+
+    .animated {
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes colorChange {
+        0% {
+            color: red;
+        }
+
+        50% {
+            color: yellow;
+        }
+
+        100% {
+            color: green;
+        }
+    }
+</style>
 <div class="sidebar bg-dark">
+    <p class="text-secondary mb-2 mb-4">
+        <span id="signal-icon"></span>
+        <span id="signal-text"></span>
+        <span id="online-status"></span>
+    </p>
     <div class="side-bar-head d-flex justify-content-center mb-5">
         <img src="../assets/logo/cilegon.png" class="w-50" alt="">
     </div>
@@ -51,4 +84,5 @@
         <a href="logout" class="btn btn-danger p-2 mt-2"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
         <a href="admin-setting" class="btn btn-warning p-2 mt-2"><i class="fa-solid fa-gear"></i> Setting</a>
     </ul>
+    <p class="text-secondary mb-2 mt-3"><span class="bold">Version</span> 1.0</p>
 </div>

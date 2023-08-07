@@ -1,4 +1,5 @@
 <?php include 'views/partials/starter-head.php'; ?>
+<?php include 'views/partials/alert-tambah-data.php'; ?>
 <style>
     * {
         font-family: montserrat;
@@ -161,17 +162,67 @@
 
 <?php
 if (isset($_POST["submit"])) {
-    // ambil data dari form
+    // Ambil data dari form dan lakukan pembersihan jika perlu
     $id = $_POST["id"];
     $nama_rencana = $_POST["nama_rencana"];
     $icon_id = $_POST["icon_id"];
     $checkbox_id = $_POST["checkbox_id"];
 
+    // cek apakah nama_rencana sudah ada dalam database
+    $query_check_nama_rencana = "SELECT COUNT(*) FROM rencana WHERE nama_rencana = ? AND id != ?";
+    $stmt_check_nama_rencana = mysqli_prepare($conn, $query_check_nama_rencana);
+    mysqli_stmt_bind_param($stmt_check_nama_rencana, 'si', $nama_rencana, $id);
+    mysqli_stmt_execute($stmt_check_nama_rencana);
+    mysqli_stmt_bind_result($stmt_check_nama_rencana, $nama_rencana_count);
+    mysqli_stmt_fetch($stmt_check_nama_rencana);
+    mysqli_stmt_close($stmt_check_nama_rencana);
+
+    if ($nama_rencana_count > 0) {
+        echo "
+           <script>
+            Swal.fire({
+                position: 'center-center',
+                icon: 'error',
+                title: 'Oops :(',
+                text: 'Data gagal diupdate! Nama data sudah ada dalam database.',
+                showConfirmButton: false,
+                timer: 3500
+            });
+           </script>
+        ";
+        exit;
+    }
+
+    // cek apakah checkbox_id sudah ada dalam database
+    $query_check_checkbox_id = "SELECT COUNT(*) FROM rencana WHERE checkbox_id = ? AND id != ?";
+    $stmt_check_checkbox_id = mysqli_prepare($conn, $query_check_checkbox_id);
+    mysqli_stmt_bind_param($stmt_check_checkbox_id, 'si', $checkbox_id, $id);
+    mysqli_stmt_execute($stmt_check_checkbox_id);
+    mysqli_stmt_bind_result($stmt_check_checkbox_id, $checkbox_id_count);
+    mysqli_stmt_fetch($stmt_check_checkbox_id);
+    mysqli_stmt_close($stmt_check_checkbox_id);
+
+    if ($checkbox_id_count > 0) {
+        echo "
+           <script>
+            Swal.fire({
+                position: 'center-center',
+                icon: 'error',
+                title: 'Oops :(',
+                text: 'Data gagal diupdate! Checkbox ID sudah ada dalam database.',
+                showConfirmButton: false,
+                timer: 3500
+            });
+           </script>
+        ";
+        exit;
+    }
+
     // query update data rencana
     $query = "UPDATE rencana SET
-            nama_rencana = '$nama_rencana',
-            checkbox_id = '$checkbox_id',
-            icon_id = '$icon_id'";
+        nama_rencana = '$nama_rencana',
+        checkbox_id = '$checkbox_id',
+        icon_id = '$icon_id'";
 
     // cek apakah ada file yang diupload
     if (!empty($_FILES['file_json']['name'])) {
@@ -180,7 +231,6 @@ if (isset($_POST["submit"])) {
         $file_tmp = $_FILES["file_json"]["tmp_name"];
         $file_error = $_FILES["file_json"]["error"];
 
-        // Cek apakah file berhasil diupload dan tidak ada error
         if ($file_error === UPLOAD_ERR_OK) {
             $file_destination = '../assets/geojson/rencana/' . $file_name;
 
@@ -193,8 +243,16 @@ if (isset($_POST["submit"])) {
             // Error saat upload file
             echo "
                <script>
-                alert('Terjadi kesalahan saat upload file!');
-                document.location.href = 'ubah-rencana.php';
+                Swal.fire({
+                    position: 'center-center',
+                    icon: 'error',
+                    title: 'Oops :(',
+                    text: 'Terjadi kesalahan saat upload file!',
+                    showConfirmButton: false,
+                    timer: 3500
+                }).then(function() {
+                    window.location.href = 'ubah-rencana.php';
+                });
                </script>
             ";
             exit;
@@ -208,7 +266,6 @@ if (isset($_POST["submit"])) {
         $icon_tmp = $_FILES["icon"]["tmp_name"];
         $icon_error = $_FILES["icon"]["error"];
 
-        // Cek apakah file icon berhasil diupload dan tidak ada error
         if ($icon_error === UPLOAD_ERR_OK) {
             $icon_destination = '../assets/icon/rencana/' . $icon_name;
 
@@ -226,8 +283,16 @@ if (isset($_POST["submit"])) {
                 // Ekstensi file icon tidak valid
                 echo "
                    <script>
-                    alert('Ekstensi file icon tidak valid. Harap pilih file dengan ekstensi JPG, JPEG, atau PNG.');
-                    document.location.href = 'ubah-rencana.php';
+                    Swal.fire({
+                        position: 'center-center',
+                        icon: 'error',
+                        title: 'Oops :(',
+                        text: 'Ekstensi file icon tidak valid. Harap pilih file dengan ekstensi JPG, JPEG, atau PNG.',
+                        showConfirmButton: false,
+                        timer: 3500
+                    }).then(function() {
+                        window.location.href = 'ubah-rencana.php';
+                    });
                    </script>
                 ";
                 exit;
@@ -236,8 +301,16 @@ if (isset($_POST["submit"])) {
             // Error saat upload file icon
             echo "
                <script>
-                alert('Terjadi kesalahan saat upload file icon!');
-                document.location.href = 'ubah-rencana.php';
+                Swal.fire({
+                    position: 'center-center',
+                    icon: 'error',
+                    title: 'Oops :(',
+                    text: 'Terjadi kesalahan saat upload file icon!',
+                    showConfirmButton: false,
+                    timer: 3500
+                }).then(function() {
+                    window.location.href = 'ubah-rencana.php';
+                });
                </script>
             ";
             exit;
@@ -250,19 +323,36 @@ if (isset($_POST["submit"])) {
     if (mysqli_query($conn, $query)) {
         echo "
            <script> 
-            alert('Data berhasil diupdate!');
-            document.location.href = 'ubah-rencana.php';
+            Swal.fire({
+                position: 'center-center',
+                icon: 'success',
+                title: 'Selamat :)',
+                text: 'Data berhasil diupdate!',
+                showConfirmButton: false,
+                timer: 3500
+            }).then(function() {
+                window.location.href = 'ubah-rencana.php';
+            });
            </script>
         ";
     } else {
         echo "
            <script>
-            alert('Data gagal diupdate!');
-            document.location.href = 'ubah-rencana.php';
+            Swal.fire({
+                position: 'center-center',
+                icon: 'error',
+                title: 'Oops :(',
+                text: 'Data gagal diupdate!',
+                showConfirmButton: false,
+                timer: 3500
+            }).then(function() {
+                window.location.href = 'ubah-rencana.php';
+            });
            </script>
         ";
     }
 }
 ?>
+
 
 <?php include 'views/partials/starter-foot.php'; ?>

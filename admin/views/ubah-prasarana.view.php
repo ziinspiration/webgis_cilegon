@@ -1,4 +1,5 @@
 <?php include 'views/partials/starter-head.php' ?>
+<?php include 'views/partials/alert-hapus.php' ?>
 <div class="container-fluid">
     <h1 class="mt-5 mb-2 text-center text-dark">Daftar data prasarana</h1>
     <div class="row w-75 m-auto">
@@ -53,19 +54,57 @@
     };
 
     // Menggunakan class 'hapusData' sebagai selector untuk tombol hapus
+    // const hapusButtons = document.getElementsByClassName('hapusData');
+    // for (let i = 0; i < hapusButtons.length; i++) {
+    //     hapusButtons[i].addEventListener('click', function(event) {
+    //         event.preventDefault();
+    //         var konfirmasi = confirm("Apakah Anda yakin ingin menghapus?");
+    //         if (konfirmasi) {
+    //             console.log("Data dengan ID " + hapusButtons[i].getAttribute('id_prasarana') + " telah dihapus!");
+    //             // Tambahkan tindakan penghapusan di sini (misalnya, hapus data dari server)
+    //             window.location.href = "functions/delete-prasarana.php?id=" + hapusButtons[i].getAttribute(
+    //                 'id_prasarana');
+    //         } else {
+    //             console.log("Penghapusan dibatalkan.");
+    //         }
+    //     });
+    // }
+
     const hapusButtons = document.getElementsByClassName('hapusData');
     for (let i = 0; i < hapusButtons.length; i++) {
         hapusButtons[i].addEventListener('click', function(event) {
             event.preventDefault();
-            var konfirmasi = confirm("Apakah Anda yakin ingin menghapus?");
-            if (konfirmasi) {
-                console.log("Data dengan ID " + hapusButtons[i].getAttribute('id_prasarana') + " telah dihapus!");
-                // Tambahkan tindakan penghapusan di sini (misalnya, hapus data dari server)
-                window.location.href = "functions/delete-prasarana.php?id=" + hapusButtons[i].getAttribute(
-                    'id_prasarana');
-            } else {
-                console.log("Penghapusan dibatalkan.");
-            }
+
+            // Use SweetAlert for the confirmation dialog
+            Swal.fire({
+                title: 'Apakah Anda yakin ingin menghapus?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Ya, hapus!',
+                cancelButtonText: 'Tidak',
+                didOpen: () => {
+                    const sweetAlertContainer = document.querySelector('.swal2-container');
+                    if (sweetAlertContainer) {
+                        sweetAlertContainer.style.padding = '20px'; // Atur padding sesuai kebutuhan
+                        const sweetAlertIcon = sweetAlertContainer.querySelector('.swal2-icon');
+                        if (sweetAlertIcon) {
+                            sweetAlertIcon.style.marginBottom = '15px'; // Atur margin sesuai kebutuhan
+                        }
+                    }
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    console.log("Data dengan ID " + hapusButtons[i].getAttribute('id_prasarana') +
+                        " telah dihapus!");
+
+                    // Perform deletion action (e.g., delete data from the server)
+                    window.location.href = "functions/delete-prasarana.php?id=" + hapusButtons[i]
+                        .getAttribute(
+                            'id_prasarana');
+                } else {
+                    console.log("Penghapusan dibatalkan.");
+                }
+            });
         });
     }
 </script>

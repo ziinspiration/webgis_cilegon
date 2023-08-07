@@ -1,73 +1,74 @@
 <?php include 'views/partials/starter-head.php' ?>
+<?php include 'views/partials/alert-tambah-data.php'; ?>
 <style>
-* {
-    font-family: montserrat;
-}
-
-body {
-    background-image: url(../assets/index/footer2.jpg);
-}
-
-.orange {
-    color: orange !important;
-}
-
-.bg-orange {
-    background-color: orange;
-}
-
-form {
-    border: 2px solid orange !important;
-}
-
-@media screen and (max-width:550px) {
-    .formulir {
-        flex-direction: column;
+    * {
+        font-family: montserrat;
     }
 
-    .left,
-    .right {
-        width: 100% !important;
-        margin: 0 !important;
+    body {
+        background-image: url(../assets/index/footer2.jpg);
     }
 
-    .file-now {
-        font-size: 9px !important;
-        margin-top: 5px !important;
+    .orange {
+        color: orange !important;
     }
 
-    .btn-primary {
-        width: 100% !important;
+    .bg-orange {
+        background-color: orange;
     }
 
+    form {
+        border: 2px solid orange !important;
+    }
+
+    @media screen and (max-width:550px) {
+        .formulir {
+            flex-direction: column;
+        }
+
+        .left,
+        .right {
+            width: 100% !important;
+            margin: 0 !important;
+        }
+
+        .file-now {
+            font-size: 9px !important;
+            margin-top: 5px !important;
+        }
+
+        .btn-primary {
+            width: 100% !important;
+        }
+
+
+        .view-change-img {
+            margin: auto !important;
+            margin-bottom: 30px !important;
+        }
+    }
+
+    @media screen and (max-width:990px) {
+        .file-now {
+            font-size: 11px !important;
+            margin-top: 5px !important;
+        }
+    }
+
+    .row {
+        margin-top: 100px !important;
+        margin-bottom: 100px !important;
+    }
 
     .view-change-img {
-        margin: auto !important;
-        margin-bottom: 30px !important;
+        height: 150px !important;
+        width: 150px !important;
     }
-}
 
-@media screen and (max-width:990px) {
-    .file-now {
-        font-size: 11px !important;
-        margin-top: 5px !important;
+    .img-preview {
+        height: 90px !important;
+        width: 90px !important;
     }
-}
-
-.row {
-    margin-top: 100px !important;
-    margin-bottom: 100px !important;
-}
-
-.view-change-img {
-    height: 150px !important;
-    width: 150px !important;
-}
-
-.img-preview {
-    height: 90px !important;
-    width: 90px !important;
-}
 </style>
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -79,21 +80,18 @@ form {
                     <div class="left w-50 me-3">
                         <div class="mb-3">
                             <label for="nama_prasarana" class="form-label orange ps-1 pe-1">Nama data</label>
-                            <input type="text" class="form-control p-2" id="nama_prasarana" name="nama_prasarana"
-                                value="<?= $getdata['nama_prasarana']; ?>" required />
+                            <input type="text" class="form-control p-2" id="nama_prasarana" name="nama_prasarana" value="<?= $getdata['nama_prasarana']; ?>" required />
                         </div>
                         <div class="mb-3">
                             <label for="file_json" class="form-label orange ps-1 pe-1">File geojson</label>
                             <div class="input-group">
-                                <input type="file" class="form-control p-2" id="file_json" name="file_json"
-                                    accept=".geojson" />
-                                <label class="input-group-text p-2" for="file_json"><i
-                                        class="fa-solid fa-magnifying-glass"></i></label>
+                                <input type="file" class="form-control p-2" id="file_json" name="file_json" accept=".geojson" />
+                                <label class="input-group-text p-2" for="file_json"><i class="fa-solid fa-magnifying-glass"></i></label>
                             </div>
                             <div class="file-now text-light p-2">
                                 <?php if (!empty($getdata['file_json'])) : ?>
-                                <p><small>File sekarang = <?= basename($getdata['file_json']); ?></small></p>
-                                <p class="text-danger"><small>*Jangan buat nama file sama dengan sebelumnya</small></p>
+                                    <p><small>File sekarang = <?= basename($getdata['file_json']); ?></small></p>
+                                    <p class="text-danger"><small>*Jangan buat nama file sama dengan sebelumnya</small></p>
                                 <?php endif; ?>
                             </div>
                         </div>
@@ -104,15 +102,12 @@ form {
                     <div class="right w-50 me-3 d-flex flex-column">
                         <div class="mb-5">
                             <label for="checkbox_id" class="form-label orange ps-1 pe-1">Checkbox ID</label>
-                            <input type="text" class="form-control p-2" id="checkbox_id" name="checkbox_id"
-                                value="<?= $getdata['checkbox_id']; ?>" required />
+                            <input type="text" class="form-control p-2" id="checkbox_id" name="checkbox_id" value="<?= $getdata['checkbox_id']; ?>" required />
                         </div>
                         <?php if ($getdata['id_jenis'] === '1') : ?>
-                        <div
-                            class="view-change-img mt-5 d-flex m-auto align-items-center justify-content-center p-5 rounded-circle bg-light">
-                            <img class="img-preview" src="../assets/icon/prasarana/<?= $getdata["icon"]; ?>"
-                                alt="Preview" id="preview" />
-                        </div>
+                            <div class="view-change-img mt-5 d-flex m-auto align-items-center justify-content-center p-5 rounded-circle bg-light">
+                                <img class="img-preview" src="../assets/icon/prasarana/<?= $getdata["icon"]; ?>" alt="Preview" id="preview" />
+                            </div>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -120,24 +115,21 @@ form {
                 <div class="bottom d-flex flex-column">
                     <?php if ($getdata['id_jenis'] === '1') : ?>
 
-                    <div class="w-100 kolom">
-                        <label for="icon" class="form-label orange ps-1 pe-1">Icon file</label>
-                        <input type="file" onchange="previewImage(event)" class="form-control p-2" id="icon" name="icon"
-                            accept=".jpg, .jpeg, .png" />
-                    </div>
+                        <div class="w-100 kolom">
+                            <label for="icon" class="form-label orange ps-1 pe-1">Icon file</label>
+                            <input type="file" onchange="previewImage(event)" class="form-control p-2" id="icon" name="icon" accept=".jpg, .jpeg, .png" />
+                        </div>
 
-                    <div class="w-100 kolom">
-                        <label for="icon_id" class="form-label orange ps-1 pe-1">Icon ID</label>
-                        <input type="text" class="form-control p-2" id="icon_id" name="icon_id"
-                            value="<?= $getdata['icon_id']; ?>" required />
-                    </div>
+                        <div class="w-100 kolom">
+                            <label for="icon_id" class="form-label orange ps-1 pe-1">Icon ID</label>
+                            <input type="text" class="form-control p-2" id="icon_id" name="icon_id" value="<?= $getdata['icon_id']; ?>" required />
+                        </div>
 
                     <?php endif; ?>
                 </div>
 
                 <div class="btn-kirim d-flex justify-content-end">
-                    <button type="submit" name="submit" class="btn btn-primary w-25 p-2 mt-4 mb-4"><i
-                            class="fa-solid fa-floppy-disk me-2"></i>Simpan</button>
+                    <button type="submit" name="submit" class="btn btn-primary w-25 p-2 mt-4 mb-4"><i class="fa-solid fa-floppy-disk me-2"></i>Simpan</button>
                 </div>
             </form>
         </div>
@@ -148,11 +140,61 @@ form {
 
 <?php
 if (isset($_POST["submit"])) {
-    // ambil data dari form
+    // Ambil data dari form dan lakukan pembersihan jika perlu
     $id = $_POST["id"];
     $nama_prasarana = $_POST["nama_prasarana"];
     $checkbox_id = $_POST["checkbox_id"];
     $icon_id = $_POST["icon_id"];
+
+    // cek apakah nama_prasarana sudah ada dalam database
+    $query_check_nama_prasarana = "SELECT COUNT(*) FROM prasarana WHERE nama_prasarana = ? AND id != ?";
+    $stmt_check_nama_prasarana = mysqli_prepare($conn, $query_check_nama_prasarana);
+    mysqli_stmt_bind_param($stmt_check_nama_prasarana, 'si', $nama_prasarana, $id);
+    mysqli_stmt_execute($stmt_check_nama_prasarana);
+    mysqli_stmt_bind_result($stmt_check_nama_prasarana, $nama_prasarana_count);
+    mysqli_stmt_fetch($stmt_check_nama_prasarana);
+    mysqli_stmt_close($stmt_check_nama_prasarana);
+
+    if ($nama_prasarana_count > 0) {
+        echo "
+           <script>
+            Swal.fire({
+                position: 'center-center',
+                icon: 'error',
+                title: 'Oops :(',
+                text: 'Data gagal diupdate! Nama data sudah ada dalam database.',
+                showConfirmButton: false,
+                timer: 3500
+            });
+           </script>
+        ";
+        exit;
+    }
+
+    // cek apakah checkbox_id sudah ada dalam database
+    $query_check_checkbox_id = "SELECT COUNT(*) FROM prasarana WHERE checkbox_id = ? AND id != ?";
+    $stmt_check_checkbox_id = mysqli_prepare($conn, $query_check_checkbox_id);
+    mysqli_stmt_bind_param($stmt_check_checkbox_id, 'si', $checkbox_id, $id);
+    mysqli_stmt_execute($stmt_check_checkbox_id);
+    mysqli_stmt_bind_result($stmt_check_checkbox_id, $checkbox_id_count);
+    mysqli_stmt_fetch($stmt_check_checkbox_id);
+    mysqli_stmt_close($stmt_check_checkbox_id);
+
+    if ($checkbox_id_count > 0) {
+        echo "
+           <script>
+            Swal.fire({
+                position: 'center-center',
+                icon: 'error',
+                title: 'Oops :(',
+                text: 'Data gagal diupdate! Checkbox ID sudah ada dalam database.',
+                showConfirmButton: false,
+                timer: 3500
+            });
+           </script>
+        ";
+        exit;
+    }
 
     // query update data prasarana
     $query = "UPDATE prasarana SET
@@ -172,13 +214,21 @@ if (isset($_POST["submit"])) {
 
             // Tambahkan query untuk update file
             $query .= ", file_json = '$file_name'";
-            
+
             // Pindahkan file ke folder tujuan
             if (!move_uploaded_file($file_tmp, $file_destination)) {
                 echo "
                    <script>
-                    alert('Terjadi kesalahan saat upload file!');
-                    document.location.href = 'ubah-prasarana.php';
+                    Swal.fire({
+                        position: 'center-center',
+                        icon: 'error',
+                        title: 'Oops :(',
+                        text: 'Terjadi kesalahan saat upload file!',
+                        showConfirmButton: false,
+                        timer: 3500
+                    }).then(function() {
+                        window.location.href = 'ubah-prasarana';
+                    });
                    </script>
                 ";
                 exit;
@@ -187,8 +237,16 @@ if (isset($_POST["submit"])) {
             // Error saat upload file
             echo "
                <script>
-                alert('Terjadi kesalahan saat upload file!');
-                document.location.href = 'ubah-prasarana.php';
+                Swal.fire({
+                    position: 'center-center',
+                    icon: 'error',
+                    title: 'Oops :(',
+                    text: 'Terjadi kesalahan saat upload file!',
+                    showConfirmButton: false,
+                    timer: 3500
+                }).then(function() {
+                    window.location.href = 'ubah-prasarana';
+                });
                </script>
             ";
             exit;
@@ -212,13 +270,21 @@ if (isset($_POST["submit"])) {
             if (in_array($icon_extension, $allowed_extensions)) {
                 // Tambahkan query untuk update icon
                 $query .= ", icon = '$icon_name'";
-                
+
                 // Pindahkan file icon ke folder tujuan
                 if (!move_uploaded_file($icon_tmp, $icon_destination)) {
                     echo "
                        <script>
-                        alert('Terjadi kesalahan saat upload file icon!');
-                        document.location.href = 'ubah-prasarana.php';
+                        Swal.fire({
+                            position: 'center-center',
+                            icon: 'error',
+                            title: 'Oops :(',
+                            text: 'Terjadi kesalahan saat upload file icon!',
+                            showConfirmButton: false,
+                            timer: 3500
+                        }).then(function() {
+                            window.location.href = 'ubah-prasarana';
+                        });
                        </script>
                     ";
                     exit;
@@ -226,21 +292,37 @@ if (isset($_POST["submit"])) {
             } else {
                 // Ekstensi file icon tidak valid
                 echo "
-               <script>
-                alert('Ekstensi file icon tidak valid. Harap pilih file dengan ekstensi JPG, JPEG, atau PNG.');
-                document.location.href = 'ubah-prasarana.php';
-               </script>
-            ";
+                   <script>
+                    Swal.fire({
+                        position: 'center-center',
+                        icon: 'error',
+                        title: 'Oops :(',
+                        text: 'Ekstensi file icon tidak valid. Harap pilih file dengan ekstensi JPG, JPEG, atau PNG.',
+                        showConfirmButton: false,
+                        timer: 3500
+                    }).then(function() {
+                        window.location.href = 'ubah-prasarana';
+                    });
+                   </script>
+                ";
                 exit;
             }
         } else {
             // Error saat upload file icon
             echo "
-           <script>
-            alert('Terjadi kesalahan saat upload file icon!');
-            document.location.href = 'ubah-prasarana.php';
-           </script>
-        ";
+               <script>
+                Swal.fire({
+                    position: 'center-center',
+                    icon: 'error',
+                    title: 'Oops :(',
+                    text: 'Terjadi kesalahan saat upload file icon!',
+                    showConfirmButton: false,
+                    timer: 3500
+                }).then(function() {
+                    window.location.href = 'ubah-prasarana';
+                });
+               </script>
+            ";
             exit;
         }
     }
@@ -251,20 +333,35 @@ if (isset($_POST["submit"])) {
     if (mysqli_query($conn, $query)) {
         echo "
            <script> 
-            alert('Data berhasil diupdate!');
-            document.location.href = 'ubah-prasarana.php';
+            Swal.fire({
+                position: 'center-center',
+                icon: 'success',
+                title: 'Selamat :)',
+                text: 'Data berhasil diupdate!',
+                showConfirmButton: false,
+                timer: 3500
+            }).then(function() {
+                window.location.href = 'ubah-prasarana';
+            });
            </script>
         ";
     } else {
         echo "
            <script>
-            alert('Data gagal diupdate!');
-            document.location.href = 'ubah-prasarana.php';
+            Swal.fire({
+                position: 'center-center',
+                icon: 'error',
+                title: 'Oops :(',
+                text: 'Data gagal diupdate!',
+                showConfirmButton: false,
+                timer: 3500
+            }).then(function() {
+                window.location.href = 'ubah-prasarana';
+            });
            </script>
         ";
     }
 }
 ?>
-
 
 <?php include 'views/partials/starter-foot.php' ?>

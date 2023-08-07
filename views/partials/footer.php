@@ -3,23 +3,26 @@
         <div class="row">
             <div class="col-lg-3 col-md-6">
                 <h5 class="orange">Tentang Kami</h5>
-                <p>Deskripsi mengenai Kabupaten Kota Cilegon dan informasi lainnya.</p>
+                <p>Website Geospasial BAPPEDA Kota Cilegon adalah platform online yang menyajikan informasi peta dan
+                    data geografis wilayah Kota Cilegon. Dengan peta interaktif dan data terstruktur, website ini
+                    membantu masyarakat dan pihak terkait dalam perencanaan, pengambilan keputusan, dan pemantauan
+                    pembangunan di kota tersebut.</p>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h5 class="orange">Link Penting</h5>
                 <ul class="list-unstyled list-link d-flex">
                     <div class="list-left me-4">
-                        <li><a href="index.php">Beranda</a></li>
-                        <li><a href="wilayah.php">Wilayah</a></li>
-                        <li><a href="skpd.php">Skpd</a></li>
-                        <li><a href="datapokok.php">Data pokok</a></li>
-                        <li><a href="mapTematik.php">Map tematik</a></li>
+                        <li><a href="index">Beranda</a></li>
+                        <li><a href="wilayah">Wilayah</a></li>
+                        <li><a href="skpd">Skpd</a></li>
+                        <li><a href="datapokok">Data pokok</a></li>
+                        <li><a href="mapTematik">Map tematik</a></li>
                     </div>
                     <div class="list-left">
-                        <li><a href="mapSpasial.php">Map spasial</a></li>
-                        <li><a href="kJalan.php">Kemantapan jalan</a></li>
-                        <li><a href="rtrw.php">RT RW Kota Cilegon</a></li>
-                        <li><a href="lakip.php">LAKIP Kota Cilegon</a></li>
+                        <li><a href="mapSpasial">Map spasial</a></li>
+                        <li><a href="kJalan">Kemantapan jalan</a></li>
+                        <li><a href="rtrw">RT RW Kota Cilegon</a></li>
+                        <li><a href="lakip">LAKIP Kota Cilegon</a></li>
                     </div>
                 </ul>
             </div>
@@ -65,8 +68,10 @@
                     </a>
                     <?php endforeach; ?>
                 </div>
-
             </div>
         </div>
+    </div>
+    <div class="version d-flex justify-content-end">
+        <p class="text-light mt-3 me-5"><span class="bold">Version</span> 1.0</p>
     </div>
 </footer>

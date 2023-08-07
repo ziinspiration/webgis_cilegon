@@ -1,4 +1,6 @@
 <?php
+include_once 'sweetalert.php';
+
 if (!function_exists('koneksi')) {
     function koneksi()
     {

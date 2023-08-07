@@ -1,4 +1,5 @@
 <?php include 'views/partials/starter-head.php'; ?>
+<?php include 'views/partials/alert-tambah-data.php'; ?>
 <style>
     * {
         font-family: montserrat;
@@ -80,6 +81,181 @@
         margin: auto !important;
     }
 </style>
+<?php
+if (isset($_POST['send'])) {
+    // Mendapatkan data dari form
+    $nama_sarana = htmlspecialchars($_POST['nama_sarana']);
+    $kategori = $_POST['kategori_id'];
+    $id_jenis_sarana = $_POST['id_jenis_sarana'];
+
+    $icon = ($id_jenis_sarana == 1 && isset($_POST['icon'])) ? htmlspecialchars($_POST['icon']) : '0';
+    $icon_id = ($id_jenis_sarana == 1) ? htmlspecialchars($_POST['icon_id']) : '0';
+
+    $checkbox_id = htmlspecialchars($_POST['checkbox_id']);
+
+    // Cek apakah file JSON telah diunggah
+    if (isset($_FILES['file_json']) && $_FILES['file_json']['error'] === UPLOAD_ERR_OK) {
+        // Mendapatkan informasi file JSON
+        $file_name = $_FILES['file_json']['name'];
+        $file_tmp = $_FILES['file_json']['tmp_name'];
+
+        // Cek apakah nama_sarana sudah ada dalam database
+        $query_check_nama_sarana = "SELECT COUNT(*) FROM sarana WHERE nama_sarana = ?";
+        $stmt_check_nama_sarana = mysqli_prepare($conn, $query_check_nama_sarana);
+        mysqli_stmt_bind_param($stmt_check_nama_sarana, 's', $nama_sarana);
+        mysqli_stmt_execute($stmt_check_nama_sarana);
+        mysqli_stmt_bind_result($stmt_check_nama_sarana, $nama_sarana_count);
+        mysqli_stmt_fetch($stmt_check_nama_sarana);
+        mysqli_stmt_close($stmt_check_nama_sarana);
+
+        if ($nama_sarana_count > 0) {
+            echo "
+            <script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Gagal mengirim data!',
+                    text: 'Nama data sudah ada dalam database.',
+                    showConfirmButton: true,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'daftar-sarana';
+                    }
+                });
+            </script>";
+            exit;
+        }
+
+        // Cek apakah checkbox_id sudah ada dalam database
+        $query_check_checkbox_id = "SELECT COUNT(*) FROM sarana WHERE checkbox_id = ?";
+        $stmt_check_checkbox_id = mysqli_prepare($conn, $query_check_checkbox_id);
+        mysqli_stmt_bind_param($stmt_check_checkbox_id, 's', $checkbox_id);
+        mysqli_stmt_execute($stmt_check_checkbox_id);
+        mysqli_stmt_bind_result($stmt_check_checkbox_id, $checkbox_id_count);
+        mysqli_stmt_fetch($stmt_check_checkbox_id);
+        mysqli_stmt_close($stmt_check_checkbox_id);
+
+        if ($checkbox_id_count > 0) {
+            echo "
+            <script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Gagal mengirim data!',
+                    text: 'Checkbox ID sudah ada dalam database.',
+                    showConfirmButton: true,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'daftar-sarana';
+                    }
+                });
+            </script>";
+            exit;
+        }
+
+        // Pindahkan file JSON ke direktori tujuan
+        $upload_dir = '../assets/geojson/sarana/';
+        $upload_path = $upload_dir . $file_name;
+        if (move_uploaded_file($file_tmp, $upload_path)) {
+            // Cek apakah file icon telah diunggah jika jenis file adalah "marker" (ID 1)
+            if ($id_jenis_sarana == 1 && isset($_FILES['icon']) && $_FILES['icon']['error'] === UPLOAD_ERR_OK) {
+                // Mendapatkan informasi file icon
+                $file_icon_name = $_FILES['icon']['name'];
+                $file_icon_tmp = $_FILES['icon']['tmp_name'];
+
+                // Mendapatkan ekstensi file icon
+                $file_icon_ext = strtolower(pathinfo($file_icon_name, PATHINFO_EXTENSION));
+
+                // Batasi jenis file yang diizinkan
+                $allowed_icon_exts = array('png', 'jpg', 'jpeg');
+
+                // Periksa apakah ekstensi file icon valid
+                if (in_array($file_icon_ext, $allowed_icon_exts)) {
+                    // Pindahkan file icon ke direktori tujuan
+                    $upload_icon_dir = '../assets/icon/sarana/';
+                    $upload_icon_path = $upload_icon_dir . $file_icon_name;
+                    if (move_uploaded_file($file_icon_tmp, $upload_icon_path)) {
+                        $icon = $file_icon_name;
+                    } else {
+                        echo "
+                        <script>
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Gagal mengunggah file icon!',
+                                showConfirmButton: true,
+                            });
+                        </script>";
+                    }
+                } else {
+                    echo "
+                    <script>
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Jenis file icon tidak valid!',
+                            showConfirmButton: true,
+                        });
+                    </script>";
+                }
+            }
+
+            // Memasukkan data ke tabel sarana
+            $query = "INSERT INTO sarana (nama_sarana, file_json, icon, icon_id, checkbox_id, kategori_id, id_jenis_sarana) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            $stmt = mysqli_prepare($conn, $query);
+            mysqli_stmt_bind_param($stmt, 'ssssssi', $nama_sarana, $file_name, $icon, $icon_id, $checkbox_id, $kategori, $id_jenis_sarana);
+
+            // Menjalankan query
+            if (mysqli_stmt_execute($stmt)) {
+                mysqli_stmt_close($stmt);
+                mysqli_close($conn);
+                echo "
+                <script>
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Data berhasil ditambahkan!',
+                        showConfirmButton: true,
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = 'daftar-sarana';
+                        }
+                    });
+                </script>";
+                exit;
+            } else {
+                echo "
+                <script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Terjadi kesalahan!',
+                        text: '" . mysqli_error($conn) . "',
+                        showConfirmButton: true,
+                    });
+                </script>";
+            }
+            mysqli_stmt_close($stmt);
+        } else {
+            echo "
+            <script>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Gagal mengunggah file GeoJSON!',
+                    showConfirmButton: true,
+                });
+            </script>";
+        }
+    } else {
+        echo "
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'File GeoJSON tidak valid!',
+                showConfirmButton: true,
+            });
+        </script>";
+    }
+
+    // Menutup koneksi database
+    mysqli_close($conn);
+}
+
+?>
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="w-75 align-content-center">
