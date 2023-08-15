@@ -28,6 +28,21 @@
     .profile-picture img {
         width: 250px !important;
         height: 250px !important;
+        border: 3px solid whitesmoke;
+        outline: 2px solid lightgray;
+        box-shadow: 0 0 5px lightgray;
+        margin-bottom: 13px !important;
+    }
+
+    @media screen and (max-width:990px) {
+        .grup {
+            width: 100% !important;
+        }
+
+        .profile-picture img {
+            margin: auto !important;
+            margin-bottom: 20px !important;
+        }
     }
 </style>
 <div class="container-fluid">
@@ -39,33 +54,36 @@
         </div>
         <div class="col-md-9">
             <div class="content">
-                <div class="profile-picture d-flex flex-column mb-3">
-                    <?php if (!empty($admin['foto_profile'])) : ?>
-                        <img src="<?= $admin['foto_profile']; ?>" class="w-25 rounded-circle" alt="Profile Picture">
-                    <?php else : ?>
-                        <img src="../assets/index/profile-picture.jpg" class="w-25 rounded-circle" alt="Default Profile Picture">
-                    <?php endif; ?>
-                    <input type="file" onchange="previewImage(this)" class="form-control w-25 p-2 mt-2" name="new_foto_profile" accept="image/*">
-                </div>
-                <div class="input-group mb-3 w-75 d-flex align-items-center">
-                    <span class="input-group-text p-3" id="basic-addon1"><i class="fa-solid fa-user"></i></span>
-                    <input type="text" class="form-control p-3" name="nama_pegawai" value="<?= $admin['nama_pegawai']; ?>" aria-describedby="basic-addon1" readonly>
-                    <i class="change text-primary fa-solid fa-pen ms-4" onclick="enableEdit('nama_pegawai')"></i>
-                </div>
-                <div class="input-nik mb-3">
-                    <div class="input-group w-75 d-flex align-items-center">
-                        <span class="input-group-text p-3" id="basic-addon1"><i class="fa-solid fa-id-badge"></i></span>
-                        <input type="text" class="form-control p-3" name="nik" id="nik" value="<?= $admin['nik']; ?>" aria-describedby="basic-addon1" readonly>
-                        <i class="change text-primary fa-solid fa-pen ms-4" onclick="enableEdit('nik')"></i>
+                <form enctype="multipart/form-data">
+                    <div class="profile-picture d-flex flex-column mb-4">
+                        <?php if (!empty($admin['foto_profile'])) : ?>
+                            <img src="../assets/profile_picture/<?= $admin['foto_profile']; ?>" class="w-25 rounded-circle" alt="Profile Picture">
+                        <?php else : ?>
+                            <img src="../assets/index/profile-picture.jpg" class="w-25 rounded-circle" alt="Default Profile Picture">
+                        <?php endif; ?>
+                        <input type="file" onchange="previewImage(this)" class="form-control input-image w-50 p-2 mt-2 grup" name="new_foto_profile" accept="image/*">
                     </div>
-                    <span id="nik-error" class="text-danger ms-5 mt-1"></span>
-                </div>
-                <p>Apakah anda ingin merubah password ? <a class="text-decoration-none" href="">KLIK
-                        DISINI</a></p>
+                    <hr class="mb-4">
+                    <div class="input-group mb-3 w-75 d-flex align-items-center grup">
+                        <span class="input-group-text p-3" id="basic-addon1"><i class="fa-solid fa-user"></i></span>
+                        <input type="text" class="form-control p-3" name="nama_pegawai" value="<?= $admin['nama_pegawai']; ?>" aria-describedby="basic-addon1" readonly>
+                        <i class="change text-primary fa-solid fa-pen ms-4" onclick="enableEdit('nama_pegawai')"></i>
+                    </div>
+                    <div class="input-nik mb-3">
+                        <div class="input-group w-75 d-flex align-items-center grup">
+                            <span class="input-group-text p-3" id="basic-addon1"><i class="fa-solid fa-id-badge"></i></span>
+                            <input type="text" class="form-control p-3" name="nik" id="nik" value="<?= $admin['nik']; ?>" aria-describedby="basic-addon1" readonly>
+                            <i class="change text-primary fa-solid fa-pen ms-4" onclick="enableEdit('nik')"></i>
+                        </div>
+                        <span id="nik-error" class="text-danger ms-5 mt-1"></span>
+                    </div>
+                    <p>Apakah anda ingin merubah password ? <a class="text-decoration-none" href="update-password-self?id=<?= $admin["id"] ?>">KLIK
+                            DISINI</a></p>
             </div>
             <div class="button d-flex justify-content-end mb-5">
                 <button type="button" class="btn btn-primary me-5 p-2 px-3 rounded" onclick="saveChanges()"><i class="fa-solid fa-floppy-disk"></i> Save</button>
             </div>
+            </form>
         </div>
     </div>
 </div>

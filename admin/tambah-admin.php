@@ -28,7 +28,7 @@ function registrasi($data)
     $result = mysqli_query($conn, "SELECT nik FROM admin WHERE nik = '$nik'");
 
     if (mysqli_fetch_assoc($result)) {
-        return array('status' => 'error', 'message' => 'Admin dengan NIK tersebut sudah terdaftar');
+        return array('status' => 'error', 'message' => 'Admin dengan NIP tersebut sudah terdaftar');
     }
 
     // Cek konfirmasi password

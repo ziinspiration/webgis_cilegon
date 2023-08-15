@@ -3,7 +3,6 @@
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.1/dist/leaflet.markercluster.js"></script>
 <script src="../assets/sweetalert/cdn.jsdelivr.net_npm_sweetalert2@11_dist_sweetalert2.min.js"></script>
-<script src="script/login.js"></script>
 <script>
     var oldSignalStrength = -1; // Penyimpanan kekuatan sinyal sebelumnya
 

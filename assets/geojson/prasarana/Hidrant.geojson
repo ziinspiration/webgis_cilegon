@@ -1,0 +1,595 @@
+{
+  "type": "FeatureCollection",
+  "name": "Hindrant",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:EPSG::3395" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Maulana Yusuf No. 5 Kel. Citangkil",
+        "LETAK": "Depan Kantor BAPPEDA Kola Cilegon",
+        "Y": -6.013576,
+        "X": 106.043293
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11804685.378801912069321, -666187.380740699358284]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Lumba-Lumba No. 1, Kel. Taman Baru Kec. Citangkil",
+        "LETAK": "Kav. Blok C (Belakang Alfa Midi)",
+        "Y": -6.019746,
+        "X": 106.048327
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11805245.761118564754725, -666873.453465869999491]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Sunan Ampel 3 Blok FWB 31 No. 1, Kel. Wamasari",
+        "LETAK": "Akses Jalan Masuk Perum Wamasari (Selelah Rel KA)",
+        "Y": -6.012783,
+        "X": 106.012278
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11801232.804794957861304, -666099.203732376219705]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Brigjend KH. Syamun No. 26 RT1/RW5, Kel. Citangkil",
+        "LETAK": "Akses Jalan Masuk Link. KubangSepal (Setelah Rel KA)",
+        "Y": -6.010165,
+        "X": 106.03152
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11803374.814436802640557, -665808.098215981386602]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Sunan Kudus II. Link. Warung Juwet Kel. Samangraya",
+        "LETAK": "Perempatan Jalan (SelelahRel KA)",
+        "Y": -6.011925,
+        "X": 105.999081
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11799763.721474958583713, -666003.799247119924985]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. KH. Agus Salim No.3, Kel. Kebonsari",
+        "LETAK": "Seberang Krakatau Tecfmology, Abes masuk Link. Leuwueng Sawo (depan indomarel, setefah Rel KA)",
+        "Y": -6.011748,
+        "X": 106.016698
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11801724.836944265291095, -665984.117921227938496]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Lingkar Selatan, Kel. Lebak Denok",
+        "LETAK": "Perempalan ( Mancak - Kerenceng )",
+        "Y": -6.04907,
+        "X": 106.058555
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11806384.336870398372412, -670134.241683256230317]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Lembang Raya, Kel. Citangkil",
+        "LETAK": "Depan Mushola",
+        "Y": -6.020638,
+        "X": 106.041057
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11804436.468420498073101, -666972.639997385209426]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Sunan Drajat RT.09/04 Link. Pintu Air, Kel. Kubangsari",
+        "LETAK": "Depan Masjid Pintu Air (Setelah Rel KA)",
+        "Y": -6.011275,
+        "X": 105.989408
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11798686.928040515631437, -665931.523223421885632]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Sunan Gunung Jati Link. Lijajar Kel. Tegal Ratu Kec. Cinandan",
+        "LETAK": "Akses Jalan Masuk Kel. Ciwandan, (Depan Masjid, Setelah Rel KA)",
+        "Y": -6.018206,
+        "X": 105.971771
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11796723.58618139475584, -666702.212532948236912]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Sunan Bonang Na. 55, Kel. Kubangsari",
+        "LETAK": "Akses masuk Link. Penauan (setielah kiri, selelahrel KA)",
+        "Y": -6.011597,
+        "X": 105.987049
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11798424.325361734256148, -665967.327642687479965]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Lingkar Selatan, Kel. Randakari",
+        "LETAK": "Depan PT Marcusuar lnduslri Beton",
+        "Y": -6.039072,
+        "X": 105.993162
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11799104.821408953517675, -669022.457831217790954]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Lingkar Selatan, Kel. Randakari",
+        "LETAK": "Depan Warung Ria Jaya",
+        "Y": -6.031285,
+        "X": 105.974318
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11797007.116924446076155, -668156.552969710086472]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Raya Cilegon Serang Km 2 Kel. Cibeber",
+        "LETAK": "(Seberang Madrasah Al-Jauharotunnaqiyah, Bawah Jembatan Penyeberangan)",
+        "Y": -6.028023,
+        "X": 106.073384
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11808035.093599371612072, -667793.826310577103868]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Nuri Blok E No. 21 Perumnas Ctbeber",
+        "LETAK": "(Belakang Kantor BPN Cilegon)",
+        "Y": -6.033226,
+        "X": 106.066818
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11807304.169822823256254, -668372.388612693059258]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. PCI Blok A11 No. 1d, Kel. Kedaleman",
+        "LETAK": "Komplek Ruko PCI (seberang Executive Gym)",
+        "Y": -6.035866,
+        "X": 106.080181
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11808791.732178293168545, -668665.953031539684162]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Kubang Laban, Kel. Kedaleman",
+        "LETAK": "Seberang Dinas LH",
+        "Y": -6.003175,
+        "X": 106.087852
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11809645.66399216838181, -665030.860109148896299]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Cendana Raya Link. Jerang",
+        "LETAK": "(Seberang Yayasan Al-lnayah)",
+        "Y": -6.033983,
+        "X": 106.058068
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11806330.124278383329511, -668456.565837667207234]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Sultan, Kel. Kedaleman",
+        "LETAK": "Depan Pertigaan Terminal Seruni, Arah ke Bojonegara",
+        "Y": -6.021554,
+        "X": 106.085443
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11809377.495338847860694, -667074.495396554819308]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "Griya Praja Mandiri, Kel. Kalitimbang",
+        "LETAK": "Akses Jalan Masuk Griya Praja Mandiri (Sebelah Kiri Setelah Jembatan)",
+        "Y": -6.041235,
+        "X": 106.063664
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11806953.068148860707879, -669262.983019734616391]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. KH. Abdul Latif, Kel. Karangasem",
+        "LETAK": "Samping KPU Kola Cllegon",
+        "Y": -6.036343,
+        "X": 106.049276
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11805351.403315328061581, -668718.994939047493972]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Kepodang No. 15, Kel. Bendungan",
+        "LETAK": "Seberang Ruko Pertigaan Kepodang-Pagebangan",
+        "Y": -6.026028,
+        "X": 106.053992
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11805876.386033907532692, -667571.988133791601285]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Raya Ciwedus, Kel. Ciwaduk",
+        "LETAK": "(Depan Masjid Asy-Syuhada, BBS 3)",
+        "Y": -6.02952,
+        "X": 106.041992
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11804540.552144389599562, -667960.288883723667823]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. KH. Tb. Ismail, Kel. Ciwaduk",
+        "LETAK": "Pojok Pasar Kelapa (BLOK F), arah ke SMAN 1 Cilegon",
+        "Y": -6.033226,
+        "X": 106.049035
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11805324.575318047776818, -668372.388612693059258]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. KH. Tb. Lsmail, Kel. Ciwaduk",
+        "LETAK": "(Depan Masjid Al Muhajirin)",
+        "Y": -6.028632,
+        "X": 106.049353
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11805359.974916117265821, -667861.545497604878619]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Ketileng Barat, Kel. Kelieng",
+        "LETAK": "Depan Madrasah Al-ljtimaiyyah",
+        "Y": -6.025099,
+        "X": 106.059941
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11806538.625684637576342, -667468.686327413190156]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Lingkar Selatan, Kel. Bagendung",
+        "LETAK": "Simpul JLS-Ciwedus",
+        "Y": -6.042271,
+        "X": 106.035479
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11803815.528300851583481, -669378.186367496382445]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Pepaya No. 28, Kel. Ciwaduk",
+        "LETAK": null,
+        "Y": -6.022635,
+        "X": 106.052891
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11805753.823274545371532, -667194.698334971675649]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Kapl P. Tendean Km 3 Panggung Rawi, Kel. Jombang",
+        "LETAK": "Depan UGD RSUD Cilegon",
+        "Y": -6.002757,
+        "X": 106.066641
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11807284.466272953897715, -664984.381813023705035]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Kapl P. Tendean No. 2, Kel.Panggung Rawi",
+        "LETAK": "(Seberang Ex. Dinkes/ Alfa Midi, Depan Ruko Acing)",
+        "Y": -6.010277,
+        "X": 106.060198
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11806567.234793771058321, -665820.551898853387684]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Raya Bojonegara, Kel. Jombang Wetan",
+        "LETAK": "(Pangkalan Ojek Samping Ex. Matahari)",
+        "Y": -6.018426,
+        "X": 106.05581
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11806078.764868170022964, -666726.675493261194788]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Cut Nyak Dien No. 34, Kel. Jombang Welan",
+        "LETAK": "(Seberang SMPN 1 Cilegon)",
+        "Y": -6.019596,
+        "X": 106.05368
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11805841.654352782294154, -666856.774132606573403]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Peganrungan Baru No. 5, Kel. Jombang Wetan",
+        "LETAK": "Teman Kota seberang Dinsos (Ex. Pasar Baru Cilegon)",
+        "Y": -6.012525,
+        "X": 106.059286
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11806465.711418168619275, -666070.51565434562508]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "Komplek Sukmajaya Mandiri, Kel. Sukmajaya",
+        "LETAK": "Depan Dinas DAMKAR, Akses masuk Cilegon Center Mall",
+        "Y": -6.02328,
+        "X": 106.06818
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11807455.786969283595681, -667266.419907695730217]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Pangeran Jayakarta No. 1, Link. Martapura",
+        "LETAK": "Depan Kantor Kel. Masigit",
+        "Y": -6.008091,
+        "X": 106.057126
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11806225.261318055912852, -665577.483164890669286]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Raya Kranggot No.150 Kel. Jombang Wetan",
+        "LETAK": null,
+        "Y": -6014878.0,
+        "X": 106.064373
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.79769313486231571e308, -1.79769313486231571e308]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Raden Sastradikarta Kel. Jombang Wetan",
+        "LETAK": "Depan Makam Tumenggung",
+        "Y": -6.014063,
+        "X": 106.053921
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11805868.482350062578917, -666241.532385405269451]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Jend. Sudirman, Kel. Ramanuju",
+        "LETAK": "Taman Simpang (Sampilg Polres Cilegon)",
+        "Y": -6.011103,
+        "X": 106.043522
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11804710.870965303853154, -665912.39789025101345]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Bukit Palem No.3, Kel. Kotabumi",
+        "LETAK": "Akses Jalan Keluar Perumahan Bukit Palem (Dekal Jembatan Tol)",
+        "Y": -5.986298,
+        "X": 106.036622
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11803942.766478829085827, -663154.299797027138993]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Kaligandu, Kel. Purwakarta",
+        "LETAK": "Samping Madrasah (Jalan Masuk Kel. Purwakarla)",
+        "Y": -5.990649,
+        "X": 106.058144
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11806338.584559682756662, -663638.083584160660394]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "Jl. KH. Simin No. E5/6, Kel. Kebon Dalem",
+        "LETAK": "Pertigaan JI. KH. Simin - JI. Bhayangkara (Belakang Gapura)",
+        "Y": -5.990649,
+        "X": 106.047699
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11805175.852478345856071, -663638.083584160660394]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Sumampir RT/RW: 03/04",
+        "LETAK": "Depan SD Kebon dalem",
+        "Y": -6.005499,
+        "X": 106.046201
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11805009.095881137996912, -665289.271199169685133]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "Link. Kaligandu Kel. Purwakarta",
+        "LETAK": null,
+        "Y": -6.005499,
+        "X": 106.046201
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11805009.095881137996912, -665289.271199169685133]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "JI. Arga Raya No. 1 , Kel. Kotasari",
+        "LETAK": "Gerbang Utama Komplek Arga Baja Pura",
+        "Y": -5.988938,
+        "X": 106.023699
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11802504.18469930626452, -663447.838563061552122]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ALAMAT": "Link. Sumur Manjangan, Kel. Kotasari",
+        "LETAK": "Depen Puri Cilegon Hijau",
+        "Y": -5.987194,
+        "X": 106.026246
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [11802787.715442357584834, -663253.924914062605239]
+      }
+    }
+  ]
+}

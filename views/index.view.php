@@ -27,74 +27,73 @@ $jamSekarang = date('H:i:s');
         <div class="running-right bg-dark text-light">
             <marquee behavior="scroll" direction="left">
                 <?php foreach ($getmarquee as $marque) : ?>
-                <?= $marque['informasi']; ?>
-                <i class="fa-solid fa-circle orange ms-4 me-4"></i>
+                    <?= $marque['informasi']; ?>
+                    <i class="fa-solid fa-circle orange ms-4 me-4"></i>
                 <?php endforeach; ?>
             </marquee>
         </div>
     </div>
     <div class="hero" id="hero">
         <div class="hero-content">
-            <h2 class="text-light"><span id="greeting" class="text-light"></span> <br> Di Website <span
-                    style="color: orange;">BAPPEDA KOTA CILEGON</span></h2>
+            <h2 class="text-light"><span id="greeting" class="text-light"></span> <br> Di Website <span style="color: orange;">BAPPEDA KOTA CILEGON</span></h2>
         </div>
     </div>
 </div>
 
 <script>
-var greetings = ["Selamat Datang", "<?= $salam; ?>"];
-var index = 0;
-var greetingElement = document.getElementById("greeting");
-var heroElement = document.getElementById("hero");
-var backgrounds = ["assets/index/hero-1.jpeg",
-    "assets/index/hero-2.jpg"
-]; // Ganti dengan path gambar yang Anda inginkan
-var backgroundIndex = 0;
+    var greetings = ["Selamat Datang", "<?= $salam; ?>"];
+    var index = 0;
+    var greetingElement = document.getElementById("greeting");
+    var heroElement = document.getElementById("hero");
+    var backgrounds = ["assets/index/hero-1.jpeg",
+        "assets/index/hero-2.jpg"
+    ]; // Ganti dengan path gambar yang Anda inginkan
+    var backgroundIndex = 0;
 
-function changeGreeting() {
-    var greeting = greetings[index];
-    var characters = greeting.split("");
+    function changeGreeting() {
+        var greeting = greetings[index];
+        var characters = greeting.split("");
 
-    var interval = setInterval(function() {
-        greetingElement.textContent += characters.shift();
+        var interval = setInterval(function() {
+            greetingElement.textContent += characters.shift();
 
-        if (characters.length === 0) {
-            clearInterval(interval);
-            setTimeout(function() {
-                greetingElement.textContent = "";
-                index = (index + 1) % greetings.length;
-                changeGreeting();
-            }, 2500);
-        }
-    }, 150);
-}
+            if (characters.length === 0) {
+                clearInterval(interval);
+                setTimeout(function() {
+                    greetingElement.textContent = "";
+                    index = (index + 1) % greetings.length;
+                    changeGreeting();
+                }, 2500);
+            }
+        }, 150);
+    }
 
-function changeBackground() {
-    heroElement.style.backgroundImage = "url('" + backgrounds[backgroundIndex] + "')";
-    heroElement.style.transition = "background-image 1s ease-in-out"; // Tambahkan efek transisi
-    backgroundIndex = (backgroundIndex + 1) % backgrounds.length;
-}
+    function changeBackground() {
+        heroElement.style.backgroundImage = "url('" + backgrounds[backgroundIndex] + "')";
+        heroElement.style.transition = "background-image 1s ease-in-out"; // Tambahkan efek transisi
+        backgroundIndex = (backgroundIndex + 1) % backgrounds.length;
+    }
 
-changeGreeting();
-changeBackground();
-setInterval(changeBackground, 4000);
+    changeGreeting();
+    changeBackground();
+    setInterval(changeBackground, 4000);
 
-// Update jam
-function updateClock() {
-    const serverTime = new Date("<?php echo date('Y-m-d H:i:s'); ?>");
-    const clientTime = new Date();
-    const timeDifference = serverTime.getTime() - clientTime.getTime();
+    // Update jam
+    function updateClock() {
+        const serverTime = new Date("<?php echo date('Y-m-d H:i:s'); ?>");
+        const clientTime = new Date();
+        const timeDifference = serverTime.getTime() - clientTime.getTime();
 
-    setInterval(() => {
-        const currentTime = new Date(new Date().getTime() + timeDifference);
-        const hours = currentTime.getHours().toString().padStart(2, '0');
-        const minutes = currentTime.getMinutes().toString().padStart(2, '0');
-        const seconds = currentTime.getSeconds().toString().padStart(2, '0');
-        document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
-    }, 1000);
-}
+        setInterval(() => {
+            const currentTime = new Date(new Date().getTime() + timeDifference);
+            const hours = currentTime.getHours().toString().padStart(2, '0');
+            const minutes = currentTime.getMinutes().toString().padStart(2, '0');
+            const seconds = currentTime.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }, 1000);
+    }
 
-window.onload = updateClock;
+    window.onload = updateClock;
 </script>
 
 

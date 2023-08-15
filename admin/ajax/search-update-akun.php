@@ -13,6 +13,7 @@ $getdata = query($query);
                     <th scope="col">No</th>
                     <th scope="col">Nama pegawai</th>
                     <th scope="col">NIK</th>
+                    <th class="text-center" scope="col">Detail</th>
                     <th class="text-center" scope="col">Aksi</th>
                 </tr>
             </thead>
@@ -22,6 +23,8 @@ $getdata = query($query);
                         <th class="text-center" scope="row"><?= $i + 1; ?></th>
                         <td><?= $a['nama_pegawai']; ?></td>
                         <td><?= $a['nik']; ?></td>
+                        <td class="text-center"><a href="detail-admin?id=<?= $a["id"] ?>"><i class="bi bi-eye-fill"></i></a>
+                        </td>
                         <td class="text-center"><a href="form-update-akun?id=<?= $a["id"] ?>"><span class="badge bdg-a text-bg-warning p-2"><i class="fa-regular fa-pen-to-square"></i>
                                     Ubah</span></a> <span class="fw-bold spase">|</span> <a href="functions/delete-akun.php?id=<?= $a["id"] ?>"><span class="badge text-bg-danger p-2"><i class="fa-solid fa-trash"></i> Hapus</span></a>
                         </td>

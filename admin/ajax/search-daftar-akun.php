@@ -12,7 +12,7 @@ $getdata = query($query);
                 <tr class="fofa">
                     <th scope="col">No</th>
                     <th scope="col">Nama pegawai</th>
-                    <th scope="col">NIK</th>
+                    <th scope="col">NIP</th>
                 </tr>
             </thead>
             <tbody>

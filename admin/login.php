@@ -43,6 +43,19 @@ if (isset($_POST["login"])) {
     }
 
     $_SESSION['error'] = true;
+
+    // Tambahkan penghitungan percobaan login yang gagal
+    if (!isset($_SESSION['failed_login_count'])) {
+        $_SESSION['failed_login_count'] = 1;
+    } else {
+        $_SESSION['failed_login_count']++;
+    }
+
+    // Cek jika jumlah percobaan login yang gagal mencapai batas
+    if ($_SESSION['failed_login_count'] >= 5) {
+        $_SESSION['lockout_time'] = time() + 300; // Lockout for 5 minutes (300 seconds)
+        $_SESSION['failed_login_count'] = 0; // Reset failed login count
+    }
 }
 
 $nama_halaman = 'Login admin';

@@ -32,19 +32,17 @@ if (mysqli_num_rows($checkResult) > 0) {
     exit;
 }
 
-// Menyimpan perubahan data pengguna ke dalam database
-$query = "UPDATE admin SET nik = '$nik', nama_pegawai = '$nama_pegawai' WHERE id = $admin_id";
-mysqli_query($conn, $query);
-
-// Proses perubahan gambar profil jika ada
-if (isset($_POST['foto_profile'])) {
-    $foto_profile = $_POST['foto_profile'];
-
-    // Ubah format base64 menjadi file gambar dan simpan di server
-    $imageData = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $foto_profile));
-    $imagePath = '../../assets/profile_picture/' . $admin_id . '.jpg'; // Ganti dengan path yang sesuai
-
-    file_put_contents($imagePath, $imageData);
+// Process the uploaded profile picture if available
+$new_foto_profile = '';
+if (isset($_FILES['new_foto_profile']) && $_FILES['new_foto_profile']['error'] === UPLOAD_ERR_OK) {
+    $foto_profile = $_FILES['new_foto_profile']['tmp_name'];
+    $imagePath = '../../assets/profile_picture/' . $admin_id . '.jpg'; // Update the path and filename as needed
+    move_uploaded_file($foto_profile, $imagePath);
+    $new_foto_profile = $admin_id . '.jpg'; // Set the new filename
 }
+
+// Menyimpan perubahan data pengguna ke dalam database
+$query = "UPDATE admin SET nik = '$nik', nama_pegawai = '$nama_pegawai', foto_profile = '$new_foto_profile' WHERE id = $admin_id";
+mysqli_query($conn, $query);
 
 mysqli_close($conn);

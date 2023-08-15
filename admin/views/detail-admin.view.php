@@ -1,0 +1,1 @@
+<p><?= $getdata['nama_pegawai']; ?></p>

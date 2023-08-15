@@ -1,14 +1,14 @@
 <?php include 'views/partials/starter-head.php' ?>
 <style>
-@media screen and (max-width: 900px) {
-    .content {
-        flex-direction: column !important;
-    }
+    @media screen and (max-width: 900px) {
+        .content {
+            flex-direction: column !important;
+        }
 
-    .child-content {
-        margin: 20px !important;
+        .child-content {
+            margin: 20px !important;
+        }
     }
-}
 </style>
 <div class="container-fluid">
     <div class="row">
@@ -31,12 +31,6 @@
                         <p>Tambah akun</p>
                     </a>
                 </div>
-                <!-- <div class="child-content">
-                        <a href="ubah-akun.php" class="card bg-light text-center text-decoration-none p-5">
-                            <i class="bi bi-person-gear"></i>
-                            <p>Update akun</p>
-                        </a>
-                    </div> -->
             </div>
         </div>
     </div>

@@ -53,23 +53,6 @@
             .then((text) => (searchContainer.innerHTML = text));
     };
 
-    // Menggunakan class 'hapusData' sebagai selector untuk tombol hapus
-    // const hapusButtons = document.getElementsByClassName('hapusData');
-    // for (let i = 0; i < hapusButtons.length; i++) {
-    //     hapusButtons[i].addEventListener('click', function(event) {
-    //         event.preventDefault();
-    //         var konfirmasi = confirm("Apakah Anda yakin ingin menghapus?");
-    //         if (konfirmasi) {
-    //             console.log("Data dengan ID " + hapusButtons[i].getAttribute('id_tematik') + " telah dihapus!");
-    //             // Tambahkan tindakan penghapusan di sini (misalnya, hapus data dari server)
-    //             window.location.href = "functions/delete-tematik.php?id=" + hapusButtons[i].getAttribute(
-    //                 'id_tematik');
-    //         } else {
-    //             console.log("Penghapusan dibatalkan.");
-    //         }
-    //     });
-    // }
-
     const hapusButtons = document.getElementsByClassName('hapusData');
     for (let i = 0; i < hapusButtons.length; i++) {
         hapusButtons[i].addEventListener('click', function(event) {
@@ -97,7 +80,6 @@
                     console.log("Data dengan ID " + hapusButtons[i].getAttribute('id_tematik') +
                         " telah dihapus!");
 
-                    // Perform deletion action (e.g., delete data from the server)
                     window.location.href = "functions/delete-tematik.php?id=" + hapusButtons[i]
                         .getAttribute(
                             'id_tematik');
