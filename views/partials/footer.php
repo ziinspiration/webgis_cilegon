@@ -1,3 +1,11 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<style>
+    #map {
+        height: 200px !important;
+        border: 2px solid orange !important;
+        border-radius: 10px !important;
+    }
+</style>
 <footer class="footer bg-dark">
     <div class="container">
         <div class="row">
@@ -9,74 +17,49 @@
                     pembangunan di kota tersebut.</p>
             </div>
             <div class="col-lg-3 col-md-6">
-                <h5 class="orange">Navigasi
-                    <link rel="stylesheet"
-                        href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
-                        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
-                        crossorigin="anonymous">
-                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
-                        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
-                        crossorigin="anonymous"></script>
-                    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-                        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-                        crossorigin="anonymous"></script>
-                </h5>
-                <ul class="list-unstyled list-link d-flex">
-                    <div class="list-left me-4">
-                        <li><a href="index">Beranda</a></li>
-                        <li><a href="wilayah">Wilayah</a></li>
-                        <li><a href="skpd">Skpd</a></li>
-                        <li><a href="datapokok">Data pokok</a></li>
-                        <li><a href="mapTematik">Map tematik</a></li>
-                    </div>
-                    <div class="list-left">
-                        <li><a href="mapSpasial">Map spasial</a></li>
-                        <li><a href="kJalan">Kemantapan jalan</a></li>
-                        <li><a href="rtrw">RT RW Kota Cilegon</a></li>
-                        <li><a href="lakip">LAKIP Kota Cilegon</a></li>
-                    </div>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-md-6">
                 <h5 class="orange">Hubungi Kami</h5>
                 <?php foreach ($getalamat as $alamat) : ?>
-                <p><span>Alamat :</span>
-                    <?= $alamat['informasi']; ?>
-                </p>
+                    <p><span>Alamat :</span>
+                        <?= $alamat['informasi']; ?>
+                    </p>
                 <?php endforeach; ?>
                 <?php foreach ($getemail as $email) : ?>
-                <p><span>Email :</span>
-                    <?= $email['informasi']; ?>
-                </p>
+                    <p><span>Email :</span>
+                        <?= $email['informasi']; ?>
+                    </p>
                 <?php endforeach; ?>
                 <?php foreach ($gettelp as $telp) : ?>
-                <p><span>Telp :</span>
-                    <?= $telp['informasi']; ?>
-                </p>
+                    <p><span>Telp :</span>
+                        <?= $telp['informasi']; ?>
+                    </p>
                 <?php endforeach; ?>
             </div>
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-6 col-md-6">
+                <h5 class="orange">Lokasi Kami</h5>
+                <div id="map"></div>
+            </div>
+            <div class="col-lg-6 col-md-6 mt-4">
                 <h5 class="orange">Ikuti Kami</h5>
-                <div class="social-icons">
+                <div class="social-icons ">
                     <?php foreach ($getfacebook as $facebook) : ?>
-                    <a href="<?= $facebook['informasi']; ?>" class="facebook" target="_blank">
-                        <i class="fab fa-facebook"></i>
-                    </a>
+                        <a href="<?= $facebook['informasi']; ?>" class="facebook" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
                     <?php endforeach; ?>
                     <?php foreach ($gettwitter as $twitter) : ?>
-                    <a href="<?= $twitter['informasi']; ?>" class="twitter" target="_blank">
-                        <i class="fab fa-twitter"></i>
-                    </a>
+                        <a href="<?= $twitter['informasi']; ?>" class="twitter" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
                     <?php endforeach; ?>
                     <?php foreach ($getinstagram as $instagram) : ?>
-                    <a href="<?= $instagram['informasi']; ?>" class="instagram" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+                        <a href="<?= $instagram['informasi']; ?>" class="instagram" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     <?php endforeach; ?>
                     <?php foreach ($getyoutube as $youtube) : ?>
-                    <a href="<?= $youtube['informasi']; ?>" class="youtube" target="_blank">
-                        <i class="fab fa-youtube"></i>
-                    </a>
+                        <a href="<?= $youtube['informasi']; ?>" class="youtube" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -86,3 +69,24 @@
         <p class="text-light mt-3 me-5"><span class="bold">Version</span> 1.0</p>
     </div>
 </footer>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script>
+    var map = L.map('map').setView([-6.013203875167288, 106.04259269650859], 13);
+
+    L.tileLayer('https://{s}.googleapis.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+        maxZoom: 19,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+        attribution: '&copy; Google'
+    }).addTo(map);
+
+    var customIcon = L.icon({
+        iconUrl: 'assets/index/icon.png',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+    });
+
+    var marker = L.marker([-6.013203875167288, 106.04259269650859], {
+        icon: customIcon
+    }).addTo(map);
+</script>

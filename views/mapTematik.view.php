@@ -471,6 +471,10 @@
                 popupContent +=
                     "<p><b>Debit :</b> " + feature.properties.DEBIT + "</p>";
             }
+            if (feature.properties.CH) {
+                popupContent +=
+                    "<p><b>CH :</b> " + feature.properties.CH + "</p>";
+            }
             if (feature.properties.LERENG) {
                 popupContent +=
                     "<p><b>Lereng :</b> " + feature.properties.LERENG + "</p>";

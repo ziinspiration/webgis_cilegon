@@ -1,99 +1,85 @@
 <?php include 'partials/starter-head.php' ?>
+<style>
+@media screen and (max-width:990px) {
+    .search-class {
+        width: 65% !important;
+    }
+}
+</style>
 <?php include 'partials/nav.php' ?>
 <?php include 'partials/breadcrumb.php' ?>
+
 <div class="container">
     <div class="row">
         <div class="col">
             <!-- Search -->
-            <div class="input-group mb-5 mt-5 w-25">
-                <input type="search" class="form-control input-search" placeholder="Cari disini"
+            <div class="input-group search-class mb-5 mt-5 w-25">
+                <input type="search" id="search" class="form-control input-search" placeholder="Cari disini"
                     aria-label="Cari disini" aria-describedby="button-addon2">
-                <button class="btn btn-search btn-outline-secondary" type="submit" id="cari"><i
+                <button class="btn btn-search btn-outline-secondary" type="button" id="cari"><i
                         class="bi bi-search"></i></button>
             </div>
             <!-- Table -->
             <table class="table table-striped table-hover mb-5">
                 <thead>
                     <tr>
-                        <th scope="col">NO</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
+                        <th scope="col">ID Desa</th>
+                        <th scope="col">Kecamatan</th>
+                        <th scope="col">Ibukota Kecamatan</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                    </tr>
+                <tbody id="table-data">
+                    <!-- Data will be loaded here using AJAX -->
                 </tbody>
             </table>
             <!-- PAGINATION -->
             <nav aria-label="Page navigation example mt-5">
-                <ul class="pagination">
-                    <li class="page-item">
-                        <a class="page-link orange" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link orange" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link orange" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link orange" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link orange" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
+                <ul class="pagination" id="pagination">
+                    <!-- Pagination links will be added here using AJAX -->
                 </ul>
             </nav>
         </div>
     </div>
 </div>
+
 <?php include 'partials/footer.php' ?>
 <?php include 'partials/script.php' ?>
 <?php include 'partials/starter-foot.php' ?>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Load initial data on page load
+    loadTableData(1);
+
+    // Handle page change
+    $(document).on('click', '.pagination a', function(e) {
+        e.preventDefault();
+        var page = $(this).data('page');
+        loadTableData(page);
+    });
+
+    // Handle live searching
+    $('#search').keyup(function() {
+        loadTableData(1); // Load first page of search results
+    });
+});
+
+function loadTableData(page) {
+    var searchQuery = $('#search').val();
+
+    $.ajax({
+        url: 'ajax/wilayah-data.php',
+        method: 'POST',
+        data: {
+            page: page,
+            search: searchQuery
+        },
+        dataType: 'json', // Added this line to specify the data type
+        success: function(data) {
+            $('#table-data').html(data.tableData);
+            $('#pagination').html(data.pagination);
+        }
+    });
+}
+</script>

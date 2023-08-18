@@ -43,11 +43,11 @@
             <li class="mb-3 mt-2">Profile</li>
         </a>
         <a class="text-decoration-none orange nav-link p-2 bold-informasi" href="informasi-web">
-            <li class="mb-3 mt-2">Informasi website</li>
+            <li class="mb-3 mt-2">Informasi Website</li>
         </a>
         <!-- Spasial -->
         <ul class="list-unstyled mb-3">
-            <p class="text-secondary">Spasial</p>
+            <p class="text-secondary">Data Map Spasial</p>
             <li class="ms-3">
                 <a class="text-decoration-none orange nav-link p-2 bold-b" href="administrasi">
                     Administrasi
@@ -66,7 +66,7 @@
         </ul>
         <!-- Tematik -->
         <ul class="list-unstyled mb-3">
-            <p class="text-secondary">Tematik</p>
+            <p class="text-secondary">Data Map Tematik</p>
             <li class="ms-3">
                 <a class="text-decoration-none orange nav-link p-2 bold-e" href="tematik">
                     Tematik
@@ -75,6 +75,67 @@
             <li class="ms-3">
                 <a class="text-decoration-none orange nav-link p-2 bold-f" href="rencana">
                     Rencana
+                </a>
+            </li>
+        </ul>
+        <!-- Data pokok -->
+        <ul class="list-unstyled mb-3">
+            <p class="text-secondary">Data pokok</p>
+            <li class="ms-3">
+                <a class="text-decoration-none orange nav-link p-2 bold-g" href="data-sarana">
+                    Data Sarana
+                </a>
+            </li>
+            <li class="ms-3">
+                <a class="text-decoration-none orange nav-link p-2 bold-h" href="data-prasarana">
+                    Data Prasarana
+                </a>
+            </li>
+            <li class="ms-3">
+                <a class="text-decoration-none orange nav-link p-2 bold-i" href="data-tematik">
+                    Data Tematik
+                </a>
+            </li>
+            <li class="ms-3">
+                <a class="text-decoration-none orange nav-link p-2 bold-j" href="data-rencana">
+                    Data Rencana
+                </a>
+            </li>
+        </ul>
+        <!-- Referensi -->
+        <ul class="list-unstyled mb-3">
+            <p class="text-secondary">Referensi</p>
+            <li class="ms-3">
+                <a class="text-decoration-none orange nav-link p-2 bold-k" href="data-wilayah">
+                    Data Wilayah
+                </a>
+            </li>
+            <li class="ms-3">
+                <a class="text-decoration-none orange nav-link p-2 bold-l" href="data-skpd">
+                    Data SKPD
+                </a>
+            </li>
+        </ul>
+        <!-- Publikasi -->
+        <ul class="list-unstyled mb-3">
+            <p class="text-secondary">Publikasi</p>
+            <li class="ms-3">
+                <a class="text-decoration-none orange nav-link p-2 bold-m" href="data-publikasi">
+                    Data Publikasi
+                </a>
+            </li>
+        </ul>
+        <!-- Layanan -->
+        <ul class="list-unstyled mb-3">
+            <p class="text-secondary">Layanan</p>
+            <li class="ms-3">
+                <a class="text-decoration-none orange nav-link p-2 bold-n" href="data-kemantapan-jalan">
+                    Kemantapan Jalan
+                </a>
+            </li>
+            <li class="ms-3">
+                <a class="text-decoration-none orange nav-link p-2 bold-o" href="data-kemantapan-drainase">
+                    Kemantapan Drainase
                 </a>
             </li>
         </ul>

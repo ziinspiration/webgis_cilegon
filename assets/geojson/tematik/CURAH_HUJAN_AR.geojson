@@ -9,8 +9,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Chname": "2000 - 2500 mm",
-        "SUMBER_DAT": "Bappeda Provinsi Banten Tahun 2016",
+        "CH": "2000 - 2500 mm",
+        "SUMBER": "Bappeda Provinsi Banten Tahun 2016",
         "LUAS": 8112.8962419700001,
         "color": "#73B2FF"
       },
@@ -4018,8 +4018,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Chname": "1750 - 2000 mm",
-        "SUMBER_DAT": "Bappeda Provinsi Banten Tahun 2016",
+        "CH": "1750 - 2000 mm",
+        "SUMBER": "Bappeda Provinsi Banten Tahun 2016",
         "LUAS": 6500.0740658799996,
         "color": "#BED2FF"
       },
@@ -7094,8 +7094,8 @@
     {
       "type": "Feature",
       "properties": {
-        "Chname": "2000 - 2500 mm",
-        "SUMBER_DAT": "Bappeda Provinsi Banten Tahun 2016",
+        "CH": "2000 - 2500 mm",
+        "SUMBER": "Bappeda Provinsi Banten Tahun 2016",
         "LUAS": 1646.1966489399999,
         "color": "#73B2FF"
       },

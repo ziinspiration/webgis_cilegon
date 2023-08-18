@@ -130,6 +130,54 @@ function countTematik()
     }
 }
 
+// Hitung data publikasi
+function countPublikasi()
+{
+    $conn = koneksi();
+
+    $query = "SELECT COUNT(*) AS total FROM publikasi";
+    $result = query($query);
+
+    // Periksa hasil query
+    if ($result && isset($result[0]['total'])) {
+        return $result[0]['total'];
+    } else {
+        return 0;
+    }
+}
+
+// Hitung data wilayah
+function countWilayah()
+{
+    $conn = koneksi();
+
+    $query = "SELECT COUNT(*) AS total FROM wilayah";
+    $result = query($query);
+
+    // Periksa hasil query
+    if ($result && isset($result[0]['total'])) {
+        return $result[0]['total'];
+    } else {
+        return 0;
+    }
+}
+
+// Hitung data skpd
+function countSKPD()
+{
+    $conn = koneksi();
+
+    $query = "SELECT COUNT(*) AS total FROM skpd";
+    $result = query($query);
+
+    // Periksa hasil query
+    if ($result && isset($result[0]['total'])) {
+        return $result[0]['total'];
+    } else {
+        return 0;
+    }
+}
+
 // Hapus data administrasi
 function deleteAdministrasi($id)
 {
@@ -180,6 +228,33 @@ function deleteTematik($id)
 {
     $conn = koneksi();
     mysqli_query($conn, "DELETE FROM tematik WHERE id = $id");
+
+    return mysqli_affected_rows($conn);
+}
+
+// Hapus data publikasi
+function deletePublikasi($id)
+{
+    $conn = koneksi();
+    mysqli_query($conn, "DELETE FROM publikasi WHERE id = $id");
+
+    return mysqli_affected_rows($conn);
+}
+
+// Hapus data wilayah
+function deleteWilayah($id)
+{
+    $conn = koneksi();
+    mysqli_query($conn, "DELETE FROM wilayah WHERE id = $id");
+
+    return mysqli_affected_rows($conn);
+}
+
+// Hapus data skpd
+function deleteSKPD($id)
+{
+    $conn = koneksi();
+    mysqli_query($conn, "DELETE FROM skpd WHERE id = $id");
 
     return mysqli_affected_rows($conn);
 }

@@ -47,17 +47,13 @@
                         Layanan
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="layananDropdown">
-                        <li><a class="dropdown-item border-bottom" href="kJalan">Kemantapan Jalan</a></li>
+                        <li><a class="dropdown-item border-bottom" href="kemantapan-jalan">Kemantapan Jalan</a></li>
+                        <li><a class="dropdown-item border-bottom" href="kemantapan-drainase">Kemantapan Drainase</a>
+                        </li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown me-3">
-                    <a class="nav-link dropdown-toggle mb-2" href="#" id="publikasiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Publikasi
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="publikasiDropdown">
-                        <li><a class="dropdown-item border-bottom" href="rtrw">RTRW Kota Cilegon</a></li>
-                        <li><a class="dropdown-item" href="lakip">LAKIP Kota Cilegon</a></li>
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="publikasi">Publikasi</a>
                 </li>
             </ul>
         </div>
