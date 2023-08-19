@@ -27,7 +27,7 @@ if (count($getdata) > 0) {
                     </tr>';
     }
 } else {
-    $output = '<tr><td colspan="3"><div class="m-auto text-center p-3">Tidak ada data yang cocok dengan kriteria pencarian anda.</div></td></tr>';
+    $output = '<tr><td colspan="3"><div class="m-auto text-center p-3">Data tidak tersedia</div></td></tr>';
 }
 
 $totalItems = count(query("SELECT * FROM skpd")); // Ganti dari "dinas" menjadi "skpd"

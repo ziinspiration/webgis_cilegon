@@ -37,7 +37,7 @@ for ($i = 1; $i <= $totalPages; $i++) {
 
 // Check if there are no search results
 if (empty($getdata)) {
-    $output .= '<tr><td colspan="3"><div class="m-auto text-center p-3">Tidak ada data yang cocok dengan kriteria pencarian anda.</div></td></tr>';
+    $output .= '<tr><td colspan="3"><div class="m-auto text-center p-3">Data tidak tersedia</div></td></tr>';
 }
 
 echo json_encode(array(
