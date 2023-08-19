@@ -82,6 +82,11 @@
         <ul class="list-unstyled mb-3">
             <p class="text-secondary">Data pokok</p>
             <li class="ms-3">
+                <a class="text-decoration-none orange nav-link p-2 bold-p" href="data-administrasi">
+                    Data Administrasi
+                </a>
+            </li>
+            <li class="ms-3">
                 <a class="text-decoration-none orange nav-link p-2 bold-g" href="data-sarana">
                     Data Sarana
                 </a>

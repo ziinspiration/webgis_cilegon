@@ -3,6 +3,45 @@
 <?php include 'partials/breadcrumb.php' ?>
 <div class="container">
     <div class="row justify-content-md-center">
+        <!-- Content 5 -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card">
+                <div class="card-head d-flex">
+                    <div class="icon-card text-center rounded-circle">
+                        <i class="fa-solid fa-house"></i>
+                    </div>
+                    <div class="header">
+                        <h3 class="text-center orange">Administrasi</h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseOne">
+                                    Selengkapnya..
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse"
+                                data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <ul class="parent-list">
+                                        <?php foreach ($getadministrasi as $adm) : ?>
+                                        <li class="list-card">
+                                            <a href="detail-data-administrasi?id=<?= $adm['id']; ?>">
+                                                <?= $adm['nama_data']; ?>
+                                            </a>
+                                        </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Content 1 -->
         <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card">
@@ -82,10 +121,10 @@
             <div class="card">
                 <div class="card-head d-flex">
                     <div class="icon-card text-center rounded-circle">
-                        <i class="fa-sharp fa-solid fa-road"></i>
+                        <i class="fa-solid fa-earth-asia"></i>
                     </div>
                     <div class="header">
-                        <h3 class="text-center orange">Utilitas</h3>
+                        <h3 class="text-center orange">Tematik</h3>
                     </div>
                 </div>
                 <div class="card-body">
@@ -101,11 +140,13 @@
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <ul class="parent-list">
-                                        <li class="list-card"><a href="">Lorem ipsum dolor sit amet.</a></li>
-                                        <li class="list-card"><a href="">Lorem ipsum dolor sit amet.</a></li>
-                                        <li class="list-card"><a href="">Lorem ipsum dolor sit amet.</a></li>
-                                        <li class="list-card"><a href="">Lorem ipsum dolor sit amet.</a></li>
-                                        <li class="list-card"><a href="">Lorem ipsum dolor sit amet.</a></li>
+                                        <?php foreach ($gettematik as $a) : ?>
+                                        <li class="list-card">
+                                            <a href="detail-data-tematik?id=<?= $a['id']; ?>">
+                                                <?= $a['nama_data']; ?>
+                                            </a>
+                                        </li>
+                                        <?php endforeach; ?>
                                     </ul>
                                 </div>
                             </div>
@@ -119,10 +160,10 @@
             <div class="card">
                 <div class="card-head d-flex">
                     <div class="icon-card text-center rounded-circle">
-                        <i class="fa-solid fa-water"></i>
+                        <i class="fa-solid fa-map"></i>
                     </div>
                     <div class="header">
-                        <h3 class="text-center orange">Irigasi</h3>
+                        <h3 class="text-center orange">Spasial</h3>
                     </div>
                 </div>
                 <div class="card-body">
@@ -135,43 +176,6 @@
                                 </button>
                             </h2>
                             <div id="collapseFour" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <ul class="parent-list">
-                                        <li class="list-card"><a href="">Lorem ipsum dolor sit amet.</a></li>
-                                        <li class="list-card"><a href="">Lorem ipsum dolor sit amet.</a></li>
-                                        <li class="list-card"><a href="">Lorem ipsum dolor sit amet.</a></li>
-                                        <li class="list-card"><a href="">Lorem ipsum dolor sit amet.</a></li>
-                                        <li class="list-card"><a href="">Lorem ipsum dolor sit amet.</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Content 5 -->
-        <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card">
-                <div class="card-head d-flex">
-                    <div class="icon-card text-center rounded-circle">
-                        <i class="fa-solid fa-house"></i>
-                    </div>
-                    <div class="header">
-                        <h3 class="text-center orange">Pemukiman</h3>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="accordion" id="accordionExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseOne">
-                                    Selengkapnya..
-                                </button>
-                            </h2>
-                            <div id="collapseFive" class="accordion-collapse collapse"
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <ul class="parent-list">
