@@ -141,7 +141,7 @@ if (isset($_POST['update'])) {
                                 </tr>
                                 <tr>
                                     <th scope="row" class="text-warning">Sedang</th>
-                                    <td><input class="border-1 rounded w-25 text-center" type="text" value="<?= $a['normal']; ?>" name="normal">%</td>
+                                    <td><input class="border-1 rounded w-25 text-center" type="text" value="<?= $a['normal']; ?>" name="normal"> %</td>
                                 </tr>
                                 <tr>
                                     <th scope="row" class="text-danger">Buruk</th>

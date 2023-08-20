@@ -25,12 +25,14 @@
                 <table class="table table-striped table-hover mb-5 table-responsive">
                     <thead>
                         <tr>
-                            <th scope="col">Provinsi</th>
-                            <th scope="col">Kabupaten</th>
-                            <th scope="col">Kecamatan</th>
-                            <th scope="col">Kelurahan</th>
-                            <th scope="col">Sumber</th>
-                            <th scope="col">Luas</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Data</th>
+                            <th scope="col">Data</th>
+                            <?php if (!empty($getdata[0]['data4'])) : ?>
+                                <th scope="col">Data</th>
+                            <?php endif; ?>
+                            <th scope="col">Data</th>
+                            <th scope="col">Data</th>
                         </tr>
                     </thead>
                     <tbody id="table-data">
@@ -72,7 +74,7 @@
         var searchQuery = $('#search').val();
 
         $.ajax({
-            url: 'ajax/detail-adm-search.php',
+            url: 'ajax/detail-sarana-search.php',
             method: 'POST',
             data: {
                 page: page,

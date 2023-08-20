@@ -38,24 +38,57 @@
                         </tr>
                     </thead>
                     <tbody id="table-data">
-                        <?php foreach ($getdata as $a) : ?>
-                        <tr>
-                            <td><?= $a['kecamatan']; ?></td>
-                            <td><?= $a['kelurahan']; ?></td>
-                            <td><?= $a['keterangan']; ?></td>
-                            <?php if (!empty($a['fungsi'])) : ?>
-                            <td><?= $a['fungsi']; ?></td>
-                            <?php endif; ?>
-                            <td><?= $a['sumber']; ?></td>
-                            <td><?= $a['luas']; ?></td>
-                        </tr>
-                        <?php endforeach; ?>
+                        <!-- Data will be loaded here using AJAX -->
                     </tbody>
                 </table>
+                <!-- PAGINATION -->
+                <nav aria-label="Page navigation example mt-5">
+                    <ul class="pagination" id="pagination">
+                        <!-- Pagination links will be added here using AJAX -->
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
 </div>
 <?php include 'partials/footer.php' ?>
 <?php include 'partials/script.php' ?>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Memuat data awal saat halaman dimuat
+    loadTableData(1);
+
+    // Menangani perubahan halaman
+    $(document).on('click', '.pagination a', function(e) {
+        e.preventDefault();
+        var page = $(this).data('page');
+        loadTableData(page);
+    });
+
+    // Menangani pencarian langsung
+    $('#search').keyup(function() {
+        loadTableData(1); // Memuat halaman pertama hasil pencarian
+    });
+});
+
+function loadTableData(page) {
+    var searchQuery = $('#search').val();
+
+    $.ajax({
+        url: 'ajax/detail-tematik-search.php',
+        method: 'POST',
+        data: {
+            page: page,
+            search: searchQuery,
+            data_pokok_id: <?php echo $id; ?> // Pastikan variabel $id sudah didefinisikan sebelumnya
+        },
+        dataType: 'json', // Menentukan tipe data yang diharapkan
+        success: function(data) {
+            $('#table-data').html(data.tableData);
+            $('#pagination').html(data.pagination);
+        }
+    });
+}
+</script>
 <?php include 'partials/starter-foot.php' ?>

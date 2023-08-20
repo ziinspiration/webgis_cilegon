@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 <style>
     #map {
-        height: 200px !important;
+        height: 300px !important;
         border: 2px solid orange !important;
         border-radius: 10px !important;
     }
