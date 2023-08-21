@@ -1,14 +1,14 @@
 <?php include 'partials/starter-head.php' ?>
 <style>
-.table-res {
-    overflow-y: auto !important;
-}
-
-@media screen and (max-width:990px) {
-    .search-class {
-        width: 65% !important;
+    .table-res {
+        overflow-y: auto !important;
     }
-}
+
+    @media screen and (max-width:990px) {
+        .search-class {
+            width: 65% !important;
+        }
+    }
 </style>
 <?php include 'partials/nav.php' ?>
 <?php include 'partials/breadcrumb.php' ?>
@@ -16,10 +16,10 @@
     <div class="row">
         <div class="col">
             <!-- Search -->
-            <!-- <div class="input-group search-class mb-5 mt-5 w-25">
+            <div class="input-group search-class mb-5 mt-5 w-25">
                 <input type="search" id="search" class="form-control input-search" placeholder="Cari disini" aria-label="Cari disini" aria-describedby="button-addon2">
                 <button class="btn btn-search btn-outline-secondary" type="button" id="cari"><i class="bi bi-search"></i></button>
-            </div> -->
+            </div>
             <!-- Table -->
             <div class="table-res">
                 <table class="table table-striped table-hover mb-5 table-responsive">
@@ -51,40 +51,40 @@
 <?php include 'partials/script.php' ?>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-$(document).ready(function() {
-    // Memuat data awal saat halaman dimuat
-    loadTableData(1);
+    $(document).ready(function() {
+        // Memuat data awal saat halaman dimuat
+        loadTableData(1);
 
-    // Menangani perubahan halaman
-    $(document).on('click', '.pagination a', function(e) {
-        e.preventDefault();
-        var page = $(this).data('page');
-        loadTableData(page);
+        // Menangani perubahan halaman
+        $(document).on('click', '.pagination a', function(e) {
+            e.preventDefault();
+            var page = $(this).data('page');
+            loadTableData(page);
+        });
+
+        // Menangani pencarian langsung
+        $('#search').keyup(function() {
+            loadTableData(1); // Memuat halaman pertama hasil pencarian
+        });
     });
 
-    // Menangani pencarian langsung
-    $('#search').keyup(function() {
-        loadTableData(1); // Memuat halaman pertama hasil pencarian
-    });
-});
+    function loadTableData(page) {
+        var searchQuery = $('#search').val();
 
-function loadTableData(page) {
-    var searchQuery = $('#search').val();
-
-    $.ajax({
-        url: 'ajax/detail-adm-search.php',
-        method: 'POST',
-        data: {
-            page: page,
-            search: searchQuery,
-            data_pokok_id: <?php echo $id; ?> // Pastikan variabel $id sudah didefinisikan sebelumnya
-        },
-        dataType: 'json', // Menentukan tipe data yang diharapkan
-        success: function(data) {
-            $('#table-data').html(data.tableData);
-            $('#pagination').html(data.pagination);
-        }
-    });
-}
+        $.ajax({
+            url: 'ajax/detail-adm-search.php',
+            method: 'POST',
+            data: {
+                page: page,
+                search: searchQuery,
+                data_pokok_id: <?php echo $id; ?> // Pastikan variabel $id sudah didefinisikan sebelumnya
+            },
+            dataType: 'json', // Menentukan tipe data yang diharapkan
+            success: function(data) {
+                $('#table-data').html(data.tableData);
+                $('#pagination').html(data.pagination);
+            }
+        });
+    }
 </script>
 <?php include 'partials/starter-foot.php' ?>

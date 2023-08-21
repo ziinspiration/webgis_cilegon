@@ -21,6 +21,7 @@ foreach ($getdata as $a) {
     $output .= '<tr>
                     <td><a href="download.pdf.php?id=' . $a['id'] . '" class="download-link">' . $a['nama_data'] . '</a></td>
                     <td>' . $a['keterangan'] . '</td>
+                    <td><a class="orange" href="download.pdf.php?id=' . $a['id'] . '" class="download-link"><i class="fa-solid fa-file-pdf text-danger"></i></a></td>
                 </tr>';
 }
 
