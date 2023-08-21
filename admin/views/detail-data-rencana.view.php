@@ -8,31 +8,28 @@
             <button class="btn btn-search btn-outline-secondary" name="search" id="search-button" type="submit" id="cari"><i class="bi bi-search"></i></button>
         </div>
         <!-- Table -->
+        <?php $i = 1; ?>
         <div id="search-container" class="table-responsive mt-5">
             <table class="table table-striped m-auto mt-1">
                 <thead>
                     <tr class="fofa">
-                        <th scope="col">data1</th>
-                        <th scope="col">data2</th>
-                        <th scope="col">data3</th>
-                        <?php if (!empty($getdata[0]['data4'])) : ?>
-                            <th scope="col">data4</th>
-                        <?php endif; ?>
-                        <th scope="col">data5</th>
-                        <th scope="col">data6</th>
+                        <th scope="col">No</th>
+                        <th scope="col">Kecamatan</th>
+                        <th scope="col">Kelurahan</th>
+                        <th scope="col">Keterangan</th>
+                        <th scope="col">Sumber</th>
+                        <th scope="col">Luas</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($getdata as $a) : ?>
                         <tr>
-                            <td><?= $a['data1']; ?></td>
-                            <td><?= $a['data2']; ?></td>
-                            <td><?= $a['data3']; ?></td>
-                            <?php if (!empty($a['data4'])) : ?>
-                                <td><?= $a['data4']; ?></td>
-                            <?php endif; ?>
-                            <td><?= $a['data5']; ?></td>
-                            <td><?= $a['data6']; ?></td>
+                            <td><?= $i++; ?></td>
+                            <td><?= $a['kecamatan']; ?></td>
+                            <td><?= $a['kelurahan']; ?></td>
+                            <td><?= $a['keterangan']; ?></td>
+                            <td><?= $a['sumber']; ?></td>
+                            <td><?= $a['luas']; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

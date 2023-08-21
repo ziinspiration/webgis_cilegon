@@ -3,15 +3,14 @@
 "name": "SPBU_PT",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "SPBU 34-42407 GROGOL CILEGON", "KETERANGAN": "SPBU", "X": "106,028521500067", "Y": "-5,99172970006555" }, "geometry": { "type": "Point", "coordinates": [ 106.028521500067257, -5.991729700065548, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "SPBU 34-42407 GROGOL CILEGON", "KETERANGAN": "SPBU", "X": "106,028584103968", "Y": "-5,99141855401311" }, "geometry": { "type": "Point", "coordinates": [ 106.028584103968228, -5.991418554013106, 0.0 ] } },
 { "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "SPBU 34-42406 TEGAL WANGI", "KETERANGAN": "SPBU", "X": "106,016125299843", "Y": "-5,98403010040875" }, "geometry": { "type": "Point", "coordinates": [ 106.01612529984277, -5.984030100408745, 0.0 ] } },
-{ "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "SPBU", "KETERANGAN": "SPBU", "X": "106,078764799856", "Y": "-6,03167249968607" }, "geometry": { "type": "Point", "coordinates": [ 106.078764799855662, -6.031672499686067, 0.0 ] } },
-{ "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "SPBU SHELL CILEGON", "KETERANGAN": "SPBU", "X": "106,077374400308", "Y": "-6,03053079955669" }, "geometry": { "type": "Point", "coordinates": [ 106.077374400308372, -6.030530799556686, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "SPBU SHELL CILEGON", "KETERANGAN": "SPBU", "X": "106,07717419047", "Y": "-6,03082985332704" }, "geometry": { "type": "Point", "coordinates": [ 106.077174190470487, -6.030829853327039, 0.0 ] } },
 { "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "SPBU 34-424-01", "KETERANGAN": "SPBU", "X": "106,069202400271", "Y": "-6,024746200077" }, "geometry": { "type": "Point", "coordinates": [ 106.069202400270626, -6.024746200077004, 0.0 ] } },
 { "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "SPBU 34.42409", "KETERANGAN": "SPBU", "X": "106,006079899568", "Y": "-5,95860890028047" }, "geometry": { "type": "Point", "coordinates": [ 106.006079899567794, -5.958608900280467, 0.0 ] } },
 { "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "SPBU 34.424.13 KALITIMBANG", "KETERANGAN": "SPBU", "X": "106,062841900134", "Y": "-6,04966679978293" }, "geometry": { "type": "Point", "coordinates": [ 106.062841900133662, -6.049666799782926, 0.0 ] } },
 { "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "SPBU KRENCENG 34-42411", "KETERANGAN": "SPBU", "X": "106,018424799765", "Y": "-6,01071990040305" }, "geometry": { "type": "Point", "coordinates": [ 106.018424799764773, -6.010719900403046, 0.0 ] } },
 { "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "SPBU PERTAMINA 34.424.02", "KETERANGAN": "SPBU", "X": "106,004401600054", "Y": "-5,96885749967385" }, "geometry": { "type": "Point", "coordinates": [ 106.004401600053882, -5.968857499673845, 0.0 ] } },
-{ "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "SPBU PCI", "KETERANGAN": "SPBU", "X": "106,078427199756", "Y": "-6,03153310027233" }, "geometry": { "type": "Point", "coordinates": [ 106.078427199755538, -6.031533100272327, 0.0 ] } }
+{ "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "SPBU PCI", "KETERANGAN": "SPBU", "X": "106,078569501561", "Y": "-6,03159607743904" }, "geometry": { "type": "Point", "coordinates": [ 106.078569501560935, -6.031596077439044, 0.0 ] } }
 ]
 }

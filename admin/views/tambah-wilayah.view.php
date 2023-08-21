@@ -1,97 +1,98 @@
 <?php include 'views/partials/starter-head.php'; ?>
 <?php include 'views/partials/alert-tambah-data.php'; ?>
 <style>
-* {
-    font-family: montserrat;
-}
-
-body {
-    background-image: url(../assets/index/footer2.jpg);
-}
-
-.orange {
-    color: orange !important;
-}
-
-.bg-orange {
-    background-color: orange;
-}
-
-form {
-    border: 2px solid orange !important;
-}
-
-@media screen and (max-width:550px) {
-    .content {
-        width: 95% !important;
+    * {
+        font-family: montserrat;
     }
 
-    .formulir {
-        flex-direction: column;
+    body {
+        background-image: url(../assets/index/footer2.jpg);
     }
 
-    .left,
-    .right,
-    .center {
-        width: 100% !important;
-        margin: 0 !important;
-        flex-direction: column !important;
+    .orange {
+        color: orange !important;
     }
 
-    .file-now {
-        font-size: 9px !important;
-        margin-top: 5px !important;
+    .bg-orange {
+        background-color: orange;
     }
 
-    .btn-primary {
-        width: 100% !important;
+    form {
+        border: 2px solid orange !important;
     }
 
-    .kolom {
-        width: 100% !important;
-        margin: 0 !important;
-        margin-bottom: 50px !important;
+    @media screen and (max-width:550px) {
+        .content {
+            width: 95% !important;
+        }
+
+        .formulir {
+            flex-direction: column;
+        }
+
+        .left,
+        .right,
+        .center {
+            width: 100% !important;
+            margin: 0 !important;
+            flex-direction: column !important;
+        }
+
+        .file-now {
+            font-size: 9px !important;
+            margin-top: 5px !important;
+        }
+
+        .btn-primary {
+            width: 100% !important;
+        }
+
+        .kolom {
+            width: 100% !important;
+            margin: 0 !important;
+            margin-bottom: 50px !important;
+        }
+
+        .img-preview {
+            display: none !important;
+        }
+
+        .preview-image {
+            display: block !important;
+            width: 30% !important;
+            margin: auto !important;
+        }
+    }
+
+    @media screen and (max-width:990px) {
+        .file-now {
+            font-size: 11px !important;
+            margin-top: 5px !important;
+        }
+    }
+
+    .row {
+        margin-top: 100px !important;
+        margin-bottom: 100px !important;
     }
 
     .img-preview {
-        display: none !important;
-    }
-
-    .preview-image {
-        display: block !important;
-        width: 30% !important;
+        width: 10% !important;
         margin: auto !important;
     }
-}
-
-@media screen and (max-width:990px) {
-    .file-now {
-        font-size: 11px !important;
-        margin-top: 5px !important;
-    }
-}
-
-.row {
-    margin-top: 100px !important;
-    margin-bottom: 100px !important;
-}
-
-.img-preview {
-    width: 10% !important;
-    margin: auto !important;
-}
 </style>
 
 <?php
 if (isset($_POST['send'])) {
-    $id_desa = clean_input($_POST['id_desa']);
+    $kode_wilayah = clean_input($_POST['kode_wilayah']);
     $kecamatan = clean_input($_POST['kecamatan']);
-    $ibukota = clean_input($_POST['ibukota']);
+    $jumlah_kelurahan = clean_input($_POST['jumlah_kelurahan']);
+    $daftar_kelurahan = clean_input($_POST['daftar_kelurahan']);
 
     // Prepare statement
-    $query = "INSERT INTO wilayah (id_desa, kecamatan, ibukota) VALUES (?, ?, ?)";
+    $query = "INSERT INTO wilayah (kode_wilayah, kecamatan, jumlah_kelurahan, daftar_kelurahan) VALUES (?, ?, ?, ?)";
     $stmt = mysqli_prepare($conn, $query);
-    mysqli_stmt_bind_param($stmt, 'sss', $id_desa, $kecamatan, $ibukota);
+    mysqli_stmt_bind_param($stmt, 'ssss', $kode_wilayah, $kecamatan, $jumlah_kelurahan, $daftar_kelurahan);
 
     // Menjalankan query
     if (mysqli_stmt_execute($stmt)) {
@@ -135,21 +136,22 @@ if (isset($_POST['send'])) {
                 <h2 class="text-center text-light mb-5 mt-2">Input data wilayah</h2>
                 <!-- ID Desa -->
                 <div class="mb-3">
-                    <label for="id_desa" class="form-label orange ps-1 pe-1">ID Desa</label>
-                    <input type="text" name="id_desa" class="form-control p-2" id="id_desa"
-                        placeholder="Masukkan ID Desa" required />
+                    <label for="kode_wilayah" class="form-label orange ps-1 pe-1">Kode Wilayah</label>
+                    <input type="text" name="kode_wilayah" class="form-control p-2" id="kode_wilayah" placeholder="Masukkan Kode Wilayah" required />
                 </div>
                 <!-- Kecamatan -->
                 <div class=" mb-3">
                     <label for="kecamatan" class="form-label orange ps-1 pe-1">Kecamatan</label>
-                    <input type="text" name="kecamatan" class="form-control p-2" id="kecamatan"
-                        placeholder="Masukkan Nama Kecamatan" required />
+                    <input type="text" name="kecamatan" class="form-control p-2" id="kecamatan" placeholder="Masukkan Nama Kecamatan" required />
                 </div>
-                <!-- Ibukota kecamatan -->
+                <!-- jumlah_kelurahan kecamatan -->
                 <div class=" mb-3">
-                    <label for="ibukota" class="form-label orange ps-1 pe-1">Ibukota Kecamatan</label>
-                    <input type="text" name="ibukota" class="form-control p-2" id="ibukota"
-                        placeholder="Masukkan Ibukota Kecamatan" required />
+                    <label for="jumlah_kelurahan" class="form-label orange ps-1 pe-1">Jumlah kelurahan</label>
+                    <input type="text" name="jumlah_kelurahan" class="form-control p-2" id="jumlah_kelurahan" placeholder="Masukkan Jumlah Kelurahan" required />
+                </div>
+                <div class=" mb-3">
+                    <label for="daftar_kelurahan" class="form-label orange ps-1 pe-1">Daftar kelurahan</label>
+                    <input type="text" name="daftar_kelurahan" class="form-control p-2" id="daftar_kelurahan" placeholder="Masukkan Daftar Kelurahan" required />
                 </div>
                 <div class="btn-kirim d-flex justify-content-end mt-5 p-4">
                     <button type="submit" name="send" class="btn btn-primary w-25 p-2">

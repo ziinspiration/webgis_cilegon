@@ -4,6 +4,10 @@
     .search-class {
         width: 65% !important;
     }
+
+    .table-res {
+        overflow-y: auto !important;
+    }
 }
 </style>
 <?php include 'partials/nav.php' ?>
@@ -19,18 +23,20 @@
                         class="bi bi-search"></i></button>
             </div>
             <!-- Table -->
-            <table class="table table-striped table-hover mb-5">
-                <thead>
-                    <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Nama Dinas</th>
-                        <th scope="col">Alamat</th>
-                    </tr>
-                </thead>
-                <tbody id="table-data">
-                    <!-- Data will be loaded here using AJAX -->
-                </tbody>
-            </table>
+            <div class="table-res">
+                <table class="table table-striped table-hover mb-5">
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Nama Dinas</th>
+                            <th scope="col">Alamat</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-data">
+                        <!-- Data will be loaded here using AJAX -->
+                    </tbody>
+                </table>
+            </div>
             <!-- PAGINATION -->
             <nav aria-label="Page navigation example mt-5">
                 <ul class="pagination" id="pagination">

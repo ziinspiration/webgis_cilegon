@@ -9,6 +9,7 @@ $getdata = query("SELECT * FROM atribut_rencana
                   JOIN data_rencana ON atribut_rencana.data_pokok_id = data_rencana.id 
                   WHERE atribut_rencana.data_pokok_id = $id");
 
+$i = 1;
 
 $nama_halaman = 'Data detail';
 $linkcss = 'datadetail.css';

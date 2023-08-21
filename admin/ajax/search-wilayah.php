@@ -1,7 +1,7 @@
 <?php
 require '../functions/functions.php';
 $keyword = $_GET['keyword'];
-$query = "SELECT * FROM wilayah WHERE id_desa LIKE '%$keyword%' OR kecamatan LIKE '%$keyword%' OR ibukota LIKE '%$keyword%'";
+$query = "SELECT * FROM wilayah WHERE kode_wilayah LIKE '%$keyword%' OR kecamatan LIKE '%$keyword%' OR daftar_kelurahan LIKE '%$keyword%' OR jumlah_kelurahan LIKE '%$keyword%'";
 $getdata = query($query);
 ?>
 
@@ -9,17 +9,19 @@ $getdata = query($query);
     <table class="table table-striped m-auto mt-1">
         <thead>
             <tr class="fofa">
-                <th scope="col">ID Desa</th>
+                <th scope="col">Kode wilayah</th>
                 <th scope="col">Kecamatan</th>
-                <th scope="col">Ibukota Kecamatan</th>
+                <th scope="col">Jumlah kelurahan</th>
+                <th scope="col">Daftar kelurahan</th>
             </tr>
         </thead>
         <tbody>
             <?php foreach ($getdata as $i => $a) : ?>
                 <tr>
-                    <th class="text-center" scope="row"><?= $a['id_desa']; ?></th>
+                    <th class="text-center" scope="row"><?= $a['kode_wilayah']; ?></th>
                     <td><?= $a['kecamatan']; ?></td>
-                    <td><?= $a['ibukota']; ?></td>
+                    <td><?= $a['jumlah_kelurahan']; ?></td>
+                    <td><?= $a['daftar_kelurahan']; ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

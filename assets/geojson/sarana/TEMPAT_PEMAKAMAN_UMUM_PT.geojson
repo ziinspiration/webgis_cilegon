@@ -3,7 +3,13 @@
 "name": "TEMPAT_PEMAKAMAN_UMUM_PT",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "JENIS": "RTH DAN SEJENIS", "TOPONIM": "PEMAKAMAN UMUM KARANG ANYAR", "KETERANGAN": "TEMPAT PEMAKAMAN UMUM", "X": "106,077010050895", "Y": "-6,03532706666488" }, "geometry": { "type": "Point", "coordinates": [ 106.077010050894842, -6.035327066664878 ] } },
-{ "type": "Feature", "properties": { "JENIS": "RTH DAN SEJENIS", "TOPONIM": "PEMAKAMAN UMUM", "KETERANGAN": "TEMPAT PEMAKAMAN UMUM", "X": "106,062729229386", "Y": "-6,02207294950131" }, "geometry": { "type": "Point", "coordinates": [ 106.062729229385923, -6.022072949501315 ] } }
+{ "type": "Feature", "properties": { "JENIS": "RTH DAN SEJENIS", "TOPONIM": "TPU CIORA KWISTA", "KETERANGAN": "TEMPAT PEMAKAMAN UMUM", "X": "106,025381613", "Y": "-5,98241923399999" }, "geometry": { "type": "Point", "coordinates": [ 106.025381613000022, -5.982419233999974 ] } },
+{ "type": "Feature", "properties": { "JENIS": "RTH DAN SEJENIS", "TOPONIM": "TPU MAKAM CALANG", "KETERANGAN": "TEMPAT PEMAKAMAN UMUM", "X": "106,049636276", "Y": "-6,000245982" }, "geometry": { "type": "Point", "coordinates": [ 106.049636276000058, -6.000245982 ] } },
+{ "type": "Feature", "properties": { "JENIS": "RTH DAN SEJENIS", "TOPONIM": "TPU MARTAPURA", "KETERANGAN": "TEMPAT PEMAKAMAN UMUM", "X": "106,057452658", "Y": "-6,00576635799996" }, "geometry": { "type": "Point", "coordinates": [ 106.057452658000031, -6.005766357999958 ] } },
+{ "type": "Feature", "properties": { "JENIS": "RTH DAN SEJENIS", "TOPONIM": "TPU KRANGGOT", "KETERANGAN": "TEMPAT PEMAKAMAN UMUM", "X": "106,065800814", "Y": "-6,01520194499995" }, "geometry": { "type": "Point", "coordinates": [ 106.065800814000042, -6.015201944999953 ] } },
+{ "type": "Feature", "properties": { "JENIS": "RTH DAN SEJENIS", "TOPONIM": "TPU UMUM CIBEBER", "KETERANGAN": "TEMPAT PEMAKAMAN UMUM", "X": "106,072184918", "Y": "-6,031904153" }, "geometry": { "type": "Point", "coordinates": [ 106.072184918000062, -6.031904152999985 ] } },
+{ "type": "Feature", "properties": { "JENIS": "RTH DAN SEJENIS", "TOPONIM": "TPU BLOK ABC CIBEBER", "KETERANGAN": "TEMPAT PEMAKAMAN UMUM", "X": "106,060829833", "Y": "-6,03747084199998" }, "geometry": { "type": "Point", "coordinates": [ 106.060829833000071, -6.037470841999964 ] } },
+{ "type": "Feature", "properties": { "JENIS": "RTH DAN SEJENIS", "TOPONIM": "TPU WARNASARI", "KETERANGAN": "TEMPAT PEMAKAMAN UMUM", "X": "106,009841491", "Y": "-6,03077512699999" }, "geometry": { "type": "Point", "coordinates": [ 106.009841491000088, -6.030775127 ] } },
+{ "type": "Feature", "properties": { "JENIS": "RTH DAN SEJENIS", "TOPONIM": "TPU RANDAKARI", "KETERANGAN": "TEMPAT PEMAKAMAN UMUM", "X": "105,969394157", "Y": "-6,02726677799996" }, "geometry": { "type": "Point", "coordinates": [ 105.969394157000067, -6.027266777999959 ] } }
 ]
 }

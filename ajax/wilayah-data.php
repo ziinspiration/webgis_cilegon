@@ -9,7 +9,7 @@ $searchQuery = isset($_POST['search']) ? $_POST['search'] : '';
 
 $query = "SELECT * FROM wilayah";
 if (!empty($searchQuery)) {
-    $query .= " WHERE kecamatan LIKE '%$searchQuery%' OR ibukota LIKE '%$searchQuery%'";
+    $query .= " WHERE kode_wilayah LIKE '%$searchQuery%' OR  kecamatan LIKE '%$searchQuery%' OR jumlah_kelurahan LIKE '%$searchQuery%' OR daftar_kelurahan LIKE '%$searchQuery%'";
 }
 $query .= " ORDER BY kecamatan ASC LIMIT $start, $itemsPerPage";
 
@@ -21,13 +21,14 @@ $i = $start + 1; // Initialize counter for row number
 if (count($getdata) > 0) {
     foreach ($getdata as $a) {
         $output .= '<tr>
-                        <th scope="row">' . $i++ . '</th>
+                        <th scope="row">' . $a['kode_wilayah'] . '</th>
                         <td>' . $a['kecamatan'] . '</td>
-                        <td>' . $a['ibukota'] . '</td>
+                        <td>' . $a['jumlah_kelurahan'] . '</td>
+                        <td>' . $a['daftar_kelurahan'] . '</td>
                     </tr>';
     }
 } else {
-    $output = '<tr><td colspan="3"><div class="m-auto text-center p-3">Data tidak tersedia.</div></td></tr>';
+    $output = '<tr><td colspan="4"><div class="m-auto text-center p-3">Data tidak tersedia.</div></td></tr>';
 }
 
 $totalItems = count(query("SELECT * FROM wilayah"));

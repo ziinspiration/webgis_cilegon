@@ -1,37 +1,46 @@
-<?php include 'views/partials/starter-head.php' ?>
-<?php include 'views/partials/alert-hapus.php' ?>
+<?php
+require 'views/partials/starter-head.php';
+require 'views/partials/alert-hapus.php';
+?>
 <div class="container-fluid">
-    <h1 class="mt-5 mb-2 text-center text-dark">Daftar data wilayah</h1>
+    <h1 class="mt-5 mb-2 text-center text-dark">Daftar data administrasi</h1>
     <div class="row w-75 m-auto">
         <!-- Search -->
-        <div class="input-group searching mb-2 mt-5">
-            <input type="search" name="keyword" id="keyword" class="form-control input-search" placeholder="Cari disini"
-                aria-label="Cari disini" aria-describedby="button-addon2">
-            <button class="btn btn-search btn-outline-secondary" name="search" id="search-button" type="submit"
-                id="cari"><i class="bi bi-search"></i></button>
-        </div>
+        <!-- <div class="input-group searching mb-2 mt-5">
+            <input type="search" name="keyword" id="keyword" class="form-control input-search" placeholder="Cari disini" aria-label="Cari disini" aria-describedby="button-addon2">
+            <button class="btn btn-search btn-outline-secondary" name="search" id="search-button" type="submit" id="cari"><i class="bi bi-search"></i></button>
+        </div> -->
         <!-- Table -->
-        <div id="search-container" class="table-responsive">
+        <div id="search-container" class="table-responsive mt-5">
             <table class="table table-striped m-auto mt-1">
                 <thead>
                     <tr class="fofa">
-                        <th class="text-center" scope="col">Kode wilayah</th>
-                        <th class="text-center" scope="col">Kecamatan</th>
-                        <th class="text-center" scope="col">Aksi</th>
+                        <th scope="col">Provinsi</th>
+                        <th scope="col">Kabupaten</th>
+                        <th scope="col">Kecamatan</th>
+                        <th scope="col">Kelurahan</th>
+                        <th scope="col">Sumber</th>
+                        <th scope="col">Luas</th>
+                        <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($getdata as $i => $a) : ?>
+                    <?php foreach ($getdata as $a) : ?>
                     <tr>
-                        <th class="text-center" scope="row"><?= $a['kode_wilayah']; ?></th>
-                        <td class="text-center"><?= $a['kecamatan']; ?></td>
+                        <td><?= $a['provinsi']; ?></td>
+                        <td><?= $a['kabupaten']; ?></td>
+                        <td><?= $a['kecamatan']; ?></td>
+                        <td><?= $a['kelurahan']; ?></td>
+                        <td><?= $a['sumber']; ?></td>
+                        <td><?= $a['luas']; ?></td>
                         <td class="text-center">
-                            <a class="text-decoration-none" href="form-update-wilayah?id=<?= $a["id"] ?>">
+                            <a class="text-decoration-none"
+                                href="form-update-atribut-administrasi?id=<?= $a["id_atribut"] ?>">
                                 <span class="badge bdg-a text-bg-warning p-2"><i
                                         class="fa-regular fa-pen-to-square"></i>Ubah</span>
                             </a>
                             <span class="fw-bold spase">|</span>
-                            <a href="javascript:void(0);" class="hapusData" id_wilayah="<?= $a["id"] ?>">
+                            <a href="javascript:void(0);" class="hapusData" id_atribut="<?= $a["id_atribut"] ?>">
                                 <span class="badge text-bg-danger p-2"><i class="fa-solid fa-trash"></i> Hapus</span>
                             </a>
                         </td>
@@ -44,16 +53,6 @@
 </div>
 <?php include 'views/partials/script.php' ?>
 <script>
-const keyword = document.getElementById("keyword");
-const searchButton = document.getElementById("search-button");
-const searchContainer = document.getElementById("search-container");
-
-keyword.onkeyup = function() {
-    fetch("ajax/search-update-wilayah.php?keyword=" + keyword.value)
-        .then((response) => response.text())
-        .then((text) => (searchContainer.innerHTML = text));
-};
-
 // Menggunakan class 'hapusData' sebagai selector untuk tombol hapus
 const hapusButtons = document.getElementsByClassName('hapusData');
 for (let i = 0; i < hapusButtons.length; i++) {
@@ -79,13 +78,13 @@ for (let i = 0; i < hapusButtons.length; i++) {
             }
         }).then((result) => {
             if (result.isConfirmed) {
-                console.log("Data dengan ID " + hapusButtons[i].getAttribute('id_wilayah') +
+                console.log("Data dengan ID " + hapusButtons[i].getAttribute('id_atribut') +
                     " telah dihapus!");
 
                 // Perform deletion action (e.g., delete data from the server)
-                window.location.href = "functions/delete-wilayah.php?id=" + hapusButtons[i]
+                window.location.href = "functions/delete-atribut-administrasi.php?id=" + hapusButtons[i]
                     .getAttribute(
-                        'id_wilayah');
+                        'id_atribut');
             } else {
                 console.log("Penghapusan dibatalkan.");
             }

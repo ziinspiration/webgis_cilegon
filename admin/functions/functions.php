@@ -258,3 +258,18 @@ function deleteSKPD($id)
 
     return mysqli_affected_rows($conn);
 }
+
+function deleteAtributAdministrasi($id)
+{
+    $conn = koneksi();
+    $stmt = mysqli_prepare($conn, "DELETE FROM atribut_administrasi WHERE id = ?");
+    mysqli_stmt_bind_param($stmt, "i", $id);
+    mysqli_stmt_execute($stmt);
+
+    $affected_rows = mysqli_stmt_affected_rows($stmt);
+
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+
+    return $affected_rows;
+}

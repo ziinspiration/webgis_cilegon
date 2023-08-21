@@ -16,10 +16,10 @@ if (!empty($id)) {
 }
 
 if (!empty($searchQuery)) {
-    $query .= " AND (data1 LIKE '%$searchQuery%' OR data2 LIKE '%$searchQuery%' OR data3 LIKE '%$searchQuery%' OR data4 LIKE '%$searchQuery%' OR data5 LIKE '%$searchQuery%' OR data6 LIKE '%$searchQuery%')";
+    $query .= " AND (kecamatan LIKE '%$searchQuery%' OR kelurahan LIKE '%$searchQuery%' OR keterangan LIKE '%$searchQuery%' OR sumber LIKE '%$searchQuery%'  OR luas LIKE '%$searchQuery%')";
 }
 
-$query .= " ORDER BY data1 ASC LIMIT $start, $itemsPerPage";
+$query .= " ORDER BY kecamatan ASC LIMIT $start, $itemsPerPage";
 
 $getdata = query($query);
 
@@ -29,12 +29,12 @@ $i = $start + 1; // Inisialisasi hitungan untuk nomor baris
 if (count($getdata) > 0) {
     foreach ($getdata as $a) {
         $output .= '<tr>
-                        <td>' . $a['data1'] . '</td>
-                        <td>' . $a['data2'] . '</td>
-                        <td>' . $a['data3'] . '</td>
-                        <td>' . $a['data4'] . '</td>
-                        <td>' . $a['data5'] . '</td>
-                        <td>' . $a['data6'] . '</td>
+                        <th>' . $i++ . '</th>
+                        <td>' . $a['kecamatan'] . '</td>
+                        <td>' . $a['kelurahan'] . '</td>
+                        <td>' . $a['keterangan'] . '</td>
+                        <td>' . $a['sumber'] . '</td>    
+                        <td>' . $a['luas'] . '</td>            
                     </tr>';
     }
 } else {

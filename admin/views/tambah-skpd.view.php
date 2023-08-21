@@ -140,13 +140,13 @@ mysqli_close($conn);
                 <div class="mb-3">
                     <label for="nama_dinas" class="form-label orange ps-1 pe-1">Nama Dinas</label>
                     <input type="text" name="nama_dinas" class="form-control p-2" id="nama_dinas"
-                        placeholder="Masukkan ID Desa" required />
+                        placeholder="Masukkan nama dinas" required />
                 </div>
                 <!-- Alamat -->
                 <div class=" mb-3">
                     <label for="alamat" class="form-label orange ps-1 pe-1">Alamat</label>
                     <input type="text" name="alamat" class="form-control p-2" id="alamat"
-                        placeholder="Masukkan Nama alamat" required />
+                        placeholder="Masukkan alamat dinas" required />
                 </div>
                 <div class="btn-kirim d-flex justify-content-end mt-5 p-4">
                     <button type="submit" name="send" class="btn btn-primary w-25 p-2">

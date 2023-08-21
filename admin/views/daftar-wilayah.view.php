@@ -12,17 +12,19 @@
             <table class="table table-striped m-auto mt-1">
                 <thead>
                     <tr class="fofa">
-                        <th scope="col">ID Desa</th>
+                        <th scope="col">Kode wilayah</th>
                         <th scope="col">Kecamatan</th>
-                        <th scope="col">Ibukota Kecamatan</th>
+                        <th scope="col">Jumlah kelurahan</th>
+                        <th scope="col">Daftar kelurahan</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($getdata as $a) : ?>
                         <tr>
-                            <th class="text-center" scope="row"><?= $a['id_desa']; ?></th>
+                            <th class="text-center" scope="row"><?= $a['kode_wilayah']; ?></th>
                             <td><?= $a['kecamatan']; ?></td>
-                            <td><?= $a['ibukota']; ?></td>
+                            <td><?= $a['jumlah_kelurahan']; ?></td>
+                            <td><?= $a['daftar_kelurahan']; ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

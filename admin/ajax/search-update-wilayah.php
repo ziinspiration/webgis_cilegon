@@ -1,7 +1,7 @@
 <?php
 require '../functions/functions.php';
 $keyword = $_GET['keyword'];
-$query = "SELECT * FROM wilayah WHERE kecamatan LIKE '%$keyword%' OR id_desa LIKE '%$keyword%' OR ibukota LIKE '%$keyword%'";
+$query = "SELECT * FROM wilayah WHERE kecamatan LIKE '%$keyword%' OR kode_wilayah LIKE '%$keyword%' OR daftar_kelurahan LIKE '%$keyword%'";
 $getdata = query($query);
 ?>
 
@@ -10,18 +10,16 @@ $getdata = query($query);
         <table class="table table-striped m-auto mt-1">
             <thead>
                 <tr class="fofa">
-                    <th scope="col">ID Desa</th>
-                    <th scope="col">Kecamatan</th>
-                    <th scope="col">Ibukota Kecamatan</th>
+                    <th class="text-center" scope="col">Kode wilayah</th>
+                    <th class="text-center" scope="col">Kecamatan</th>
                     <th class="text-center" scope="col">Aksi</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($getdata as $i => $a) : ?>
                     <tr>
-                        <th class="text-center" scope="row"><?= $a['id_desa']; ?></th>
-                        <td><?= $a['kecamatan']; ?></td>
-                        <td><?= $a['ibukota']; ?></td>
+                        <th class="text-center" scope="row"><?= $a['kode_wilayah']; ?></th>
+                        <td class="text-center"><?= $a['kecamatan']; ?></td>
                         <td class="text-center"><a href="form-update-wilayah?id=<?= $a["id"] ?>"><span class="badge bdg-a text-bg-warning p-2"><i class="fa-regular fa-pen-to-square"></i>
                                     Ubah</span></a> <span class="fw-bold spase">|</span> <a href="functions/delete-wilayah.php?id=<?= $a["id"] ?>"><span class="badge text-bg-danger p-2"><i class="fa-solid fa-trash"></i> Hapus</span></a>
                         </td>

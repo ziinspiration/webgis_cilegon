@@ -1,0 +1,12 @@
+{
+"type": "FeatureCollection",
+"name": "TERMINAL_TYPE_C_PT",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "TERMINAL C SURALAYA", "KETERANGAN": "TERMINAL", "X": "106,027872456649", "Y": "-5,89954121605422" }, "geometry": { "type": "Point", "coordinates": [ 106.027872456648595, -5.899541216054217, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "TERMINAL C PASAR BARU MERAK", "KETERANGAN": "TERMINAL", "X": "106,005688741242", "Y": "-5,93178767156377" }, "geometry": { "type": "Point", "coordinates": [ 106.005688741242466, -5.931787671563768, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "TERMINAL C PASAR KRANGGOT", "KETERANGAN": "TERMINAL", "X": "106,066744125041", "Y": "-6,01760134632502" }, "geometry": { "type": "Point", "coordinates": [ 106.066744125041396, -6.017601346325023, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "TERMINAL C PASAR KELAPA KAVLING", "KETERANGAN": "TERMINAL", "X": "106,051008153903", "Y": "-6,02411872959567" }, "geometry": { "type": "Point", "coordinates": [ 106.05100815390324, -6.024118729595671, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "SISTEM TRANSPORTASI", "TOPONIMI": "TERMINAL C CIWANDAN", "KETERANGAN": "TERMINAL", "X": "105,975270901531", "Y": "-6,01592049543444" }, "geometry": { "type": "Point", "coordinates": [ 105.975270901530962, -6.015920495434443, 0.0 ] } }
+]
+}

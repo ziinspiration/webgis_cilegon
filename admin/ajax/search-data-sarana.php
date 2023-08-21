@@ -6,10 +6,11 @@ $query = "SELECT * FROM atribut_sarana
 JOIN data_sarana ON atribut_sarana.data_pokok_id = data_sarana.id 
 WHERE atribut_sarana.data_pokok_id = $id AND 
       (
-      data3 LIKE '%$keyword%' OR data6 LIKE '%$keyword%' OR 
-      data1 LIKE '%$keyword%' OR data2 LIKE '%$keyword%' OR 
-      data5 LIKE '%$keyword%' OR
-      data4 LIKE '%$keyword%'
+      nama LIKE '%$keyword%' OR 
+      keterangan LIKE '%$keyword%' OR 
+      jenis LIKE '%$keyword%' OR
+      x LIKE '%$keyword%' OR
+      y LIKE '%$keyword%'
       )";
 
 $getdata = query($query);
@@ -19,27 +20,23 @@ $getdata = query($query);
     <table class="table table-striped m-auto mt-1">
         <thead>
             <tr class="fofa">
-                <th scope="col">data1</th>
-                <th scope="col">data2</th>
-                <th scope="col">data3</th>
-                <?php if (!empty($getdata[0]['data4'])) : ?>
-                    <th scope="col">data4</th>
-                <?php endif; ?>
-                <th scope="col">data5</th>
-                <th scope="col">data6</th>
+                <th scope="col">No</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Keterangan</th>
+                <th scope="col">Jenis</th>
+                <th scope="col">X</th>
+                <th scope="col">Y</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($getdata as $a) : ?>
+            <?php foreach ($getdata as $i => $a) : ?>
                 <tr>
-                    <td><?= $a['data1']; ?></td>
-                    <td><?= $a['data2']; ?></td>
-                    <td><?= $a['data3']; ?></td>
-                    <?php if (!empty($a['data4'])) : ?>
-                        <td><?= $a['data4']; ?></td>
-                    <?php endif; ?>
-                    <td><?= $a['data5']; ?></td>
-                    <td><?= $a['data6']; ?></td>
+                    <td><?= $i + 1; ?></td>
+                    <td><?= $a['nama']; ?></td>
+                    <td><?= $a['keterangan']; ?></td>
+                    <td><?= $a['jenis']; ?></td>
+                    <td><?= $a['x']; ?></td>
+                    <td><?= $a['y']; ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

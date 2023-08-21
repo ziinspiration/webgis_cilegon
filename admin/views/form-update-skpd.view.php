@@ -60,14 +60,14 @@
             <form class="px-5 py-4 bg-dark rounded-4" action="" method="POST" enctype="multipart/form-data">
                 <h2 class="text-center text-light mb-5 mt-2">Update data SKPD</h2>
                 <input type="hidden" name="id" value="<?= $getdata['id']; ?>" />
-                <div class="formulir d-flex justify-content-between">
-                    <div class="left w-50 me-3">
+                <div class="formulir">
+                    <div class="left w-100 me-3">
                         <div class="mb-3">
                             <label for="nama_dinas" class="form-label orange ps-1 pe-1">Nama Dinas</label>
                             <input type="text" class="form-control p-2" id="nama_dinas" name="nama_dinas" value="<?= $getdata['nama_dinas']; ?>" required />
                         </div>
                     </div>
-                    <div class="right w-50 me-3">
+                    <div class="right w-100 me-3">
                         <div class="mb-3">
                             <label for="alamat" class="form-label orange ps-1 pe-1">Alamat Dinas</label>
                             <input type="text" class="form-control p-2" id="alamat" name="alamat" value="<?= $getdata['alamat']; ?>" required />
