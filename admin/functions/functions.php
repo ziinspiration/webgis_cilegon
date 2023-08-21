@@ -273,3 +273,178 @@ function deleteAtributAdministrasi($id)
 
     return $affected_rows;
 }
+
+function deleteAtributTematik($id)
+{
+    $conn = koneksi();
+    $stmt = mysqli_prepare($conn, "DELETE FROM atribut_tematik WHERE id = ?");
+    mysqli_stmt_bind_param($stmt, "i", $id);
+    mysqli_stmt_execute($stmt);
+
+    $affected_rows = mysqli_stmt_affected_rows($stmt);
+
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+
+    return $affected_rows;
+}
+
+function deleteAtributRencana($id)
+{
+    $conn = koneksi();
+    $stmt = mysqli_prepare($conn, "DELETE FROM atribut_rencana WHERE id = ?");
+    mysqli_stmt_bind_param($stmt, "i", $id);
+    mysqli_stmt_execute($stmt);
+
+    $affected_rows = mysqli_stmt_affected_rows($stmt);
+
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+
+    return $affected_rows;
+}
+
+function deleteAtributSarana($id)
+{
+    $conn = koneksi();
+    $stmt = mysqli_prepare($conn, "DELETE FROM atribut_sarana WHERE id = ?");
+    mysqli_stmt_bind_param($stmt, "i", $id);
+    mysqli_stmt_execute($stmt);
+
+    $affected_rows = mysqli_stmt_affected_rows($stmt);
+
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+
+    return $affected_rows;
+}
+
+function deleteAtributPrasarana($id)
+{
+    $conn = koneksi();
+    $stmt = mysqli_prepare($conn, "DELETE FROM atribut_Prasarana WHERE id = ?");
+    mysqli_stmt_bind_param($stmt, "i", $id);
+    mysqli_stmt_execute($stmt);
+
+    $affected_rows = mysqli_stmt_affected_rows($stmt);
+
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+
+    return $affected_rows;
+}
+
+function deletePokokAdministrasi($id)
+{
+    $conn = koneksi();
+
+    // Hapus data terkait dari tabel atribut_administrasi
+    $stmt_delete_atribut = mysqli_prepare($conn, "DELETE FROM atribut_administrasi WHERE data_pokok_id = ?");
+    mysqli_stmt_bind_param($stmt_delete_atribut, "i", $id);
+    mysqli_stmt_execute($stmt_delete_atribut);
+    mysqli_stmt_close($stmt_delete_atribut);
+
+    // Hapus data dari tabel data_administrasi
+    $stmt_delete_data = mysqli_prepare($conn, "DELETE FROM data_administrasi WHERE id = ?");
+    mysqli_stmt_bind_param($stmt_delete_data, "i", $id);
+    mysqli_stmt_execute($stmt_delete_data);
+
+    $affected_rows = mysqli_stmt_affected_rows($stmt_delete_data);
+
+    mysqli_stmt_close($stmt_delete_data);
+    mysqli_close($conn);
+
+    return $affected_rows;
+}
+
+function deletePokokTematik($id)
+{
+    $conn = koneksi();
+
+    // Hapus data terkait dari tabel atribut_tematik
+    $stmt_delete_atribut = mysqli_prepare($conn, "DELETE FROM atribut_tematik WHERE data_pokok_id = ?");
+    mysqli_stmt_bind_param($stmt_delete_atribut, "i", $id);
+    mysqli_stmt_execute($stmt_delete_atribut);
+    mysqli_stmt_close($stmt_delete_atribut);
+
+    // Hapus data dari tabel data_tematik
+    $stmt_delete_data = mysqli_prepare($conn, "DELETE FROM data_tematik WHERE id = ?");
+    mysqli_stmt_bind_param($stmt_delete_data, "i", $id);
+    mysqli_stmt_execute($stmt_delete_data);
+
+    $affected_rows = mysqli_stmt_affected_rows($stmt_delete_data);
+
+    mysqli_stmt_close($stmt_delete_data);
+    mysqli_close($conn);
+
+    return $affected_rows;
+}
+
+function deletePokokRencana($id)
+{
+    $conn = koneksi();
+
+    // Hapus data terkait dari tabel atribut_rencana
+    $stmt_delete_atribut = mysqli_prepare($conn, "DELETE FROM atribut_rencana WHERE data_pokok_id = ?");
+    mysqli_stmt_bind_param($stmt_delete_atribut, "i", $id);
+    mysqli_stmt_execute($stmt_delete_atribut);
+    mysqli_stmt_close($stmt_delete_atribut);
+
+    // Hapus data dari tabel data_rencana
+    $stmt_delete_data = mysqli_prepare($conn, "DELETE FROM data_rencana WHERE id = ?");
+    mysqli_stmt_bind_param($stmt_delete_data, "i", $id);
+    mysqli_stmt_execute($stmt_delete_data);
+
+    $affected_rows = mysqli_stmt_affected_rows($stmt_delete_data);
+
+    mysqli_stmt_close($stmt_delete_data);
+    mysqli_close($conn);
+
+    return $affected_rows;
+}
+
+function deletePokokSarana($id)
+{
+    $conn = koneksi();
+
+    // Hapus data terkait dari tabel atribut_sarana
+    $stmt_delete_atribut = mysqli_prepare($conn, "DELETE FROM atribut_sarana WHERE data_pokok_id = ?");
+    mysqli_stmt_bind_param($stmt_delete_atribut, "i", $id);
+    mysqli_stmt_execute($stmt_delete_atribut);
+    mysqli_stmt_close($stmt_delete_atribut);
+
+    // Hapus data dari tabel data_sarana
+    $stmt_delete_data = mysqli_prepare($conn, "DELETE FROM data_sarana WHERE id = ?");
+    mysqli_stmt_bind_param($stmt_delete_data, "i", $id);
+    mysqli_stmt_execute($stmt_delete_data);
+
+    $affected_rows = mysqli_stmt_affected_rows($stmt_delete_data);
+
+    mysqli_stmt_close($stmt_delete_data);
+    mysqli_close($conn);
+
+    return $affected_rows;
+}
+
+function deletePokokPrasarana($id)
+{
+    $conn = koneksi();
+
+    // Hapus data terkait dari tabel atribut_prasarana
+    $stmt_delete_atribut = mysqli_prepare($conn, "DELETE FROM atribut_prasarana WHERE data_pokok_id = ?");
+    mysqli_stmt_bind_param($stmt_delete_atribut, "i", $id);
+    mysqli_stmt_execute($stmt_delete_atribut);
+    mysqli_stmt_close($stmt_delete_atribut);
+
+    // Hapus data dari tabel data_prasarana
+    $stmt_delete_data = mysqli_prepare($conn, "DELETE FROM data_prasarana WHERE id = ?");
+    mysqli_stmt_bind_param($stmt_delete_data, "i", $id);
+    mysqli_stmt_execute($stmt_delete_data);
+
+    $affected_rows = mysqli_stmt_affected_rows($stmt_delete_data);
+
+    mysqli_stmt_close($stmt_delete_data);
+    mysqli_close($conn);
+
+    return $affected_rows;
+}

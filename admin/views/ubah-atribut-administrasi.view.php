@@ -21,30 +21,28 @@ require 'views/partials/alert-hapus.php';
                         <th scope="col">Kelurahan</th>
                         <th scope="col">Sumber</th>
                         <th scope="col">Luas</th>
-                        <th scope="col">Aksi</th>
+                        <th class="text-center" scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($getdata as $a) : ?>
-                    <tr>
-                        <td><?= $a['provinsi']; ?></td>
-                        <td><?= $a['kabupaten']; ?></td>
-                        <td><?= $a['kecamatan']; ?></td>
-                        <td><?= $a['kelurahan']; ?></td>
-                        <td><?= $a['sumber']; ?></td>
-                        <td><?= $a['luas']; ?></td>
-                        <td class="text-center">
-                            <a class="text-decoration-none"
-                                href="form-update-atribut-administrasi?id=<?= $a["id_atribut"] ?>">
-                                <span class="badge bdg-a text-bg-warning p-2"><i
-                                        class="fa-regular fa-pen-to-square"></i>Ubah</span>
-                            </a>
-                            <span class="fw-bold spase">|</span>
-                            <a href="javascript:void(0);" class="hapusData" id_atribut="<?= $a["id_atribut"] ?>">
-                                <span class="badge text-bg-danger p-2"><i class="fa-solid fa-trash"></i> Hapus</span>
-                            </a>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td><?= $a['provinsi']; ?></td>
+                            <td><?= $a['kabupaten']; ?></td>
+                            <td><?= $a['kecamatan']; ?></td>
+                            <td><?= $a['kelurahan']; ?></td>
+                            <td><?= $a['sumber']; ?></td>
+                            <td><?= $a['luas']; ?></td>
+                            <td class="text-center">
+                                <a class="text-decoration-none" href="form-update-atribut-administrasi?id=<?= $a["id_atribut"] ?>">
+                                    <span class="badge bdg-a text-bg-warning p-2"><i class="fa-regular fa-pen-to-square"></i>Ubah</span>
+                                </a>
+                                <span class="fw-bold spase">|</span>
+                                <a href="javascript:void(0);" class="hapusData" id_atribut="<?= $a["id_atribut"] ?>">
+                                    <span class="badge text-bg-danger p-2"><i class="fa-solid fa-trash"></i> Hapus</span>
+                                </a>
+                            </td>
+                        </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
@@ -53,43 +51,43 @@ require 'views/partials/alert-hapus.php';
 </div>
 <?php include 'views/partials/script.php' ?>
 <script>
-// Menggunakan class 'hapusData' sebagai selector untuk tombol hapus
-const hapusButtons = document.getElementsByClassName('hapusData');
-for (let i = 0; i < hapusButtons.length; i++) {
-    hapusButtons[i].addEventListener('click', function(event) {
-        event.preventDefault();
+    // Menggunakan class 'hapusData' sebagai selector untuk tombol hapus
+    const hapusButtons = document.getElementsByClassName('hapusData');
+    for (let i = 0; i < hapusButtons.length; i++) {
+        hapusButtons[i].addEventListener('click', function(event) {
+            event.preventDefault();
 
-        // Use SweetAlert for the confirmation dialog
-        Swal.fire({
-            title: 'Apakah Anda yakin ingin menghapus?',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Ya, hapus!',
-            cancelButtonText: 'Tidak',
-            didOpen: () => {
-                const sweetAlertContainer = document.querySelector('.swal2-container');
-                if (sweetAlertContainer) {
-                    sweetAlertContainer.style.padding = '20px'; // Atur padding sesuai kebutuhan
-                    const sweetAlertIcon = sweetAlertContainer.querySelector('.swal2-icon');
-                    if (sweetAlertIcon) {
-                        sweetAlertIcon.style.marginBottom = '15px'; // Atur margin sesuai kebutuhan
+            // Use SweetAlert for the confirmation dialog
+            Swal.fire({
+                title: 'Apakah Anda yakin ingin menghapus?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Ya, hapus!',
+                cancelButtonText: 'Tidak',
+                didOpen: () => {
+                    const sweetAlertContainer = document.querySelector('.swal2-container');
+                    if (sweetAlertContainer) {
+                        sweetAlertContainer.style.padding = '20px'; // Atur padding sesuai kebutuhan
+                        const sweetAlertIcon = sweetAlertContainer.querySelector('.swal2-icon');
+                        if (sweetAlertIcon) {
+                            sweetAlertIcon.style.marginBottom = '15px'; // Atur margin sesuai kebutuhan
+                        }
                     }
                 }
-            }
-        }).then((result) => {
-            if (result.isConfirmed) {
-                console.log("Data dengan ID " + hapusButtons[i].getAttribute('id_atribut') +
-                    " telah dihapus!");
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    console.log("Data dengan ID " + hapusButtons[i].getAttribute('id_atribut') +
+                        " telah dihapus!");
 
-                // Perform deletion action (e.g., delete data from the server)
-                window.location.href = "functions/delete-atribut-administrasi.php?id=" + hapusButtons[i]
-                    .getAttribute(
-                        'id_atribut');
-            } else {
-                console.log("Penghapusan dibatalkan.");
-            }
+                    // Perform deletion action (e.g., delete data from the server)
+                    window.location.href = "functions/delete-atribut-administrasi.php?id=" + hapusButtons[i]
+                        .getAttribute(
+                            'id_atribut');
+                } else {
+                    console.log("Penghapusan dibatalkan.");
+                }
+            });
         });
-    });
-}
+    }
 </script>
 <?php include 'views/partials/starter-foot.php' ?>

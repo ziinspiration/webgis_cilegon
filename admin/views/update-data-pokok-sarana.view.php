@@ -48,6 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <a class="text-warning me-2 edit-icon" href="#"><i class="fa-solid fa-pen-to-square"></i></a>
                                     <button type="submit" class="text-primary btn save-icon" name="save"><i class="fa-solid fa-floppy-disk"></i></button>
                                 <?php endif; ?>
+                                <a href="javascript:void(0);" class="hapusData text-danger ms-2" id_pokok="<?= $a["id"] ?>"><i class=" fa-solid fa-trash"></i></a>
                                 </form>
                             </td>
                         </tr>
@@ -93,6 +94,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php endif; ?>
         <?php endif; ?>
     });
+
+    // Hapus data
+    // Menggunakan class 'hapusData' sebagai selector untuk tombol hapus
+    const hapusButtons = document.getElementsByClassName('hapusData');
+    for (let i = 0; i < hapusButtons.length; i++) {
+        hapusButtons[i].addEventListener('click', function(event) {
+            event.preventDefault();
+
+            // Use SweetAlert for the confirmation dialog
+            Swal.fire({
+                title: 'Apakah Anda yakin ingin menghapus?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Ya, hapus!',
+                cancelButtonText: 'Tidak',
+                didOpen: () => {
+                    const sweetAlertContainer = document.querySelector('.swal2-container');
+                    if (sweetAlertContainer) {
+                        sweetAlertContainer.style.padding = '20px'; // Atur padding sesuai kebutuhan
+                        const sweetAlertIcon = sweetAlertContainer.querySelector('.swal2-icon');
+                        if (sweetAlertIcon) {
+                            sweetAlertIcon.style.marginBottom = '15px'; // Atur margin sesuai kebutuhan
+                        }
+                    }
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    console.log("Data dengan ID " + hapusButtons[i].getAttribute('id_pokok') +
+                        " telah dihapus!");
+
+                    // Perform deletion action (e.g., delete data from the server)
+                    window.location.href = "functions/delete-pokok-sarana.php?id=" + hapusButtons[i]
+                        .getAttribute(
+                            'id_pokok');
+                } else {
+                    console.log("Penghapusan dibatalkan.");
+                }
+            });
+        });
+    }
 </script>
 
 <?php include 'views/partials/starter-foot.php' ?>
