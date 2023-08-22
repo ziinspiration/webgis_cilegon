@@ -9,14 +9,14 @@
 
 <div class="container mt-5 mb-5">
     <div class="row">
-        <div class="col-md-6 mb-5 mt-5">
+        <div class="col-md-6 mb-3 mt-3">
             <div style="width: 80%; margin: auto;">
-                <canvas id="barChart"></canvas>
+                <canvas class="shadow card p-3 rounded-3" id="barChart"></canvas>
             </div>
         </div>
-        <div class="col-md-6 mb-5 mt-5">
+        <div class="col-md-6 mb-3 mt-3">
             <div style="width: 80%; margin: auto;">
-                <canvas id="pieChart"></canvas>
+                <canvas class="shadow card p-3 rounded-3" id="pieChart"></canvas>
             </div>
         </div>
         <div class="note">
@@ -36,12 +36,16 @@
     const barChart = new Chart(barChartCtx, {
         type: 'bar',
         data: {
-            labels: ['Baik', 'Sedang', 'Rusak'],
+            labels: ['SALURAN PRIMER', 'SALURAN SEKUNDER', 'SALURAN TERSIER'],
             datasets: [{
                 label: 'Kemantapan Drainase',
-                data: [getdata.reduce((total, a) => total + a.good, 0), getdata.reduce((total, a) => total +
-                    a.normal, 0), getdata.reduce((total, a) => total + a.bad, 0)],
-                backgroundColor: ['green', 'yellow', 'red']
+                data: [getdata.reduce((total, a) => total + a.data1, 0),
+                    getdata.reduce((total, a) => total + a.data2, 0),
+                    getdata.reduce((total, a) => total + a.data3, 0)
+                ],
+                backgroundColor: ['rgba(0, 150, 136, 0.7)', 'rgba(255, 152, 0, 0.7)',
+                    'rgba(255, 235, 59, 0.7)'
+                ]
             }]
         },
         options: {
@@ -55,17 +59,22 @@
 
     const pieChartCtx = document.getElementById('pieChart').getContext('2d');
     const pieChart = new Chart(pieChartCtx, {
-        type: 'pie',
+        type: 'doughnut',
         data: {
-            labels: ['Baik', 'Sedang', 'Rusak'],
+            labels: ['SALURAN PRIMER', 'SALURAN SEKUNDER', 'SALURAN TERSIER'],
             datasets: [{
                 label: 'Kemantapan Drainase',
-                data: [getdata.reduce((total, a) => total + a.good, 0), getdata.reduce((total, a) => total +
-                    a.normal, 0), getdata.reduce((total, a) => total + a.bad, 0)],
-                backgroundColor: ['green', 'yellow', 'red']
+                data: [getdata.reduce((total, a) => total + a.data1, 0),
+                    getdata.reduce((total, a) => total + a.data2, 0),
+                    getdata.reduce((total, a) => total + a.data3, 0)
+                ],
+                backgroundColor: ['rgba(0, 150, 136, 0.7)', 'rgba(255, 152, 0, 0.7)',
+                    'rgba(255, 235, 59, 0.7)'
+                ]
             }]
         }
     });
 </script>
+
 
 <?php include 'partials/starter-foot.php' ?>

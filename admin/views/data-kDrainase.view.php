@@ -1,22 +1,32 @@
 <?php
 include 'views/partials/starter-head.php';
+
 if (isset($_POST['update'])) {
-    $good = clean_input($_POST['good']);
-    $normal = clean_input($_POST['normal']);
-    $bad = clean_input($_POST['bad']);
+    $data1 = clean_input($_POST['data1']);
+    $data2 = clean_input($_POST['data2']);
+    $data3 = clean_input($_POST['data3']);
 
-    if (!empty($good) && !empty($normal) && !empty($bad)) {
-        $total = $good + $normal + $bad;
-        if ($total == 100) {
-            $query = "UPDATE status_kemantapan SET good = ?, normal = ?, bad = ? WHERE nama_data = 'kemantapan_drainase'";
+    // Convert the input strings to integers
+    $data1 = (int) $data1;
+    $data2 = (int) $data2;
+    $data3 = (int) $data3;
 
-            $stmt = $conn->prepare($query);
-            if ($stmt) {
-                $stmt->bind_param("iii", $good, $normal, $bad);
+    // Calculate the total
+    $total = $data1 + $data2 + $data3;
 
-                if ($stmt->execute()) {
-                    // SweetAlert success message
-                    echo '<script>
+    if ($total <= 100) {
+        // Prepare the query
+        $query = "UPDATE status_kemantapan SET data1 = ?, data2 = ?, data3 = ? WHERE nama_data = 'kemantapan_drainase'";
+
+        // Prepare and execute the statement
+        $stmt = $conn->prepare($query);
+        if ($stmt) {
+            // Bind the parameters with appropriate types
+            $stmt->bind_param("iii", $data1, $data2, $data3);
+
+            if ($stmt->execute()) {
+                // SweetAlert success message with redirection
+                echo '<script>
                     Swal.fire({
                         icon: "success",
                         title: "Data berhasil diupdate.",
@@ -26,43 +36,33 @@ if (isset($_POST['update'])) {
                         window.location.href = "data-kemantapan-drainase"; 
                     });
                 </script>';
-                } else {
-                    // SweetAlert error message
-                    echo '<script>
-                        Swal.fire({
-                            icon: "error",
-                            title: "Terjadi kesalahan saat mengupdate data",
-                            text: "' . $stmt->error . '"
-                        });
-                    </script>';
-                }
-
-                $stmt->close();
             } else {
-                // SweetAlert error message
+                // SweetAlert error message with SQL error
                 echo '<script>
                     Swal.fire({
                         icon: "error",
-                        title: "Terjadi kesalahan saat mempersiapkan statement",
-                        text: "' . $conn->error . '"
+                        title: "Terjadi kesalahan saat mengupdate data",
+                        text: "Error: ' . $stmt->error . '"
                     });
                 </script>';
             }
+
+            $stmt->close();
         } else {
-            // SweetAlert warning message
+            // SweetAlert warning message for total greater than 100
             echo '<script>
                 Swal.fire({
                     icon: "warning",
-                    title: "Total harus berjumlah 100%"
+                    title: "Total tidak boleh melebihi 100%"
                 });
             </script>';
         }
     } else {
-        // SweetAlert error message
+        // SweetAlert error message for negative input values
         echo '<script>
             Swal.fire({
                 icon: "error",
-                title: "Input tidak boleh kosong"
+                title: "Input harus bernilai 0 atau lebih besar"
             });
         </script>';
     }
@@ -134,17 +134,17 @@ if (isset($_POST['update'])) {
                         <tbody class="text-center">
                             <?php foreach ($getdata as $a) : ?>
                                 <tr>
-                                    <th scope="row" class="text-success">Baik</th>
-                                    <td><input class="border-1 rounded w-25 text-center" type="text" value="<?= $a['good']; ?>" name="good">
+                                    <th scope="row" class="text-success">Saluran Primer</th>
+                                    <td><input class="border-1 rounded w-25 text-center" type="text" value="<?= $a['data1']; ?>" name="data1">
                                         %</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row" class="text-warning">Sedang</th>
-                                    <td><input class="border-1 rounded w-25 text-center" type="text" value="<?= $a['normal']; ?>" name="normal"> %</td>
+                                    <th scope="row" class="text-warning">Saluran Sekunder</th>
+                                    <td><input class="border-1 rounded w-25 text-center" type="text" value="<?= $a['data2']; ?>" name="data2"> %</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row" class="text-danger">Buruk</th>
-                                    <td><input class="border-1 rounded w-25 text-center" type="text" value="<?= $a['bad']; ?>" name="bad">
+                                    <th scope="row" class="text-danger">Saluran Tersier</th>
+                                    <td><input class="border-1 rounded w-25 text-center" type="text" value="<?= $a['data3']; ?>" name="data3">
                                         %</td>
                                 </tr>
                             <?php endforeach; ?>
@@ -167,12 +167,14 @@ if (isset($_POST['update'])) {
     const barChart = new Chart(barChartCtx, {
         type: 'bar',
         data: {
-            labels: ['Baik', 'Sedang', 'Rusak'],
+            labels: ['SALURAN PRIMER', 'SALURAN SEKUNDER', 'SALURAN TERSIER'],
             datasets: [{
                 label: 'Kemantapan Drainase',
-                data: [getdata.reduce((total, a) => total + a.good, 0), getdata.reduce((total, a) => total +
-                    a.normal, 0), getdata.reduce((total, a) => total + a.bad, 0)],
-                backgroundColor: ['green', 'yellow', 'red']
+                data: [getdata.reduce((total, a) => total + a.data1, 0),
+                    getdata.reduce((total, a) => total + a.data2, 0),
+                    getdata.reduce((total, a) => total + a.data3, 0)
+                ],
+                backgroundColor: ['green', 'yellow', 'red', ]
             }]
         },
         options: {
@@ -188,12 +190,14 @@ if (isset($_POST['update'])) {
     const pieChart = new Chart(pieChartCtx, {
         type: 'pie',
         data: {
-            labels: ['Baik', 'Sedang', 'Rusak'],
+            labels: ['SALURAN PRIMER', 'SALURAN SEKUNDER', 'SALURAN TERSIER'],
             datasets: [{
                 label: 'Kemantapan Drainase',
-                data: [getdata.reduce((total, a) => total + a.good, 0), getdata.reduce((total, a) => total +
-                    a.normal, 0), getdata.reduce((total, a) => total + a.bad, 0)],
-                backgroundColor: ['green', 'yellow', 'red']
+                data: [getdata.reduce((total, a) => total + a.data1, 0),
+                    getdata.reduce((total, a) => total + a.data2, 0),
+                    getdata.reduce((total, a) => total + a.data3, 0)
+                ],
+                backgroundColor: ['green', 'yellow', 'red', ]
             }]
         }
     });
