@@ -12,7 +12,7 @@
         <!-- Table -->
         <div id="search-container">
             <div class="table-responsive">
-                <table class="table table-striped m-auto mt-1">
+                <table class="table table-striped m-auto mt-1 mb-5">
                     <thead>
                         <tr class="fofa">
                             <th scope="col">No</th>

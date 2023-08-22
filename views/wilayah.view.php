@@ -1,14 +1,14 @@
 <?php include 'partials/starter-head.php' ?>
 <style>
-@media screen and (max-width:990px) {
-    .search-class {
-        width: 65% !important;
-    }
+    @media screen and (max-width:990px) {
+        .search-class {
+            width: 65% !important;
+        }
 
-    .table-res {
-        overflow-y: auto !important;
+        .table-res {
+            overflow-y: auto !important;
+        }
     }
-}
 </style>
 <?php include 'partials/nav.php' ?>
 <?php include 'partials/breadcrumb.php' ?>
@@ -18,10 +18,8 @@
         <div class="col">
             <!-- Search -->
             <div class="input-group search-class mb-5 mt-5 w-25">
-                <input type="search" id="search" class="form-control input-search" placeholder="Cari disini"
-                    aria-label="Cari disini" aria-describedby="button-addon2">
-                <button class="btn btn-search btn-outline-secondary" type="button" id="cari"><i
-                        class="bi bi-search"></i></button>
+                <input type="search" id="search" class="form-control input-search" placeholder="Cari disini" aria-label="Cari disini" aria-describedby="button-addon2">
+                <button class="btn btn-search btn-outline-secondary" type="button" id="cari"><i class="bi bi-search"></i></button>
             </div>
             <!-- Table -->
             <div class="table-res">
@@ -35,14 +33,12 @@
                         </tr>
                     </thead>
                     <tbody id="table-data">
-                        <!-- Data will be loaded here using AJAX -->
                     </tbody>
                 </table>
             </div>
             <!-- PAGINATION -->
             <nav aria-label="Page navigation example mt-5">
                 <ul class="pagination" id="pagination">
-                    <!-- Pagination links will be added here using AJAX -->
                 </ul>
             </nav>
         </div>
@@ -55,38 +51,38 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-$(document).ready(function() {
-    // Load initial data on page load
-    loadTableData(1);
+    $(document).ready(function() {
+        // Load initial data on page load
+        loadTableData(1);
 
-    // Handle page change
-    $(document).on('click', '.pagination a', function(e) {
-        e.preventDefault();
-        var page = $(this).data('page');
-        loadTableData(page);
+        // Handle page change
+        $(document).on('click', '.pagination a', function(e) {
+            e.preventDefault();
+            var page = $(this).data('page');
+            loadTableData(page);
+        });
+
+        // Handle live searching
+        $('#search').keyup(function() {
+            loadTableData(1); // Load first page of search results
+        });
     });
 
-    // Handle live searching
-    $('#search').keyup(function() {
-        loadTableData(1); // Load first page of search results
-    });
-});
+    function loadTableData(page) {
+        var searchQuery = $('#search').val();
 
-function loadTableData(page) {
-    var searchQuery = $('#search').val();
-
-    $.ajax({
-        url: 'ajax/wilayah-data.php',
-        method: 'POST',
-        data: {
-            page: page,
-            search: searchQuery
-        },
-        dataType: 'json', // Added this line to specify the data type
-        success: function(data) {
-            $('#table-data').html(data.tableData);
-            $('#pagination').html(data.pagination);
-        }
-    });
-}
+        $.ajax({
+            url: 'ajax/wilayah-data.php',
+            method: 'POST',
+            data: {
+                page: page,
+                search: searchQuery
+            },
+            dataType: 'json', // Added this line to specify the data type
+            success: function(data) {
+                $('#table-data').html(data.tableData);
+                $('#pagination').html(data.pagination);
+            }
+        });
+    }
 </script>

@@ -3,7 +3,7 @@
 <?php include 'partials/breadcrumb.php' ?>
 <div class="container">
     <div class="row justify-content-md-center">
-        <!-- Content 5 -->
+        <!-- Content -->
         <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card">
                 <div class="card-head d-flex">
@@ -40,7 +40,7 @@
                 </div>
             </div>
         </div>
-        <!-- Content 1 -->
+        <!-- Content -->
         <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card">
                 <div class="card-head d-flex">
@@ -77,7 +77,7 @@
                 </div>
             </div>
         </div>
-        <!-- Content 2 -->
+        <!-- Content -->
         <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card">
                 <div class="card-head d-flex">
@@ -114,7 +114,7 @@
                 </div>
             </div>
         </div>
-        <!-- Content 3 -->
+        <!-- Content -->
         <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card">
                 <div class="card-head d-flex">
@@ -151,7 +151,7 @@
                 </div>
             </div>
         </div>
-        <!-- Content 4 -->
+        <!-- Content -->
         <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card">
                 <div class="card-head d-flex">

@@ -35,16 +35,14 @@
                         </tr>
                     </thead>
                     <tbody id="table-data">
-                        <!-- Data will be loaded here using AJAX -->
                     </tbody>
                 </table>
-                <!-- PAGINATION -->
-                <nav aria-label="Page navigation example mt-5">
-                    <ul class="pagination" id="pagination">
-                        <!-- Pagination links will be added here using AJAX -->
-                    </ul>
-                </nav>
             </div>
+            <!-- PAGINATION -->
+            <nav aria-label="Page navigation example mt-5">
+                <ul class="pagination" id="pagination">
+                </ul>
+            </nav>
         </div>
     </div>
 </div>

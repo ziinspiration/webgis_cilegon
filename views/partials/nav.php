@@ -1,59 +1,57 @@
-<style>
-    #navbarToggler {
-        border: none !important;
-        background-color: transparent !important;
-    }
-
-    .bi-x-circle:hover {
-        color: red !important;
-    }
-</style>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand p-3" href="#">
-            <img src="assets/logo/cilegon.png" alt="Bootstrap" width="85" height="85">
+        <a class="navbar-brand ms-2 py-2" href="#">
+            <img src="assets/logo/cilegon.png" alt="Logo" width="100" height="100"
+                class="d-inline-block align-text-top">
         </a>
-        <button id="navbarToggler" class="custom-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button id="navbarToggler" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+            aria-label="Toggle navigation">
             <i id="navbarIcon" class="bi bi-three-dots-vertical"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="index">Beranda</a>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+            <ul class="navbar-nav me-4">
+                <li class="nav-item ms-1">
+                    <a class="nav-link" href="index">Beranda</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle mb-2" href="#" id="referensiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Referensi
+                <li class="nav-item ms-1 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Data Rujukan
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="referensiDropdown">
-                        <li><a class="dropdown-item" href="wilayah">Wilayah</a></li>
-                        <li><a class="dropdown-item border-bottom" href="skpd">SKPD</a></li>
+                    <ul class="dropdown-menu shadow bg-light rounded-3">
+                        <li><a class="dropdown-item mb-1" href="wilayah">Data Kewilayahan</a></li>
+                        <hr class="my-0 mx-2">
+                        <li><a class="dropdown-item mt-1" href="skpd">Data OPD</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="datapokok">Data pokok</a>
+                <li class="nav-item ms-1">
+                    <a class="nav-link" href="datapokok">Data Pokok</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle mb-2" href="#" id="petaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <li class="nav-item ms-1 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
                         Peta
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="petaDropdown">
-                        <li><a class="dropdown-item" href="mapTematik">Tematik</a></li>
-                        <li><a class="dropdown-item border-bottom" href="mapSpasial">Spasial</a></li>
+                    <ul class="dropdown-menu shadow bg-light rounded-3">
+                        <li><a class="dropdown-item mb-1" href="mapTematik">Peta Tematik</a></li>
+                        <hr class="my-0 mx-2">
+                        <li><a class="dropdown-item mt-1" href="mapSpasial">Peta Spasial</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle mb-2" href="#" id="layananDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Layanan
+                <li class="nav-item ms-1 dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Infrastruktur
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="layananDropdown">
-                        <li><a class="dropdown-item border-bottom" href="kemantapan-jalan">Kemantapan Jalan</a></li>
-                        <li><a class="dropdown-item border-bottom" href="kemantapan-drainase">Kemantapan Drainase</a>
-                        </li>
+                    <ul class="dropdown-menu shadow bg-light rounded-3">
+                        <li><a class="dropdown-item mb-1" href="kemantapan-jalan">Kemantapan Jalan</a></li>
+                        <hr class="my-0 mx-2">
+                        <li><a class="dropdown-item mt-1" href="kemantapan-drainase">Kemantapan Drainase</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="publikasi">Publikasi</a>
+                <li class="nav-item ms-1">
+                    <a class="nav-link" href="publikasi">Informasi Publikasi</a>
                 </li>
             </ul>
         </div>

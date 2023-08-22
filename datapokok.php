@@ -13,5 +13,5 @@ $getsarana = query("SELECT * FROM data_sarana ORDER BY nama_data");
 $nama_halaman = 'Data pokok';
 $linkcss = 'datapokok.css';
 $folder = 'DATA POKOK';
-$name_page = 'Data';
+$name_page = 'Data utama';
 require 'views/datapokok.view.php';

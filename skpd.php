@@ -7,6 +7,6 @@ $i = 1;
 
 $nama_halaman = 'SKPD';
 $linkcss = 'skpd.css';
-$folder = 'REFERENSI';
-$name_page = 'SKPD';
+$folder = 'DATA RUJUKAN';
+$name_page = 'Data SKPD';
 require 'views/skpd.view.php';

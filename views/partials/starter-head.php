@@ -9,7 +9,6 @@ require 'functions/functions.php'
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/views/<?= $linkcss; ?>">
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
@@ -20,10 +19,19 @@ require 'functions/functions.php'
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,700;1,800&family=Poppins:wght@200;300;400;500;600&family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/logo/cilegon.png">
-    <title><?= $nama_halaman; ?> | CILEGON GIS</title>
+    <title><?= $nama_halaman; ?> | WEBGIS BAPPEDA CILEGON</title>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@200;300;400;500;600&family=Roboto&display=swap");
 
+        hr {
+            color: black !important;
+            border-top: 1.3px solid orange;
+            opacity: 1 !important;
+            margin-top: 2px !important;
+            margin-bottom: 2px !important;
+        }
+
+        /* Breadcrumb */
         .breadcrumb {
             font-family: "Poppins", sans-serif !important;
             font-weight: 400 !important;
@@ -71,87 +79,31 @@ require 'functions/functions.php'
             width: 100%;
         }
 
-        .custom-toggler {
-            font-size: 25px !important;
-            margin-right: 10px !important;
+        .navbar-toggler {
+            font-size: 30px !important;
+            border: none !important;
         }
 
-        .custom-toggler .navbar-toggler-icon {
-            background-image: none;
-            transition: transform 0.4s ease-in-out;
+        .bi-x-circle:hover {
+            transition: 0.3s !important;
+            color: red !important;
         }
 
-        .custom-toggler .navbar-toggler-icon.bars {
-            transform: rotate(0deg);
-        }
-
-        .custom-toggler .navbar-toggler-icon.times {
-            transform: rotate(45deg);
-        }
-
-        .nav-toggler {
-            border: none;
+        button.navbar-toggler:focus {
             outline: none;
-            background-color: transparent;
-            padding: 0;
-            width: 30px;
-            height: 30px;
-            position: relative;
-            cursor: pointer;
-            overflow: hidden !important;
+            box-shadow: none;
         }
 
-        .nav-toggler span {
-            display: block;
-            position: absolute;
-            height: 2px;
-            width: 100%;
-            background-color: #fff;
-            border-radius: 2px;
-            opacity: 1;
-            left: 0;
-            transform: rotate(0);
-            transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
-        }
-
-        .nav-toggler span:nth-child(1) {
-            top: 0;
-        }
-
-        .nav-toggler span:nth-child(2),
-        .nav-toggler span:nth-child(3) {
-            top: 8px;
-        }
-
-        .nav-toggler span:nth-child(4) {
-            top: 16px;
-        }
-
-        .nav-toggler.open span:nth-child(1) {
-            top: 8px;
-            transform: rotate(45deg);
-        }
-
-        .nav-toggler.open span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .nav-toggler.open span:nth-child(3) {
-            top: 8px;
-            transform: rotate(-45deg);
-        }
-
-        .nav-toggler.open span:nth-child(4) {
-            top: 8px;
-            transform: rotate(45deg);
+        /* Navbar */
+        .navbar {
+            font-family: Poppins !important;
+            font-size: 16px !important;
+            font-weight: 500;
         }
 
         .nav-link {
             font-weight: 500;
-            background-image: linear-gradient(to right,
-                    orange,
-                    orange 50%,
-                    rgb(98, 98, 98) 50%);
+            background-image: linear-gradient(to right, orange, orange 50%, rgb(98, 98, 98) 50%);
             background-size: 200% 100%;
             background-position: -100%;
             display: inline-block;
@@ -162,7 +114,7 @@ require 'functions/functions.php'
             transition: all 0.6s ease-in-out;
         }
 
-        .nav-link:before {
+        .nav-link::before {
             content: "";
             background: orange;
             display: block;
@@ -175,171 +127,108 @@ require 'functions/functions.php'
         }
 
         .nav-link:hover {
-            background-position: 0;
+            background-position: 100%;
+            background-image: none;
+            background-color: orange;
+            animation: fadeInOut 0.8s ease infinite;
         }
 
         .nav-link:hover::before {
             width: 100%;
         }
 
-        .navbar-nav {
-            margin-right: 110px !important;
-        }
-
-        /* DROPDOWN */
-        @media screen and (max-width: 900px) {
-            .dropdown-menu {
-                background-color: transparent;
-                border: none;
-            }
-
-            .dropdown {
-                width: 35%;
+        @media screen and (max-width:990px) {
+            .navbar-nav {
+                margin-top: 15px !important;
+                margin-bottom: 15px !important;
             }
         }
 
         .dropdown-menu {
-            background-color: white !important;
-            padding: 0;
+            margin-top: 10px !important;
+            overflow: hidden !important;
+            border: 1.3px solid orange;
+        }
+
+        @media screen and (max-width:990px) {
+            .dropdown-menu {
+                width: 35% !important;
+                margin-top: 10px !important;
+                margin-bottom: 7px !important;
+            }
+
+            .nav-item {
+                margin-bottom: 5px !important;
+            }
+        }
+
+        @media screen and (max-width:550px) {
+            .dropdown-menu {
+                width: 70% !important;
+                margin-top: 10px !important;
+                margin-bottom: 7px !important;
+            }
+        }
+
+        @media screen and (max-width:400px) {
+            .dropdown-menu {
+                width: 85% !important;
+                margin-top: 10px !important;
+                margin-bottom: 7px !important;
+            }
         }
 
         .dropdown-item {
-            box-shadow: inset 0 0 0 0 rgb(203, 203, 203);
-            color: rgb(203, 203, 203);
-            transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background-color: transparent;
+            background-image: linear-gradient(to right, transparent 0%, transparent 50%, orange 50%, orange 100%);
+            background-size: 200% 100%;
+            background-position: 0%;
+            transition: background-position 0.5s;
+            font-weight: 400;
+            color: #4a5159;
+            /* margin-top: 2px !important;
+        margin-bottom: 2px !important; */
         }
 
         .dropdown-item:hover {
-            color: #3b3b3b;
-            box-shadow: inset 200px 0 0 0 rgb(203, 203, 203);
+            background-position: 100%;
+            font-weight: 500;
+            color: #343a40 !important;
+            animation: fadeInOut2 0.8s ease infinite;
         }
 
-        /* Presentational styles */
-        .dropdown-item {
-            color: rgb(98, 98, 98);
-            font-family: "Poppins", sans-serif;
+        @keyframes fadeInOut {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes fadeInOut2 {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
         }
 
         .geser:hover {
             margin-right: 20px !important;
         }
 
-        /* Footer */
-
-        .footer {
-            /* background-color: lavenderblush !important; */
-            color: #fff;
-            padding: 30px 0;
-            width: 100%;
-        }
-
-        .footer .row {
-            margin-bottom: 20px;
-        }
-
-        .footer .col-lg-3 {
-            margin-bottom: 20px;
-        }
-
-        .footer h5 {
-            color: #fff;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        .footer p {
-            font-size: 14px;
-        }
-
-        .footer .social-icons a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            border-radius: 50%;
-            background-color: #fff;
-            color: #333;
-            text-align: center;
-            margin-right: 10px;
-        }
-
-        .list-link li a {
-            color: white !important;
-            font-weight: 500;
-            background-image: linear-gradient(to right,
-                    orange,
-                    orange 50%,
-                    white 50%);
-            background-size: 200% 100%;
-            background-position: -100%;
-            display: inline-block;
-            position: relative;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            transition: all 0.6s ease-in-out;
-        }
-
-        .list-link li a:before {
-            content: "";
-            background: orange;
-            display: block;
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            transition: all 0.4s ease-in-out;
-        }
-
-        .list-link li a:hover {
-            background-position: 0;
-        }
-
-        .list-link li a:hover::before {
-            width: 100%;
-        }
-
         .orange {
             color: orange !important;
         }
 
-        .instagram,
-        .twitter,
-        .facebook,
-        .youtube {
-            background-color: transparent !important;
-            color: white !important;
-            outline: 2px solid white;
-        }
-
-        .instagram:hover,
-        .twitter:hover,
-        .facebook:hover,
-        .youtube:hover {
-            outline: 2px solid orange;
-
-        }
-
-        .instagram:hover {
-            background: linear-gradient(to right, #833AB4, #E1306C);
-            animation: shake 0.5s infinite;
-        }
-
-        .youtube:hover {
-            /* background: linear-gradient(to right, #FF0000); */
-            background-color: #FF0000 !important;
-            animation: shake 0.5s infinite;
-        }
-
-        .twitter:hover {
-            background: linear-gradient(to right, #1DA1F2, #1DA1F2);
-            animation: shake 0.5s infinite;
-        }
-
-        .facebook:hover {
-            background: linear-gradient(to right, #4267B2, #1DA1F2);
-            animation: shake 0.5s infinite;
-        }
 
         /* Offcanvas / Spasial */
         .btn-close-canvas {
