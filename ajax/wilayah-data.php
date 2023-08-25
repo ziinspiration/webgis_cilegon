@@ -2,7 +2,7 @@
 require_once '../functions/functions.php';
 
 $page = isset($_POST['page']) ? $_POST['page'] : 1;
-$itemsPerPage = 8;
+$itemsPerPage = 10;
 $start = ($page - 1) * $itemsPerPage;
 
 $searchQuery = isset($_POST['search']) ? $_POST['search'] : '';

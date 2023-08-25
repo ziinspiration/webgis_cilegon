@@ -1,7 +1,7 @@
 <?php
 require_once '../functions/functions.php';
 
-$itemsPerPage = 8;
+$itemsPerPage = 10;
 $page = isset($_POST['page']) ? $_POST['page'] : 1;
 $start = ($page - 1) * $itemsPerPage;
 
