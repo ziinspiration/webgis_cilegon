@@ -32,6 +32,7 @@ $i = $start + 1; // Inisialisasi hitungan untuk nomor baris
 if (count($getdata) > 0) {
     foreach ($getdata as $a) {
         $output .= '<tr>
+            <th>' . $i++ . '</th>
             <td>' . $a['kecamatan'] . '</td>
             <td>' . $a['kelurahan'] . '</td>
             <td>' . $a['keterangan'] . '</td>';
@@ -40,7 +41,7 @@ if (count($getdata) > 0) {
         if (isset($a['fungsi']) && !empty($a['fungsi'])) {
             $output .= '<td>' . $a['fungsi'] . '</td>';
         } else {
-            $output .= '<td>-</td>'; // Jika fungsi tidak tersedia
+            $output .= '<td class="text-center">-</td>'; // Jika fungsi tidak tersedia
         }
 
         $output .= '<td>' . $a['sumber'] . '</td>

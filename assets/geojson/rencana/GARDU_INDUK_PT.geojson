@@ -1,0 +1,21 @@
+{
+"type": "FeatureCollection",
+"name": "GARDU_INDUK_PT",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "JENIS": "RENCANA SISTEM JARINGAN ENERGI", "NAMA": "GARDU INDUK", "KETERANGAN": "STRUKTUR RUANG", "X": "106,031362875", "Y": "-5,89536586599996" }, "geometry": { "type": "Point", "coordinates": [ 106.03136287500007, -5.895365865999963 ] } },
+{ "type": "Feature", "properties": { "JENIS": "RENCANA SISTEM JARINGAN ENERGI", "NAMA": "GARDU INDUK", "KETERANGAN": "STRUKTUR RUANG", "X": "106,017794997", "Y": "-5,98834444399995" }, "geometry": { "type": "Point", "coordinates": [ 106.017794997000067, -5.988344443999949 ] } },
+{ "type": "Feature", "properties": { "JENIS": "RENCANA SISTEM JARINGAN ENERGI", "NAMA": "GARDU INDUK", "KETERANGAN": "STRUKTUR RUANG", "X": "106,035429626", "Y": "-5,89001326699997" }, "geometry": { "type": "Point", "coordinates": [ 106.035429626000052, -5.890013266999972 ] } },
+{ "type": "Feature", "properties": { "JENIS": "RENCANA SISTEM JARINGAN ENERGI", "NAMA": "GARDU INDUK", "KETERANGAN": "STRUKTUR RUANG", "X": "105,9375", "Y": "-6,03331999999995" }, "geometry": { "type": "Point", "coordinates": [ 105.9375, -6.03332 ] } },
+{ "type": "Feature", "properties": { "JENIS": "RENCANA SISTEM JARINGAN ENERGI", "NAMA": "GARDU INDUK", "KETERANGAN": "STRUKTUR RUANG", "X": "106,02714", "Y": "-5,99603999999994" }, "geometry": { "type": "Point", "coordinates": [ 106.02714, -5.99604 ] } },
+{ "type": "Feature", "properties": { "JENIS": "RENCANA SISTEM JARINGAN ENERGI", "NAMA": "GARDU INDUK", "KETERANGAN": "STRUKTUR RUANG", "X": "106,03086", "Y": "-5,99576999999994" }, "geometry": { "type": "Point", "coordinates": [ 106.03086, -5.99577 ] } },
+{ "type": "Feature", "properties": { "JENIS": "RENCANA SISTEM JARINGAN ENERGI", "NAMA": "GARDU INDUK", "KETERANGAN": "STRUKTUR RUANG", "X": "106,019293837", "Y": "-5,98889744899998" }, "geometry": { "type": "Point", "coordinates": [ 106.019293837000077, -5.988897448999978 ] } },
+{ "type": "Feature", "properties": { "JENIS": "RENCANA SISTEM JARINGAN ENERGI", "NAMA": "GARDU INDUK", "KETERANGAN": "STRUKTUR RUANG", "X": "106,00234", "Y": "-5,93480999999997" }, "geometry": { "type": "Point", "coordinates": [ 106.00234, -5.93481 ] } },
+{ "type": "Feature", "properties": { "JENIS": "RENCANA SISTEM JARINGAN ENERGI", "NAMA": "GARDU INDUK", "KETERANGAN": "STRUKTUR RUANG", "X": "105,99524", "Y": "-5,97956999999997" }, "geometry": { "type": "Point", "coordinates": [ 105.99524, -5.97957 ] } },
+{ "type": "Feature", "properties": { "JENIS": "RENCANA SISTEM JARINGAN ENERGI", "NAMA": "GARDU INDUK", "KETERANGAN": "STRUKTUR RUANG", "X": "105,96887", "Y": "-6,02142999999995" }, "geometry": { "type": "Point", "coordinates": [ 105.96887, -6.02143 ] } },
+{ "type": "Feature", "properties": { "JENIS": "RENCANA SISTEM JARINGAN ENERGI", "NAMA": "GARDU INDUK", "KETERANGAN": "STRUKTUR RUANG", "X": "106,031956238", "Y": "-5,89688102899993" }, "geometry": { "type": "Point", "coordinates": [ 106.031956238000078, -5.896881028999928 ] } },
+{ "type": "Feature", "properties": { "JENIS": "RENCANA SISTEM JARINGAN ENERGI", "NAMA": "GARDU INDUK", "KETERANGAN": "STRUKTUR RUANG", "X": "106,030520762", "Y": "-5,89682466199997" }, "geometry": { "type": "Point", "coordinates": [ 106.030520762000037, -5.896824661999972 ] } },
+{ "type": "Feature", "properties": { "JENIS": "RENCANA SISTEM JARINGAN ENERGI", "NAMA": "GARDU INDUK", "KETERANGAN": "STRUKTUR RUANG", "X": "105,9619167", "Y": "-6,03488889999994" }, "geometry": { "type": "Point", "coordinates": [ 105.961916700000074, -6.034888899999942 ] } },
+{ "type": "Feature", "properties": { "JENIS": "RENCANA SISTEM JARINGAN ENERGI", "NAMA": "GARDU INDUK", "KETERANGAN": "STRUKTUR RUANG", "X": "105,9890278", "Y": "-6,01094439999997" }, "geometry": { "type": "Point", "coordinates": [ 105.989027800000088, -6.010944399999971 ] } }
+]
+}

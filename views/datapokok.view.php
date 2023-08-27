@@ -1,11 +1,22 @@
 <?php include 'partials/starter-head.php' ?>
+<style>
+    .container {
+        padding: 60px 40px !important;
+    }
+
+    @media screen and (max-width:550px) {
+        .container {
+            padding: 60px 0 !important;
+        }
+    }
+</style>
 <?php include 'partials/nav.php' ?>
 <?php include 'partials/breadcrumb.php' ?>
-<div class="container">
+<div class="container overflow-hidden">
     <div class="row justify-content-md-center">
         <!-- Content -->
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card">
+            <div data-aos="fade-right" data-aos-duration="1200" class="card">
                 <div class="card-head d-flex">
                     <div class="icon-card text-center rounded-circle">
                         <i class="fa-solid fa-house"></i>
@@ -42,7 +53,7 @@
         </div>
         <!-- Content -->
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card">
+            <div data-aos="zoom-in" data-aos-duration="1200" class="card">
                 <div class="card-head d-flex">
                     <div class="icon-card text-center rounded-circle">
                         <i class="fa-sharp fa-solid fa-road"></i>
@@ -79,7 +90,7 @@
         </div>
         <!-- Content -->
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card">
+            <div data-aos="fade-left" data-aos-duration="1200" class="card">
                 <div class="card-head d-flex">
                     <div class="icon-card text-center rounded-circle">
                         <i class="fa-solid fa-building"></i>
@@ -116,7 +127,7 @@
         </div>
         <!-- Content -->
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card">
+            <div data-aos="fade-right" data-aos-duration="1200" class="card">
                 <div class="card-head d-flex">
                     <div class="icon-card text-center rounded-circle">
                         <i class="fa-solid fa-earth-asia"></i>
@@ -153,7 +164,7 @@
         </div>
         <!-- Content -->
         <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card">
+            <div data-aos="fade-left" data-aos-duration="1200" class="card">
                 <div class="card-head d-flex">
                     <div class="icon-card text-center rounded-circle">
                         <i class="fa-solid fa-map"></i>
@@ -192,4 +203,9 @@
 </div>
 <?php include 'partials/footer.php' ?>
 <?php include 'partials/script.php' ?>
+<script type="text/javascript" src="script/tilt.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 <?php include 'partials/starter-foot.php' ?>

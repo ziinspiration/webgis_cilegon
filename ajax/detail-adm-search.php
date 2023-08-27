@@ -31,6 +31,7 @@ $i = $start + 1;
 if (count($getdata) > 0) {
     foreach ($getdata as $a) {
         $output .= '<tr>
+                        <th>' . $i++ . '</th>
                         <td>' . $a['provinsi'] . '</td>
                         <td>' . $a['kabupaten'] . '</td>
                         <td>' . $a['kecamatan'] . '</td>

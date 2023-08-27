@@ -9,6 +9,7 @@ $getdata = query("SELECT * FROM atribut_administrasi
                   JOIN data_administrasi ON atribut_administrasi.data_pokok_id = data_administrasi.id 
                   WHERE atribut_administrasi.data_pokok_id = $id");
 
+$i = 1;
 
 $nama_halaman = 'Data detail';
 $linkcss = 'datadetail.css';

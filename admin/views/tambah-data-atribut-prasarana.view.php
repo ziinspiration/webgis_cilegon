@@ -1,27 +1,43 @@
 <?php include 'views/partials/starter-head.php'; ?>
 <?php include 'views/partials/alert-tambah-data.php'; ?>
 <style>
-    .table-res {
-        overflow-y: auto !important;
-    }
+.table-res {
+    overflow-y: auto !important;
+}
 
-    @media screen and (max-width:990px) {
-        .search-class {
-            width: 65% !important;
-        }
+@media screen and (max-width:990px) {
+    .search-class {
+        width: 65% !important;
     }
+}
 
-    * {
-        font-family: Montserrat;
-    }
+* {
+    font-family: Montserrat;
+}
 
-    th {
-        padding: 10px !important;
-    }
+th {
+    padding: 10px !important;
+}
 
-    td {
-        padding: 10px !important;
+td {
+    padding: 10px !important;
+}
+
+.arrow-down {
+    font-size: 40px !important;
+    position: fixed !important;
+    right: 0 !important;
+    /* border: 2px solid orange !important;
+    padding: 20px !important; */
+    margin-right: 40px !important;
+}
+
+@media screen and (max-width: 550px) {
+    .arrow-down {
+        font-size: 35px !important;
+        margin-right: 5px !important;
     }
+}
 </style>
 
 <?php
@@ -67,6 +83,9 @@ if (isset($_POST['send'])) {
 
 <div class="container-fluid">
     <h1 class="mt-5 mb-2 text-center text-dark">Daftar data atribut prasarana</h1>
+    <div class="arrow-down rounded-circle">
+        <a class="orange" href="#form-tambah"><i class="bi bi-arrow-down-circle-fill"></i></a>
+    </div>
     <div class="row justify-content-center">
         <div class="table-res d-flex w-75 m-auto mt-5">
             <?php $i = 1; ?>
@@ -83,21 +102,21 @@ if (isset($_POST['send'])) {
                 </thead>
                 <tbody id="table-data">
                     <?php foreach ($getdata as $a) : ?>
-                        <tr>
-                            <td><?= $i++; ?></td>
-                            <td><?= $a['nama']; ?></td>
-                            <td><?= $a['keterangan']; ?></td>
-                            <td><?= $a['jenis']; ?></td>
-                            <td><?= $a['x']; ?></td>
-                            <td><?= $a['y']; ?></td>
-                        </tr>
+                    <tr>
+                        <td><?= $i++; ?></td>
+                        <td><?= $a['nama']; ?></td>
+                        <td><?= $a['keterangan']; ?></td>
+                        <td><?= $a['jenis']; ?></td>
+                        <td><?= $a['x']; ?></td>
+                        <td><?= $a['y']; ?></td>
+                    </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
 
 
-        <div class="formulir-tambah mb-4">
+        <div id="form-tambah" class="formulir-tambah mb-4">
             <h1 class="mt-5 mb-5 text-center text-dark">Tambah data atribut prasarana</h1>
             <form class="card w-75 p-4 bg-body-secondary m-auto" action="" method="post">
                 <div class="mb-3">

@@ -7,16 +7,18 @@
 <?php include 'partials/nav.php' ?>
 <?php include 'partials/breadcrumb.php' ?>
 
-<div class="container mt-5 mb-5">
+<div class="container mt-5 mb-5 overflow-hidden">
     <div class="row">
         <div class="col-md-6 mb-3 mt-3">
             <div style="width: 80%; margin: auto;">
-                <canvas class="shadow card p-3 rounded-3" id="barChart"></canvas>
+                <canvas data-aos="fade-right" data-aos-duration="1100" class="shadow card p-3 rounded-3"
+                    id="barChart"></canvas>
             </div>
         </div>
         <div class="col-md-6 mb-3 mt-3">
             <div style="width: 80%; margin: auto;">
-                <canvas class="shadow card p-3 rounded-3" id="pieChart"></canvas>
+                <canvas data-aos="fade-left" data-aos-duration="1100" class="shadow card p-3 rounded-3"
+                    id="pieChart"></canvas>
             </div>
         </div>
         <div class="note">
@@ -74,6 +76,10 @@ const pieChart = new Chart(pieChartCtx, {
         }]
     }
 });
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init();
 </script>
 
 

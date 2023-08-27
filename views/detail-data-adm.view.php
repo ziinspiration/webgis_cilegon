@@ -27,6 +27,7 @@
                 <table class="table table-striped table-hover mb-5 table-responsive">
                     <thead>
                         <tr>
+                            <th scope="col">No</th>
                             <th scope="col">Provinsi</th>
                             <th scope="col">Kabupaten</th>
                             <th scope="col">Kecamatan</th>

@@ -1,0 +1,17 @@
+{
+"type": "FeatureCollection",
+"name": "RUANG_EVAKUASI_PT",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "JENIS": "INFRASTRUKTUR PERKOTAAN", "NAMA": "TITIK KUMPUL RUANG EVAKUASI BENCANA", "KETERANGAN": "STRUKTUR RUANG", "X": "105,971567224", "Y": "-6,03153348399997" }, "geometry": { "type": "Point", "coordinates": [ 105.971567224000069, -6.031533483999965 ] } },
+{ "type": "Feature", "properties": { "JENIS": "INFRASTRUKTUR PERKOTAAN", "NAMA": "TITIK KUMPUL RUANG EVAKUASI BENCANA", "KETERANGAN": "STRUKTUR RUANG", "X": "105,946086715", "Y": "-6,03634914899993" }, "geometry": { "type": "Point", "coordinates": [ 105.946086715000035, -6.036349148999932 ] } },
+{ "type": "Feature", "properties": { "JENIS": "INFRASTRUKTUR PERKOTAAN", "NAMA": "TITIK KUMPUL RUANG EVAKUASI BENCANA", "KETERANGAN": "STRUKTUR RUANG", "X": "105,963717756", "Y": "-6,04350853199998" }, "geometry": { "type": "Point", "coordinates": [ 105.963717756000051, -6.043508531999976 ] } },
+{ "type": "Feature", "properties": { "JENIS": "INFRASTRUKTUR PERKOTAAN", "NAMA": "TITIK KUMPUL RUANG EVAKUASI BENCANA", "KETERANGAN": "STRUKTUR RUANG", "X": "105,990132834", "Y": "-6,02372985499994" }, "geometry": { "type": "Point", "coordinates": [ 105.990132834000065, -6.023729854999942 ] } },
+{ "type": "Feature", "properties": { "JENIS": "INFRASTRUKTUR PERKOTAAN", "NAMA": "TITIK KUMPUL RUANG EVAKUASI BENCANA", "KETERANGAN": "STRUKTUR RUANG", "X": "105,971277408", "Y": "-6,02151094899995" }, "geometry": { "type": "Point", "coordinates": [ 105.971277408000049, -6.021510948999946 ] } },
+{ "type": "Feature", "properties": { "JENIS": "INFRASTRUKTUR PERKOTAAN", "NAMA": "TITIK KUMPUL RUANG EVAKUASI BENCANA", "KETERANGAN": "STRUKTUR RUANG", "X": "106,003383976", "Y": "-6,04149472899996" }, "geometry": { "type": "Point", "coordinates": [ 106.003383976000066, -6.041494728999965 ] } },
+{ "type": "Feature", "properties": { "JENIS": "INFRASTRUKTUR PERKOTAAN", "NAMA": "TITIK KUMPUL RUANG EVAKUASI BENCANA", "KETERANGAN": "STRUKTUR RUANG", "X": "106,058697274", "Y": "-6,01347059699998" }, "geometry": { "type": "Point", "coordinates": [ 106.058697274000053, -6.01347059699998 ] } },
+{ "type": "Feature", "properties": { "JENIS": "INFRASTRUKTUR PERKOTAAN", "NAMA": "TITIK KUMPUL RUANG EVAKUASI BENCANA", "KETERANGAN": "STRUKTUR RUANG", "X": "106,042968868", "Y": "-5,98646987199993" }, "geometry": { "type": "Point", "coordinates": [ 106.04296886800006, -5.98646987199993 ] } },
+{ "type": "Feature", "properties": { "JENIS": "INFRASTRUKTUR PERKOTAAN", "NAMA": "TITIK KUMPUL RUANG EVAKUASI BENCANA", "KETERANGAN": "STRUKTUR RUANG", "X": "106,018156341", "Y": "-5,96632634499997" }, "geometry": { "type": "Point", "coordinates": [ 106.018156341000065, -5.96632634499997 ] } },
+{ "type": "Feature", "properties": { "JENIS": "INFRASTRUKTUR PERKOTAAN", "NAMA": "TITIK KUMPUL RUANG EVAKUASI BENCANA", "KETERANGAN": "STRUKTUR RUANG", "X": "106,020498689", "Y": "-5,90558768299996" }, "geometry": { "type": "Point", "coordinates": [ 106.020498689000078, -5.905587682999965 ] } }
+]
+}

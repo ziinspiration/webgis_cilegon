@@ -3,7 +3,9 @@ require_once 'functions/functions.php';
 
 $getAdmin = query("SELECT * FROM administrasi");
 
-$JSONprasarana = query("SELECT * FROM prasarana WHERE id_jenis_prasarana NOT IN (1, 2) ORDER BY id_jenis = 3 DESC, id_jenis ASC");
+$JSONjalan = query("SELECT * FROM prasarana WHERE id_jenis = 3");
+
+$JSONprasarana = query("SELECT * FROM prasarana WHERE id_jenis_prasarana NOT IN (1, 2) AND id_jenis <> 3");
 
 $JSONprasaranaPersampahan = query("SELECT * FROM prasarana JOIN jenis_prasarana ON prasarana.id_jenis_prasarana = jenis_prasarana.id_jenis WHERE nama_jenis = 'Persampahan' ORDER BY nama_prasarana ASC");
 $JSONprasaranaAirbersih = query("SELECT * FROM prasarana JOIN jenis_prasarana ON prasarana.id_jenis_prasarana = jenis_prasarana.id_jenis WHERE nama_jenis = 'Air bersih' ORDER BY nama_prasarana ASC");

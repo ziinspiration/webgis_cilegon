@@ -166,7 +166,7 @@ td {
                 </table>
                 <div class="shadow">
                     <button type="submit" name="update"
-                        class="btn btn-warning mt-3 p-1 px-2 float-end fw-bolder">Update</button>
+                        class="btn btn-warning mt-3 mb-5 p-1 px-2 float-end fw-bolder">Update</button>
                 </div>
                 </form>
             </div>

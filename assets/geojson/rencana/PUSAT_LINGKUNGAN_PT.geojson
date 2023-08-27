@@ -1,0 +1,14 @@
+{
+"type": "FeatureCollection",
+"name": "PUSAT_LINGKUNGAN_PT",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "JENIS": "SISTEM PERKOTAAN", "NAMA": "PUSAT LINGKUNGAN", "KETERANGAN": "STRUKTUR RUANG" }, "geometry": { "type": "Point", "coordinates": [ 105.96522407100008, -6.028483449999953 ] } },
+{ "type": "Feature", "properties": { "JENIS": "SISTEM PERKOTAAN", "NAMA": "PUSAT LINGKUNGAN", "KETERANGAN": "STRUKTUR RUANG" }, "geometry": { "type": "Point", "coordinates": [ 106.041619217000061, -6.032457688999955 ] } },
+{ "type": "Feature", "properties": { "JENIS": "SISTEM PERKOTAAN", "NAMA": "PUSAT LINGKUNGAN", "KETERANGAN": "STRUKTUR RUANG" }, "geometry": { "type": "Point", "coordinates": [ 106.067703711000036, -6.033171444999937 ] } },
+{ "type": "Feature", "properties": { "JENIS": "SISTEM PERKOTAAN", "NAMA": "PUSAT LINGKUNGAN", "KETERANGAN": "STRUKTUR RUANG" }, "geometry": { "type": "Point", "coordinates": [ 106.061420857000087, -6.015486081999939 ] } },
+{ "type": "Feature", "properties": { "JENIS": "SISTEM PERKOTAAN", "NAMA": "PUSAT LINGKUNGAN", "KETERANGAN": "STRUKTUR RUANG" }, "geometry": { "type": "Point", "coordinates": [ 106.05790434000005, -5.991347252999958 ] } },
+{ "type": "Feature", "properties": { "JENIS": "SISTEM PERKOTAAN", "NAMA": "PUSAT LINGKUNGAN", "KETERANGAN": "STRUKTUR RUANG" }, "geometry": { "type": "Point", "coordinates": [ 106.00917202800008, -5.97315040899997 ] } },
+{ "type": "Feature", "properties": { "JENIS": "SISTEM PERKOTAAN", "NAMA": "PUSAT LINGKUNGAN", "KETERANGAN": "STRUKTUR RUANG" }, "geometry": { "type": "Point", "coordinates": [ 106.031329711000069, -5.902294836999943 ] } }
+]
+}

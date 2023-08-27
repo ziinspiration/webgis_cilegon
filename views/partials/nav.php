@@ -1,12 +1,9 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand ms-2 py-2" href="#">
-            <img src="assets/logo/cilegon.png" alt="Logo" width="100" height="100"
-                class="d-inline-block align-text-top">
+            <img src="assets/logo/cilegon.png" alt="Logo" width="100" height="100" class="d-inline-block align-text-top">
         </a>
-        <button id="navbarToggler" class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-            aria-label="Toggle navigation">
+        <button id="navbarToggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <i id="navbarIcon" class="bi bi-three-dots-vertical"></i>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
@@ -15,8 +12,7 @@
                     <a class="nav-link" href="index">Beranda</a>
                 </li>
                 <li class="nav-item ms-1 dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Data Rujukan
                     </a>
                     <ul class="dropdown-menu shadow bg-light rounded-3">
@@ -29,8 +25,7 @@
                     <a class="nav-link" href="datapokok">Data Pokok</a>
                 </li>
                 <li class="nav-item ms-1 dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Peta
                     </a>
                     <ul class="dropdown-menu shadow bg-light rounded-3">
@@ -40,8 +35,7 @@
                     </ul>
                 </li>
                 <li class="nav-item ms-1 dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Infrastruktur
                     </a>
                     <ul class="dropdown-menu shadow bg-light rounded-3">

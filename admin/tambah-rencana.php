@@ -11,6 +11,7 @@ require 'functions/functions.php';
 $conn = koneksi();
 
 $getjenisfile = query("SELECT * FROM jenis_file;");
+$getjenisrencana = query("SELECT * FROM jenis_rencana;");
 
 // if (isset($_POST['send'])) {
 //     // Mendapatkan data dari form

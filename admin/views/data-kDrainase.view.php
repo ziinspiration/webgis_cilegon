@@ -70,37 +70,37 @@ if (isset($_POST['update'])) {
 ?>
 <?php require_once 'views/partials/alert-tambah-data.php'; ?>
 <style>
-    .table-res {
-        overflow-y: auto !important;
+.table-res {
+    overflow-y: auto !important;
+}
+
+@media screen and (max-width:990px) {
+    .search-class {
+        width: 65% !important;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .input-update {
+        width: 65% !important;
     }
 
-    @media screen and (max-width:990px) {
-        .search-class {
-            width: 65% !important;
-        }
+    .chart {
+        width: 80% !important;
     }
+}
 
-    @media screen and (max-width:550px) {
-        .input-update {
-            width: 65% !important;
-        }
+.table {
+    font-family: Montserrat;
+}
 
-        .chart {
-            width: 80% !important;
-        }
-    }
+th {
+    padding: 10px !important;
+}
 
-    .table {
-        font-family: Montserrat;
-    }
-
-    th {
-        padding: 10px !important;
-    }
-
-    td {
-        padding: 10px !important;
-    }
+td {
+    padding: 10px !important;
+}
 </style>
 <div class="container-fluid">
     <div class="row">
@@ -133,25 +133,29 @@ if (isset($_POST['update'])) {
                     <form action="" method="post">
                         <tbody class="text-center">
                             <?php foreach ($getdata as $a) : ?>
-                                <tr>
-                                    <th scope="row" class="text-success">Saluran Primer</th>
-                                    <td><input class="border-1 rounded w-25 text-center" type="text" value="<?= $a['data1']; ?>" name="data1">
-                                        %</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="text-warning">Saluran Sekunder</th>
-                                    <td><input class="border-1 rounded w-25 text-center" type="text" value="<?= $a['data2']; ?>" name="data2"> %</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row" class="text-danger">Saluran Tersier</th>
-                                    <td><input class="border-1 rounded w-25 text-center" type="text" value="<?= $a['data3']; ?>" name="data3">
-                                        %</td>
-                                </tr>
+                            <tr>
+                                <th scope="row" class="text-success">Saluran Primer</th>
+                                <td><input class="border-1 rounded w-25 text-center" type="text"
+                                        value="<?= $a['data1']; ?>" name="data1">
+                                    %</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-warning">Saluran Sekunder</th>
+                                <td><input class="border-1 rounded w-25 text-center" type="text"
+                                        value="<?= $a['data2']; ?>" name="data2"> %</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="text-danger">Saluran Tersier</th>
+                                <td><input class="border-1 rounded w-25 text-center" type="text"
+                                        value="<?= $a['data3']; ?>" name="data3">
+                                    %</td>
+                            </tr>
                             <?php endforeach; ?>
                         </tbody>
                 </table>
                 <div class="shadow">
-                    <button type="submit" name="update" class="btn btn-warning mt-3 p-1 px-2 float-end fw-bolder">Update</button>
+                    <button type="submit" name="update"
+                        class="btn mb-5 btn-warning mt-3 p-1 px-2 float-end fw-bolder">Update</button>
                 </div>
                 </form>
             </div>
@@ -161,45 +165,45 @@ if (isset($_POST['update'])) {
 <?php include 'views/partials/script.php' ?>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    const getdata = <?php echo json_encode($getdata); ?>;
+const getdata = <?php echo json_encode($getdata); ?>;
 
-    const barChartCtx = document.getElementById('barChart').getContext('2d');
-    const barChart = new Chart(barChartCtx, {
-        type: 'bar',
-        data: {
-            labels: ['SALURAN PRIMER', 'SALURAN SEKUNDER', 'SALURAN TERSIER'],
-            datasets: [{
-                label: 'Kemantapan Drainase',
-                data: [getdata.reduce((total, a) => total + a.data1, 0),
-                    getdata.reduce((total, a) => total + a.data2, 0),
-                    getdata.reduce((total, a) => total + a.data3, 0)
-                ],
-                backgroundColor: ['green', 'yellow', 'red', ]
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
+const barChartCtx = document.getElementById('barChart').getContext('2d');
+const barChart = new Chart(barChartCtx, {
+    type: 'bar',
+    data: {
+        labels: ['SALURAN PRIMER', 'SALURAN SEKUNDER', 'SALURAN TERSIER'],
+        datasets: [{
+            label: 'Kemantapan Drainase',
+            data: [getdata.reduce((total, a) => total + a.data1, 0),
+                getdata.reduce((total, a) => total + a.data2, 0),
+                getdata.reduce((total, a) => total + a.data3, 0)
+            ],
+            backgroundColor: ['green', 'yellow', 'red', ]
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
             }
         }
-    });
+    }
+});
 
-    const pieChartCtx = document.getElementById('pieChart').getContext('2d');
-    const pieChart = new Chart(pieChartCtx, {
-        type: 'pie',
-        data: {
-            labels: ['SALURAN PRIMER', 'SALURAN SEKUNDER', 'SALURAN TERSIER'],
-            datasets: [{
-                label: 'Kemantapan Drainase',
-                data: [getdata.reduce((total, a) => total + a.data1, 0),
-                    getdata.reduce((total, a) => total + a.data2, 0),
-                    getdata.reduce((total, a) => total + a.data3, 0)
-                ],
-                backgroundColor: ['green', 'yellow', 'red', ]
-            }]
-        }
-    });
+const pieChartCtx = document.getElementById('pieChart').getContext('2d');
+const pieChart = new Chart(pieChartCtx, {
+    type: 'pie',
+    data: {
+        labels: ['SALURAN PRIMER', 'SALURAN SEKUNDER', 'SALURAN TERSIER'],
+        datasets: [{
+            label: 'Kemantapan Drainase',
+            data: [getdata.reduce((total, a) => total + a.data1, 0),
+                getdata.reduce((total, a) => total + a.data2, 0),
+                getdata.reduce((total, a) => total + a.data3, 0)
+            ],
+            backgroundColor: ['green', 'yellow', 'red', ]
+        }]
+    }
+});
 </script>
 <?php include 'views/partials/starter-foot.php' ?>
