@@ -10,8 +10,8 @@ $getprasarana = query("SELECT * FROM data_prasarana ORDER BY nama_data");
 $getsarana = query("SELECT * FROM data_sarana ORDER BY nama_data");
 
 
-$nama_halaman = 'Data pokok';
+$nama_halaman = 'Data tabular';
 $linkcss = 'datapokok.css';
-$folder = 'DATA POKOK';
-$name_page = 'Data utama';
-require 'views/datapokok.view.php';
+$folder = 'DATA TABULAR';
+$name_page = 'Data Pokok';
+require 'views/datatabular.view.php';

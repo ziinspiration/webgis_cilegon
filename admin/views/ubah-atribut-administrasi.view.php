@@ -5,11 +5,6 @@ require 'views/partials/alert-hapus.php';
 <div class="container-fluid">
     <h1 class="mt-5 mb-2 text-center text-dark">Daftar data administrasi</h1>
     <div class="row w-75 m-auto">
-        <!-- Search -->
-        <!-- <div class="input-group searching mb-2 mt-5">
-            <input type="search" name="keyword" id="keyword" class="form-control input-search" placeholder="Cari disini" aria-label="Cari disini" aria-describedby="button-addon2">
-            <button class="btn btn-search btn-outline-secondary" name="search" id="search-button" type="submit" id="cari"><i class="bi bi-search"></i></button>
-        </div> -->
         <!-- Table -->
         <div id="search-container" class="table-responsive mt-5">
             <table class="table table-striped m-auto mt-1">
@@ -38,7 +33,7 @@ require 'views/partials/alert-hapus.php';
                                     <span class="badge bdg-a text-bg-warning p-2"><i class="fa-regular fa-pen-to-square"></i>Ubah</span>
                                 </a>
                                 <span class="fw-bold spase">|</span>
-                                <a href="javascript:void(0);" class="hapusData" id_atribut="<?= $a["id_atribut"] ?>">
+                                <a href="javascript:void(0);" class="hapusData" data-id-atribut="<?= $a["id_atribut"] ?>" data-id-pokok="<?= $a["id_pokok"] ?>">
                                     <span class="badge text-bg-danger p-2"><i class="fa-solid fa-trash"></i> Hapus</span>
                                 </a>
                             </td>
@@ -51,13 +46,16 @@ require 'views/partials/alert-hapus.php';
 </div>
 <?php include 'views/partials/script.php' ?>
 <script>
-    // Menggunakan class 'hapusData' sebagai selector untuk tombol hapus
     const hapusButtons = document.getElementsByClassName('hapusData');
     for (let i = 0; i < hapusButtons.length; i++) {
         hapusButtons[i].addEventListener('click', function(event) {
             event.preventDefault();
 
-            // Use SweetAlert for the confirmation dialog
+            // Dapatkan data id_atribut dan id_pokok dari atribut data
+            const idAtribut = this.getAttribute('data-id-atribut');
+            const idPokok = this.getAttribute('data-id-pokok');
+
+            // Gunakan SweetAlert untuk dialog konfirmasi
             Swal.fire({
                 title: 'Apakah Anda yakin ingin menghapus?',
                 icon: 'warning',
@@ -67,22 +65,23 @@ require 'views/partials/alert-hapus.php';
                 didOpen: () => {
                     const sweetAlertContainer = document.querySelector('.swal2-container');
                     if (sweetAlertContainer) {
-                        sweetAlertContainer.style.padding = '20px'; // Atur padding sesuai kebutuhan
+                        sweetAlertContainer.style.padding =
+                            '20px'; // Sesuaikan padding sesuai kebutuhan
                         const sweetAlertIcon = sweetAlertContainer.querySelector('.swal2-icon');
                         if (sweetAlertIcon) {
-                            sweetAlertIcon.style.marginBottom = '15px'; // Atur margin sesuai kebutuhan
+                            sweetAlertIcon.style.marginBottom =
+                                '15px'; // Sesuaikan margin sesuai kebutuhan
                         }
                     }
                 }
             }).then((result) => {
                 if (result.isConfirmed) {
-                    console.log("Data dengan ID " + hapusButtons[i].getAttribute('id_atribut') +
+                    console.log("Data dengan ID Atribut " + idAtribut + " dan ID Pokok " + idPokok +
                         " telah dihapus!");
 
-                    // Perform deletion action (e.g., delete data from the server)
-                    window.location.href = "functions/delete-atribut-administrasi.php?id=" + hapusButtons[i]
-                        .getAttribute(
-                            'id_atribut');
+                    // Lakukan tindakan penghapusan (misalnya, hapus data dari server)
+                    window.location.href = "functions/delete-atribut-administrasi.php?id_atribut=" +
+                        idAtribut + "&id_pokok=" + idPokok;
                 } else {
                     console.log("Penghapusan dibatalkan.");
                 }

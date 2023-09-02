@@ -113,7 +113,8 @@ footer .social-icons a {
             <div class="col-lg-4">
                 <div class="about">
                     <h4><span class="first">TENTANG</span> <span class="second">KAMI</span></h4>
-                    <p class="text-light">Website Geospasial BAPPEDA Kota Cilegon adalah platform online yang menyajikan
+                    <p class="text-light">Website Geospasial BAPPELITBANG Kota Cilegon adalah platform online yang
+                        menyajikan
                         informasi peta dan
                         data geografis wilayah Kota Cilegon. Dengan peta interaktif dan data terstruktur, website ini
                         membantu masyarakat dan pihak terkait dalam perencanaan, pengambilan keputusan, dan pemantauan
@@ -172,7 +173,8 @@ footer .social-icons a {
         <div class="container">
             <div class="row">
                 <p class="text-end text-white-50"><small><b>VERSION 1.0</b></small></p>
-                <p class="text-center cprg text-white-50">© 2023 Website Geospasial BAPPEDA Kota Cilegon. All rights
+                <p class="text-center cprg text-white-50">© 2023 Website Geospasial BAPPELITBANG Kota Cilegon. All
+                    rights
                     reserved.
                 </p>
             </div>

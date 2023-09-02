@@ -4,9 +4,8 @@ require 'functions/functions.php';
 $conn = koneksi();
 
 if (isset($_GET['id'])) {
-    $id = intval($_GET['id']); // Menggunakan intval() untuk validasi input
+    $id = intval($_GET['id']);
 
-    // Mendapatkan data dari database berdasarkan ID menggunakan Prepared Statement
     $stmt = $conn->prepare("SELECT * FROM publikasi WHERE id = ?");
     $stmt->bind_param("i", $id);
     $stmt->execute();

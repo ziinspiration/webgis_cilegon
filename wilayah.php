@@ -5,6 +5,6 @@ $getdata = query("SELECT * FROM wilayah ORDER BY kecamatan ASC");
 
 $nama_halaman = 'Wilayah';
 $linkcss = 'wilayah.css';
-$folder = 'DATA RUJUKAN';
+$folder = 'DATA UMUM';
 $name_page = 'Data Kewilayahan';
 require 'views/wilayah.view.php';

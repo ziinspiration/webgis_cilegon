@@ -1,19 +1,20 @@
 <?php
-
 require 'functions.php';
 
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
+// Periksa apakah id_atribut dan id_pokok ada dalam URL
+if (isset($_GET['id_atribut']) && isset($_GET['id_pokok'])) {
+    $id_atribut = $_GET['id_atribut'];
+    $id_pokok = $_GET['id_pokok'];
 
-    if (deleteAtributTematik($id)) {
+    if (deleteAtributTematik($id_atribut)) {
         echo "<script>
                 alert('Data Berhasil dihapus');
-                window.location.href = '../update-data-atribut-tematik';
+                window.location.href = '../ubah-atribut-tematik?id=$id_pokok';
             </script>";
     } else {
         echo "<script>
                 alert('Data Gagal dihapus');
-                window.location.href = '../update-data-atribut-tematik';
+                window.location.href = '../ubah-atribut-tematik?id=$id_pokok';
             </script>";
     }
 } else {

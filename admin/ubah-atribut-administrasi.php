@@ -14,6 +14,7 @@ $id = $_GET['id']; // Mengambil ID dari parameter URL
 
 $getdata = query("SELECT 
                     atribut_administrasi.id AS id_atribut, 
+                    atribut_administrasi.data_pokok_id AS id_pokok, 
                     data_administrasi.id AS id_data, 
                     atribut_administrasi.*, 
                     data_administrasi.* 
