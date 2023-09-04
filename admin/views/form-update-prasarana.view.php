@@ -1,74 +1,75 @@
 <?php include 'views/partials/starter-head.php' ?>
 <?php include 'views/partials/alert-tambah-data.php'; ?>
 <style>
-    * {
-        font-family: montserrat;
+* {
+    font-family: montserrat;
+}
+
+body {
+    background-image: url(../assets/index/footer2.jpg);
+}
+
+.orange {
+    color: orange !important;
+}
+
+.bg-orange {
+    background-color: orange;
+}
+
+form {
+    border: 2px solid orange !important;
+}
+
+@media screen and (max-width:550px) {
+    .formulir {
+        flex-direction: column;
     }
 
-    body {
-        background-image: url(../assets/index/footer2.jpg);
+    .left,
+    .right,
+    .center {
+        width: 100% !important;
+        margin: 0 !important;
     }
 
-    .orange {
-        color: orange !important;
+    .file-now {
+        font-size: 9px !important;
+        margin-top: 5px !important;
     }
 
-    .bg-orange {
-        background-color: orange;
+    .btn-primary {
+        width: 100% !important;
     }
 
-    form {
-        border: 2px solid orange !important;
-    }
-
-    @media screen and (max-width:550px) {
-        .formulir {
-            flex-direction: column;
-        }
-
-        .left,
-        .right {
-            width: 100% !important;
-            margin: 0 !important;
-        }
-
-        .file-now {
-            font-size: 9px !important;
-            margin-top: 5px !important;
-        }
-
-        .btn-primary {
-            width: 100% !important;
-        }
-
-
-        .view-change-img {
-            margin: auto !important;
-            margin-bottom: 30px !important;
-        }
-    }
-
-    @media screen and (max-width:990px) {
-        .file-now {
-            font-size: 11px !important;
-            margin-top: 5px !important;
-        }
-    }
-
-    .row {
-        margin-top: 100px !important;
-        margin-bottom: 100px !important;
-    }
 
     .view-change-img {
-        height: 150px !important;
-        width: 150px !important;
+        margin: auto !important;
+        margin-bottom: 30px !important;
     }
+}
 
-    .img-preview {
-        height: 90px !important;
-        width: 90px !important;
+@media screen and (max-width:990px) {
+    .file-now {
+        font-size: 11px !important;
+        margin-top: 5px !important;
     }
+}
+
+.row {
+    margin-top: 100px !important;
+    margin-bottom: 100px !important;
+}
+
+.view-change-img {
+    height: 150px !important;
+    width: 150px !important;
+}
+
+.img-preview {
+    height: 90px !important;
+    width: 90px !important;
+}
 </style>
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -80,56 +81,72 @@
                     <div class="left w-50 me-3">
                         <div class="mb-3">
                             <label for="nama_prasarana" class="form-label orange ps-1 pe-1">Nama data</label>
-                            <input type="text" class="form-control p-2" id="nama_prasarana" name="nama_prasarana" value="<?= $getdata['nama_prasarana']; ?>" required />
+                            <input type="text" class="form-control p-2" id="nama_prasarana" name="nama_prasarana"
+                                value="<?= $getdata['nama_prasarana']; ?>" required />
                         </div>
                         <div class="mb-3">
                             <label for="file_json" class="form-label orange ps-1 pe-1">File geojson</label>
                             <div class="input-group">
-                                <input type="file" class="form-control p-2" id="file_json" name="file_json" accept=".geojson" />
-                                <label class="input-group-text p-2" for="file_json"><i class="fa-solid fa-magnifying-glass"></i></label>
+                                <input type="file" class="form-control p-2" id="file_json" name="file_json"
+                                    accept=".geojson" />
+                                <label class="input-group-text p-2" for="file_json"><i
+                                        class="fa-solid fa-magnifying-glass"></i></label>
                             </div>
                             <div class="file-now text-light p-2">
                                 <?php if (!empty($getdata['file_json'])) : ?>
-                                    <p><small>File sekarang = <?= basename($getdata['file_json']); ?></small></p>
-                                    <p class="text-danger"><small>*Jangan buat nama file sama dengan sebelumnya</small></p>
+                                <p><small>File sekarang = <?= basename($getdata['file_json']); ?></small></p>
+                                <p class="text-danger"><small>*Jangan buat nama file sama dengan sebelumnya</small></p>
                                 <?php endif; ?>
                             </div>
                         </div>
                     </div>
-
-
-
                     <div class="right w-50 me-3 d-flex flex-column">
                         <div class="mb-5">
                             <label for="checkbox_id" class="form-label orange ps-1 pe-1">Checkbox ID</label>
-                            <input type="text" class="form-control p-2" id="checkbox_id" name="checkbox_id" value="<?= $getdata['checkbox_id']; ?>" required />
+                            <input type="text" class="form-control p-2" id="checkbox_id" name="checkbox_id"
+                                value="<?= $getdata['checkbox_id']; ?>" required />
                         </div>
                         <?php if ($getdata['id_jenis'] === '1') : ?>
-                            <div class="view-change-img mt-5 d-flex m-auto align-items-center justify-content-center p-5 rounded-circle bg-light">
-                                <img class="img-preview" src="../assets/icon/prasarana/<?= $getdata["icon"]; ?>" alt="Preview" id="preview" />
-                            </div>
+                        <div
+                            class="view-change-img mt-5 d-flex m-auto align-items-center justify-content-center p-5 rounded-circle bg-light">
+                            <img class="img-preview" src="../assets/icon/prasarana/<?= $getdata["icon"]; ?>"
+                                alt="Preview" id="preview" />
+                        </div>
                         <?php endif; ?>
                     </div>
                 </div>
-
                 <div class="bottom d-flex flex-column">
                     <?php if ($getdata['id_jenis'] === '1') : ?>
-
-                        <div class="w-100 kolom">
-                            <label for="icon" class="form-label orange ps-1 pe-1">Icon file</label>
-                            <input type="file" onchange="previewImage(event)" class="form-control p-2" id="icon" name="icon" accept=".jpg, .jpeg, .png" />
-                        </div>
-
-                        <div class="w-100 kolom">
-                            <label for="icon_id" class="form-label orange ps-1 pe-1">Icon ID</label>
-                            <input type="text" class="form-control p-2" id="icon_id" name="icon_id" value="<?= $getdata['icon_id']; ?>" required />
-                        </div>
-
+                    <div class="w-100 mb-3 kolom">
+                        <label for="icon" class="form-label orange ps-1 pe-1">Icon file</label>
+                        <input type="file" onchange="previewImage(event)" class="form-control p-2" id="icon" name="icon"
+                            accept=".jpg, .jpeg, .png" />
+                    </div>
+                    <div class="w-100 mb-3 kolom">
+                        <label for="icon_id" class="form-label orange ps-1 pe-1">Icon ID</label>
+                        <input type="text" class="form-control p-2" id="icon_id" name="icon_id"
+                            value="<?= $getdata['icon_id']; ?>" required />
+                    </div>
                     <?php endif; ?>
                 </div>
-
+                <div class="center w-50">
+                    <div class="mb-3">
+                        <label for="hide" class="form-label orange ps-1 pe-1">Hide status</label>
+                        <input type="hidden" name="hide">
+                        <select name="hide" id="hide" class="form-select form-control p-2">
+                            <?php
+                            $currentHide = $getdata['hide'];
+                            $sembunyikanSelected = ($currentHide == 0) ? "selected" : "";
+                            $tampilkanSelected = ($currentHide == 1) ? "selected" : "";
+                            ?>
+                            <option value="0" <?= $sembunyikanSelected; ?>>Disembunyikan</option>
+                            <option value="1" <?= $tampilkanSelected; ?>>Ditampilkan</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="btn-kirim d-flex justify-content-end">
-                    <button type="submit" name="submit" class="btn btn-primary w-25 p-2 mt-4 mb-4"><i class="fa-solid fa-floppy-disk me-2"></i>Simpan</button>
+                    <button type="submit" name="submit" class="btn btn-primary w-25 p-2 mt-4 mb-4"><i
+                            class="fa-solid fa-floppy-disk me-2"></i>Simpan</button>
                 </div>
             </form>
         </div>
@@ -145,6 +162,7 @@ if (isset($_POST["submit"])) {
     $nama_prasarana = $_POST["nama_prasarana"];
     $checkbox_id = $_POST["checkbox_id"];
     $icon_id = $_POST["icon_id"];
+    $hide = $_POST["hide"];
 
     // cek apakah nama_prasarana sudah ada dalam database
     $query_check_nama_prasarana = "SELECT COUNT(*) FROM prasarana WHERE nama_prasarana = ? AND id != ?";
@@ -200,6 +218,7 @@ if (isset($_POST["submit"])) {
     $query = "UPDATE prasarana SET
             nama_prasarana = '$nama_prasarana',
             icon_id = '$icon_id',
+            hide = '$hide',
             checkbox_id = '$checkbox_id'";
 
     // cek apakah ada file yang diupload

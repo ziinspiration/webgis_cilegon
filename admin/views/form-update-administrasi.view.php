@@ -89,6 +89,19 @@ form {
                             <input type="text" class="form-control p-2" id="checkbox_id" name="checkbox_id"
                                 value="<?= $getdata['checkbox_id']; ?>" required />
                         </div>
+                        <div class="mb-3">
+                            <label for="hide" class="form-label orange ps-1 pe-1">Hide status</label>
+                            <input type="hidden" name="hide">
+                            <select name="hide" id="hide" class="form-select form-control p-2">
+                                <?php
+                            $currentHide = $getdata['hide'];
+                            $sembunyikanSelected = ($currentHide == 0) ? "selected" : "";
+                            $tampilkanSelected = ($currentHide == 1) ? "selected" : "";
+                            ?>
+                                <option value="0" <?= $sembunyikanSelected; ?>>Disembunyikan</option>
+                                <option value="1" <?= $tampilkanSelected; ?>>Ditampilkan</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="btn-kirim d-flex justify-content-end">
@@ -108,6 +121,7 @@ if (isset($_POST["submit"])) {
     $id = $_POST["id"];
     $nama_adm = $_POST["nama_adm"];
     $checkbox_id = $_POST["checkbox_id"];
+    $hide = $_POST["hide"];
 
     // cek apakah nama_adm sudah ada dalam database
     $query_check_nama_adm = "SELECT COUNT(*) FROM administrasi WHERE nama_adm = ? AND id != ?";
@@ -162,6 +176,7 @@ if (isset($_POST["submit"])) {
     // query update data administrasi
     $query = "UPDATE administrasi SET
             nama_adm = '$nama_adm',
+            hide = '$hide',
             checkbox_id = '$checkbox_id'";
 
     // cek apakah ada file yang diupload

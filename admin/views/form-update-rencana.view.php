@@ -138,6 +138,21 @@
                     </div>
                 <?php endif; ?>
             </div>
+            <div class="center w-50">
+                <div class="mb-3">
+                    <label for="hide" class="form-label orange ps-1 pe-1">Hide status</label>
+                    <input type="hidden" name="hide">
+                    <select name="hide" id="hide" class="form-select form-control p-2">
+                        <?php
+                        $currentHide = $getdata['hide'];
+                        $sembunyikanSelected = ($currentHide == 0) ? "selected" : "";
+                        $tampilkanSelected = ($currentHide == 1) ? "selected" : "";
+                        ?>
+                        <option value="0" <?= $sembunyikanSelected; ?>>Disembunyikan</option>
+                        <option value="1" <?= $tampilkanSelected; ?>>Ditampilkan</option>
+                    </select>
+                </div>
+            </div>
             <div class="btn-kirim d-flex justify-content-end">
                 <button type="submit" name="submit" class="btn btn-primary w-25 p-2 mt-4 mb-4"><i class="fa-solid fa-floppy-disk me-2"></i>Simpan</button>
             </div>
@@ -167,6 +182,7 @@ if (isset($_POST["submit"])) {
     $nama_rencana = $_POST["nama_rencana"];
     $icon_id = $_POST["icon_id"];
     $checkbox_id = $_POST["checkbox_id"];
+    $hide = $_POST["hide"];
 
     // cek apakah nama_rencana sudah ada dalam database
     $query_check_nama_rencana = "SELECT COUNT(*) FROM rencana WHERE nama_rencana = ? AND id != ?";
@@ -222,6 +238,7 @@ if (isset($_POST["submit"])) {
     $query = "UPDATE rencana SET
         nama_rencana = '$nama_rencana',
         checkbox_id = '$checkbox_id',
+        hide = '$hide',
         icon_id = '$icon_id'";
 
     // cek apakah ada file yang diupload

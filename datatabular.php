@@ -9,7 +9,6 @@ $getrencana = query("SELECT * FROM data_rencana ORDER BY nama_data");
 $getprasarana = query("SELECT * FROM data_prasarana ORDER BY nama_data");
 $getsarana = query("SELECT * FROM data_sarana ORDER BY nama_data");
 
-
 $nama_halaman = 'Data tabular';
 $linkcss = 'datapokok.css';
 $folder = 'DATA TABULAR';
