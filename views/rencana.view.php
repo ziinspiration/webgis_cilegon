@@ -148,7 +148,76 @@ a.leaflet-popup-close-button :hover {
             </ul>
             <hr>
             <!-- Rencana -->
-            <h5 class="mb-3">Rencana</h5>
+
+            <!-- Administrasi -->
+            <h6 class="mb-2 mt-4">Administrasi</h6>
+            <ul class="list-unstyled">
+                <p class="ms-3">Batas administrasi</p>
+                <?php if (!empty($getadmin)) : ?>
+                <?php foreach ($getadmin as $a) : ?>
+                <li class="ms-3">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="<?= $a['checkbox_id']; ?>">
+                        <label class="form-check-label"
+                            for="<?= $a['checkbox_id']; ?>"><?= $a['nama_rencana']; ?></label>
+                    </div>
+                </li>
+                <?php endforeach; ?>
+                <?php else : ?>
+                <li class="ms-3">
+                    <div class="alert alert-secondary " role="alert">
+                        Maaf saat ini data tidak tersedia
+                    </div>
+                </li>
+                <?php endif; ?>
+            </ul>
+
+            <!-- Pola ruang -->
+            <h6 class="mb-2">Rencana pola ruang</h6>
+            <ul class="list-unstyled">
+                <p class="ms-3">Pola ruang</p>
+                <?php if (!empty($getrencanaG)) : ?>
+                <?php foreach ($getrencanaG as $a) : ?>
+                <li class="ms-3">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="<?= $a['checkbox_id']; ?>">
+                        <label class="form-check-label"
+                            for="<?= $a['checkbox_id']; ?>"><?= $a['nama_rencana']; ?></label>
+                    </div>
+                </li>
+                <?php endforeach; ?>
+                <?php else : ?>
+                <li class="ms-3">
+                    <div class="alert alert-secondary " role="alert">
+                        Maaf saat ini data tidak tersedia
+                    </div>
+                </li>
+                <?php endif; ?>
+            </ul>
+
+            <h6 class="mb-2">Rencana struktur ruang</h6>
+            <!-- Sistem perkotaan -->
+            <ul class="list-unstyled">
+                <p class="ms-3">Sistem perkotaan</p>
+                <?php if (!empty($getrencanaF)) : ?>
+                <?php foreach ($getrencanaF as $a) : ?>
+                <li class="ms-3">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="<?= $a['checkbox_id']; ?>">
+                        <label class="form-check-label"
+                            for="<?= $a['checkbox_id']; ?>"><?= $a['nama_rencana']; ?></label>
+                    </div>
+                </li>
+                <?php endforeach; ?>
+                <?php else : ?>
+                <li class="ms-3">
+                    <div class="alert alert-secondary " role="alert">
+                        Maaf saat ini data tidak tersedia
+                    </div>
+                </li>
+                <?php endif; ?>
+            </ul>
+
             <!-- Infrastruktur ruang -->
             <ul class="list-unstyled">
                 <p class="ms-3">Infrastruktur ruang</p>
@@ -258,29 +327,6 @@ a.leaflet-popup-close-button :hover {
                 </li>
                 <?php endif; ?>
             </ul>
-
-            <!-- Sistem perkotaan -->
-            <ul class="list-unstyled">
-                <p class="ms-3">Sistem perkotaan</p>
-                <?php if (!empty($getrencanaD)) : ?>
-                <?php foreach ($getrencanaD as $a) : ?>
-                <li class="ms-3">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="<?= $a['checkbox_id']; ?>">
-                        <label class="form-check-label"
-                            for="<?= $a['checkbox_id']; ?>"><?= $a['nama_rencana']; ?></label>
-                    </div>
-                </li>
-                <?php endforeach; ?>
-                <?php else : ?>
-                <li class="ms-3">
-                    <div class="alert alert-secondary " role="alert">
-                        Maaf saat ini data tidak tersedia
-                    </div>
-                </li>
-                <?php endif; ?>
-            </ul>
-
         </div>
     </div>
 </div>
@@ -385,6 +431,11 @@ checkboxGroup.forEach(function(checkbox) {
             var url;
             var checkboxId = this.id;
             var rencanaData = [
+                <?php foreach ($getadmin as $r) : ?> {
+                    id: "<?= $r['checkbox_id']; ?>",
+                    fileJson: "<?= $r['file_json']; ?>"
+                },
+                <?php endforeach; ?>
                 <?php foreach ($getrencanaA as $r) : ?> {
                     id: "<?= $r['checkbox_id']; ?>",
                     fileJson: "<?= $r['file_json']; ?>"
@@ -411,6 +462,11 @@ checkboxGroup.forEach(function(checkbox) {
                 },
                 <?php endforeach; ?>
                 <?php foreach ($getrencanaF as $r) : ?> {
+                    id: "<?= $r['checkbox_id']; ?>",
+                    fileJson: "<?= $r['file_json']; ?>"
+                },
+                <?php endforeach; ?>
+                <?php foreach ($getrencanaG as $r) : ?> {
                     id: "<?= $r['checkbox_id']; ?>",
                     fileJson: "<?= $r['file_json']; ?>"
                 },
@@ -443,8 +499,8 @@ function addGeoJsonLayer(url, checkbox) {
 
                     return {
                         fillColor: color,
-                        fillOpacity: 0.5,
-                        opacity: 1,
+                        fillOpacity: 0.7,
+                        opacity: 0.7,
                         color: color,
                         weight: 1.5,
                         dashArray: darray,
@@ -480,6 +536,11 @@ function addGeoJsonLayer(url, checkbox) {
                     }
                     <?php endforeach; ?>
                     <?php foreach ($getrencanaF as $r) : ?>
+                    if (checkbox.id === "<?= $r['checkbox_id']; ?>") {
+                        customIcon = createCustomIcon<?= $r['icon_id']; ?>();
+                    }
+                    <?php endforeach; ?>
+                    <?php foreach ($getrencanaG as $r) : ?>
                     if (checkbox.id === "<?= $r['checkbox_id']; ?>") {
                         customIcon = createCustomIcon<?= $r['icon_id']; ?>();
                     }
@@ -524,6 +585,7 @@ function onEachFeature(feature, layer) {
         click: function(e) {
             zoomToFeature(e);
             showPopup(feature, layer);
+            addTooltip(feature, layer);
         },
     });
 }
@@ -608,6 +670,9 @@ function showPopup(feature, layer) {
             popupContent +=
                 "<p><b>Formasi :</b> " + feature.properties.FORMASI + "</p>";
         }
+        if (feature.properties.PROVINSI) {
+            popupContent += "<p><b>Provinsi :</b> " + feature.properties.PROVINSI + "</p>";
+        }
         if (feature.properties.KABUPATEN) {
             popupContent += "<p><b>Kabupaten :</b> " + feature.properties.KABUPATEN + "</p>";
         }
@@ -684,6 +749,40 @@ function showPopup(feature, layer) {
     } else {
         popupContent += "Informasi tidak tersedia";
         layer.bindPopup(popupContent);
+    }
+}
+
+// TOOLTIP
+function addTooltip(feature, layer) {
+    if (feature.properties && feature.properties.KABUPATEN) {
+        layer.bindTooltip(feature.properties.KABUPATEN, {
+            permanent: true,
+            direction: 'center',
+            className: 'leaflet-tooltip',
+        }).openTooltip();
+    }
+
+    if (feature.properties && feature.properties.KOTA) {
+        layer.bindTooltip(feature.properties.KOTA, {
+            permanent: true,
+            direction: 'center',
+            className: 'leaflet-tooltip',
+        }).openTooltip();
+    }
+
+    if (feature.properties && feature.properties.KECAMATAN) {
+        layer.bindTooltip(feature.properties.KECAMATAN, {
+            permanent: true,
+            direction: 'center',
+            className: 'leaflet-tooltip',
+        }).openTooltip();
+    }
+    if (feature.properties && feature.properties.KELURAHAN) {
+        layer.bindTooltip(feature.properties.KELURAHAN, {
+            permanent: true,
+            direction: 'center',
+            className: 'leaflet-tooltip',
+        }).openTooltip();
     }
 }
 
@@ -774,6 +873,21 @@ function createCustomIcon<?= $r['icon_id']; ?>() {
 
 // Rencana F icon
 <?php foreach ($getrencanaF as $r) : ?>
+
+function createCustomIcon<?= $r['icon_id']; ?>() {
+    var customIcon = L.icon({
+        iconUrl: "assets/icon/rencana/<?= $r['icon']; ?>",
+        iconSize: [20, 20],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32],
+    });
+
+    return customIcon;
+}
+<?php endforeach; ?>
+
+// Rencana G icon
+<?php foreach ($getrencanaG as $r) : ?>
 
 function createCustomIcon<?= $r['icon_id']; ?>() {
     var customIcon = L.icon({

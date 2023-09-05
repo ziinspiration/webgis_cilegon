@@ -37,8 +37,8 @@ $ZONASIperdagangan = query("SELECT * FROM sarana JOIN kategori_data ON sarana.ka
 $ZONASIpemakaman = query("SELECT * FROM sarana JOIN kategori_data ON sarana.kategori_id = kategori_data.id_kategori JOIN jenis_sarana ON sarana.id_jenis_sarana = jenis_sarana.id_jenis WHERE nama_kategori = 'Tempat pemakaman umum' AND id_jenis_sarana = 2 AND hide = 1");
 
 // LEGENDA
-$getlegendasarana = query("SELECT * FROM sarana WHERE id_jenis_sarana = 1");
-$getlegendaprasarana = query("SELECT * FROM prasarana WHERE id_jenis = 1");
+$getlegendasarana = query("SELECT * FROM sarana WHERE id_jenis_sarana = 1 AND hide = 1");
+$getlegendaprasarana = query("SELECT * FROM prasarana WHERE id_jenis = 1 AND hide = 1");
 
 $nama_halaman = 'Tematik';
 $linkcss = 'spasial.css';

@@ -56,11 +56,11 @@
             <div class="content">
                 <form enctype="multipart/form-data">
                     <div class="profile-picture d-flex flex-column mb-4">
-                        <?php if (!empty($admin['foto_profile'])) : ?>
-                            <img src="../assets/profile_picture/<?= $admin['foto_profile']; ?>" class="w-25 rounded-circle" alt="Profile Picture">
-                        <?php else : ?>
-                            <img src="../assets/index/profile-picture.jpg" class="w-25 rounded-circle" alt="Default Profile Picture">
-                        <?php endif; ?>
+                        <?php
+                        $profilePicture = !empty($admin['foto_profile']) ? "../assets/profile_picture/{$admin['foto_profile']}" : "../assets/index/profile-picture.jpg";
+                        $altText = !empty($admin['foto_profile']) ? "Profile Picture" : "Default Profile Picture";
+                        ?>
+                        <img src="<?= $profilePicture; ?>" class="w-25 rounded-circle" alt="<?= $altText; ?>">
                         <input type="file" onchange="previewImage(this)" class="form-control input-image w-50 p-2 mt-2 grup" name="new_foto_profile" accept="image/*">
                     </div>
                     <hr class="mb-4">

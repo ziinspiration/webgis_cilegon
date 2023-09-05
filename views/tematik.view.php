@@ -158,7 +158,7 @@
                     </li>
             </ul>
             <hr>
-            <ul class="list-unstyled">
+            <ul class="list-unstyled mt-3">
                 <h5 class="mb-3">Wilayah Administrasi</h3>
                     <?php foreach ($getAdmin as $a) : ?>
                         <li class="ms-3">
@@ -733,8 +733,8 @@
 
                         return {
                             fillColor: color,
-                            fillOpacity: 0.8,
-                            opacity: 0.8,
+                            fillOpacity: 0.7,
+                            opacity: 0.7,
                             color: color,
                             weight: 2,
                         };
@@ -1136,7 +1136,6 @@
             layer.bindPopup(popupContent);
         }
     }
-
 
     // TOOLTIP
     function addTooltip(feature, layer) {
