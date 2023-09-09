@@ -2,7 +2,7 @@
 if (!function_exists('koneksi')) {
     function koneksi()
     {
-        $conn = mysqli_connect("localhost", "root", "", "webgis-cilegon");
+        $conn = mysqli_connect("localhost", "root", "", "webgis_cilegon");
         return $conn;
     }
 }

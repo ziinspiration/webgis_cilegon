@@ -35,7 +35,7 @@ $jamSekarang = date('H:i:s');
     </div>
     <div class="hero" id="hero">
         <div class="hero-content">
-            <h2 class="text-light"><span id="greeting" class="text-light"></span> <br> Di Website <span style="color: orange;">BAPPELITBANG KOTA CILEGON</span></h2>
+            <h2 class="text-light"><span id="greeting" class="text-light"></span> <br> Di Website <span style="color: orange;">BAPPEDALITBANG KOTA CILEGON</span></h2>
         </div>
     </div>
 </div>
