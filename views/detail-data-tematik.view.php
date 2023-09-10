@@ -73,7 +73,7 @@ function loadTableData(page) {
     var searchQuery = $('#search').val();
 
     $.ajax({
-        url: 'ajax/detail-tematik-search.php',
+        url: 'assets/ajax/detail-tematik-search.php',
         method: 'POST',
         data: {
             page: page,

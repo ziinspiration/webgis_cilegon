@@ -71,7 +71,7 @@ function loadTableData(page) {
     var searchQuery = $('#search').val();
 
     $.ajax({
-        url: 'ajax/detail-sarana-search.php',
+        url: 'assets/ajax/detail-sarana-search.php',
         method: 'POST',
         data: {
             page: page,

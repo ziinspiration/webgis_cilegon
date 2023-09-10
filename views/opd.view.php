@@ -1,12 +1,12 @@
 <?php include 'partials/starter-head.php' ?>
 <style>
-    .table-res {
-        overflow-y: auto !important;
-    }
-
     @media screen and (max-width:990px) {
         .search-class {
             width: 65% !important;
+        }
+
+        .table-res {
+            overflow-y: auto !important;
         }
     }
 </style>
@@ -22,14 +22,12 @@
             </div>
             <!-- Table -->
             <div class="table-res">
-                <table class="table table-striped table-hover mb-5 table-responsive">
+                <table class="table table-striped table-hover mb-5">
                     <thead>
                         <tr>
                             <th scope="col">No</th>
-                            <th scope="col">Nama</th>
-                            <th scope="col">Keterangan</th>
-                            <th scope="col">X</th>
-                            <th scope="col">Y</th>
+                            <th scope="col">Nama Dinas</th>
+                            <th scope="col">Alamat</th>
                         </tr>
                     </thead>
                     <tbody id="table-data">
@@ -44,24 +42,27 @@
         </div>
     </div>
 </div>
+
 <?php include 'partials/footer.php' ?>
 <?php include 'partials/script.php' ?>
+<?php include 'partials/starter-foot.php' ?>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function() {
-        // Memuat data awal saat halaman dimuat
+        // Load initial data on page load
         loadTableData(1);
 
-        // Menangani perubahan halaman
+        // Handle page change
         $(document).on('click', '.pagination a', function(e) {
             e.preventDefault();
             var page = $(this).data('page');
             loadTableData(page);
         });
 
-        // Menangani pencarian langsung
+        // Handle live searching
         $('#search').keyup(function() {
-            loadTableData(1); // Memuat halaman pertama hasil pencarian
+            loadTableData(1); // Load first page of search results
         });
     });
 
@@ -69,14 +70,13 @@
         var searchQuery = $('#search').val();
 
         $.ajax({
-            url: 'assets/ajax/detail-prasarana-search.php',
+            url: 'assets/ajax/skpd-data.php',
             method: 'POST',
             data: {
                 page: page,
-                search: searchQuery,
-                data_pokok_id: <?php echo $id; ?> // Pastikan variabel $id sudah didefinisikan sebelumnya
+                search: searchQuery
             },
-            dataType: 'json', // Menentukan tipe data yang diharapkan
+            dataType: 'json',
             success: function(data) {
                 $('#table-data').html(data.tableData);
                 $('#pagination').html(data.pagination);
@@ -84,4 +84,3 @@
         });
     }
 </script>
-<?php include 'partials/starter-foot.php' ?>

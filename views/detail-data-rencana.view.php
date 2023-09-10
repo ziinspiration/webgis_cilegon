@@ -70,7 +70,7 @@
         var searchQuery = $('#search').val();
 
         $.ajax({
-            url: 'ajax/detail-rencana-search.php',
+            url: 'assets/ajax/detail-rencana-search.php',
             method: 'POST',
             data: {
                 page: page,

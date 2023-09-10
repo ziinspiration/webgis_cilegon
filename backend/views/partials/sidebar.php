@@ -144,11 +144,20 @@
                 </a>
             </li>
         </ul>
+        <ul class="list-unstyled mb-3">
+            <p class="text-secondary">Kritik & Saran</p>
+            <li class="ms-3">
+                <a class="text-decoration-none orange nav-link p-2 bold-q" href="kritik-saran">
+                    Klik Disini <i class="ms-1 fa-solid fa-hand-point-left"></i>
+                </a>
+            </li>
+        </ul>
         <a class="register-button text-decoration-none text-dark bg-orange nav-link p-1 text-center mt-3"
             href="register-admin">
             <li class="mb-3 mt-2"><i class="bi bi-person-plus me-2 fw-bold"></i>Registrasi admin baru </li>
         </a>
-        <a href="logout" class="btn btn-danger p-2 mt-2"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        <a href="../auth/logout" class="btn btn-danger p-2 mt-2"><i class="fa-solid fa-right-from-bracket"></i>
+            Logout</a>
         <a href="admin-setting" class="btn btn-warning p-2 mt-2"><i class="fa-solid fa-gear"></i> Setting</a>
     </ul>
     <p class="text-secondary mb-2 mt-3"><span class="bold">Version</span> 1.0</p>

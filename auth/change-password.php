@@ -6,7 +6,7 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 
-require 'functions/functions.php';
+require '../backend/functions/functions.php';
 
 $conn = koneksi();
 
@@ -14,4 +14,4 @@ $admin_id = $_SESSION["id"];
 
 $nama_halaman = 'Update password';
 $linkcss = 'update-password.css';
-require 'views/update-password-self.view.php';
+require 'views/change-password.view.php';

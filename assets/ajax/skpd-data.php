@@ -1,5 +1,5 @@
 <?php
-require_once '../functions/functions.php';
+require_once '../../functions/functions.php';
 
 $page = isset($_POST['page']) ? $_POST['page'] : 1;
 $itemsPerPage = 10;

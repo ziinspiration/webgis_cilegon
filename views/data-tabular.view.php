@@ -1,14 +1,14 @@
 <?php include 'partials/starter-head.php' ?>
 <style>
-.container {
-    padding: 60px 40px !important;
-}
-
-@media screen and (max-width:550px) {
     .container {
-        padding: 60px 0 !important;
+        padding: 60px 40px !important;
     }
-}
+
+    @media screen and (max-width:550px) {
+        .container {
+            padding: 60px 0 !important;
+        }
+    }
 </style>
 <?php include 'partials/nav.php' ?>
 <?php include 'partials/breadcrumb.php' ?>
@@ -29,21 +29,19 @@
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseOne">
                                     Selengkapnya..
                                 </button>
                             </h2>
-                            <div id="collapseFive" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample">
+                            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <ul class="parent-list">
                                         <?php foreach ($getadministrasi as $adm) : ?>
-                                        <li class="list-card">
-                                            <a href="detail-data-administrasi?id=<?= $adm['id']; ?>">
-                                                <?= $adm['nama_data']; ?>
-                                            </a>
-                                        </li>
+                                            <li class="list-card">
+                                                <a href="detail-data-administrasi?id=<?= $adm['id']; ?>">
+                                                    <?= $adm['nama_data']; ?>
+                                                </a>
+                                            </li>
                                         <?php endforeach; ?>
                                     </ul>
                                 </div>
@@ -68,21 +66,19 @@
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                     Selengkapnya..
                                 </button>
                             </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample">
+                            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <ul class="parent-list">
                                         <?php foreach ($getprasarana as $a) : ?>
-                                        <li class="list-card">
-                                            <a href="detail-data-prasarana?id=<?= $a['id']; ?>">
-                                                <?= $a['nama_data']; ?>
-                                            </a>
-                                        </li>
+                                            <li class="list-card">
+                                                <a href="detail-data-prasarana?id=<?= $a['id']; ?>">
+                                                    <?= $a['nama_data']; ?>
+                                                </a>
+                                            </li>
                                         <?php endforeach; ?>
                                     </ul>
                                 </div>
@@ -107,21 +103,19 @@
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseOne">
                                     Selengkapnya..
                                 </button>
                             </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample">
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <ul class="parent-list">
                                         <?php foreach ($getsarana as $a) : ?>
-                                        <li class="list-card">
-                                            <a href="detail-data-sarana?id=<?= $a['id']; ?>">
-                                                <?= $a['nama_data']; ?>
-                                            </a>
-                                        </li>
+                                            <li class="list-card">
+                                                <a href="detail-data-sarana?id=<?= $a['id']; ?>">
+                                                    <?= $a['nama_data']; ?>
+                                                </a>
+                                            </li>
                                         <?php endforeach; ?>
                                     </ul>
                                 </div>
@@ -146,21 +140,19 @@
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseOne">
                                     Selengkapnya..
                                 </button>
                             </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample">
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <ul class="parent-list">
                                         <?php foreach ($gettematik as $a) : ?>
-                                        <li class="list-card">
-                                            <a href="detail-data-tematik?id=<?= $a['id']; ?>">
-                                                <?= $a['nama_data']; ?>
-                                            </a>
-                                        </li>
+                                            <li class="list-card">
+                                                <a href="detail-data-tematik?id=<?= $a['id']; ?>">
+                                                    <?= $a['nama_data']; ?>
+                                                </a>
+                                            </li>
                                         <?php endforeach; ?>
                                     </ul>
                                 </div>
@@ -185,21 +177,19 @@
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseOne">
                                     Selengkapnya..
                                 </button>
                             </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample">
+                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <ul class="parent-list">
                                         <?php foreach ($getrencana as $a) : ?>
-                                        <li class="list-card">
-                                            <a href="detail-data-rencana?id=<?= $a['id']; ?>">
-                                                <?= $a['nama_data']; ?>
-                                            </a>
-                                        </li>
+                                            <li class="list-card">
+                                                <a href="detail-data-rencana?id=<?= $a['id']; ?>">
+                                                    <?= $a['nama_data']; ?>
+                                                </a>
+                                            </li>
                                         <?php endforeach; ?>
                                     </ul>
                                 </div>
@@ -213,9 +203,9 @@
 </div>
 <?php include 'partials/footer.php' ?>
 <?php include 'partials/script.php' ?>
-<script type="text/javascript" src="script/tilt.js"></script>
+<script type="text/javascript" src="assets/script/tilt.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-AOS.init();
+    AOS.init();
 </script>
 <?php include 'partials/starter-foot.php' ?>

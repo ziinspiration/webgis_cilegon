@@ -72,7 +72,7 @@
         var searchQuery = $('#search').val();
 
         $.ajax({
-            url: 'ajax/wilayah-data.php',
+            url: 'assets/ajax/wilayah-data.php',
             method: 'POST',
             data: {
                 page: page,

@@ -13,4 +13,4 @@ $nama_halaman = 'Data tabular';
 $linkcss = 'datapokok.css';
 $folder = 'DATA TABULAR';
 $name_page = 'Data Pokok';
-require 'views/datatabular.view.php';
+require 'views/data-tabular.view.php';

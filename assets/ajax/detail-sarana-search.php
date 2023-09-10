@@ -1,29 +1,29 @@
 <?php
-require_once '../functions/functions.php';
+require_once '../../functions/functions.php';
 
-$page = isset($_POST['page']) ? $_POST['page'] : 1;
 $itemsPerPage = 10;
+$page = isset($_POST['page']) ? $_POST['page'] : 1;
 $start = ($page - 1) * $itemsPerPage;
 
 $searchQuery = isset($_POST['search']) ? $_POST['search'] : '';
-$id = isset($_POST['data_pokok_id']) ? $_POST['data_pokok_id'] : '';
+$id = isset($_POST['data_pokok_id']) ? $_POST['data_pokok_id'] : ''; // Pastikan Anda mengambil nilai ini dari permintaan AJAX
 
-$query = "SELECT * FROM atribut_rencana 
-JOIN data_rencana ON atribut_rencana.data_pokok_id = data_rencana.id";
+$query = "SELECT * FROM atribut_sarana 
+JOIN data_sarana ON atribut_sarana.data_pokok_id = data_sarana.id";
 
 if (!empty($id)) {
-    $query .= " WHERE atribut_rencana.data_pokok_id = $id";
+    $query .= " WHERE atribut_sarana.data_pokok_id = $id";
 }
 
 if (!empty($searchQuery)) {
-    $query .= " AND (kecamatan LIKE '%$searchQuery%' OR kelurahan LIKE '%$searchQuery%' OR keterangan LIKE '%$searchQuery%' OR sumber LIKE '%$searchQuery%'  OR luas LIKE '%$searchQuery%')";
+    $query .= " AND (nama LIKE '%$searchQuery%' OR keterangan LIKE '%$searchQuery%' OR x LIKE '%$searchQuery%' OR y LIKE '%$searchQuery%')";
 }
 
-$countQuery = str_replace("SELECT *", "SELECT COUNT(*)", $query); // Count query for total items
-$totalItems = query($countQuery)[0]['COUNT(*)'];
+$getdata = query($query);
 
-$query .= " ORDER BY kecamatan ASC LIMIT $start, $itemsPerPage";
+$totalItems = count($getdata);
 
+$query .= " ORDER BY nama ASC LIMIT $start, $itemsPerPage";
 $getdata = query($query);
 
 $output = '';
@@ -33,15 +33,14 @@ if (count($getdata) > 0) {
     foreach ($getdata as $a) {
         $output .= '<tr>
                         <th>' . $i++ . '</th>
-                        <td>' . $a['kecamatan'] . '</td>
-                        <td>' . $a['kelurahan'] . '</td>
+                        <td>' . $a['nama'] . '</td>
                         <td>' . $a['keterangan'] . '</td>
-                        <td>' . $a['sumber'] . '</td>    
-                        <td>' . $a['luas'] . '</td>            
+                        <td>' . $a['x'] . '</td>
+                        <td>' . $a['y'] . '</td>       
                     </tr>';
     }
 } else {
-    $output = '<tr><td colspan="6"><div class="m-auto text-center p-3">Data tidak tersedia</div></td></tr>';
+    $output = '<tr><td colspan="5"><div class="m-auto text-center p-3">Data tidak tersedia</div></td></tr>';
 }
 
 $totalPages = ceil($totalItems / $itemsPerPage);
@@ -71,8 +70,9 @@ if ($endPage < $totalPages) {
     $pagination .= '<li class="page-item disabled"><span class="page-link bg-transparent border-0">...</span></li>';
 }
 
+
 $pagination .= '<li class="page-item"><a class="page-link text-dark rounded-start-pill ms-1 bg-body-tertiary" href="#" data-page="' . $nextPage . '"><i class="fa-solid fa-angle-right"></i></i></a></li>';
-$pagination .= '<li class="page-item"><a class="page-link bg-body-tertiary fw-bolder text-dark rounded-end-pill" href="#" data-page="' . $totalPages . '"><i class="fa-solid fa-angle-double-right"></i></a></li>';
+$pagination .= '<li class="page-item"><a class="page-link bg-body-tertiary fw-bolder text-dark rounded-end-pill" href="#" data-page="' . $totalPages . '"><i class="fa-solid fa-angles-right"></i></a></li>';
 
 echo json_encode(array(
     'tableData' => $output,

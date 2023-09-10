@@ -1,5 +1,5 @@
 <?php
-require_once '../functions/functions.php';
+require_once '../../functions/functions.php';
 
 $page = isset($_POST['page']) ? $_POST['page'] : 1;
 $itemsPerPage = 10;
@@ -8,20 +8,20 @@ $start = ($page - 1) * $itemsPerPage;
 $searchQuery = isset($_POST['search']) ? $_POST['search'] : '';
 $id = isset($_POST['data_pokok_id']) ? $_POST['data_pokok_id'] : '';
 
-$query = "SELECT * FROM atribut_prasarana 
-JOIN data_prasarana ON atribut_prasarana.data_pokok_id = data_prasarana.id";
+$query = "SELECT * FROM atribut_administrasi 
+JOIN data_administrasi ON atribut_administrasi.data_pokok_id = data_administrasi.id";
 
 if (!empty($id)) {
-    $query .= " WHERE atribut_prasarana.data_pokok_id = $id";
+    $query .= " WHERE atribut_administrasi.data_pokok_id = $id";
 }
 
 if (!empty($searchQuery)) {
-    $query .= " AND (nama LIKE '%$searchQuery%' OR keterangan LIKE '%$searchQuery%' OR x LIKE '%$searchQuery%' OR y LIKE '%$searchQuery%')";
+    $query .= " AND (provinsi LIKE '%$searchQuery%' OR kabupaten LIKE '%$searchQuery%' OR kecamatan LIKE '%$searchQuery%' OR kelurahan LIKE '%$searchQuery%' OR sumber LIKE '%$searchQuery%' OR luas LIKE '%$searchQuery%')";
 }
 
 $totalItems = count(query($query)); // Hitung total item sesuai kondisi
 
-$query .= " ORDER BY nama ASC LIMIT $start, $itemsPerPage";
+$query .= " ORDER BY provinsi ASC LIMIT $start, $itemsPerPage";
 
 $getdata = query($query);
 
@@ -32,10 +32,12 @@ if (count($getdata) > 0) {
     foreach ($getdata as $a) {
         $output .= '<tr>
                         <th>' . $i++ . '</th>
-                        <td>' . $a['nama'] . '</td>
-                        <td>' . $a['keterangan'] . '</td>
-                        <td>' . $a['x'] . '</td>
-                        <td>' . $a['y'] . '</td>  
+                        <td>' . $a['provinsi'] . '</td>
+                        <td>' . $a['kabupaten'] . '</td>
+                        <td>' . $a['kecamatan'] . '</td>
+                        <td>' . $a['kelurahan'] . '</td>
+                        <td>' . $a['sumber'] . '</td>
+                        <td>' . $a['luas'] . '</td>
                     </tr>';
     }
 } else {

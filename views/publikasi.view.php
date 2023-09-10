@@ -12,7 +12,6 @@
     }
 
     .swal2-popup {
-        /* background: url(../assets/index/footer2.jpg ) !important; */
         background-color: #333333 !important;
         padding: 20px !important;
         box-shadow: 0 0 7px #333333 !important;
@@ -108,7 +107,7 @@
         var searchQuery = $('#search').val();
 
         $.ajax({
-            url: 'ajax/publikasi-data.php', // Change this to your PHP file
+            url: 'assets/ajax/publikasi-data.php', // Change this to your PHP file
             method: 'POST',
             data: {
                 page: page,

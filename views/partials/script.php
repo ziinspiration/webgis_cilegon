@@ -5,5 +5,5 @@
 <script src="https://unpkg.com/labelgun@6.1.0/lib/labelgun.min.js"></script>
 <script src="node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="script/labels.js"></script>
-<script src="script/index.js"></script>
+<script src="assets/script/labels.js"></script>
+<script src="assets/script/index.js"></script>

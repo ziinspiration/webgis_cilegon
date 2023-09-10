@@ -1,0 +1,10 @@
+.bold-q {
+  font-weight: 600 !important;
+  color: rgb(187, 186, 186) !important;
+}
+
+@media screen and (max-width: 550px) {
+  .content {
+    flex-direction: column !important;
+  }
+}
