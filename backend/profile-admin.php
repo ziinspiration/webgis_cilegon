@@ -10,10 +10,8 @@ require 'functions/functions.php';
 
 $conn = koneksi();
 
-// Mendapatkan admin_id dari session
 $admin_id = $_SESSION["id"];
 
-//ambil data admin berdasarkan id
 $query = "SELECT * FROM admin WHERE id = $admin_id";
 $result = mysqli_query($conn, $query);
 $admin = mysqli_fetch_assoc($result);

@@ -100,7 +100,6 @@ document.getElementById("nik").addEventListener("input", function() {
     var nikInput = this.value;
     var errorElement = document.getElementById("nik-error");
 
-    // Lakukan pengecekan dengan regex untuk memastikan input hanya angka
     if (!/^\d+$/.test(nikInput)) {
         errorElement.textContent = "*NIK hanya boleh berisi angka";
     } else {
