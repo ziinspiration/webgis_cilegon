@@ -167,19 +167,12 @@ a.leaflet-popup-close-button :hover {
                     <li class="ms-3">
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" id="<?= $a['checkbox_id']; ?>">
-                            <label class="form-check-label"
-                                for="<?= $a['checkbox_id']; ?>"><?= $a['nama_adm']; ?></label>
+                            <label class="form-check-label" for="<?= $a['checkbox_id']; ?>">
+                                <?= $a['nama_adm'] = ucwords($a['nama_adm']); ?>
+                            </label>
                         </div>
                     </li>
                     <?php endforeach; ?>
-                    <!-- <li class="ms-3">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" value="" id="toggleTooltipCheckbox" checked>
-                            <label class="form-check-label" for="toggleTooltipCheckbox">
-                                On/Off Tooltip
-                            </label>
-                        </div>
-                    </li> -->
             </ul>
             <!-- Tematik -->
             <h5 class="mb-3">Tematik</h5>
@@ -190,8 +183,9 @@ a.leaflet-popup-close-button :hover {
                 <li class="ms-3">
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="<?= $a['checkbox_id']; ?>">
-                        <label class="form-check-label"
-                            for="<?= $a['checkbox_id']; ?>"><?= $a['nama_tematik']; ?></label>
+                        <label class="form-check-label" for="<?= $a['checkbox_id']; ?>">
+                            <?= $a['nama_tematik'] = ucwords($a['nama_tematik']); ?>
+                        </label>
                     </div>
                 </li>
                 <?php endforeach; ?>
@@ -203,8 +197,9 @@ a.leaflet-popup-close-button :hover {
                 <li class="ms-3">
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="<?= $a['checkbox_id']; ?>">
-                        <label class="form-check-label"
-                            for="<?= $a['checkbox_id']; ?>"><?= $a['nama_tematik']; ?></label>
+                        <label class="form-check-label" for="<?= $a['checkbox_id']; ?>">
+                            <?= $a['nama_tematik'] = ucwords($a['nama_tematik']); ?>
+                        </label>
                     </div>
                 </li>
                 <?php endforeach; ?>
@@ -217,20 +212,54 @@ a.leaflet-popup-close-button :hover {
                     <li class="ms-3">
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" id="<?= $a['checkbox_id']; ?>">
-                            <label class="form-check-label"
-                                for="<?= $a['checkbox_id']; ?>"><?= $a['nama_prasarana']; ?></label>
+                            <label class="form-check-label" for="<?= $a['checkbox_id']; ?>">
+                                <?= $a['nama_prasarana'] = ucwords($a['nama_prasarana']); ?>
+                            </label>
                         </div>
                     </li>
                     <?php endforeach; ?>
                 </ul>
                 <ul class="list-unstyled">
                     <p class="ms-3">Sistem & Jaringan</p>
-                    <?php foreach ($JSONjalan as $a) : ?>
-                    <li class="ms-3">
+
+                    <Small>
+                        <p class="text-dark-subtle ms-5 mt-3 mb-1">Status Jalan</p>
+                    </Small>
+                    <?php foreach ($JSONjalanstatus as $a) : ?>
+                    <li class="ms-5">
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" id="<?= $a['checkbox_id']; ?>">
-                            <label class="form-check-label"
-                                for="<?= $a['checkbox_id']; ?>"><?= $a['nama_prasarana']; ?></label>
+                            <label class="form-check-label" for="<?= $a['checkbox_id']; ?>">
+                                <?= $a['nama_prasarana'] = ucwords($a['nama_prasarana']); ?>
+                            </label>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
+
+                    <Small>
+                        <p class="text-dark-subtle ms-5 mt-3 mb-1">Fungsi Jalan</p>
+                    </Small>
+                    <?php foreach ($JSONjalanfungsi as $a) : ?>
+                    <li class="ms-5">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="<?= $a['checkbox_id']; ?>">
+                            <label class="form-check-label" for="<?= $a['checkbox_id']; ?>">
+                                <?= $a['nama_prasarana'] = ucwords($a['nama_prasarana']); ?>
+                            </label>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
+
+                    <Small>
+                        <p class="text-dark-subtle ms-5 mt-3 mb-1">Kondisi Jaringan</p>
+                    </Small>
+                    <?php foreach ($JSONjalankondisi as $a) : ?>
+                    <li class="ms-5">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="<?= $a['checkbox_id']; ?>">
+                            <label class="form-check-label" for="<?= $a['checkbox_id']; ?>">
+                                <?= $a['nama_prasarana'] = ucwords($a['nama_prasarana']); ?>
+                            </label>
                         </div>
                     </li>
                     <?php endforeach; ?>
@@ -241,8 +270,9 @@ a.leaflet-popup-close-button :hover {
                     <li class="ms-3">
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" id="<?= $a['checkbox_id']; ?>">
-                            <label class="form-check-label"
-                                for="<?= $a['checkbox_id']; ?>"><?= $a['nama_prasarana']; ?></label>
+                            <label class="form-check-label" for="<?= $a['checkbox_id']; ?>">
+                                <?= $a['nama_prasarana'] = ucwords($a['nama_prasarana']); ?>
+                            </label>
                         </div>
                     </li>
                     <?php endforeach; ?>
@@ -253,8 +283,9 @@ a.leaflet-popup-close-button :hover {
                     <li class="ms-3">
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" id="<?= $a['checkbox_id']; ?>">
-                            <label class="form-check-label"
-                                for="<?= $a['checkbox_id']; ?>"><?= $a['nama_prasarana']; ?></label>
+                            <label class="form-check-label" for="<?= $a['checkbox_id']; ?>">
+                                <?= $a['nama_prasarana'] = ucwords($a['nama_prasarana']); ?>
+                            </label>
                         </div>
                     </li>
                     <?php endforeach; ?>
@@ -270,7 +301,7 @@ a.leaflet-popup-close-button :hover {
                                 <input class="form-check-input" type="checkbox" value=""
                                     id="<?= $jk['checkbox_id']; ?>">
                                 <label class="form-check-label" for="<?= $jk['checkbox_id']; ?>">
-                                    <?= $jk['nama_sarana']; ?>
+                                    <?= $jk['nama_sarana'] = ucwords($jk['nama_sarana']); ?>
                                 </label>
                             </div>
                         </li>
@@ -282,7 +313,7 @@ a.leaflet-popup-close-button :hover {
                                 <input class="form-check-input" type="checkbox" value=""
                                     id="<?= $jp['checkbox_id']; ?>">
                                 <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
-                                    <?= $jp['nama_sarana']; ?>
+                                    <?= $jp['nama_sarana'] = ucwords($jp['nama_sarana']); ?>
                                 </label>
                             </div>
                         </li>
@@ -296,20 +327,20 @@ a.leaflet-popup-close-button :hover {
                                 <input class="form-check-input" type="checkbox" value=""
                                     id="<?= $jp['checkbox_id']; ?>">
                                 <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
-                                    <?= $jp['nama_sarana']; ?>
+                                    <?= $jp['nama_sarana'] = ucwords($jp['nama_sarana']); ?>
                                 </label>
                             </div>
                         </li>
                         <?php endforeach; ?>
 
-                        <p class="text-secondary ms-4"><small>Zonasi pendidikan</small></p>
+                        <p class="text-secondary ms-4 mb-1 mt-3"><small>Zonasi pendidikan</small></p>
                         <?php foreach ($ZONASIpendidikan as $jp) : ?>
                         <li class="ms-5">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value=""
                                     id="<?= $jp['checkbox_id']; ?>">
                                 <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
-                                    <?= $jp['nama_sarana']; ?>
+                                    <?= $jp['nama_sarana'] = ucwords($jp['nama_sarana']); ?>
                                 </label>
                             </div>
                         </li>
@@ -323,19 +354,19 @@ a.leaflet-popup-close-button :hover {
                                 <input class="form-check-input" type="checkbox" value=""
                                     id="<?= $js['checkbox_id']; ?>">
                                 <label class="form-check-label" for="<?= $js['checkbox_id']; ?>">
-                                    <?= $js['nama_sarana']; ?>
+                                    <?= $js['nama_sarana'] = ucwords($js['nama_sarana']); ?>
                                 </label>
                             </div>
                         </li>
                         <?php endforeach; ?>
-                        <p class="text-secondary ms-4"><small>Zonasi kesehatan</small></p>
+                        <p class="text-secondary ms-4 mb-1 mt-3"><small>Zonasi kesehatan</small></p>
                         <?php foreach ($ZONASIkesehatan as $jp) : ?>
                         <li class="ms-5">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value=""
                                     id="<?= $jp['checkbox_id']; ?>">
                                 <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
-                                    <?= $jp['nama_sarana']; ?>
+                                    <?= $jp['nama_sarana'] = ucwords($jp['nama_sarana']); ?>
                                 </label>
                             </div>
                         </li>
@@ -348,19 +379,19 @@ a.leaflet-popup-close-button :hover {
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="<?= $p['checkbox_id']; ?>">
                                 <label class="form-check-label" for="<?= $p['checkbox_id']; ?>">
-                                    <?= $p['nama_sarana']; ?>
+                                    <?= $p['nama_sarana'] = ucwords($p['nama_sarana']); ?>
                                 </label>
                             </div>
                         </li>
                         <?php endforeach; ?>
                         <?php foreach ($ZONASIpariwisata as $jp) : ?>
-                        <p class="text-secondary ms-4"><small>Zonasi pariwisata</small></p>
+                        <p class="text-secondary ms-4 mb-1 mt-3"><small>Zonasi pariwisata</small></p>
                         <li class="ms-5">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value=""
                                     id="<?= $jp['checkbox_id']; ?>">
                                 <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
-                                    <?= $jp['nama_sarana']; ?>
+                                    <?= $jp['nama_sarana'] = ucwords($jp['nama_sarana']); ?>
                                 </label>
                             </div>
                         </li>
@@ -373,19 +404,19 @@ a.leaflet-popup-close-button :hover {
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="<?= $p['checkbox_id']; ?>">
                                 <label class="form-check-label" for="<?= $p['checkbox_id']; ?>">
-                                    <?= $p['nama_sarana']; ?>
+                                    <?= $p['nama_sarana'] = ucwords($p['nama_sarana']); ?>
                                 </label>
                             </div>
                         </li>
                         <?php endforeach; ?>
                         <?php foreach ($ZONASIperibadatan as $jp) : ?>
-                        <p class="text-secondary ms-4"><small>Zonasi peribadatan</small></p>
+                        <p class="text-secondary ms-4 mb-1 mt-3"><small>Zonasi peribadatan</small></p>
                         <li class="ms-5">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value=""
                                     id="<?= $jp['checkbox_id']; ?>">
                                 <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
-                                    <?= $jp['nama_sarana']; ?>
+                                    <?= $jp['nama_sarana'] = ucwords($jp['nama_sarana']); ?>
                                 </label>
                             </div>
                         </li>
@@ -399,19 +430,19 @@ a.leaflet-popup-close-button :hover {
                                 <input class="form-check-input" type="checkbox" value=""
                                     id="<?= $jt['checkbox_id']; ?>">
                                 <label class="form-check-label" for="<?= $jt['checkbox_id']; ?>">
-                                    <?= $jt['nama_sarana']; ?>
+                                    <?= $jt['nama_sarana'] = ucwords($jt['nama_sarana']); ?>
                                 </label>
                             </div>
                         </li>
                         <?php endforeach; ?>
                         <?php foreach ($ZONASItransportasi as $jp) : ?>
-                        <p class="text-secondary ms-4"><small>Zonasi sistem transportasi</small></p>
+                        <p class="text-secondary ms-4 mb-1 mt-3"><small>Zonasi sistem transportasi</small></p>
                         <li class="ms-5">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value=""
                                     id="<?= $jp['checkbox_id']; ?>">
                                 <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
-                                    <?= $jp['nama_sarana']; ?>
+                                    <?= $jp['nama_sarana'] = ucwords($jp['nama_sarana']); ?>
                                 </label>
                             </div>
                         </li>
@@ -425,19 +456,19 @@ a.leaflet-popup-close-button :hover {
                                 <input class="form-check-input" type="checkbox" value=""
                                     id="<?= $fu['checkbox_id']; ?>">
                                 <label class="form-check-label" for="<?= $fu['checkbox_id']; ?>">
-                                    <?= $fu['nama_sarana']; ?>
+                                    <?= $fu['nama_sarana'] = ucwords($fu['nama_sarana']); ?>
                                 </label>
                             </div>
                         </li>
                         <?php endforeach; ?>
                         <?php foreach ($ZONASIfasilitasolahraga as $jp) : ?>
-                        <p class="text-secondary ms-4"><small>Zonasi fasilitas olahraga</small></p>
+                        <p class="text-secondary ms-4 mb-1 mt-3"><small>Zonasi fasilitas olahraga</small></p>
                         <li class="ms-5">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value=""
                                     id="<?= $jp['checkbox_id']; ?>">
                                 <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
-                                    <?= $jp['nama_sarana']; ?>
+                                    <?= $jp['nama_sarana'] = ucwords($jp['nama_sarana']); ?>
                                 </label>
                             </div>
                         </li>
@@ -451,19 +482,19 @@ a.leaflet-popup-close-button :hover {
                                 <input class="form-check-input" type="checkbox" value=""
                                     id="<?= $fu['checkbox_id']; ?>">
                                 <label class="form-check-label" for="<?= $fu['checkbox_id']; ?>">
-                                    <?= $fu['nama_sarana']; ?>
+                                    <?= $fu['nama_sarana'] = ucwords($fu['nama_sarana']); ?>
                                 </label>
                             </div>
                         </li>
                         <?php endforeach; ?>
                         <?php foreach ($ZONASIperdagangan as $jp) : ?>
-                        <p class="text-secondary ms-4"><small>Zonasi perdagangan & perniagaan</small></p>
+                        <p class="text-secondary ms-4 mb-1 mt-3"><small>Zonasi perdagangan & perniagaan</small></p>
                         <li class="ms-5">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value=""
                                     id="<?= $jp['checkbox_id']; ?>">
                                 <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
-                                    <?= $jp['nama_sarana']; ?>
+                                    <?= $jp['nama_sarana'] = ucwords($jp['nama_sarana']); ?>
                                 </label>
                             </div>
                         </li>
@@ -477,19 +508,19 @@ a.leaflet-popup-close-button :hover {
                                 <input class="form-check-input" type="checkbox" value=""
                                     id="<?= $fu['checkbox_id']; ?>">
                                 <label class="form-check-label" for="<?= $fu['checkbox_id']; ?>">
-                                    <?= $fu['nama_sarana']; ?>
+                                    <?= $fu['nama_sarana'] = ucwords($fu['nama_sarana']); ?>
                                 </label>
                             </div>
                         </li>
                         <?php endforeach; ?>
                         <?php foreach ($ZONASIpemakaman as $jp) : ?>
-                        <p class="text-secondary ms-4"><small>Zonasi tempat pemakaman umum</small></p>
+                        <p class="text-secondary ms-4 mb-1 mt-3"><small>Zonasi tempat pemakaman umum</small></p>
                         <li class="ms-5">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value=""
                                     id="<?= $jp['checkbox_id']; ?>">
                                 <label class="form-check-label" for="<?= $jp['checkbox_id']; ?>">
-                                    <?= $jp['nama_sarana']; ?>
+                                    <?= $jp['nama_sarana'] = ucwords($jp['nama_sarana']); ?>
                                 </label>
                             </div>
                         </li>
@@ -636,7 +667,21 @@ checkboxGroup.forEach(function(checkbox) {
                 }
                 <?php endforeach; ?>
 
-                <?php foreach ($JSONjalan as $jj) : ?>
+                <?php foreach ($JSONjalanfungsi as $jj) : ?>
+                if (checkbox.id === "<?= $jj['checkbox_id']; ?>") {
+                    url = "assets/geojson/prasarana/<?= $jj['file_json']; ?>";
+                    addGeoJsonLayer(url, checkbox);
+                }
+                <?php endforeach; ?>
+
+                <?php foreach ($JSONjalanstatus as $jj) : ?>
+                if (checkbox.id === "<?= $jj['checkbox_id']; ?>") {
+                    url = "assets/geojson/prasarana/<?= $jj['file_json']; ?>";
+                    addGeoJsonLayer(url, checkbox);
+                }
+                <?php endforeach; ?>
+
+                <?php foreach ($JSONjalankondisi as $jj) : ?>
                 if (checkbox.id === "<?= $jj['checkbox_id']; ?>") {
                     url = "assets/geojson/prasarana/<?= $jj['file_json']; ?>";
                     addGeoJsonLayer(url, checkbox);
@@ -903,6 +948,22 @@ legend.onAdd = function(map) {
     var div = L.DomUtil.create('div', 'legend');
     div.innerHTML = `
         <h5 class="mb-3">Legenda</h5>
+        <?php foreach ($getlegendaadministrasi as $a) : ?>
+            <div class="legend-items">
+                <span class="legend-icon">
+                    <img src="assets/legenda/<?= $a['file']; ?>">
+                </span>
+                <p><?= $a['nama_data']; ?></p>
+            </div>
+        <?php endforeach; ?>
+        <?php foreach ($getlegendatematik as $a) : ?>
+            <div class="legend-items">
+                <span class="legend-icon">
+                    <img src="assets/legenda/<?= $a['file']; ?>">
+                </span>
+                <p><?= $a['nama_data']; ?></p>
+            </div>
+        <?php endforeach; ?>
         <?php foreach ($getlegendasarana as $a) : ?>
             <div class="legend-items">
                 <span class="legend-icon">

@@ -11,6 +11,7 @@ $getrencanaG = query("SELECT * FROM rencana JOIN jenis_rencana ON rencana.jenis_
 $getadmin = query("SELECT * FROM rencana JOIN jenis_rencana ON rencana.jenis_rencana_id = jenis_rencana.id_jenis_rencana WHERE jenis_rencana_id = 8 AND hide = 1");
 
 $getlegenda = query("SELECT * FROM rencana WHERE id_jenis_file = 1 AND hide = 1");
+$getlegendarencana = query("SELECT * FROM legenda WHERE jenis_id = 3");
 
 $nama_halaman = 'Rencana';
 $linkcss = 'tematik.css';

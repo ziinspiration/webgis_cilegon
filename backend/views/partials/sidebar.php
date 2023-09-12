@@ -1,30 +1,30 @@
 <style>
-    #signal-icon {
-        font-size: 19px !important;
+#signal-icon {
+    font-size: 19px !important;
+}
+
+.icon-koneksi {
+    font-size: 19px !important;
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes colorChange {
+    0% {
+        color: red;
     }
 
-    .icon-koneksi {
-        font-size: 19px !important;
+    50% {
+        color: yellow;
     }
 
-    .animated {
-        animation-duration: 1s;
-        animation-timing-function: ease-in-out;
+    100% {
+        color: green;
     }
-
-    @keyframes colorChange {
-        0% {
-            color: red;
-        }
-
-        50% {
-            color: yellow;
-        }
-
-        100% {
-            color: green;
-        }
-    }
+}
 </style>
 <div class="sidebar bg-dark">
     <p class="text-secondary mb-2 mb-4">
@@ -156,8 +156,14 @@
                     Struktur Organisasi
                 </a>
             </li>
+            <li class="ms-3">
+                <a class="text-decoration-none orange nav-link p-2 bold-s" href="data-legenda">
+                    Data Legenda
+                </a>
+            </li>
         </ul>
-        <a class="register-button text-decoration-none text-dark bg-orange nav-link p-1 text-center mt-3" href="register-admin">
+        <a class="register-button text-decoration-none text-dark bg-orange nav-link p-1 text-center mt-3"
+            href="register-admin">
             <li class="mb-3 mt-2"><i class="bi bi-person-plus me-2 fw-bold"></i>Registrasi admin baru </li>
         </a>
         <a href="../auth/logout" class="btn btn-danger p-2 mt-2"><i class="fa-solid fa-right-from-bracket"></i>

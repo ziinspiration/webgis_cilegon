@@ -158,8 +158,9 @@ a.leaflet-popup-close-button :hover {
                 <li class="ms-3">
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="<?= $a['checkbox_id']; ?>">
-                        <label class="form-check-label"
-                            for="<?= $a['checkbox_id']; ?>"><?= $a['nama_rencana']; ?></label>
+                        <label class="form-check-label" for="<?= $a['checkbox_id']; ?>">
+                            <?= $a['nama_rencana'] = ucwords($a['nama_rencana']); ?>
+                        </label>
                     </div>
                 </li>
                 <?php endforeach; ?>
@@ -181,8 +182,9 @@ a.leaflet-popup-close-button :hover {
                 <li class="ms-3">
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="<?= $a['checkbox_id']; ?>">
-                        <label class="form-check-label"
-                            for="<?= $a['checkbox_id']; ?>"><?= $a['nama_rencana']; ?></label>
+                        <label class="form-check-label" for="<?= $a['checkbox_id']; ?>">
+                            <?= $a['nama_rencana'] = ucwords($a['nama_rencana']); ?>
+                        </label>
                     </div>
                 </li>
                 <?php endforeach; ?>
@@ -204,8 +206,9 @@ a.leaflet-popup-close-button :hover {
                 <li class="ms-3">
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="<?= $a['checkbox_id']; ?>">
-                        <label class="form-check-label"
-                            for="<?= $a['checkbox_id']; ?>"><?= $a['nama_rencana']; ?></label>
+                        <label class="form-check-label" for="<?= $a['checkbox_id']; ?>">
+                            <?= $a['nama_rencana'] = ucwords($a['nama_rencana']); ?>
+                        </label>
                     </div>
                 </li>
                 <?php endforeach; ?>
@@ -226,8 +229,9 @@ a.leaflet-popup-close-button :hover {
                 <li class="ms-3">
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="<?= $a['checkbox_id']; ?>">
-                        <label class="form-check-label"
-                            for="<?= $a['checkbox_id']; ?>"><?= $a['nama_rencana']; ?></label>
+                        <label class="form-check-label" for="<?= $a['checkbox_id']; ?>">
+                            <?= $a['nama_rencana'] = ucwords($a['nama_rencana']); ?>
+                        </label>
                     </div>
                 </li>
                 <?php endforeach; ?>
@@ -248,8 +252,9 @@ a.leaflet-popup-close-button :hover {
                 <li class="ms-3">
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="<?= $a['checkbox_id']; ?>">
-                        <label class="form-check-label"
-                            for="<?= $a['checkbox_id']; ?>"><?= $a['nama_rencana']; ?></label>
+                        <label class="form-check-label" for="<?= $a['checkbox_id']; ?>">
+                            <?= $a['nama_rencana'] = ucwords($a['nama_rencana']); ?>
+                        </label>
                     </div>
                 </li>
                 <?php endforeach; ?>
@@ -270,8 +275,9 @@ a.leaflet-popup-close-button :hover {
                 <li class="ms-3">
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="<?= $a['checkbox_id']; ?>">
-                        <label class="form-check-label"
-                            for="<?= $a['checkbox_id']; ?>"><?= $a['nama_rencana']; ?></label>
+                        <label class="form-check-label" for="<?= $a['checkbox_id']; ?>">
+                            <?= $a['nama_rencana'] = ucwords($a['nama_rencana']); ?>
+                        </label>
                     </div>
                 </li>
                 <?php endforeach; ?>
@@ -292,8 +298,9 @@ a.leaflet-popup-close-button :hover {
                 <li class="ms-3">
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="<?= $a['checkbox_id']; ?>">
-                        <label class="form-check-label"
-                            for="<?= $a['checkbox_id']; ?>"><?= $a['nama_rencana']; ?></label>
+                        <label class="form-check-label" for="<?= $a['checkbox_id']; ?>">
+                            <?= $a['nama_rencana'] = ucwords($a['nama_rencana']); ?>
+                        </label>
                     </div>
                 </li>
                 <?php endforeach; ?>
@@ -314,8 +321,9 @@ a.leaflet-popup-close-button :hover {
                 <li class="ms-3">
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="<?= $a['checkbox_id']; ?>">
-                        <label class="form-check-label"
-                            for="<?= $a['checkbox_id']; ?>"><?= $a['nama_rencana']; ?></label>
+                        <label class="form-check-label" for="<?= $a['checkbox_id']; ?>">
+                            <?= $a['nama_rencana'] = ucwords($a['nama_rencana']); ?>
+                        </label>
                     </div>
                 </li>
                 <?php endforeach; ?>
@@ -600,8 +608,10 @@ var legend = L.control({
 legend.onAdd = function(map) {
     var div = L.DomUtil.create('div', 'legend');
     div.innerHTML = '<h5 class="mb-3">Legenda</h5>' +
-
-        <?php foreach ($getlegenda as $a) : ?> '<div class="legend-items"><span class="legend-icon"><img src="assets/icon/rencana/<?= $a['icon']; ?>"></span><p><?= $a['nama_rencana']; ?></p></div>' +
+        <?php foreach ($getlegendarencana as $a) : ?> '<div class="legend-items"><span class="legend-icon"><img src="assets/legenda/<?= $a['file']; ?>"></span><p><?= $a['nama_data']; ?></p></div>' +
+        <?php endforeach; ?>
+    <?php foreach ($getlegenda as $a) : ?>
+        '<div class="legend-items"><span class="legend-icon"><img src="assets/icon/rencana/<?= $a['icon']; ?>"></span><p><?= $a['nama_rencana']; ?></p></div>' +
         <?php endforeach; ?> '<div><span class="marker-icon"></span></div>';
     return div;
 };

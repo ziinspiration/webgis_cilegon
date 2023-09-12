@@ -9,7 +9,9 @@ $getTematik = query("SELECT * FROM tematik WHERE kategori = '2' AND hide = 1 ORD
 $getBencana = query("SELECT * FROM tematik WHERE kategori = '1' AND hide = 1 ORDER BY nama_tematik ASC");
 
 // DATA PRASARANA
-$JSONjalan = query("SELECT * FROM prasarana WHERE id_jenis_prasarana = 4 AND hide = 1");
+$JSONjalanstatus = query("SELECT * FROM prasarana WHERE id_jenis_prasarana = 5 AND hide = 1");
+$JSONjalankondisi = query("SELECT * FROM prasarana WHERE id_jenis_prasarana = 7 AND hide = 1");
+$JSONjalanfungsi = query("SELECT * FROM prasarana WHERE id_jenis_prasarana = 6 AND hide = 1");
 $JSONprasarana = query("SELECT * FROM prasarana WHERE id_jenis_prasarana NOT IN (1, 2) AND id_jenis <> 3 AND hide = 1");
 $JSONprasaranaPersampahan = query("SELECT * FROM prasarana JOIN jenis_prasarana ON prasarana.id_jenis_prasarana = jenis_prasarana.id_jenis WHERE nama_jenis = 'Persampahan' AND hide = 1 ORDER BY nama_prasarana ASC");
 $JSONprasaranaAirbersih = query("SELECT * FROM prasarana JOIN jenis_prasarana ON prasarana.id_jenis_prasarana = jenis_prasarana.id_jenis WHERE nama_jenis = 'Air bersih' AND hide = 1 ORDER BY nama_prasarana ASC");
@@ -39,6 +41,8 @@ $ZONASIpemakaman = query("SELECT * FROM sarana JOIN kategori_data ON sarana.kate
 // LEGENDA
 $getlegendasarana = query("SELECT * FROM sarana WHERE id_jenis_sarana = 1 AND hide = 1");
 $getlegendaprasarana = query("SELECT * FROM prasarana WHERE id_jenis = 1 AND hide = 1");
+$getlegendaadministrasi = query("SELECT * FROM legenda WHERE jenis_id = 1");
+$getlegendatematik = query("SELECT * FROM legenda WHERE jenis_id = 2");
 
 $nama_halaman = 'Tematik';
 $linkcss = 'spasial.css';

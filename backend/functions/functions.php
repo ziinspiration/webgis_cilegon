@@ -251,6 +251,15 @@ function deleteTematik($id)
     return mysqli_affected_rows($conn);
 }
 
+// Hapus data legenda
+function deleteLegenda($id)
+{
+    $conn = koneksi();
+    mysqli_query($conn, "DELETE FROM legenda WHERE id = $id");
+
+    return mysqli_affected_rows($conn);
+}
+
 // Hapus data publikasi
 function deletePublikasi($id)
 {
