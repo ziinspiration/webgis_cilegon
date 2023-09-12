@@ -9,7 +9,7 @@ $getTematik = query("SELECT * FROM tematik WHERE kategori = '2' AND hide = 1 ORD
 $getBencana = query("SELECT * FROM tematik WHERE kategori = '1' AND hide = 1 ORDER BY nama_tematik ASC");
 
 // DATA PRASARANA
-$JSONjalan = query("SELECT * FROM prasarana WHERE id_jenis = 3 AND hide = 1");
+$JSONjalan = query("SELECT * FROM prasarana WHERE id_jenis_prasarana = 4 AND hide = 1");
 $JSONprasarana = query("SELECT * FROM prasarana WHERE id_jenis_prasarana NOT IN (1, 2) AND id_jenis <> 3 AND hide = 1");
 $JSONprasaranaPersampahan = query("SELECT * FROM prasarana JOIN jenis_prasarana ON prasarana.id_jenis_prasarana = jenis_prasarana.id_jenis WHERE nama_jenis = 'Persampahan' AND hide = 1 ORDER BY nama_prasarana ASC");
 $JSONprasaranaAirbersih = query("SELECT * FROM prasarana JOIN jenis_prasarana ON prasarana.id_jenis_prasarana = jenis_prasarana.id_jenis WHERE nama_jenis = 'Air bersih' AND hide = 1 ORDER BY nama_prasarana ASC");

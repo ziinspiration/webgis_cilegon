@@ -39,7 +39,8 @@
 
     .alamat,
     .email,
-    .telphone {
+    .telphone,
+    .koordinat {
         color: orange;
     }
 
@@ -91,6 +92,15 @@
                     </div>
                 <?php endforeach; ?>
 
+                <?php foreach ($getkoordinat as $a) : ?>
+                    <div class="mb-3 input-group">
+                        <span class="input-group-text p-2 koordinat"><i class="fa-solid fa-location-dot"></i></span>
+                        <input type="text" class="form-control p-1 px-2" name="informasi" value="<?= $a['informasi']; ?>" id="input-koordinat-<?= $a['id']; ?>" data-id="<?= $a['id']; ?>" data-type="koordinat" readonly aria-describedby="<?= $a['nama_data']; ?>">
+                        <i class="fa-regular fa-pen-to-square ms-2 iFunction" onclick="enableEdit('input-koordinat-<?= $a['id']; ?>')"></i>
+                        <i class="fa-solid fa-floppy-disk ms-2 iFunction" onclick="saveChanges('<?= $a['id']; ?>', 'koordinat')"></i>
+                    </div>
+                <?php endforeach; ?>
+
             </form>
         </div>
     </div>
@@ -118,7 +128,7 @@
             url: "ajax/update-contact.php",
             type: "POST",
             data: {
-                id: id, // Tambahkan id ke data yang dikirimkan
+                id: id,
                 type: type,
                 informasi: informasi
             },

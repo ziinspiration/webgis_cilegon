@@ -154,9 +154,9 @@
     </div>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $nama_pengguna = $_POST["nama_pengguna"];
-        $isi = $_POST["isi"];
-        $jawaban_otomatis = $_POST["jawaban_otomatis"];
+        $nama_pengguna = cleaner($_POST["nama_pengguna"]);
+        $isi = cleaner($_POST["isi"]);
+        $jawaban_otomatis = cleaner($_POST["jawaban_otomatis"]);
 
         // Atur zona waktu sesuai dengan zona waktu yang Anda inginkan
         date_default_timezone_set('Asia/Jakarta'); // Gantilah dengan zona waktu yang sesuai
@@ -173,31 +173,32 @@
 
         if (mysqli_query($conn, $sql)) {
             echo "<script>
-           Swal.fire({
-               title: 'Berhasil!',
-               text: 'Data berhasil ditambahkan.',
-               icon: 'success',
-               showConfirmButton: false,
-               timer: 1500
-           }).then(function() {
-               window.location.href = 'saran-kritik.php';
-           });
-       </script>";
+       Swal.fire({
+           title: 'Berhasil!',
+           text: 'Hai $nama_pengguna, Terima kasih atas komentarmu!',
+    icon: 'success',
+    showConfirmButton: false,
+    timer: 4500
+    }).then(function() {
+    window.location.href = 'saran-kritik.php';
+    });
+    </script>";
             exit;
         } else {
             echo "<script>
-           Swal.fire({
-               title: 'Gagal!',
-               text: 'Terjadi kesalahan saat menambahkan data.',
-               icon: 'error',
-               showConfirmButton: false,
-               timer: 1500
-           });
-       </script>";
+    Swal.fire({
+        title: 'Gagal!',
+        text: 'Terjadi kesalahan saat menambahkan komentar.',
+        icon: 'error',
+        showConfirmButton: false,
+        timer: 1500
+    });
+    </script>";
         }
         mysqli_close($conn);
     }
     ?>
+
 </div>
 <?php include 'partials/footer.php' ?>
 <?php include 'partials/script.php' ?>

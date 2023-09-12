@@ -8,3 +8,4 @@ $getmarquee = query("SELECT * FROM informasi_bappeda WHERE jenis_informasi ='mar
 $getalamat = query("SELECT * FROM informasi_bappeda WHERE nama_data ='Alamat'");
 $getemail = query("SELECT * FROM informasi_bappeda WHERE nama_data ='Email'");
 $gettelp = query("SELECT * FROM informasi_bappeda WHERE nama_data ='Nomor telepon'");
+$getkoordinat = query("SELECT * FROM informasi_bappeda WHERE nama_data ='Koordinat'");

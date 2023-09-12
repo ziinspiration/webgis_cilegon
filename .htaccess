@@ -3,4 +3,3 @@ RewriteEngine On
 
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^ %{REQUEST_URI}.php [L]
-

@@ -13,6 +13,7 @@ $conn = koneksi();
 $getAlamat = query("SELECT * FROM informasi_bappeda WHERE nama_data = 'Alamat'");
 $getEmail = query("SELECT * FROM informasi_bappeda WHERE nama_data = 'Email'");
 $getPhone = query("SELECT * FROM informasi_bappeda WHERE nama_data = 'Nomor telepon'");
+$getkoordinat = query("SELECT * FROM informasi_bappeda WHERE nama_data = 'Koordinat'");
 
 $nama_halaman = 'Media sosial control';
 $linkcss = 'contact-control.css';

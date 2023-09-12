@@ -18,6 +18,7 @@ $table = "";
 switch ($type) {
     case "alamat":
     case "email":
+    case "koordinat":
     case "telphone":
         $table = "informasi_bappeda";
         break;

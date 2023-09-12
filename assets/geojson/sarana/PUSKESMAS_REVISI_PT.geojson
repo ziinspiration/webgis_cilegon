@@ -1,0 +1,24 @@
+{
+"type": "FeatureCollection",
+"name": "PUSKESMAS_REVISI_PT",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "JENIS": "KESEHATAN", "TOPONIM": "PUSKESMAS PULOMERAK", "KETERANGAN": "PUSKESMAS", "X": "106,003499711624", "Y": "-5,94393314733797" }, "geometry": { "type": "Point", "coordinates": [ 106.003499711623533, -5.943933147337972, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "KESEHATAN", "TOPONIM": "PUSKESMAS PURWAKARTA", "KETERANGAN": "PUSKESMAS", "X": "106,059546344972", "Y": "-5,99109510798549" }, "geometry": { "type": "Point", "coordinates": [ 106.05954634497246, -5.991095107985484, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "KESEHATAN", "TOPONIM": "PUSKESMAS CIWANDAN", "KETERANGAN": "PUSKESMAS", "X": "105,981589427388", "Y": "-6,03517324280067" }, "geometry": { "type": "Point", "coordinates": [ 105.981589427387789, -6.035173242800672, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "KESEHATAN", "TOPONIM": "PUSKESMAS CILEGON", "KETERANGAN": "PUSKESMAS", "X": "106,03642120043", "Y": "-6,03924180003689" }, "geometry": { "type": "Point", "coordinates": [ 106.036421200429999, -6.039241800036892, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "KESEHATAN", "TOPONIM": "PUSKESMAS JOMBANG", "KETERANGAN": "PUSKESMAS", "X": "106,064832999874", "Y": "-6,01505810000209" }, "geometry": { "type": "Point", "coordinates": [ 106.064832999873673, -6.015058100002094, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "KESEHATAN", "TOPONIM": "PUSKESMAS CIBEBER", "KETERANGAN": "PUSKESMAS", "X": "106,070806199942", "Y": "-6,03781189966005" }, "geometry": { "type": "Point", "coordinates": [ 106.070806199942197, -6.037811899660052, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "KESEHATAN", "TOPONIM": "PUSKESMAS CITANGKIL", "KETERANGAN": "PUSKESMAS", "X": "106,018315100369", "Y": "-6,01711910002144" }, "geometry": { "type": "Point", "coordinates": [ 106.018315100368667, -6.017119100021443, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "KESEHATAN", "TOPONIM": "PUSKESMAS GROGOL", "KETERANGAN": "PUSKESMAS", "X": "106,014264699754", "Y": "-5,97918369991466" }, "geometry": { "type": "Point", "coordinates": [ 106.014264699754435, -5.979183699914662, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "KESEHATAN", "TOPONIM": "PUSKESMAS CITANGKIL II", "KETERANGAN": "PUSKESMAS", "X": "106,014279700335", "Y": "-6,03719900006566" }, "geometry": { "type": "Point", "coordinates": [ 106.01427970033474, -6.037199000065662, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "KESEHATAN", "TOPONIM": "PUSKESMAS PEMBANTU PULOMERAK SURALAYA", "KETERANGAN": "PUSKESMAS PEMBANTU", "X": "106,031340066712", "Y": "-5,90314745263302" }, "geometry": { "type": "Point", "coordinates": [ 106.031340066712218, -5.903147452633023, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "KESEHATAN", "TOPONIM": "PUSKESMAS PEMBANTU PULOMERAK", "KETERANGAN": "PUSKESMAS PEMBANTU", "X": "106,005862781324", "Y": "-5,92020752417727" }, "geometry": { "type": "Point", "coordinates": [ 106.00586278132397, -5.920207524177273, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "KESEHATAN", "TOPONIM": "PUSKESMAS PEMBANTU RAWAARUM", "KETERANGAN": "PUSKESMAS PEMBANTU", "X": "106,014418813332", "Y": "-5,97908043065402" }, "geometry": { "type": "Point", "coordinates": [ 106.014418813332227, -5.979080430654022, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "KESEHATAN", "TOPONIM": "PUSKESMAS PEMBANTU PURWAKARTA\r\n", "KETERANGAN": "PUSKESMAS PEMBANTU", "X": "106,059546344972", "Y": "-5,99109510798549" }, "geometry": { "type": "Point", "coordinates": [ 106.05954634497246, -5.991095107985484, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "KESEHATAN", "TOPONIM": "PUSKESMAS PEMBANTU JOMBANG", "KETERANGAN": "PUSKESMAS PEMBANTU", "X": "106,064832999874", "Y": "-6,01505810000209" }, "geometry": { "type": "Point", "coordinates": [ 106.064832999873673, -6.015058100002094, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "KESEHATAN", "TOPONIM": "PUSKESMAS PEMBANTU CIWANDAN", "KETERANGAN": "PUSKESMAS PEMBANTU", "X": "105,971831369675", "Y": "-6,02187994617634" }, "geometry": { "type": "Point", "coordinates": [ 105.971831369674717, -6.021879946176336, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "KESEHATAN", "TOPONIM": "PUSKESMAS PEMBANTU CIWADUK", "KETERANGAN": "PUSKESMAS PEMBANTU", "X": "106,048287924047", "Y": "-6,02838821066691" }, "geometry": { "type": "Point", "coordinates": [ 106.048287924046789, -6.028388210666909, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "KESEHATAN", "TOPONIM": "PUSKESMAS PEMBANTU CIBEBER", "KETERANGAN": "PUSKESMAS PEMBANTU", "X": "106,072757766668", "Y": "-6,02666834730798" }, "geometry": { "type": "Point", "coordinates": [ 106.072757766667678, -6.026668347307984, 0.0 ] } }
+]
+}

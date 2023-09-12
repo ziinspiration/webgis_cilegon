@@ -8,16 +8,49 @@ if (!function_exists('koneksi')) {
 }
 
 if (!function_exists('query')) {
-    function query($sql)
+    function query($sql, $params = [])
     {
         $conn = koneksi();
-        $result = mysqli_query($conn, "$sql");
+        $stmt = mysqli_prepare($conn, $sql);
+
+        if ($stmt === false) {
+            return false;
+        }
+
+        if (!empty($params)) {
+            $types = str_repeat('s', count($params));
+            mysqli_stmt_bind_param($stmt, $types, ...$params);
+        }
+
+        $result = mysqli_stmt_execute($stmt);
+
+        if ($result === false) {
+            return false;
+        }
+
         $rows = [];
-        while ($row = mysqli_fetch_assoc($result)) {
+        $result_set = mysqli_stmt_get_result($stmt);
+        while ($row = mysqli_fetch_assoc($result_set)) {
             $rows[] = $row;
         }
+
+        mysqli_stmt_close($stmt);
+
         return $rows;
     }
 }
+
+if (!function_exists('cleaner')) {
+    function cleaner($data)
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+}
+
+
+
 
 require_once 'get-information.php';

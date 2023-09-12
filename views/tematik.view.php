@@ -997,6 +997,10 @@ function showPopup(feature, layer) {
             popupContent +=
                 "<p><b>Nama :</b> " + feature.properties.NAMA + "</p>";
         }
+        if (feature.properties.NAMOBJ) {
+            popupContent +=
+                "<p><b>Nama :</b> " + feature.properties.NAMOBJ + "</p>";
+        }
         if (feature.properties.NO_RUAS) {
             popupContent +=
                 "<p><b>No ruas :</b> " + feature.properties.NO_RUAS + "</p>";
@@ -1093,6 +1097,14 @@ function showPopup(feature, layer) {
             popupContent +=
                 "<p><b>Keterangan :</b> " + feature.properties.KETERANGAN + "</p>";
         }
+        if (feature.properties.LAYER) {
+            popupContent +=
+                "<p><b>Keterangan :</b> " + feature.properties.LAYER + "</p>";
+        }
+        if (feature.properties.KET) {
+            popupContent +=
+                "<p><b>Keterangan :</b> " + feature.properties.KET + "</p>";
+        }
         if (feature.properties.LINGKUNGAN) {
             popupContent +=
                 "<p><b>Lingkungan :</b> " + feature.properties.LINGKUNGAN + "</p>";
@@ -1145,6 +1157,9 @@ function showPopup(feature, layer) {
         }
         if (feature.properties.SUMBER) {
             popupContent += "<p><b>Sumber :</b> " + feature.properties.SUMBER + "</p>";
+        }
+        if (feature.properties.SBDATA) {
+            popupContent += "<p><b>Sumber :</b> " + feature.properties.SBDATA + "</p>";
         }
         if (feature.properties.name) {
             popupContent +=

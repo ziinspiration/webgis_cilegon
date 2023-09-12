@@ -183,7 +183,9 @@ footer .social-icons a {
 </footer>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script>
-var map = L.map('map').setView([-6.013203875167288, 106.04259269650859], 15);
+<?php foreach ($getkoordinat as $a) : ?>
+var map = L.map('map').setView([<?= $a['informasi']; ?>], 15);
+<?php endforeach; ?>
 
 L.tileLayer('https://{s}.googleapis.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
     maxZoom: 19,
