@@ -1,8 +1,4 @@
 <?php include 'partials/starter-head.php' ?>
-<link rel="stylesheet" href="assets/leaflet-search/dist/leaflet-search.src.css">
-<style>
-    .search-input {}
-</style>
 <style>
     /* Popup informasi */
     .custom-popup hr {
@@ -516,7 +512,7 @@
 </div>
 
 <?php include 'partials/script-map.php' ?>
-<script src="assets/leaflet-search/dist/leaflet-search.src.js"></script>
+
 <script>
     var map = L.map("map").setView([-5.992735076420852, 106.02561279458], 12);
 
@@ -605,19 +601,22 @@
         }
     });
 
-    const checkboxGroup = document.querySelectorAll(".form-check-input");
-    var geoJsonLayer = null;
     var currentLayers = [];
-    var activeLayers = {};
-    var searchControl = null;
-    var searchResultMarkers = [];
-
+    const checkboxGroup = document.querySelectorAll(".form-check-input");
     checkboxGroup.forEach(function(checkbox) {
         checkbox.addEventListener("change", function() {
             <?php foreach ($getAdmin as $a) : ?>
                 if (checkbox.id === "<?= $a['checkbox_id']; ?>") {
                     if (this.checked) {
-                        removeGeoJsonLayer(checkbox);
+                        checkboxGroup.forEach(function(otherCheckbox) {
+                            <?php foreach ($getAdmin as $other) : ?>
+                                if (otherCheckbox !== checkbox && otherCheckbox.id ===
+                                    "<?= $other['checkbox_id']; ?>") {
+                                    otherCheckbox.checked = false;
+                                    removeGeoJsonLayer(otherCheckbox);
+                                }
+                            <?php endforeach; ?>
+                        });
 
                         var url = "assets/geojson/administrasi/<?= $a['file_json']; ?>";
                         addGeoJsonLayer(url, checkbox);
@@ -627,7 +626,7 @@
                 }
             <?php endforeach; ?>
 
-            // Checkbox selain checkbox administrasi
+            // Checkbox selain keempat checkbox tersebut
             if (!(
                     <?php foreach ($getAdmin as $a) : ?> checkbox.id === "<?= $a['checkbox_id']; ?>"
                         <?php if (end($getAdmin) !== $a) echo "||"; ?> <?php endforeach; ?>
@@ -767,7 +766,6 @@
                             addGeoJsonLayer(url, checkbox);
                         }
                     <?php endforeach; ?>
-
                 } else {
                     removeGeoJsonLayer(checkbox);
                 }
@@ -775,13 +773,13 @@
         });
     });
 
+    // LAYER SETTING
     function addGeoJsonLayer(url, checkbox) {
-        fetch(url, {
-                cache: "no-store"
-            })
+        fetch(url)
             .then(response => response.json())
             .then(data => {
-                var geoJsonLayer = L.geoJson(data, {
+
+                var layer = L.geoJson(data, {
                     style: function(feature) {
                         var color = feature.properties.color;
 
@@ -795,6 +793,7 @@
                     },
                     pointToLayer: function(feature, latlng) {
                         var customIcon = null;
+                        // Cek jenis checkbox untuk menentukan ikon kustom yang akan digunakan
 
                         // Prasarana
                         <?php foreach ($JSONprasarana as $jk) : ?>
@@ -878,69 +877,46 @@
                                     createCustomIcon<?= $pemakaman['icon_id']; ?>();
                             }
                         <?php endforeach; ?>
-
+                        // Buat marker dengan ikon kustom
                         return L.marker(latlng, {
                             icon: customIcon
                         });
                     },
                     onEachFeature: function(feature, layer) {
-
+                        // Panggil fungsi showPopup untuk menampilkan popup saat di klik
                         showPopup(feature, layer);
+                        // Panggil fungsi addTooltip untuk menambahkan tooltips pada setiap layer polygon
                         addTooltip(feature, layer);
                     },
                 });
 
-                geoJsonLayer.addTo(map);
-                activeLayers[checkbox.id] = geoJsonLayer;
 
+                currentLayers.push({
+                    checkbox: checkbox,
+                    layer: layer
+                });
 
-                updateSearchControl();
+                // Tampilkan layer hanya jika checkbox terpilih
+                if (checkbox.checked) {
+                    layer.addTo(map);
+                }
             })
             .catch(error => {
                 console.log('Error:', error);
             });
     }
 
-    function updateSearchControl() {
-        if (searchControl) {
-            map.removeControl(searchControl);
-            searchControl = null;
-        }
-
-        for (var i = 0; i < searchResultMarkers.length; i++) {
-            map.removeLayer(searchResultMarkers[i]);
-        }
-        searchResultMarkers = [];
-
-        var allLayers = Object.values(activeLayers);
-
-        searchControl = new L.Control.Search({
-            layer: L.featureGroup(allLayers),
-            propertyName: 'KETERANGAN',
-            marker: false,
-            moveToLocation: function(latlng, title, map) {
-                map.setView(latlng, 15);
-            }
-        });
-
-        searchControl.on('search:locationfound', function(e) {
-            var marker = L.marker(e.latlng).addTo(map);
-            marker.bindPopup(e.text).openPopup();
-
-            searchResultMarkers.push(marker);
-        });
-
-        map.addControl(searchControl);
-    }
-
     function removeGeoJsonLayer(checkbox) {
-        if (activeLayers.hasOwnProperty(checkbox.id)) {
-            map.removeLayer(activeLayers[checkbox.id]);
-            delete activeLayers[checkbox.id];
+        var indexToRemove = currentLayers.findIndex(function(layerObj) {
+            return layerObj.checkbox === checkbox;
+        });
 
-            updateSearchControl();
+        if (indexToRemove !== -1) {
+            var layerObj = currentLayers.splice(indexToRemove, 1)[0];
+            map.removeLayer(layerObj.layer);
         }
     }
+
 
     var info = L.control();
 
@@ -990,6 +966,8 @@
     };
 
     legend.addTo(map);
+
+
 
     // FUNGSI LAINNYA
     info.onAdd = function(map) {
@@ -1225,6 +1203,15 @@
             if (feature.properties.SBDATA) {
                 popupContent += "<p><b>Sumber :</b> " + feature.properties.SBDATA + "</p>";
             }
+            if (feature.properties.name) {
+                popupContent +=
+                    "<p><b>name :</b> " + feature.properties.name + "</p>";
+            }
+            if (feature.properties.Description) {
+                popupContent +=
+                    "<p><b>Description :</b> " + feature.properties.Description + "</p>";
+            }
+
             popupContent += "</div>";
             layer.bindPopup(popupContent);
         } else {

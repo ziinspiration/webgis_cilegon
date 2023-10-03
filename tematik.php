@@ -1,5 +1,11 @@
 <?php
 require_once 'functions/functions.php';
+// SEARCH
+$getsearchtematik = query("SELECT * FROM tematik WHERE hide = 1");
+$getsearchrencana = query("SELECT * FROM rencana WHERE hide = 1");
+$getsearchadministrasi = query("SELECT * FROM administrasi WHERE hide = 1");
+$getsearchsarana = query("SELECT * FROM sarana WHERE hide = 1");
+$getsearchprasarana = query("SELECT * FROM prasarana WHERE hide = 1");
 
 // DATA ADMINISTRASI
 $getAdmin = query("SELECT * FROM administrasi WHERE hide = 1");
