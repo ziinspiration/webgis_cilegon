@@ -13,6 +13,20 @@ $getAdmin = query("SELECT * FROM administrasi WHERE hide = 1");
 // DATA TEMATIK
 $getTematik = query("SELECT * FROM tematik WHERE kategori = '2' AND hide = 1 ORDER BY nama_tematik ASC");
 $getBencana = query("SELECT * FROM tematik WHERE kategori = '1' AND hide = 1 ORDER BY nama_tematik ASC");
+$icontematik = "
+    (
+        SELECT * FROM tematik
+        WHERE kategori = '2' AND hide = 1
+    )
+    UNION ALL
+    (
+        SELECT * FROM tematik
+        WHERE kategori = '1' AND hide = 1
+    )
+    ORDER BY nama_tematik ASC;
+";
+
+$gettematikicon = query($icontematik);
 
 // DATA PRASARANA
 $JSONjalanstatus = query("SELECT * FROM prasarana WHERE id_jenis_prasarana = 5 AND hide = 1");
@@ -21,6 +35,42 @@ $JSONjalanfungsi = query("SELECT * FROM prasarana WHERE id_jenis_prasarana = 6 A
 $JSONprasarana = query("SELECT * FROM prasarana WHERE id_jenis_prasarana NOT IN (1, 2) AND id_jenis <> 3 AND hide = 1");
 $JSONprasaranaPersampahan = query("SELECT * FROM prasarana JOIN jenis_prasarana ON prasarana.id_jenis_prasarana = jenis_prasarana.id_jenis WHERE nama_jenis = 'Persampahan' AND hide = 1 ORDER BY nama_prasarana ASC");
 $JSONprasaranaAirbersih = query("SELECT * FROM prasarana JOIN jenis_prasarana ON prasarana.id_jenis_prasarana = jenis_prasarana.id_jenis WHERE nama_jenis = 'Air bersih' AND hide = 1 ORDER BY nama_prasarana ASC");
+$iconprasarana = "
+    (
+        SELECT * FROM prasarana
+        WHERE id_jenis_prasarana = 5 AND hide = 1
+    )
+    UNION ALL
+    (
+        SELECT * FROM prasarana
+        WHERE id_jenis_prasarana = 7 AND hide = 1
+    )
+    UNION ALL
+    (
+        SELECT * FROM prasarana
+        WHERE id_jenis_prasarana = 6 AND hide = 1
+    )
+    UNION ALL
+    (
+        SELECT * FROM prasarana
+        WHERE id_jenis_prasarana NOT IN (1, 2) AND id_jenis <> 3 AND hide = 1
+    )
+    UNION ALL
+    (
+        SELECT prasarana.* FROM prasarana
+        JOIN jenis_prasarana ON prasarana.id_jenis_prasarana = jenis_prasarana.id_jenis
+        WHERE jenis_prasarana.nama_jenis = 'Persampahan' AND prasarana.hide = 1
+    )
+    UNION ALL
+    (
+        SELECT prasarana.* FROM prasarana
+        JOIN jenis_prasarana ON prasarana.id_jenis_prasarana = jenis_prasarana.id_jenis
+        WHERE jenis_prasarana.nama_jenis = 'Air bersih' AND prasarana.hide = 1
+    )
+    ORDER BY nama_prasarana ASC;
+";
+
+$getprasaranaicon = query($iconprasarana);
 
 // DATA POINT SARANA
 $JSONkantor = query("SELECT * FROM sarana JOIN kategori_data ON sarana.kategori_id = kategori_data.id_kategori JOIN jenis_sarana ON sarana.id_jenis_sarana = jenis_sarana.id_jenis WHERE nama_kategori = 'Perkantoran' AND id_jenis_sarana = 1 AND hide = 1");
@@ -43,12 +93,74 @@ $ZONASItransportasi = query("SELECT * FROM sarana JOIN kategori_data ON sarana.k
 $ZONASIfasilitasolahraga = query("SELECT * FROM sarana JOIN kategori_data ON sarana.kategori_id = kategori_data.id_kategori JOIN jenis_sarana ON sarana.id_jenis_sarana = jenis_sarana.id_jenis WHERE nama_kategori = 'Fasilitas olahraga' AND id_jenis_sarana = 2 AND hide = 1");
 $ZONASIperdagangan = query("SELECT * FROM sarana JOIN kategori_data ON sarana.kategori_id = kategori_data.id_kategori JOIN jenis_sarana ON sarana.id_jenis_sarana = jenis_sarana.id_jenis WHERE nama_kategori = 'Perdagangan & Perniagaan' AND id_jenis_sarana = 2 AND hide = 1");
 $ZONASIpemakaman = query("SELECT * FROM sarana JOIN kategori_data ON sarana.kategori_id = kategori_data.id_kategori JOIN jenis_sarana ON sarana.id_jenis_sarana = jenis_sarana.id_jenis WHERE nama_kategori = 'Tempat pemakaman umum' AND id_jenis_sarana = 2 AND hide = 1");
+$iconsarana = "
+    (
+        SELECT * FROM sarana
+        JOIN kategori_data ON sarana.kategori_id = kategori_data.id_kategori
+        JOIN jenis_sarana ON sarana.id_jenis_sarana = jenis_sarana.id_jenis
+        WHERE nama_kategori = 'Perkantoran' AND id_jenis_sarana = 1 AND hide = 1
+    )
+    UNION ALL
+    (
+        SELECT * FROM sarana
+        JOIN kategori_data ON sarana.kategori_id = kategori_data.id_kategori
+        JOIN jenis_sarana ON sarana.id_jenis_sarana = jenis_sarana.id_jenis
+        WHERE nama_kategori = 'Pendidikan' AND id_jenis_sarana = 1 AND hide = 1
+    )
+    UNION ALL
+    (
+        SELECT * FROM sarana
+        JOIN kategori_data ON sarana.kategori_id = kategori_data.id_kategori
+        JOIN jenis_sarana ON sarana.id_jenis_sarana = jenis_sarana.id_jenis
+        WHERE nama_kategori = 'Kesehatan' AND id_jenis_sarana = 1 AND hide = 1
+    )
+    UNION ALL
+    (
+        SELECT * FROM sarana
+        JOIN kategori_data ON sarana.kategori_id = kategori_data.id_kategori
+        JOIN jenis_sarana ON sarana.id_jenis_sarana = jenis_sarana.id_jenis
+        WHERE nama_kategori = 'Pariwisata & Hiburan' AND id_jenis_sarana = 1 AND hide = 1
+    )
+    UNION ALL
+    (
+        SELECT * FROM sarana
+        JOIN kategori_data ON sarana.kategori_id = kategori_data.id_kategori
+        JOIN jenis_sarana ON sarana.id_jenis_sarana = jenis_sarana.id_jenis
+        WHERE nama_kategori = 'Peribadatan' AND id_jenis_sarana = 1 AND hide = 1
+    )
+    UNION ALL
+    (
+        SELECT * FROM sarana
+        JOIN kategori_data ON sarana.kategori_id = kategori_data.id_kategori
+        JOIN jenis_sarana ON sarana.id_jenis_sarana = jenis_sarana.id_jenis
+        WHERE nama_kategori = 'Sistem transportasi' AND id_jenis_sarana = 1 AND hide = 1
+    )
+    UNION ALL
+    (
+        SELECT * FROM sarana
+        JOIN kategori_data ON sarana.kategori_id = kategori_data.id_kategori
+        JOIN jenis_sarana ON sarana.id_jenis_sarana = jenis_sarana.id_jenis
+        WHERE nama_kategori = 'Fasilitas olahraga' AND id_jenis_sarana = 1 AND hide = 1
+    )
+    UNION ALL
+    (
+        SELECT * FROM sarana
+        JOIN kategori_data ON sarana.kategori_id = kategori_data.id_kategori
+        JOIN jenis_sarana ON sarana.id_jenis_sarana = jenis_sarana.id_jenis
+        WHERE nama_kategori = 'Perdagangan & Perniagaan' AND id_jenis_sarana = 1 AND hide = 1
+    )
+    UNION ALL
+    (
+        SELECT * FROM sarana
+        JOIN kategori_data ON sarana.kategori_id = kategori_data.id_kategori
+        JOIN jenis_sarana ON sarana.id_jenis_sarana = jenis_sarana.id_jenis
+        WHERE nama_kategori = 'Tempat pemakaman umum' AND id_jenis_sarana = 1 AND hide = 1
+    )
+    ORDER BY nama_sarana ASC;
+";
 
-// LEGENDA
-$getlegendasarana = query("SELECT * FROM sarana WHERE id_jenis_sarana = 1 AND hide = 1");
-$getlegendaprasarana = query("SELECT * FROM prasarana WHERE id_jenis = 1 AND hide = 1");
-$getlegendaadministrasi = query("SELECT * FROM legenda WHERE jenis_id = 1");
-$getlegendatematik = query("SELECT * FROM legenda WHERE jenis_id = 2");
+$getsaranaicon = query($iconsarana);
+
 
 $nama_halaman = 'Tematik';
 $linkcss = 'spasial.css';

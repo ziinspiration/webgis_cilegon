@@ -156,11 +156,11 @@
                     Struktur Organisasi
                 </a>
             </li>
-            <li class="ms-3">
+            <!-- <li class="ms-3">
                 <a class="text-decoration-none orange nav-link p-2 bold-s" href="data-legenda">
                     Data Legenda
                 </a>
-            </li>
+            </li> -->
         </ul>
         <a class="register-button text-decoration-none text-dark bg-orange nav-link p-1 text-center mt-3"
             href="register-admin">
