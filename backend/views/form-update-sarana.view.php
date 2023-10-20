@@ -111,29 +111,26 @@ form {
                     </div>
                 </div>
 
-                <?php if ($getdata['id_jenis_sarana'] === '1') : ?>
+
                 <div
                     class="view-change-img mb-3 d-flex align-items-center justify-content-center p-5 rounded-circle bg-light">
                     <img class="img-preview" src="../assets/icon/sarana/<?= $getdata["icon"]; ?>" alt="Preview"
                         id="preview" />
                 </div>
-                <?php endif; ?>
 
-                <?php if ($getdata['id_jenis_sarana'] === '1') : ?>
                 <div class="center w-100 mb-5 d-flex justify-content-between">
                     <div class="w-50 me-3 kolom">
                         <label for="icon" class="form-label orange ps-1 pe-1">Icon file</label>
                         <input type="file" onchange="previewImage(event)" class="form-control p-2" id="icon" name="icon"
                             accept=".jpg, .jpeg, .png" />
                     </div>
-
                     <div class="w-50 ms-3 kolom">
                         <label for="icon_id" class="form-label orange ps-1 pe-1">Icon ID</label>
                         <input type="text" class="form-control p-2" id="icon_id" name="icon_id"
                             value="<?= $getdata['icon_id']; ?>" required />
                     </div>
                 </div>
-                <?php endif; ?>
+
                 <div class="right w-100 d-flex justify-content-between mb-5">
                     <div class="w-100 me-3 kolom">
                         <label for="checkbox_id" class="form-label orange ps-1 pe-1">Checkbox ID</label>
@@ -287,7 +284,7 @@ form {
                     showConfirmButton: false,
                     timer: 3500
                 }).then(function() {
-                    window.location.href = 'ubah-sarana.php';
+                    window.location.href = 'ubah-sarana';
                 });
                </script>
             ";
@@ -327,7 +324,7 @@ form {
                         showConfirmButton: false,
                         timer: 3500
                     }).then(function() {
-                        window.location.href = 'ubah-sarana.php';
+                        window.location.href = 'ubah-sarana';
                     });
                    </script>
                 ";
@@ -345,7 +342,7 @@ form {
                     showConfirmButton: false,
                     timer: 3500
                 }).then(function() {
-                    window.location.href = 'ubah-sarana.php';
+                    window.location.href = 'ubah-sarana';
                 });
                </script>
             ";
@@ -367,7 +364,7 @@ form {
                 showConfirmButton: false,
                 timer: 3500
             }).then(function() {
-                window.location.href = 'ubah-sarana.php';
+                window.location.href = 'ubah-sarana';
             });
            </script>
         ";
@@ -382,7 +379,7 @@ form {
                 showConfirmButton: false,
                 timer: 3500
             }).then(function() {
-                window.location.href = 'ubah-sarana.php';
+                window.location.href = 'ubah-sarana';
             });
            </script>
         ";

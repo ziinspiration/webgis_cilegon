@@ -26,6 +26,10 @@ form {
         flex-direction: column;
     }
 
+    .bottom {
+        flex-direction: column;
+    }
+
     .left,
     .right,
     .center {
@@ -101,47 +105,46 @@ form {
                         </div>
                     </div>
                     <div class="right w-50 me-3 d-flex flex-column">
-                        <div class="mb-5">
+                        <div class="mb-3">
                             <label for="checkbox_id" class="form-label orange ps-1 pe-1">Checkbox ID</label>
                             <input type="text" class="form-control p-2" id="checkbox_id" name="checkbox_id"
                                 value="<?= $getdata['checkbox_id']; ?>" required />
                         </div>
-                        <?php if ($getdata['id_jenis'] === '1') : ?>
+                        <div class="mb-3">
+                            <label for="hide" class="form-label orange ps-1 pe-1">Hide status</label>
+                            <input type="hidden" name="hide">
+                            <select name="hide" id="hide" class="form-select form-control p-2">
+                                <?php
+                                $currentHide = $getdata['hide'];
+                                $sembunyikanSelected = ($currentHide == 0) ? "selected" : "";
+                                $tampilkanSelected = ($currentHide == 1) ? "selected" : "";
+                                ?>
+                                <option value="0" <?= $sembunyikanSelected; ?>>Disembunyikan</option>
+                                <option value="1" <?= $tampilkanSelected; ?>>Ditampilkan</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="bottom d-flex justify-content-between me-3">
+                    <div class="btm-left d-flex m-auto">
                         <div
-                            class="view-change-img mt-5 d-flex m-auto align-items-center justify-content-center p-5 rounded-circle bg-light">
+                            class="view-change-img d-flex m-auto align-items-center justify-content-center p-5 rounded-circle bg-light">
                             <img class="img-preview" src="../assets/icon/prasarana/<?= $getdata["icon"]; ?>"
                                 alt="Preview" id="preview" />
                         </div>
-                        <?php endif; ?>
                     </div>
-                </div>
-                <div class="bottom d-flex flex-column">
-                    <?php if ($getdata['id_jenis'] === '1') : ?>
-                    <div class="w-100 mb-3 kolom">
-                        <label for="icon" class="form-label orange ps-1 pe-1">Icon file</label>
-                        <input type="file" onchange="previewImage(event)" class="form-control p-2" id="icon" name="icon"
-                            accept=".jpg, .jpeg, .png" />
-                    </div>
-                    <div class="w-100 mb-3 kolom">
-                        <label for="icon_id" class="form-label orange ps-1 pe-1">Icon ID</label>
-                        <input type="text" class="form-control p-2" id="icon_id" name="icon_id"
-                            value="<?= $getdata['icon_id']; ?>" required />
-                    </div>
-                    <?php endif; ?>
-                </div>
-                <div class="center w-50">
-                    <div class="mb-3">
-                        <label for="hide" class="form-label orange ps-1 pe-1">Hide status</label>
-                        <input type="hidden" name="hide">
-                        <select name="hide" id="hide" class="form-select form-control p-2">
-                            <?php
-                            $currentHide = $getdata['hide'];
-                            $sembunyikanSelected = ($currentHide == 0) ? "selected" : "";
-                            $tampilkanSelected = ($currentHide == 1) ? "selected" : "";
-                            ?>
-                            <option value="0" <?= $sembunyikanSelected; ?>>Disembunyikan</option>
-                            <option value="1" <?= $tampilkanSelected; ?>>Ditampilkan</option>
-                        </select>
+                    <div class="btm-right">
+                        <div class="w-100 mb-3 kolom">
+                            <label for="icon" class="form-label orange ps-1 pe-1">Icon file</label>
+                            <input type="file" onchange="previewImage(event)" class="form-control p-2" id="icon"
+                                name="icon" accept=".jpg, .jpeg, .png" />
+                        </div>
+                        <div class="w-100 mb-3 kolom">
+                            <label for="icon_id" class="form-label orange ps-1 pe-1">Icon ID</label>
+                            <input type="text" class="form-control p-2" id="icon_id" name="icon_id"
+                                value="<?= $getdata['icon_id']; ?>" required />
+                        </div>
                     </div>
                 </div>
                 <div class="btn-kirim d-flex justify-content-end">

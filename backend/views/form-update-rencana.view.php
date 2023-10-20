@@ -110,52 +110,48 @@
                                 <?php endif; ?>
                             </div>
                         </div>
-
                     </div>
-                    <?php if ($getdata['id_jenis_file'] === '1') : ?>
-                        <div class="center w-100 mb-5 d-flex justify-content-between">
-                            <!-- Icon ID -->
-                            <div class="w-50 me-3 kolom">
-                                <label for="icon_id" class="form-label orange ps-1 pe-1">Icon ID</label>
-                                <input type="text" class="form-control p-2" id="icon_id" name="icon_id" value="<?= $getdata['icon_id']; ?>" required />
-                            </div>
-                            <img class="img-preview" src="../assets/icon/rencana/<?= $getdata["icon"]; ?>" alt="Preview" id="preview" />
+                    <div class="center w-100 mb-5 d-flex justify-content-between">
+                        <!-- Icon ID -->
+                        <div class="w-50 me-3 kolom">
+                            <label for="icon_id" class="form-label orange ps-1 pe-1">Icon ID</label>
+                            <input type="text" class="form-control p-2" id="icon_id" name="icon_id" value="<?= $getdata['icon_id']; ?>" required />
                         </div>
+                        <img class="img-preview" src="../assets/icon/rencana/<?= $getdata["icon"]; ?>" alt="Preview" id="preview" />
+                    </div>
                 </div>
-            <?php endif; ?>
-            <div class="right w-100 mb-5 d-flex justify-content-between">
-                <!-- Checkbox ID -->
-                <div class="w-50 me-3 kolom">
-                    <label for="checkbox_id" class="form-label orange ps-1 pe-1">Checkbox ID</label>
-                    <input type="text" class="form-control p-2" id="checkbox_id" name="checkbox_id" value="<?= $getdata['checkbox_id']; ?>" required />
-                </div>
-                <!-- Icon -->
-                <?php if ($getdata['id_jenis_file'] === '1') : ?>
+                <div class="right w-100 mb-5 d-flex justify-content-between">
+                    <!-- Checkbox ID -->
+                    <div class="w-50 me-3 kolom">
+                        <label for="checkbox_id" class="form-label orange ps-1 pe-1">Checkbox ID</label>
+                        <input type="text" class="form-control p-2" id="checkbox_id" name="checkbox_id" value="<?= $getdata['checkbox_id']; ?>" required />
+                    </div>
+                    <!-- Icon -->
                     <img class="preview-image d-none" src="../assets/icon/rencana/<?= $getdata["icon"]; ?>" alt="Preview" id="preview" />
                     <div class="w-50 ms-3 kolom">
                         <label for="icon" class="form-label orange ps-1 pe-1">File icon</label>
                         <input type="file" onchange="previewImage(event)" class="form-control p-2" id="icon" name="icon" accept=".jpg, .jpeg, .png" />
                     </div>
-                <?php endif; ?>
-            </div>
-            <div class="center w-50">
-                <div class="mb-3">
-                    <label for="hide" class="form-label orange ps-1 pe-1">Hide status</label>
-                    <input type="hidden" name="hide">
-                    <select name="hide" id="hide" class="form-select form-control p-2">
-                        <?php
-                        $currentHide = $getdata['hide'];
-                        $sembunyikanSelected = ($currentHide == 0) ? "selected" : "";
-                        $tampilkanSelected = ($currentHide == 1) ? "selected" : "";
-                        ?>
-                        <option value="0" <?= $sembunyikanSelected; ?>>Disembunyikan</option>
-                        <option value="1" <?= $tampilkanSelected; ?>>Ditampilkan</option>
-                    </select>
+
                 </div>
-            </div>
-            <div class="btn-kirim d-flex justify-content-end">
-                <button type="submit" name="submit" class="btn btn-primary w-25 p-2 mt-4 mb-4"><i class="fa-solid fa-floppy-disk me-2"></i>Simpan</button>
-            </div>
+                <div class="center w-50">
+                    <div class="mb-3">
+                        <label for="hide" class="form-label orange ps-1 pe-1">Hide status</label>
+                        <input type="hidden" name="hide">
+                        <select name="hide" id="hide" class="form-select form-control p-2">
+                            <?php
+                            $currentHide = $getdata['hide'];
+                            $sembunyikanSelected = ($currentHide == 0) ? "selected" : "";
+                            $tampilkanSelected = ($currentHide == 1) ? "selected" : "";
+                            ?>
+                            <option value="0" <?= $sembunyikanSelected; ?>>Disembunyikan</option>
+                            <option value="1" <?= $tampilkanSelected; ?>>Ditampilkan</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="btn-kirim d-flex justify-content-end">
+                    <button type="submit" name="submit" class="btn btn-primary w-25 p-2 mt-4 mb-4"><i class="fa-solid fa-floppy-disk me-2"></i>Simpan</button>
+                </div>
             </form>
         </div>
     </div>

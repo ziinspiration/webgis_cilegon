@@ -26,6 +26,10 @@ form {
         flex-direction: column;
     }
 
+    .bottom {
+        flex-direction: column;
+    }
+
     .left,
     .right {
         width: 100% !important;
@@ -52,6 +56,16 @@ form {
 .row {
     margin-top: 100px !important;
     margin-bottom: 100px !important;
+}
+
+.view-change-img {
+    height: 150px !important;
+    width: 150px !important;
+}
+
+.img-preview {
+    height: 90px !important;
+    width: 90px !important;
 }
 </style>
 <div class="container-fluid">
@@ -106,6 +120,28 @@ form {
                             </select>
                         </div>
                     </div>
+
+                </div>
+                <div class="bottom d-flex justify-content-between me-3">
+                    <div class="btm-left d-flex m-auto">
+                        <div
+                            class="view-change-img d-flex m-auto align-items-center justify-content-center p-5 rounded-circle bg-light">
+                            <img class="img-preview" src="../assets/icon/tematik/<?= $getdata["icon"]; ?>" alt="Preview"
+                                id="preview" />
+                        </div>
+                    </div>
+                    <div class="btm-right">
+                        <div class="w-100 mb-3 kolom">
+                            <label for="icon" class="form-label orange ps-1 pe-1">Icon file</label>
+                            <input type="file" onchange="previewImage(event)" class="form-control p-2" id="icon"
+                                name="icon" accept=".jpg, .jpeg, .png" />
+                        </div>
+                        <div class="w-100 mb-3 kolom">
+                            <label for="icon_id" class="form-label orange ps-1 pe-1">Icon ID</label>
+                            <input type="text" class="form-control p-2" id="icon_id" name="icon_id"
+                                value="<?= $getdata['icon_id']; ?>" required />
+                        </div>
+                    </div>
                 </div>
                 <div class="btn-kirim d-flex justify-content-end">
                     <button type="submit" name="submit" class="btn btn-primary w-25 p-2 mt-4 mb-4"><i
@@ -120,10 +156,11 @@ form {
 
 <?php
 if (isset($_POST["submit"])) {
-    // ambil data dari form
+    // Ambil data dari form dan lakukan pembersihan jika perlu
     $id = $_POST["id"];
     $nama_tematik = $_POST["nama_tematik"];
     $checkbox_id = $_POST["checkbox_id"];
+    $icon_id = $_POST["icon_id"];
     $hide = $_POST["hide"];
 
     // cek apakah nama_tematik sudah ada dalam database
@@ -137,17 +174,17 @@ if (isset($_POST["submit"])) {
 
     if ($nama_tematik_count > 0) {
         echo "
-            <script>
-             Swal.fire({
+           <script>
+            Swal.fire({
                 position: 'center-center',
                 icon: 'error',
                 title: 'Oops :(',
                 text: 'Data gagal diupdate! Nama data sudah ada dalam database.',
                 showConfirmButton: false,
                 timer: 3500
-             });
-            </script>
-         ";
+            });
+           </script>
+        ";
         exit;
     }
 
@@ -162,25 +199,26 @@ if (isset($_POST["submit"])) {
 
     if ($checkbox_id_count > 0) {
         echo "
-            <script>
-             Swal.fire({
+           <script>
+            Swal.fire({
                 position: 'center-center',
                 icon: 'error',
                 title: 'Oops :(',
                 text: 'Data gagal diupdate! Checkbox ID sudah ada dalam database.',
                 showConfirmButton: false,
                 timer: 3500
-             });
-            </script>
-         ";
+            });
+           </script>
+        ";
         exit;
     }
 
     // query update data tematik
     $query = "UPDATE tematik SET
             nama_tematik = '$nama_tematik',
-            checkbox_id = '$checkbox_id',
-            hide = '$hide'";
+            icon_id = '$icon_id',
+            hide = '$hide',
+            checkbox_id = '$checkbox_id'";
 
     // cek apakah ada file yang diupload
     if (!empty($_FILES['file_json']['name'])) {
@@ -189,15 +227,30 @@ if (isset($_POST["submit"])) {
         $file_tmp = $_FILES["file_json"]["tmp_name"];
         $file_error = $_FILES["file_json"]["error"];
 
-        // Cek apakah file berhasil diupload dan tidak ada error
         if ($file_error === UPLOAD_ERR_OK) {
             $file_destination = '../assets/geojson/tematik/' . $file_name;
 
-            // Pindahkan file ke folder tujuan
-            move_uploaded_file($file_tmp, $file_destination);
-
             // Tambahkan query untuk update file
             $query .= ", file_json = '$file_name'";
+
+            // Pindahkan file ke folder tujuan
+            if (!move_uploaded_file($file_tmp, $file_destination)) {
+                echo "
+                   <script>
+                    Swal.fire({
+                        position: 'center-center',
+                        icon: 'error',
+                        title: 'Oops :(',
+                        text: 'Terjadi kesalahan saat upload file!',
+                        showConfirmButton: false,
+                        timer: 3500
+                    }).then(function() {
+                        window.location.href = 'ubah-tematik';
+                    });
+                   </script>
+                ";
+                exit;
+            }
         } else {
             // Error saat upload file
             echo "
@@ -210,7 +263,81 @@ if (isset($_POST["submit"])) {
                     showConfirmButton: false,
                     timer: 3500
                 }).then(function() {
-                    window.location.href = 'ubah-tematik.php';
+                    window.location.href = 'ubah-tematik';
+                });
+               </script>
+            ";
+            exit;
+        }
+    }
+
+    // cek apakah ada file icon yang diupload
+    if (!empty($_FILES['icon']['name'])) {
+        // Proses upload icon
+        $icon_name = $_FILES["icon"]["name"];
+        $icon_tmp = $_FILES["icon"]["tmp_name"];
+        $icon_error = $_FILES["icon"]["error"];
+
+        if ($icon_error === UPLOAD_ERR_OK) {
+            $icon_destination = '../assets/icon/tematik/' . $icon_name;
+
+            // Cek ekstensi file icon
+            $icon_extension = pathinfo($icon_name, PATHINFO_EXTENSION);
+            $allowed_extensions = ['jpg', 'jpeg', 'png'];
+
+            if (in_array($icon_extension, $allowed_extensions)) {
+                // Tambahkan query untuk update icon
+                $query .= ", icon = '$icon_name'";
+
+                // Pindahkan file icon ke folder tujuan
+                if (!move_uploaded_file($icon_tmp, $icon_destination)) {
+                    echo "
+                       <script>
+                        Swal.fire({
+                            position: 'center-center',
+                            icon: 'error',
+                            title: 'Oops :(',
+                            text: 'Terjadi kesalahan saat upload file icon!',
+                            showConfirmButton: false,
+                            timer: 3500
+                        }).then(function() {
+                            window.location.href = 'ubah-tematik';
+                        });
+                       </script>
+                    ";
+                    exit;
+                }
+            } else {
+                // Ekstensi file icon tidak valid
+                echo "
+                   <script>
+                    Swal.fire({
+                        position: 'center-center',
+                        icon: 'error',
+                        title: 'Oops :(',
+                        text: 'Ekstensi file icon tidak valid. Harap pilih file dengan ekstensi JPG, JPEG, atau PNG.',
+                        showConfirmButton: false,
+                        timer: 3500
+                    }).then(function() {
+                        window.location.href = 'ubah-tematik';
+                    });
+                   </script>
+                ";
+                exit;
+            }
+        } else {
+            // Error saat upload file icon
+            echo "
+               <script>
+                Swal.fire({
+                    position: 'center-center',
+                    icon: 'error',
+                    title: 'Oops :(',
+                    text: 'Terjadi kesalahan saat upload file icon!',
+                    showConfirmButton: false,
+                    timer: 3500
+                }).then(function() {
+                    window.location.href = 'ubah-tematik';
                 });
                </script>
             ";
@@ -232,7 +359,7 @@ if (isset($_POST["submit"])) {
                 showConfirmButton: false,
                 timer: 3500
             }).then(function() {
-                window.location.href = 'ubah-tematik.php';
+                window.location.href = 'ubah-tematik';
             });
            </script>
         ";
@@ -247,13 +374,12 @@ if (isset($_POST["submit"])) {
                 showConfirmButton: false,
                 timer: 3500
             }).then(function() {
-                window.location.href = 'ubah-tematik.php';
+                window.location.href = 'ubah-tematik';
             });
            </script>
         ";
     }
 }
 ?>
-
 
 <?php include 'views/partials/starter-foot.php' ?>

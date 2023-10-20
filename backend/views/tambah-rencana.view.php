@@ -83,16 +83,14 @@ form {
 </style>
 <?php
 if (isset($_POST['send'])) {
-    // Mendapatkan data dari form
-    $nama_rencana = htmlspecialchars($_POST['nama_rencana']);
+    $nama_rencana = clean_input($_POST['nama_rencana']);
     $id_jenis_file = $_POST['id_jenis_file'];
     $id_jenis_rencana = $_POST['jenis_rencana_id'];
 
-    // Atur nilai icon dan icon_id menjadi 0 jika jenis file adalah "marker" (ID 1)
-    $icon = ($id_jenis_file == 1 && isset($_POST['icon'])) ? htmlspecialchars($_POST['icon']) : '0';
-    $icon_id = ($id_jenis_file == 1) ? htmlspecialchars($_POST['icon_id']) : '0';
+    $icon = isset($_POST['icon']) ? clean_input($_POST['icon']) : '0';
+    $icon_id = isset($_POST['icon_id']) ? clean_input($_POST['icon_id']) : '0';
 
-    $checkbox_id = htmlspecialchars($_POST['checkbox_id']);
+    $checkbox_id = clean_input($_POST['checkbox_id']);
 
     // Cek apakah file JSON telah diunggah
     if (isset($_FILES['file_json']) && $_FILES['file_json']['error'] === UPLOAD_ERR_OK) {
@@ -156,8 +154,8 @@ if (isset($_POST['send'])) {
         $upload_dir = '../assets/geojson/rencana/';
         $upload_path = $upload_dir . $file_name;
         if (move_uploaded_file($file_tmp, $upload_path)) {
-            // Cek apakah file icon telah diunggah jika jenis file adalah "marker" (ID 1)
-            if ($id_jenis_file == 1 && isset($_FILES['icon']) && $_FILES['icon']['error'] === UPLOAD_ERR_OK) {
+            // Cek apakah file icon telah diunggah
+            if (isset($_FILES['icon']) && $_FILES['icon']['error'] === UPLOAD_ERR_OK) {
                 // Mendapatkan informasi file icon
                 $file_icon_name = $_FILES['icon']['name'];
                 $file_icon_tmp = $_FILES['icon']['tmp_name'];
@@ -255,7 +253,6 @@ if (isset($_POST['send'])) {
     // Menutup koneksi database
     mysqli_close($conn);
 }
-
 ?>
 <div class="container-fluid">
     <div class="row justify-content-center">
@@ -285,12 +282,12 @@ if (isset($_POST['send'])) {
                     </select>
                 </div>
                 <!-- ICON -->
-                <div class=" mb-3" id="icon_section" style="display:none;">
+                <div class=" mb-3" id="icon_section">
                     <label for="icon" class="form-label orange ps-1 pe-1">File Icon</label>
                     <input type="file" class="form-control p-2" id="icon" name="icon" accept=".jpg, .jpeg, .png" />
                 </div>
                 <!-- icon id -->
-                <div class=" mb-3" id="icon_id_section" style="display:none;">
+                <div class=" mb-3" id="icon_id_section">
                     <label for="icon_id" class="form-label orange ps-1 pe-1">Icon ID</label>
                     <input type="text" name="icon_id" class="form-control p-2" id="icon_id"
                         placeholder="*Wajib di isi untuk pembuatan icon" />
@@ -323,7 +320,7 @@ if (isset($_POST['send'])) {
     </div>
 </div>
 
-<script>
+<!-- <script>
 function showHideColumns() {
     var selectedJenisFile = document.getElementById("id_jenis_file").value;
     var iconSection = document.getElementById("icon_section");
@@ -345,7 +342,7 @@ document.getElementById("id_jenis_file").addEventListener("change", showHideColu
 
 // Panggil fungsi showHideColumns saat halaman pertama kali dimuat untuk menyesuaikan tampilan berdasarkan nilai awal dropdown
 showHideColumns();
-</script>
+</script> -->
 
 <?php include 'views/partials/script.php'; ?>
 <?php include 'views/partials/starter-foot.php'; ?>
