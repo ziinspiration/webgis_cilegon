@@ -22,6 +22,10 @@
                 <button class="btn btn-search btn-outline-secondary" type="button" id="cari"><i class="bi bi-search"></i></button>
             </div>
             <!-- Table -->
+            <div id="loading-spinner">
+                <img class="load-animation" src="assets/index/loading-animation.gif" alt="">
+                <h5 class="text-center text-loading">Sedang memuat...</h5>
+            </div>
             <div class="table-res">
                 <table class="table table-striped table-hover mb-5">
                     <thead>
@@ -44,32 +48,28 @@
         </div>
     </div>
 </div>
-
 <?php include 'partials/footer.php' ?>
 <?php include 'partials/script.php' ?>
 <?php include 'partials/starter-foot.php' ?>
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function() {
-        // Load initial data on page load
         loadTableData(1);
 
-        // Handle page change
         $(document).on('click', '.pagination a', function(e) {
             e.preventDefault();
             var page = $(this).data('page');
             loadTableData(page);
         });
 
-        // Handle live searching
         $('#search').keyup(function() {
-            loadTableData(1); // Load first page of search results
+            loadTableData(1);
         });
     });
 
     function loadTableData(page) {
         var searchQuery = $('#search').val();
+        $('#loading-spinner').show();
 
         $.ajax({
             url: 'assets/ajax/wilayah-data.php',
@@ -78,10 +78,11 @@
                 page: page,
                 search: searchQuery
             },
-            dataType: 'json', // Added this line to specify the data type
+            dataType: 'json',
             success: function(data) {
                 $('#table-data').html(data.tableData);
                 $('#pagination').html(data.pagination);
+                $('#loading-spinner').hide();
             }
         });
     }

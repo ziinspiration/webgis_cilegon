@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 12, 2023 at 10:06 AM
+-- Generation Time: Oct 24, 2023 at 04:40 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -1059,32 +1059,6 @@ INSERT INTO `atribut_sarana` (`id`, `nama`, `keterangan`, `x`, `y`, `jenis`, `da
 (464, 'PELABUHAN MERAK MAS', 'PELABUHAN', '105,997235194', '-5,92189934899994', 'SISTEM TRANSPORTASI', 26),
 (465, 'TERMINAL MULTIPURPOSE KBS CIGADING', 'PELABUHAN', '105,958942288', '-6,01384446299994', 'SISTEM TRANSPORTASI', 26),
 (466, 'PELABUHAN MERAK', 'PELABUHAN', '105,996998695', '-5,93103329899998', 'SISTEM TRANSPORTASI', 26),
-(467, 'PUSKESMAS MERAK MEDICAL SERVICE', 'PUSKESMAS', '106,002563449748', '-5,94248776124105', 'KESEHATAN', 27),
-(468, 'PUSKESMAS RAMANUJU', 'PUSKESMAS', '106,001545026371', '-5,93989462324348', 'KESEHATAN', 27),
-(469, 'PUSKESMAS PULOMERAK', 'PUSKESMAS', '106,003499711624', '-5,94393314733797', 'KESEHATAN', 27),
-(470, 'PUSKESMAS PELABUHAN MERAK', 'PUSKESMAS', '106,006566727059', '-5,97321494341527', 'KESEHATAN', 27),
-(473, 'PUSKESMAS PEMBANTU PULOMERAK SURALAYA', 'PUSKESMAS', '106,031340066712', '-5,90314745263302', 'KESEHATAN', 27),
-(474, 'PUSKESMAS PEMBANTU PULOMERAK', 'PUSKESMAS', '106,005862781324', '-5,92020752417727', 'KESEHATAN', 27),
-(476, 'PUSKESMAS KARAKATU MEDIKA', 'PUSKESMAS', '106,032826391854', '-5,98987973953077', 'KESEHATAN', 27),
-(477, 'PUSKESMAS PEMBANTU PURWAKARTA', 'PUSKESMAS', '106,059546344972', '-5,99109510798549', 'KESEHATAN', 27),
-(478, 'PUSKESMAS PEMBANTU RAWAARUM', 'PUSKESMAS', '106,014418813332', '-5,97908043065402', 'KESEHATAN', 27),
-(479, 'PUSKESMAS PEMBANTU CIWANDAN', 'PUSKESMAS', '105,971831369675', '-6,02187994617634', 'KESEHATAN', 27),
-(480, 'PUSKESMAS ANANDA', 'PUSKESMAS', '106,013242185076', '-6,01217348772577', 'KESEHATAN', 27),
-(481, 'PUSKESMAS PEMBANTU JOMBANG', 'PUSKESMAS', '106,065121778922', '-6,01514664325995', 'KESEHATAN', 27);
-INSERT INTO `atribut_sarana` (`id`, `nama`, `keterangan`, `x`, `y`, `jenis`, `data_pokok_id`) VALUES
-(482, 'PUSKESMAS PEMBANTU', 'PUSKESMAS', '106,016970779749', '-6,03787940275689', 'KESEHATAN', 27),
-(483, 'PUSKESMAS PEMBANTU CIWADUK', 'PUSKESMAS', '106,048287924047', '-6,02838821066691', 'KESEHATAN', 27),
-(485, 'PUSKESMAS PEMBANTU CIBEBER', 'PUSKESMAS', '106,072757766668', '-6,02666834730798', 'KESEHATAN', 27),
-(486, 'PUSKESMAS CILEGON', 'PUSKESMAS', '106,03642120043', '-6,03924180003689', 'KESEHATAN', 27),
-(487, 'PUSKESMAS JOMBANG', 'PUSKESMAS', '106,064832999874', '-6,01505810000209', 'KESEHATAN', 27),
-(488, 'PUSKESMAS CIBEBER', 'PUSKESMAS', '106,070806199942', '-6,03781189966005', 'KESEHATAN', 27),
-(489, 'PUSKESMAS CITANGKIL', 'PUSKESMAS', '106,018315100369', '-6,01711910002144', 'KESEHATAN', 27),
-(490, 'PUSKESMAS PURWAKARTA CILEGON', 'PUSKESMAS', '106,059609500305', '-5,99124669979297', 'KESEHATAN', 27),
-(491, 'UPTD PUSKESMAS GROGOL', 'PUSKESMAS', '106,014264699754', '-5,97918369991466', 'KESEHATAN', 27),
-(492, 'PUSKESMAS CITANGKIL II', 'PUSKESMAS', '106,014279700335', '-6,03719900006566', 'KESEHATAN', 27),
-(493, 'UPTD PUSKESMAS PULOMERAK', 'PUSKESMAS', '106,003354800091', '-5,94388960027172', 'KESEHATAN', 27),
-(494, 'PUSKESMAS GROGOL (POSKESDES KOTASARI)', 'PUSKESMAS', '106,031008400305', '-5,98439609963614', 'KESEHATAN', 27),
-(495, 'PUSTU RAMANUJU', 'PUSKESMAS', '106,044766400184', '-6,01046949977453', 'KESEHATAN', 27),
 (496, 'SMU AL-MUNAWAROH', 'SMA/SETINGKAT/SEDERAJAT', '106,008722151867', '-5,97388676248501', 'PENDIDIKAN', 28),
 (497, 'SMK TEKNOLOGI', 'SMA/SETINGKAT/SEDERAJAT', '106,055351081969', '-6,04101226370183', 'PENDIDIKAN', 28),
 (498, 'SMK NEGERI  I CILEGON', 'SMA/SETINGKAT/SEDERAJAT', '106,051846017253', '-6,04618812448268', 'PENDIDIKAN', 28),
@@ -1095,7 +1069,8 @@ INSERT INTO `atribut_sarana` (`id`, `nama`, `keterangan`, `x`, `y`, `jenis`, `da
 (503, 'SMU AL-MA&#039;ARIF', 'SMA/SETINGKAT/SEDERAJAT', '106,054529951874', '-5,97659279534465', 'PENDIDIKAN', 28),
 (505, 'SMU NEGERI 2 KRAKATAU STEEL', 'SMA/SETINGKAT/SEDERAJAT', '106,032795758637', '-5,99240354122902', 'PENDIDIKAN', 28),
 (506, 'SMK YPWKS', 'SMA/SETINGKAT/SEDERAJAT', '106,041616135205', '-5,99433756100634', 'PENDIDIKAN', 28),
-(507, 'SMA BINA BANGSA', 'SMA/SETINGKAT/SEDERAJAT', '106,057777644427', '-5,9898931356284', 'PENDIDIKAN', 28),
+(507, 'SMA BINA BANGSA', 'SMA/SETINGKAT/SEDERAJAT', '106,057777644427', '-5,9898931356284', 'PENDIDIKAN', 28);
+INSERT INTO `atribut_sarana` (`id`, `nama`, `keterangan`, `x`, `y`, `jenis`, `data_pokok_id`) VALUES
 (508, 'MADRASAH ALIYAH NEGERI PULOMERAK', 'SMA/SETINGKAT/SEDERAJAT', '106,017052241735', '-5,98043775587688', 'PENDIDIKAN', 28),
 (509, 'SMU YAPMU KP. RANDAKARI', 'SMA/SETINGKAT/SEDERAJAT', '105,971292975908', '-6,0289665107307', 'PENDIDIKAN', 28),
 (510, 'SMU 3 CILEGON', 'SMA/SETINGKAT/SEDERAJAT', '106,047319705661', '-6,06524880974998', 'PENDIDIKAN', 28),
@@ -1515,8 +1490,7 @@ INSERT INTO `atribut_sarana` (`id`, `nama`, `keterangan`, `x`, `y`, `jenis`, `da
 (925, 'MASJID AL-MUHAJIRIN', 'MASJID', '106,049039674576', '-5,99115937914165', 'PERIBADATAN', 31),
 (926, 'MASJID AT-TAQWA', 'MASJID', '106,05340700729', '-5,99059781845745', 'PERIBADATAN', 31),
 (927, 'MASJID AL-IMAN', 'MASJID', '106,052250351453', '-5,99026079624785', 'PERIBADATAN', 31),
-(928, 'MASJID SYAFINATUL MUTTAQIEN', 'MASJID', '106,049393457975', '-5,99370784161071', 'PERIBADATAN', 31);
-INSERT INTO `atribut_sarana` (`id`, `nama`, `keterangan`, `x`, `y`, `jenis`, `data_pokok_id`) VALUES
+(928, 'MASJID SYAFINATUL MUTTAQIEN', 'MASJID', '106,049393457975', '-5,99370784161071', 'PERIBADATAN', 31),
 (929, 'MADRASAH IBTIDAIYAH AL-JAUHAROTUNNAQIYAH', 'MASJID', '106,053153392871', '-5,99640635885531', 'PERIBADATAN', 31),
 (930, 'MASJID ALQODAR', 'MASJID', '106,065204579823', '-5,99654758267784', 'PERIBADATAN', 31),
 (931, 'MASJID KDL', 'MASJID', '105,98337748783', '-5,9955096237868', 'PERIBADATAN', 31),
@@ -1543,7 +1517,8 @@ INSERT INTO `atribut_sarana` (`id`, `nama`, `keterangan`, `x`, `y`, `jenis`, `da
 (952, 'MASJID AT-TAQWA', 'MASJID', '105,979446786322', '-6,01952134454914', 'PERIBADATAN', 31),
 (953, 'MASJID AL-ANWAR KP. KRAMAT', 'MASJID', '105,979909908564', '-6,02355026015563', 'PERIBADATAN', 31),
 (954, 'MASJID AL-FAIDZIN', 'MASJID', '105,975095913954', '-6,0321341108884', 'PERIBADATAN', 31),
-(955, 'MASJID ASH-SHIDQO', 'MASJID', '105,971261562324', '-6,03090038090897', 'PERIBADATAN', 31),
+(955, 'MASJID ASH-SHIDQO', 'MASJID', '105,971261562324', '-6,03090038090897', 'PERIBADATAN', 31);
+INSERT INTO `atribut_sarana` (`id`, `nama`, `keterangan`, `x`, `y`, `jenis`, `data_pokok_id`) VALUES
 (956, 'MASJID AL-KAUTSAR', 'MASJID', '105,969328179546', '-6,02907595152647', 'PERIBADATAN', 31),
 (957, 'MASJID AR-RAHMAN', 'MASJID', '105,968614474185', '-6,026730490803', 'PERIBADATAN', 31),
 (958, 'MASJID AL-HIDAYAH CIGADING', 'MASJID', '105,983535023952', '-6,01798273407502', 'PERIBADATAN', 31),
@@ -1663,7 +1638,24 @@ INSERT INTO `atribut_sarana` (`id`, `nama`, `keterangan`, `x`, `y`, `jenis`, `da
 (1072, 'MASJID AL-IKHLAS', 'MASJID', '106,000197760059', '-5,93172582698383', 'PERIBADATAN', 31),
 (1073, 'MASJID LANGON II', 'MASJID', '106,016270553909', '-5,93094210106086', 'PERIBADATAN', 31),
 (1074, 'MASJID AL-HIDAYAH', 'MASJID', '106,002639038421', '-5,93088803142069', 'PERIBADATAN', 31),
-(1075, 'MASJID SURALAYA', 'MASJID', '106,030805640647', '-5,9812682977255', 'PERIBADATAN', 31);
+(1075, 'MASJID SURALAYA', 'MASJID', '106,030805640647', '-5,9812682977255', 'PERIBADATAN', 31),
+(1080, 'PUSKESMAS PURWAKARTA', 'PUSKESMAS', '106,059546344972', '-5,99109510798549', 'KESEHATAN', 34),
+(1081, 'PUSKESMAS PULOMERAK', 'PUSKESMAS', '106,003499711624', '-5,94393314733797', 'KESEHATAN', 34),
+(1082, 'PUSKESMAS PEMBANTU RAWAARUM', 'PUSKESMAS PEMBANTU', '106,014418813332', '-5,97908043065402', 'KESEHATAN', 34),
+(1083, 'PUSKESMAS PEMBANTU PURWAKARTA ', 'PUSKESMAS PEMBANTU', '106,059546344972', '-5,99109510798549', 'KESEHATAN', 34),
+(1084, 'PUSKESMAS PEMBANTU PULOMERAK SURALAYA', 'PUSKESMAS PEMBANTU', '106,031340066712', '-5,90314745263302', 'KESEHATAN', 34),
+(1085, 'PUSKESMAS PEMBANTU PULOMERAK', 'PUSKESMAS PEMBANTU', '106,005862781324', '-5,92020752417727', 'KESEHATAN', 34),
+(1086, 'PUSKESMAS PEMBANTU JOMBANG', 'PUSKESMAS PEMBANTU', '106,064832999874', '-6,01505810000209', 'KESEHATAN', 34),
+(1087, 'PUSKESMAS PEMBANTU CIWANDAN', 'PUSKESMAS PEMBANTU', '105,971831369675', '-6,02187994617634', 'KESEHATAN', 34),
+(1088, 'PUSKESMAS PEMBANTU CIWADUK', 'PUSKESMAS PEMBANTU', '106,048287924047', '-6,02838821066691', 'KESEHATAN', 34),
+(1089, 'PUSKESMAS PEMBANTU CIBEBER', 'PUSKESMAS PEMBANTU', '106,072757766668', '-6,02666834730798', 'KESEHATAN', 34),
+(1090, 'PUSKESMAS JOMBANG', 'PUSKESMAS', '106,064832999874', '-6,01505810000209', 'KESEHATAN', 34),
+(1091, 'PUSKESMAS GROGOL', 'PUSKESMAS', '106,014264699754', '-5,97918369991466', 'KESEHATAN', 34),
+(1092, 'PUSKESMAS CIWANDAN', 'PUSKESMAS', '105,981589427388', '-6,03517324280067', 'KESEHATAN', 34),
+(1093, 'PUSKESMAS CITANGKIL II', 'PUSKESMAS', '106,014279700335', '-6,03719900006566', 'KESEHATAN', 34),
+(1094, 'PUSKESMAS CITANGKIL', 'PUSKESMAS', '106,018315100369', '-6,01711910002144', 'KESEHATAN', 34),
+(1095, 'PUSKESMAS CILEGON', 'PUSKESMAS', '106,03642120043', '-6,03924180003689', 'KESEHATAN', 34),
+(1096, 'PUSKESMAS CIBEBER', 'PUSKESMAS', '106,070806199942', '-6,03781189966005', 'KESEHATAN', 34);
 
 -- --------------------------------------------------------
 
@@ -2903,11 +2895,11 @@ INSERT INTO `data_sarana` (`id`, `nama_data`) VALUES
 (24, 'SPBU'),
 (25, 'Hotel'),
 (26, 'Pelabuhan'),
-(27, 'Puskesmas'),
 (28, 'Sekolah Menengah Atas'),
 (29, 'Sekolah Menengah Pertama'),
 (30, 'Sekolah Dasar'),
-(31, 'Masjid');
+(31, 'Masjid'),
+(34, 'Puskesmas');
 
 -- --------------------------------------------------------
 
@@ -2962,12 +2954,12 @@ INSERT INTO `informasi_bappeda` (`id`, `nama_data`, `informasi`, `jenis_informas
 (2, 'facebook', 'https://m.facebook.com/bappeda.cilegon.58?wtsid=rdr_0tnbfuhqTfzuC8tTN', 'link'),
 (3, 'twitter', 'https://twitter.com/bappedaclg?s=11&t=hJpV_DauX33lpEkbcLJq4w', 'link'),
 (4, 'youtube', 'https://youtube.com/@bappedacilegon', 'link'),
-(21, 'Alamat', 'JL. Maulana Yusuf RT. 06 RW. 01, Kecamatan Citangkil, Kota Cilegon, Provinsi Banten, 42441', 'teks'),
-(22, 'Nomor telepon', '-', 'teks'),
-(23, 'Email', 'BAPPEDA@email.cilegon.go.id', 'teks'),
+(21, 'Alamat', 'Jln. Buyut Arman No. 1 Kec. Citangkil - Kota Cilegon', 'teks'),
+(22, 'Nomor telepon', '(0254) 388656', 'teks'),
+(23, 'Email', '-', 'teks'),
 (29, 'Berita 1', 'Website geospasial adalah platform daring yang menyediakan akses mudah ke beragam informasi geografis dan spasial. Dengan memanfaatkan teknologi pemetaan dan sistem informasi geografis (SIG), website geospasial memberikan pemahaman yang lebih dalam tentang lokasi, wilayah, dan fenomena di seluruh dunia.', 'marquee'),
 (31, 'Berita 2', 'Mengapa Website geospasial ini penting ? Karna website ini dipergunakan untuk perencanaan pembangunan nasional, pengelolaan sumber daya alam berkelanjutan, penataan ruang kota, dan manajemen pengurangan risiko bencana.', 'marquee'),
-(33, 'Koordinat', '-6.013780037721651, 106.04282872420981', 'teks');
+(33, 'Koordinat', '-6.0137558,106.0428208', 'teks');
 
 -- --------------------------------------------------------
 
@@ -3008,7 +3000,9 @@ INSERT INTO `jenis_prasarana` (`id_jenis`, `nama_jenis`) VALUES
 (1, 'Air bersih'),
 (2, 'Persampahan'),
 (3, 'Lainnya'),
-(4, 'Sistem & Jaringan');
+(5, 'Status Jalan'),
+(6, 'Fungsi Jalan'),
+(7, 'Kondisi Jalan & Drainase');
 
 -- --------------------------------------------------------
 
@@ -3122,7 +3116,7 @@ CREATE TABLE `prasarana` (
 --
 
 INSERT INTO `prasarana` (`id`, `nama_prasarana`, `file_json`, `icon`, `icon_id`, `checkbox_id`, `id_jenis_prasarana`, `id_jenis`, `hide`) VALUES
-(8, 'Jalan arteri', 'JALAN_ARTERI_LN.geojson', '0', '', 'JalanArteriCheckbox', 4, 3, 1),
+(8, 'Jalan arteri', 'JALAN_ARTERI_LN.geojson', '0', '', 'JalanArteriCheckbox', 6, 3, 1),
 (9, 'Jembatan', 'JEMBATAN_PT.geojson', 'Jembatan.png', 'IconJembatan', 'JembatanPrasaranaCheckbox', 3, 1, 1),
 (10, 'Gardu listrik', 'GARDU_LISTRIK_PT.geojson', 'Gardu Listrik.png', 'IconGarduListrik', 'GarduListrikCheckbox', 3, 1, 1),
 (11, 'Telekomunikasi', 'TELEKOMUNIKASI_PT.geojson', 'Menara Telekomunikasi (BTS).png', 'IconTelekomunikasi', 'TelekomunikasiCheckbox', 3, 1, 1),
@@ -3132,20 +3126,20 @@ INSERT INTO `prasarana` (`id`, `nama_prasarana`, `file_json`, `icon`, `icon_id`,
 (15, 'TPA', 'TEMPAT_PEMBUANGAN_AKHIR_PT.geojson', 'Tempat Pemerosesan Akhir Sampah (TPA).png', 'IconTPA', 'TPACheckbox', 2, 1, 1),
 (16, 'TPS', 'TEMPAT_PEMBUANGAN_SEMENTARA_PT.geojson', 'Tempat Penampungan Sampah Sementara (TPS).png', 'IconTPS', 'TPSCheckbox', 2, 1, 1),
 (20, 'Hidran', 'HYDRANT_PT.geojson', 'Hidrant.png', 'IconHidran', 'HidranCheckbox', 3, 1, 1),
-(21, 'Jalan kolektor', 'JALAN_KOLEKTOR_LN.geojson', '0', '0', 'JalanKolektorCheckbox', 4, 3, 1),
-(22, 'Jalan kolektor sekunder', 'JALAN_KOLEKTOR_SEKUNDER_LN.geojson', '0', '0', 'JalanKolektorSekunderCheckbox', 4, 3, 1),
-(23, 'Jalan lingkungan', 'JALAN_LINGKUNGAN_LN2.geojson', '0', '', 'JalanLingkunganCheckbox', 4, 3, 1),
-(24, 'Jalan lokal', 'JALAN_LOKAL_LN.geojson', '0', '0', 'JalanLokalCheckbox', 4, 3, 1),
-(25, 'Jalan setapak', 'JALAN_SETAPAK_LN.geojson', '0', '0', 'JalanSetapakCheckbox', 4, 3, 1),
-(26, 'Jalan toll', 'JALAN_TOL_LN.geojson', '0', '0', 'JalanTollCheckbox', 4, 3, 1),
-(28, 'Kemantapan Drainase', 'KEMANTAPAN_DRAINASE_LN.geojson', '0', '0', 'KemantapanDrainase', 4, 3, 1),
-(29, 'Kemantapan Jalan Lingkungan', 'KEMANTAPAN_JALAN_LINGKUNGAN_LN2.geojson', '0', '', 'KemantapanJalanLingkungan', 4, 3, 1),
-(35, 'Alur pelayaran masuk pelabuhan', 'ALUR_PELAYARAN_MASUK_PELABUHAN_LN.geojson', '0', '0', 'AlurPelayaranMasukPelabuhanCheckbox', 4, 3, 1),
-(36, 'Alur pelayaran umum dan perlintasan', 'ALUR_PELAYARAN_UMUM_DAN_PERLINTASAN_LN.geojson', '0', '0', 'AlurPelayaranUmumDanPerlintasanCheckbox', 4, 3, 1),
-(37, 'Jaringan jalan kereta api', 'JARINGAN_JALAN_KERETA_API_LN.geojson', '0', '0', 'JaringanJalanKeretaApiCheckbox', 4, 3, 1),
-(38, 'Jaringan jalan kota', 'JARINGAN_JALAN_KOTA_LN.geojson', '0', '0', 'JaringanJalanKotaCheckbox', 4, 3, 1),
-(39, 'Jaringan jalan nasional', 'JARINGAN_JALAN_NASIONAL_LN.geojson', '0', '0', 'JaringanJalanNasionalCheckbox', 4, 3, 1),
-(40, 'Jaringan jalan provinsi', 'JARINGAN_JALAN_PROVINSI_LN.geojson', '0', '0', 'JaringanJalanProvinsiCheckbox', 4, 3, 1),
+(21, 'Jalan kolektor', 'JALAN_KOLEKTOR_LN.geojson', '0', '0', 'JalanKolektorCheckbox', 6, 3, 1),
+(22, 'Jalan kolektor sekunder', 'JALAN_KOLEKTOR_SEKUNDER_LN.geojson', '0', '0', 'JalanKolektorSekunderCheckbox', 6, 3, 1),
+(23, 'Jalan lingkungan', 'JALAN_LINGKUNGAN_LN2.geojson', '0', '', 'JalanLingkunganCheckbox', 6, 3, 1),
+(24, 'Jalan lokal', 'JALAN_LOKAL_LN.geojson', '0', '0', 'JalanLokalCheckbox', 6, 3, 1),
+(25, 'Jalan setapak', 'JALAN_SETAPAK_LN.geojson', '0', '0', 'JalanSetapakCheckbox', 6, 3, 1),
+(26, 'Jalan toll', 'JALAN_TOL_LN.geojson', '0', '0', 'JalanTollCheckbox', 6, 3, 1),
+(28, 'Kemantapan Drainase', 'KEMANTAPAN_DRAINASE_LN.geojson', '0', '0', 'KemantapanDrainase', 7, 3, 1),
+(29, 'Kemantapan Jalan Lingkungan', 'KEMANTAPAN_JALAN_LINGKUNGAN_LN2.geojson', '0', '', 'KemantapanJalanLingkungan', 7, 3, 1),
+(35, 'Alur pelayaran masuk pelabuhan', 'ALUR_PELAYARAN_MASUK_PELABUHAN_LN.geojson', '0', '0', 'AlurPelayaranMasukPelabuhanCheckbox', 5, 3, 1),
+(36, 'Alur pelayaran umum dan perlintasan', 'ALUR_PELAYARAN_UMUM_DAN_PERLINTASAN_LN.geojson', '0', '0', 'AlurPelayaranUmumDanPerlintasanCheckbox', 5, 3, 1),
+(37, 'Jaringan jalan kereta api', 'JARINGAN_JALAN_KERETA_API_LN.geojson', '0', '0', 'JaringanJalanKeretaApiCheckbox', 5, 3, 1),
+(38, 'Jaringan jalan kota', 'JARINGAN_JALAN_KOTA_LN.geojson', '0', '0', 'JaringanJalanKotaCheckbox', 5, 3, 1),
+(39, 'Jaringan jalan nasional', 'JARINGAN_JALAN_NASIONAL_LN.geojson', '0', '0', 'JaringanJalanNasionalCheckbox', 5, 3, 1),
+(40, 'Jaringan jalan provinsi', 'JARINGAN_JALAN_PROVINSI_LN.geojson', '0', '0', 'JaringanJalanProvinsiCheckbox', 5, 3, 1),
 (41, 'Distribusi PDAM perkotaan', 'DISTRIBUSI_PDAM_LN2.geojson', '0', '0', 'DistribuasiPDAMPerkotaanCheckbox', 1, 3, 1);
 
 -- --------------------------------------------------------
@@ -3168,7 +3162,6 @@ CREATE TABLE `publikasi` (
 INSERT INTO `publikasi` (`id`, `nama_data`, `keterangan`, `file_pdf`) VALUES
 (29, 'LEMBARAN DAERAH PERDA RTRW CILEGON', 'Lembaran Peraturan Daerah Kota Cilegon No 1 Tahun 2020 Tentang Rencana Tata Ruang wilayah Kota Cilegon Tahun 2020 - 2040', 'LEMBARAN DAERAH PERDA RTRW CILEGON  TENTANG RTRW 2020-2040.pdf'),
 (30, 'RPJMD Kota Cilegon', 'Rencana Pembangunan Jangka Menenengah Daerah Kota Cilegon Tahun 2021 - 2026', 'BUKU1_Final Rancangan Akhir RPJMD_Kota_Cilegon_Tahun_2021-2026.pdf'),
-(31, 'RENSTRA Kota Cilegon', 'Rencana Strategis Kota Cilegon Tahun 2021 - 2026', '24_FINAL_RENSTRA_BAPPEDA_2021_2026.pdf'),
 (32, 'SK Status Jalan', 'SK Status Jalan Kota Cilegon Tahun 2018', 'Lampiran Perubahan SK Status Jalan 2018.pdf'),
 (33, 'Kemantapan Jalan Lingkungan', 'Berisikan terkait database pemutakhiran jalan lingkungan di kota cilegon', 'KEMANTAPAN JALAN LINGKUNGAN.pdf'),
 (34, 'Kemantapan Drainase', 'Berisikan terkait database pemutakhiran drainase di kota cilegon', 'KEMANTAPAN DRAINASE.pdf'),
@@ -3198,7 +3191,7 @@ CREATE TABLE `rencana` (
 
 INSERT INTO `rencana` (`id`, `nama_rencana`, `file_json`, `icon`, `icon_id`, `checkbox_id`, `id_jenis_file`, `jenis_rencana_id`, `hide`) VALUES
 (25, 'Jalur evakuasi', 'JALUR_EVAKUASI_LN.geojson', '0', '', 'JalurEvakuasiCheckbox', 3, 1, 0),
-(26, 'Ruang evakuasi', 'RUANG_EVAKUASI_PT.geojson', 'Jalur Evakuasi Bencana.png', 'IconRencanaRuangEvakuasi', 'RencanaRuangEvakuasiCheckbox', 1, 1, 0),
+(26, 'Ruang evakuasi', 'RUANG_EVAKUASI_PT.geojson', 'Jalur Evakuasi Bencana.png', '', 'RencanaRuangEvakuasiCheckbox', 1, 1, 0),
 (27, 'Gardu induk', 'GARDU_INDUK_PT.geojson', 'Gardu Induk.png', 'IconRencanaGarduInduk', 'RencanaGarduIndukCheckbox', 1, 2, 0),
 (28, 'Pembangkit listrik lainnya', 'PEMBANGKIT_LISTRIK_LAINNYA_PT.geojson', 'Pembangkit Listrik Lainnya.png', 'IconRencanaPembangkitListrikLainnya', 'RencanaPembangkitListrikLainnyaCheckbox', 1, 2, 0),
 (29, 'Pembangkit listrik tenaga uap', 'PEMBANGKIT_LISTRIK_UAP_PT.geojson', 'Pembangkit Listrik Tenaga Uap (PLTU).png', 'IconRencanaPembangkitListrikUap', 'RencanaPembangkitListrikUapCheckbox', 1, 2, 0),
@@ -3220,7 +3213,7 @@ INSERT INTO `rencana` (`id`, `nama_rencana`, `file_json`, `icon`, `icon_id`, `ch
 (46, 'Batas provinsi', 'ADMINISTRASI_PROVINSI_AR.geojson', '0', '0', 'BatasProvinsiCheckbox', 2, 8, 1),
 (47, 'Batas kota', 'ADMINISTRASI_KOTA_AR.geojson', '0', '0', 'BatasKotaCheckbox', 2, 8, 1),
 (48, 'Batas kecamatan', 'ADMINISTRASI_KECAMATAN_AR.geojson', '0', '0', 'BatasKecamatanCheckbox', 2, 8, 1),
-(49, 'Batas kelurahan', 'ADMINISTRASI_KELURAHAN_AR.geojson', '0', '0', 'BatasKelurahanCheckbox', 2, 8, 1);
+(49, 'Batas kelurahan', 'ADMINISTRASI_KELURAHAN_REVISI_AR.geojson', '0', '', 'BatasKelurahanCheckbox', 2, 8, 1);
 
 -- --------------------------------------------------------
 
@@ -3249,10 +3242,10 @@ INSERT INTO `sarana` (`id`, `nama_sarana`, `file_json`, `icon`, `icon_id`, `chec
 (30, 'Zonasi taman kanak kanak', 'ZONASI_TAMAN_KANAK_KANAK_AR.geojson', '0', '', 'ZonasiTamanKanakKanakCheckbox', 2, 2, 1),
 (31, 'Zonasi rumah sakit', 'ZONASI_RUMAH_SAKIT_AR.geojson', '0', '0', 'ZonasiRumahSakitCheckbox', 3, 2, 1),
 (32, 'Rumah sakit', 'RUMAH_SAKIT_PT.geojson', 'Rumah Sakit.png', 'IconRumahSakit', 'RumahSakitCheckbox', 3, 1, 1),
-(33, 'Zonasi sekolah menengah atas ', 'ZONASI_SEKOLAH_MENENGAH_ATAS_AR.geojson', '0', '', 'ZonasiSekolahMenengahAtasCheckbox', 2, 2, 1),
+(33, 'Zonasi sekolah menengah atas ', 'ZONASI_SEKOLAH_MENENGAH_ATAS_AR.geojson', 'Cuplikan layar 2023-07-11 181952.png', 'vadvadvavrhbtvfdcs', 'ZonasiSekolahMenengahAtasCheckbox', 2, 2, 1),
 (34, 'Zonasi sekolah menengah pertama ', 'ZONASI_SEKOLAH_MENENGAH_PERTAMA_AR.geojson', '0', '', 'ZonasiSekolahMenengahPertamaCheckbox', 2, 2, 1),
 (35, 'Zonasi sekolah dasar', 'ZONASI_SEKOLAH_DASAR_AR.geojson', '0', '', 'ZonasiSekolahDasarCheckbox', 2, 2, 1),
-(36, 'Zonasi puskesmas', 'ZONASI_PUSKESMAS_AR.geojson', '0', '0', 'ZonasiPuskesmasCheckbox', 3, 2, 1),
+(36, 'Zonasi puskesmas', 'ZONASI_PUSKESMAS_REVISI_AR.geojson', '0', '', 'ZonasiPuskesmasCheckbox', 3, 2, 1),
 (37, 'Zonasi klinik', 'ZONASI_KLINIK_AR.geojson', '0', '0', 'ZonasiKlinikCheckbox', 3, 2, 1),
 (38, 'Sekolah dasar', 'SD_SETINGKAT_SEDERAJAT_PT.geojson', 'Pendidikan Dasar (SD).png', 'IconSekolahDasar', 'SekolahDasarCheckbox', 2, 1, 1),
 (39, 'Sekolah menengah pertama', 'SMP_SETINGKAT_SEDERAJAT_PT.geojson', 'Pendidikan Menengah Pertama (SLTP).png', 'IconSekolahMenengahPertama', 'SekolahMenengahPertamaCheckbox', 2, 1, 1),
@@ -3349,8 +3342,8 @@ CREATE TABLE `status_kemantapan` (
 --
 
 INSERT INTO `status_kemantapan` (`id`, `nama_data`, `data1`, `data2`, `data3`, `data4`) VALUES
-(1, 'kemantapan_jalan', 70, 30, 0, 0),
-(2, 'kemantapan_drainase', 47, 32, 21, 0);
+(1, 'kemantapan_jalan', 25, 25, 25, 25),
+(2, 'kemantapan_drainase', 50, 25, 25, 0);
 
 -- --------------------------------------------------------
 
@@ -3380,6 +3373,8 @@ CREATE TABLE `tematik` (
   `id` int NOT NULL,
   `nama_tematik` varchar(255) NOT NULL,
   `file_json` varchar(255) NOT NULL,
+  `icon` varchar(255) NOT NULL,
+  `icon_id` varchar(255) NOT NULL,
   `checkbox_id` varchar(255) NOT NULL,
   `kategori` int NOT NULL,
   `id_jenis_file` int DEFAULT NULL,
@@ -3390,22 +3385,22 @@ CREATE TABLE `tematik` (
 -- Dumping data for table `tematik`
 --
 
-INSERT INTO `tematik` (`id`, `nama_tematik`, `file_json`, `checkbox_id`, `kategori`, `id_jenis_file`, `hide`) VALUES
-(13, 'Rawan banjir', 'RAWAN_BANJIR_AR.geojson', 'RawanBanjirCheckbox', 1, 2, 1),
-(14, 'Rawan longsor', 'RAWAN_LONGSOR_AR.geojson', 'RawanLongsorCheckbox', 1, 2, 1),
-(15, 'Rawan gempa bumi', 'RAWAN_GEMPABUMI_AR.geojson', 'RawanGempaCheckbox', 1, 2, 1),
-(16, 'Rawan tsunami', 'RAWAN_TSUNAMI_AR.geojson', 'RawanTsunamiCheckbox', 1, 2, 1),
-(18, 'Das', 'DAS_AR.geojson', 'DasCheckbox', 2, 2, 1),
-(19, 'Hidrogeologi', 'HIDROGEOLOGI_AR.geojson', 'HidrogeologiCheckbox', 2, 2, 1),
-(20, 'Jenis tanah', 'JENIS_TANAH_AR.geojson', 'JenisTanahCheckbox', 2, 2, 1),
-(21, 'Kemiringan lereng', 'KEMIRINGAN_LERENG_AR.geojson', 'KemiringanLerengCheckbox', 2, 2, 1),
-(22, 'Kawasan hutan', 'KAWASAN_HUTAN_AR.geojson', 'KawasanHutanCheckbox', 2, 2, 1),
-(23, 'Penggunaan lahan', 'PENGGUNAAN_LAHAN_AR.geojson', 'PenggunaanLahanCheckbox', 2, 2, 1),
-(24, 'Topografi', 'TOPOGRAFI_AR.geojson', 'TopografiCheckbox', 2, 2, 1),
-(25, 'Wilayah sungai', 'WILAYAH_SUNGAI_AR.geojson', 'WilayahSungaiCheckbox', 2, 2, 1),
-(26, 'Zona air tanah', 'ZONA_AIR_TANAH_AR.geojson', 'ZonaAirTanahCheckbox', 2, 2, 1),
-(27, 'Curah hujan', 'CURAH_HUJAN_AR.geojson', 'CurahHujanCheckbox', 2, 2, 1),
-(30, 'Geologi', 'GEOLOGI_AR.geojson', 'GeologiCheckbox', 2, 2, 1);
+INSERT INTO `tematik` (`id`, `nama_tematik`, `file_json`, `icon`, `icon_id`, `checkbox_id`, `kategori`, `id_jenis_file`, `hide`) VALUES
+(13, 'Rawan banjir', 'RAWAN_BANJIR_AR.geojson', '', '', 'RawanBanjirCheckbox', 1, 2, 1),
+(14, 'Rawan longsor', 'RAWAN_LONGSOR_AR.geojson', '', '', 'RawanLongsorCheckbox', 1, 2, 1),
+(15, 'Rawan gempa bumi', 'RAWAN_GEMPABUMI_AR.geojson', '', '', 'RawanGempaCheckbox', 1, 2, 1),
+(16, 'Rawan tsunami', 'TSUNAMI.geojson', '', '', 'RawanTsunamiCheckbox', 1, 2, 1),
+(18, 'Das', 'DAS_AR.geojson', '', '', 'DasCheckbox', 2, 2, 1),
+(19, 'Hidrogeologi', 'HIDROGEOLOGI_AR.geojson', '', '', 'HidrogeologiCheckbox', 2, 2, 1),
+(20, 'Jenis tanah', 'JENIS_TANAH_AR.geojson', '', '', 'JenisTanahCheckbox', 2, 2, 1),
+(21, 'Kemiringan lereng', 'KEMIRINGAN_LERENG_AR.geojson', '', '', 'KemiringanLerengCheckbox', 2, 2, 1),
+(22, 'Kawasan hutan', 'KAWASAN_HUTAN_AR.geojson', '', '', 'KawasanHutanCheckbox', 2, 2, 1),
+(23, 'Penggunaan lahan', 'PENGGUNAAN_LAHAN_AR.geojson', '', '', 'PenggunaanLahanCheckbox', 2, 2, 1),
+(24, 'Topografi', 'TOPOGRAFI_AR.geojson', '', '', 'TopografiCheckbox', 2, 2, 1),
+(25, 'Wilayah sungai', 'WILAYAH_SUNGAI_AR.geojson', '', '', 'WilayahSungaiCheckbox', 2, 2, 1),
+(26, 'Zona air tanah', 'ZONA_AIR_TANAH_AR.geojson', '', '', 'ZonaAirTanahCheckbox', 2, 2, 1),
+(27, 'Curah hujan', 'CURAH_HUJAN_AR.geojson', '', '', 'CurahHujanCheckbox', 2, 2, 1),
+(30, 'Geologi', 'GEOLOGI_AR.geojson', '', '', 'GeologiCheckbox', 2, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -3664,7 +3659,7 @@ ALTER TABLE `atribut_rencana`
 -- AUTO_INCREMENT for table `atribut_sarana`
 --
 ALTER TABLE `atribut_sarana`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1080;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1097;
 
 --
 -- AUTO_INCREMENT for table `atribut_tematik`
@@ -3694,7 +3689,7 @@ ALTER TABLE `data_rencana`
 -- AUTO_INCREMENT for table `data_sarana`
 --
 ALTER TABLE `data_sarana`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `data_tematik`
@@ -3718,7 +3713,7 @@ ALTER TABLE `jenis_file`
 -- AUTO_INCREMENT for table `jenis_prasarana`
 --
 ALTER TABLE `jenis_prasarana`
-  MODIFY `id_jenis` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_jenis` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `jenis_rencana`
@@ -3748,7 +3743,7 @@ ALTER TABLE `kategori_tematik`
 -- AUTO_INCREMENT for table `prasarana`
 --
 ALTER TABLE `prasarana`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `publikasi`
@@ -3760,19 +3755,19 @@ ALTER TABLE `publikasi`
 -- AUTO_INCREMENT for table `rencana`
 --
 ALTER TABLE `rencana`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `sarana`
 --
 ALTER TABLE `sarana`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `saran_kritik`
 --
 ALTER TABLE `saran_kritik`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `skpd`
@@ -3796,7 +3791,7 @@ ALTER TABLE `struktur_organisasi`
 -- AUTO_INCREMENT for table `tematik`
 --
 ALTER TABLE `tematik`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `wilayah`

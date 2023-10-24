@@ -19,7 +19,7 @@ if (!empty($searchQuery)) {
     $query .= " AND (nama LIKE '%$searchQuery%' OR keterangan LIKE '%$searchQuery%' OR x LIKE '%$searchQuery%' OR y LIKE '%$searchQuery%')";
 }
 
-$totalItems = count(query($query)); // Hitung total item sesuai kondisi
+$totalItems = count(query($query));
 
 $query .= " ORDER BY nama ASC LIMIT $start, $itemsPerPage";
 

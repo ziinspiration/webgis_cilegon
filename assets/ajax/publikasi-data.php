@@ -7,7 +7,7 @@ $start = ($page - 1) * $itemsPerPage;
 
 $searchQuery = isset($_POST['search']) ? $_POST['search'] : '';
 
-$query = "SELECT * FROM publikasi"; // Ganti "publikasi" dengan nama tabel yang sesuai
+$query = "SELECT * FROM publikasi";
 if (!empty($searchQuery)) {
     $query .= " WHERE nama_data LIKE '%$searchQuery%' OR keterangan LIKE '%$searchQuery%'";
 }
@@ -16,7 +16,7 @@ $query .= " ORDER BY nama_data ASC LIMIT $start, $itemsPerPage";
 $getdata = query($query);
 
 $output = '';
-$i = $start + 1; // Initialize counter for row number
+$i = $start + 1;
 foreach ($getdata as $a) {
     $output .= '<tr>
                     <td><a href="download.pdf.php?id=' . $a['id'] . '" class="download-link">' . $a['nama_data'] . '</a></td>
@@ -25,7 +25,7 @@ foreach ($getdata as $a) {
                 </tr>';
 }
 
-$totalItems = count(query("SELECT * FROM publikasi")); // Ganti "publikasi" dengan nama tabel yang sesuai
+$totalItems = count(query("SELECT * FROM publikasi"));
 $totalPages = ceil($totalItems / $itemsPerPage);
 
 $pagination = '';
@@ -36,7 +36,6 @@ for ($i = 1; $i <= $totalPages; $i++) {
                     </li>';
 }
 
-// Check if there are no search results
 if (empty($getdata)) {
     $output .= '<tr><td colspan="3"><div class="m-auto text-center p-3">Data tidak tersedia</div></td></tr>';
 }

@@ -3,10 +3,10 @@
 "name": "TELEKOMUNIKASI_PT",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "JENIS": "TELEKOMUNIKASI", "TOPONIMI": "TOWER 3 GUNUNG SUGIH", "KETERANGAN": "MENARA TELEPON", "X": "105,94713251", "Y": "-6,02778530999996" }, "geometry": { "type": "Point", "coordinates": [ 105.947132510000074, -6.027785309999956, 0.0 ] } },
-{ "type": "Feature", "properties": { "JENIS": "TELEKOMUNIKASI", "TOPONIMI": "TOWER 2", "KETERANGAN": "MENARA TELEPON", "X": "105,941250455", "Y": "-6,03293312299996" }, "geometry": { "type": "Point", "coordinates": [ 105.941250455000045, -6.032933122999964, 0.0 ] } },
-{ "type": "Feature", "properties": { "JENIS": "TELEKOMUNIKASI", "TOPONIMI": "MENARA TELEKOMUNIKASI SAMANGRAY", "KETERANGAN": "MENARA TELEPON", "X": "106,008766924", "Y": "-6,02131611999994" }, "geometry": { "type": "Point", "coordinates": [ 106.008766924000042, -6.021316119999938, 0.0 ] } },
-{ "type": "Feature", "properties": { "JENIS": "TELEKOMUNIKASI", "TOPONIMI": "TOWER 1 KEDALEMAN", "KETERANGAN": "MENARA TELEPON", "X": "106,079270827", "Y": "-6,03320164299993" }, "geometry": { "type": "Point", "coordinates": [ 106.079270827000073, -6.033201642999927, 0.0 ] } },
-{ "type": "Feature", "properties": { "JENIS": "TELEKOMUNIKASI", "TOPONIMI": "TOWER 2 KELURAHAN KEDALEMAN", "KETERANGAN": "MENARA TELEPON", "X": "106,075611432", "Y": "-6,03764985199996" }, "geometry": { "type": "Point", "coordinates": [ 106.075611432000073, -6.037649851999959, 0.0 ] } }
+{ "type": "Feature", "properties": { "JENIS": "TELEKOMUNIKASI", "TOPONIMI": "TOWER 3 GUNUNG SUGIH", "KETERANGAN": "MENARA TELEPON", "X": "105,94713251", "Y": "-6,02778530999996", "cari": "TOWER 3 GUNUNG SUGIH" }, "geometry": { "type": "Point", "coordinates": [ 105.947132510000074, -6.027785309999956, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "TELEKOMUNIKASI", "TOPONIMI": "TOWER 2", "KETERANGAN": "MENARA TELEPON", "X": "105,941250455", "Y": "-6,03293312299996", "cari": "TOWER 2" }, "geometry": { "type": "Point", "coordinates": [ 105.941250455000045, -6.032933122999964, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "TELEKOMUNIKASI", "TOPONIMI": "MENARA TELEKOMUNIKASI SAMANGRAY", "KETERANGAN": "MENARA TELEPON", "X": "106,008766924", "Y": "-6,02131611999994", "cari": "MENARA TELEKOMUNIKASI SAMANGRAY" }, "geometry": { "type": "Point", "coordinates": [ 106.008766924000042, -6.021316119999938, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "TELEKOMUNIKASI", "TOPONIMI": "TOWER 1 KEDALEMAN", "KETERANGAN": "MENARA TELEPON", "X": "106,079270827", "Y": "-6,03320164299993", "cari": "TOWER 1 KEDALEMAN" }, "geometry": { "type": "Point", "coordinates": [ 106.079270827000073, -6.033201642999927, 0.0 ] } },
+{ "type": "Feature", "properties": { "JENIS": "TELEKOMUNIKASI", "TOPONIMI": "TOWER 2 KELURAHAN KEDALEMAN", "KETERANGAN": "MENARA TELEPON", "X": "106,075611432", "Y": "-6,03764985199996", "cari": "TOWER 2 KELURAHAN KEDALEMAN" }, "geometry": { "type": "Point", "coordinates": [ 106.075611432000073, -6.037649851999959, 0.0 ] } }
 ]
 }

@@ -16,7 +16,7 @@ $query .= " ORDER BY kecamatan ASC LIMIT $start, $itemsPerPage";
 $getdata = query($query);
 
 $output = '';
-$i = $start + 1; // Initialize counter for row number
+$i = $start + 1;
 
 if (count($getdata) > 0) {
     foreach ($getdata as $a) {

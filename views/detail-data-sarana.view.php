@@ -51,19 +51,16 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 $(document).ready(function() {
-    // Memuat data awal saat halaman dimuat
     loadTableData(1);
 
-    // Menangani perubahan halaman
     $(document).on('click', '.pagination a', function(e) {
         e.preventDefault();
         var page = $(this).data('page');
         loadTableData(page);
     });
 
-    // Menangani pencarian langsung
     $('#search').keyup(function() {
-        loadTableData(1); // Memuat halaman pertama hasil pencarian
+        loadTableData(1);
     });
 });
 
@@ -76,9 +73,9 @@ function loadTableData(page) {
         data: {
             page: page,
             search: searchQuery,
-            data_pokok_id: <?php echo $id; ?> // Pastikan variabel $id sudah didefinisikan sebelumnya
+            data_pokok_id: <?php echo $id; ?>
         },
-        dataType: 'json', // Menentukan tipe data yang diharapkan
+        dataType: 'json',
         success: function(data) {
             $('#table-data').html(data.tableData);
             $('#pagination').html(data.pagination);

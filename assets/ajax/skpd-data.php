@@ -7,7 +7,7 @@ $start = ($page - 1) * $itemsPerPage;
 
 $searchQuery = isset($_POST['search']) ? $_POST['search'] : '';
 
-$query = "SELECT * FROM skpd"; // Ganti "dinas" menjadi "skpd"
+$query = "SELECT * FROM skpd";
 if (!empty($searchQuery)) {
     $query .= " WHERE nama_dinas LIKE '%$searchQuery%' OR alamat LIKE '%$searchQuery%'";
 }
@@ -16,7 +16,7 @@ $query .= " ORDER BY nama_dinas ASC LIMIT $start, $itemsPerPage";
 $getdata = query($query);
 
 $output = '';
-$i = $start + 1; // Initialize counter for row number
+$i = $start + 1;
 
 if (count($getdata) > 0) {
     foreach ($getdata as $a) {
@@ -30,7 +30,7 @@ if (count($getdata) > 0) {
     $output = '<tr><td colspan="3"><div class="m-auto text-center p-3">Data tidak tersedia</div></td></tr>';
 }
 
-$totalItems = count(query("SELECT * FROM skpd")); // Ganti dari "dinas" menjadi "skpd"
+$totalItems = count(query("SELECT * FROM skpd"));
 $totalPages = ceil($totalItems / $itemsPerPage);
 
 $pagination = '';

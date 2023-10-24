@@ -19,7 +19,7 @@ if (!empty($searchQuery)) {
     $query .= " AND (kecamatan LIKE '%$searchQuery%' OR kelurahan LIKE '%$searchQuery%' OR keterangan LIKE '%$searchQuery%' OR sumber LIKE '%$searchQuery%'  OR luas LIKE '%$searchQuery%')";
 }
 
-$countQuery = str_replace("SELECT *", "SELECT COUNT(*)", $query); // Count query for total items
+$countQuery = str_replace("SELECT *", "SELECT COUNT(*)", $query);
 $totalItems = query($countQuery)[0]['COUNT(*)'];
 
 $query .= " ORDER BY kecamatan ASC LIMIT $start, $itemsPerPage";
@@ -27,7 +27,7 @@ $query .= " ORDER BY kecamatan ASC LIMIT $start, $itemsPerPage";
 $getdata = query($query);
 
 $output = '';
-$i = $start + 1; // Inisialisasi hitungan untuk nomor baris
+$i = $start + 1;
 
 if (count($getdata) > 0) {
     foreach ($getdata as $a) {

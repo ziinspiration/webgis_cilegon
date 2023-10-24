@@ -1,42 +1,9 @@
 {
-  "type": "FeatureCollection",
-  "name": "AIR_LIMBAH_PT",
-  "crs": {
-    "type": "name",
-    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
-  },
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {
-        "NAMA": "IPAL Komunal Griya Praja Mandiri",
-        "SUMBER": "Bappeda Kota Cilegon",
-        "JENIS": "LIMBAH",
-        "TOPONIMI": "IPAL KOMUNAL GRIYA PRAJA MANDIRI",
-        "KETERANGAN": "AIR LIMBAH",
-        "X": "106,065526517428",
-        "Y": "-6,04215412272054"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [106.065526517427827, -6.042154122720542]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "NAMA": "IPLT TPA Bagendung",
-        "SUMBER": "Bappeda Kota Cilegon",
-        "JENIS": "LIMBAH",
-        "TOPONIMI": "IPLT TPA BAGENDUNG",
-        "KETERANGAN": "AIR LIMBAH",
-        "X": "106,024321214418",
-        "Y": "-6,06239273827949"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [106.024321214417725, -6.062392738279486]
-      }
-    }
-  ]
+"type": "FeatureCollection",
+"name": "AIR_LIMBAH_PT",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "JENIS": "LIMBAH", "TOPONIMI": "IPAL KOMUNAL GRIYA PRAJA MANDIRI", "KETERANGAN": "AIR LIMBAH", "X": "106,065526517428", "Y": "-6,04215412272054", "cari": "IPAL KOMUNAL GRIYA PRAJA MANDIRI" }, "geometry": { "type": "Point", "coordinates": [ 106.065526517427827, -6.042154122720543 ] } },
+{ "type": "Feature", "properties": { "JENIS": "LIMBAH", "TOPONIMI": "IPLT TPA BAGENDUNG", "KETERANGAN": "AIR LIMBAH", "X": "106,024321214418", "Y": "-6,06239273827949", "cari": "IPLT TPA BAGENDUNG" }, "geometry": { "type": "Point", "coordinates": [ 106.024321214417725, -6.062392738279486 ] } }
+]
 }

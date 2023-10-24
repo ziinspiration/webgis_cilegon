@@ -18,7 +18,6 @@ $jamSekarang = date('H:i:s');
 
 ?>
 <?php include 'partials/nav.php' ?>
-
 <div class="container-fluid p-0">
     <div class="running-text">
         <div class="running-left text-center bg-orange text-dark">
@@ -39,7 +38,6 @@ $jamSekarang = date('H:i:s');
         </div>
     </div>
 </div>
-
 <script>
     var greetings = ["Selamat Datang", "<?= $salam; ?>"];
     var index = 0;
@@ -70,7 +68,7 @@ $jamSekarang = date('H:i:s');
 
     function changeBackground() {
         heroElement.style.backgroundImage = "url('" + backgrounds[backgroundIndex] + "')";
-        heroElement.style.transition = "background-image 1s ease-in-out"; // Tambahkan efek transisi
+        heroElement.style.transition = "background-image 1s ease-in-out";
         backgroundIndex = (backgroundIndex + 1) % backgrounds.length;
     }
 

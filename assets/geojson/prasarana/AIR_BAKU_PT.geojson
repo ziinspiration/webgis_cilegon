@@ -1,38 +1,8 @@
 {
-  "type": "FeatureCollection",
-  "name": "AIR_BAKU_PT",
-  "crs": {
-    "type": "name",
-    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
-  },
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {
-        "JENIS": "AIR BERSIH",
-        "TOPINIMI": "AIR BAKU WADUK KRENCENG",
-        "KETERANGAN": "AIR BAKU",
-        "X": "106,029548874417",
-        "Y": "-6,01589911771867"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [106.029548874417401, -6.015899117718673, 0.0]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "JENIS": "AIR BERSIH",
-        "TOPINIMI": "AIR BAKU DARI  AIR LAUT",
-        "KETERANGAN": "AIR BAKU",
-        "X": "105,982347291826",
-        "Y": "-5,99293426060863"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [105.982347291825675, -5.992934260608632, 0.0]
-      }
-    }
-  ]
+"type": "FeatureCollection",
+"name": "AIR_BAKU_PT",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "JENIS": "AIR BERSIH", "TOPINIMI": "AIR BAKU DARI  AIR LAUT", "KETERANGAN": "AIR BAKU", "X": "105,982347291826", "Y": "-5,99293426060863", "cari": "Air Baku dari Air Laut" }, "geometry": { "type": "Point", "coordinates": [ 105.982347291825675, -5.992934260608632, 0.0 ] } }
+]
 }

@@ -1,7 +1,6 @@
 <?php
 require 'functions/functions.php'
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,10 +9,13 @@ require 'functions/functions.php'
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/views/<?= $linkcss; ?>">
+    <!-- Modules Link -->
     <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="node_modules/leaflet/dist/leaflet.css">
     <link rel="stylesheet" href="node_modules/leaflet-search/dist/leaflet-search.src.css">
+    <!-- CDN Link -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-search/2.9.6/leaflet-search.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.1/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.1/dist/MarkerCluster.Default.css" />
@@ -21,6 +23,7 @@ require 'functions/functions.php'
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,700;1,800&family=Poppins:wght@200;300;400;500;600&family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <!-- Icon Link -->
     <link rel="icon" href="assets/logo/cilegon.png">
     <title><?= $nama_halaman; ?> | WEBGIS BAPPEDA CILEGON</title>
     <style>
@@ -189,8 +192,6 @@ require 'functions/functions.php'
             transition: background-position 0.5s;
             font-weight: 400;
             color: #4a5159;
-            /* margin-top: 2px !important;
-        margin-bottom: 2px !important; */
         }
 
         .dropdown-item:hover {
@@ -232,8 +233,7 @@ require 'functions/functions.php'
             color: orange !important;
         }
 
-
-        /* Offcanvas / Spasial */
+        /* Offcanvas */
         .btn-close-canvas {
             transition: all .3s;
         }
@@ -270,9 +270,6 @@ require 'functions/functions.php'
             position: relative;
         }
 
-        .footer {
-            background-image: url(assets/index/footer2.jpg);
-        }
 
         .bg-orange {
             background-color: orange !important;
@@ -305,6 +302,69 @@ require 'functions/functions.php'
         marquee {
             font-size: 18px;
             white-space: nowrap;
+        }
+
+        /* Loading */
+        #loading-spinner {
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 20px;
+            z-index: 9999;
+        }
+
+        .load-animation {
+            width: 100px !important;
+            height: 100px !important;
+            background-color: transparent !important;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .text-loading {
+            font-family: Montserrat !important;
+            position: fixed;
+            color: orange;
+            top: 65%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: blink 1.5s infinite;
+        }
+
+        @media screen and (max-width:550px) {
+            .load-animation {
+                width: 80px !important;
+                height: 80px !important;
+            }
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.2;
+            }
         }
     </style>
 </head>

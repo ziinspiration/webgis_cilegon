@@ -6,7 +6,7 @@ $itemsPerPage = 10;
 $start = ($page - 1) * $itemsPerPage;
 
 $searchQuery = isset($_POST['search']) ? $_POST['search'] : '';
-$id = isset($_POST['data_pokok_id']) ? $_POST['data_pokok_id'] : ''; // Pastikan Anda mengambil nilai ini dari permintaan AJAX
+$id = isset($_POST['data_pokok_id']) ? $_POST['data_pokok_id'] : '';
 
 $query = "SELECT * FROM atribut_tematik 
 JOIN data_tematik ON atribut_tematik.data_pokok_id = data_tematik.id";
@@ -19,7 +19,7 @@ if (!empty($searchQuery)) {
     $query .= " AND (kecamatan LIKE '%$searchQuery%' OR kelurahan LIKE '%$searchQuery%' OR keterangan LIKE '%$searchQuery%' OR sumber LIKE '%$searchQuery%' OR luas LIKE '%$searchQuery%')";
 }
 
-$countQuery = str_replace("SELECT *", "SELECT COUNT(*)", $query); // Count query for total items
+$countQuery = str_replace("SELECT *", "SELECT COUNT(*)", $query);
 $totalItems = query($countQuery)[0]['COUNT(*)'];
 
 $query .= " ORDER BY kecamatan ASC LIMIT $start, $itemsPerPage";
@@ -27,7 +27,7 @@ $query .= " ORDER BY kecamatan ASC LIMIT $start, $itemsPerPage";
 $getdata = query($query);
 
 $output = '';
-$i = $start + 1; // Inisialisasi hitungan untuk nomor baris
+$i = $start + 1;
 
 if (count($getdata) > 0) {
     foreach ($getdata as $a) {
@@ -37,11 +37,10 @@ if (count($getdata) > 0) {
             <td>' . $a['kelurahan'] . '</td>
             <td>' . $a['keterangan'] . '</td>';
 
-        // Tambahkan fungsi hanya jika tersedia
         if (isset($a['fungsi']) && !empty($a['fungsi'])) {
             $output .= '<td>' . $a['fungsi'] . '</td>';
         } else {
-            $output .= '<td class="text-center">-</td>'; // Jika fungsi tidak tersedia
+            $output .= '<td class="text-center">-</td>';
         }
 
         $output .= '<td>' . $a['sumber'] . '</td>

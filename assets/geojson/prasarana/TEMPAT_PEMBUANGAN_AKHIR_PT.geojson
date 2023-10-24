@@ -3,6 +3,6 @@
 "name": "TEMPAT_PEMBUANGAN_AKHIR_PT",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "JENIS": "PERSAMPAHAN", "TOPONIMI": "TPA BAGENDUNG", "KETERANGAN": "TPA", "X": "106,023518354703", "Y": "-6,06325943361561" }, "geometry": { "type": "Point", "coordinates": [ 106.023518354703441, -6.063259433615607, 0.0 ] } }
+{ "type": "Feature", "properties": { "JENIS": "PERSAMPAHAN", "TOPONIMI": "TPA BAGENDUNG", "KETERANGAN": "TPA", "X": "106,023518354703", "Y": "-6,06325943361561", "cari": "TPA BAGENDUNG" }, "geometry": { "type": "Point", "coordinates": [ 106.023518354703441, -6.063259433615607, 0.0 ] } }
 ]
 }

@@ -1,24 +1,24 @@
 <?php include 'partials/starter-head.php' ?>
 <style>
-.container {
-    padding: 60px 40px !important;
-}
-
-@media screen and (max-width:550px) {
     .container {
-        padding: 60px 0 !important;
+        padding: 60px 40px !important;
     }
-}
 
-.btn-detail {
-    transition: 0.7s !important;
-}
+    @media screen and (max-width:550px) {
+        .container {
+            padding: 60px 0 !important;
+        }
+    }
 
-.btn-detail:hover {
-    color: orange !important;
-    transition: 0.7s !important;
-    transform: scale(1.1);
-}
+    .btn-detail {
+        transition: 0.7s !important;
+    }
+
+    .btn-detail:hover {
+        color: orange !important;
+        transition: 0.7s !important;
+        transform: scale(1.1);
+    }
 </style>
 <?php include 'partials/nav.php' ?>
 <?php include 'partials/breadcrumb.php' ?>
@@ -39,24 +39,21 @@
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseOne">
                                     Selengkapnya..
                                 </button>
                             </h2>
-                            <div id="collapseFive" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample">
+                            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <ul class="parent-list">
                                         <?php foreach ($getadministrasi as $a) : ?>
-                                        <li class="list-card">
-                                            <form action="functions/tabular-administrasi.php" method="post">
-                                                <input type="hidden" name="id" value="<?= $a['id']; ?>">
-                                                <input type="hidden" name="nama_data" value="<?= $a['nama_data']; ?>">
-                                                <button class="btn btn-detail"
-                                                    type="submit"><?= $a['nama_data']; ?></button>
-                                            </form>
-                                        </li>
+                                            <li class="list-card">
+                                                <form action="functions/tabular-administrasi.php" method="post">
+                                                    <input type="hidden" name="id" value="<?= $a['id']; ?>">
+                                                    <input type="hidden" name="nama_data" value="<?= $a['nama_data']; ?>">
+                                                    <button class="btn btn-detail" type="submit"><?= $a['nama_data']; ?></button>
+                                                </form>
+                                            </li>
                                         <?php endforeach; ?>
                                     </ul>
                                 </div>
@@ -81,24 +78,21 @@
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                     Selengkapnya..
                                 </button>
                             </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample">
+                            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <ul class="parent-list">
                                         <?php foreach ($getprasarana as $a) : ?>
-                                        <li class="list-card">
-                                            <form action="functions/tabular-prasarana.php" method="post">
-                                                <input type="hidden" name="id" value="<?= $a['id']; ?>">
-                                                <input type="hidden" name="nama_data" value="<?= $a['nama_data']; ?>">
-                                                <button class="btn btn-detail"
-                                                    type="submit"><?= $a['nama_data']; ?></button>
-                                            </form>
-                                        </li>
+                                            <li class="list-card">
+                                                <form action="functions/tabular-prasarana.php" method="post">
+                                                    <input type="hidden" name="id" value="<?= $a['id']; ?>">
+                                                    <input type="hidden" name="nama_data" value="<?= $a['nama_data']; ?>">
+                                                    <button class="btn btn-detail" type="submit"><?= $a['nama_data']; ?></button>
+                                                </form>
+                                            </li>
                                         <?php endforeach; ?>
                                     </ul>
                                 </div>
@@ -123,24 +117,21 @@
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseOne">
                                     Selengkapnya..
                                 </button>
                             </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample">
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <ul class="parent-list">
                                         <?php foreach ($getsarana as $a) : ?>
-                                        <li class="list-card">
-                                            <form action="functions/tabular-sarana.php" method="post">
-                                                <input type="hidden" name="id" value="<?= $a['id']; ?>">
-                                                <input type="hidden" name="nama_data" value="<?= $a['nama_data']; ?>">
-                                                <button class="btn btn-detail"
-                                                    type="submit"><?= $a['nama_data']; ?></button>
-                                            </form>
-                                        </li>
+                                            <li class="list-card">
+                                                <form action="functions/tabular-sarana.php" method="post">
+                                                    <input type="hidden" name="id" value="<?= $a['id']; ?>">
+                                                    <input type="hidden" name="nama_data" value="<?= $a['nama_data']; ?>">
+                                                    <button class="btn btn-detail" type="submit"><?= $a['nama_data']; ?></button>
+                                                </form>
+                                            </li>
                                         <?php endforeach; ?>
                                     </ul>
                                 </div>
@@ -165,24 +156,21 @@
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseOne">
                                     Selengkapnya..
                                 </button>
                             </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample">
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <ul class="parent-list">
                                         <?php foreach ($gettematik as $a) : ?>
-                                        <li class="list-card">
-                                            <form action="functions/tabular-tematik.php" method="post">
-                                                <input type="hidden" name="id" value="<?= $a['id']; ?>">
-                                                <input type="hidden" name="nama_data" value="<?= $a['nama_data']; ?>">
-                                                <button class="btn btn-detail"
-                                                    type="submit"><?= $a['nama_data']; ?></button>
-                                            </form>
-                                        </li>
+                                            <li class="list-card">
+                                                <form action="functions/tabular-tematik.php" method="post">
+                                                    <input type="hidden" name="id" value="<?= $a['id']; ?>">
+                                                    <input type="hidden" name="nama_data" value="<?= $a['nama_data']; ?>">
+                                                    <button class="btn btn-detail" type="submit"><?= $a['nama_data']; ?></button>
+                                                </form>
+                                            </li>
                                         <?php endforeach; ?>
                                     </ul>
                                 </div>
@@ -207,24 +195,21 @@
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseOne">
                                     Selengkapnya..
                                 </button>
                             </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample">
+                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <ul class="parent-list">
                                         <?php foreach ($getrencana as $a) : ?>
-                                        <li class="list-card">
-                                            <form action="functions/tabular-rencana.php" method="post">
-                                                <input type="hidden" name="id" value="<?= $a['id']; ?>">
-                                                <input type="hidden" name="nama_data" value="<?= $a['nama_data']; ?>">
-                                                <button class="btn btn-detail"
-                                                    type="submit"><?= $a['nama_data']; ?></button>
-                                            </form>
-                                        </li>
+                                            <li class="list-card">
+                                                <form action="functions/tabular-rencana.php" method="post">
+                                                    <input type="hidden" name="id" value="<?= $a['id']; ?>">
+                                                    <input type="hidden" name="nama_data" value="<?= $a['nama_data']; ?>">
+                                                    <button class="btn btn-detail" type="submit"><?= $a['nama_data']; ?></button>
+                                                </form>
+                                            </li>
                                         <?php endforeach; ?>
                                     </ul>
                                 </div>
@@ -241,6 +226,6 @@
 <script type="text/javascript" src="assets/script/tilt.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-AOS.init();
+    AOS.init();
 </script>
 <?php include 'partials/starter-foot.php' ?>

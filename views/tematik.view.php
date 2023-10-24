@@ -114,7 +114,12 @@
         display: none;
     }
 </style>
+
 <div class="map-container">
+    <div id="loading-spinner">
+        <img class="load-animation" src="assets/index/loading-animation.gif" alt="">
+        <h5 class="text-center text-loading">Sedang memuat...</h5>
+    </div>
     <div class="map-overlay">
         <p class="text-secondary mb-2 mb-1 bg-primary-subtle shadow rounded-1 px-2">
             <span id="signal-icon"></span>
@@ -125,7 +130,6 @@
             <i class="bi bi-list"></i>
             <div id="legend" class="leaflet-control"></div>
         </button>
-
     </div>
     <div id="map"></div>
 </div>
@@ -523,6 +527,17 @@
 <?php include 'partials/script-map.php' ?>
 <script src="assets/leaflet-search/dist/leaflet-search.src.js"></script>
 <script>
+    // LOADING SET
+    const loadingSpinner = document.getElementById("loading-spinner");
+
+    function showLoadingSpinner() {
+        loadingSpinner.style.display = "flex";
+    }
+
+    function hideLoadingSpinner() {
+        loadingSpinner.style.display = "none";
+    }
+
     var map = L.map("map").setView([-5.992735076420852, 106.02561279458], 12);
 
     var googleLayer = L.tileLayer(
@@ -820,8 +835,12 @@
         });
     });
 
+
     // SETTING UNTUK LAYER
     function addGeoJsonLayer(url, checkbox) {
+
+        showLoadingSpinner();
+
         fetch(url, {
                 cache: "no-store"
             })
@@ -840,6 +859,7 @@
                         };
                     },
                     pointToLayer: function(feature, latlng) {
+
                         var customIcon = null;
 
                         // Prasarana
@@ -930,18 +950,20 @@
                         });
                     },
                     onEachFeature: function(feature, layer) {
-
-                        showPopup(feature, layer);
                         addTooltip(feature, layer);
+                        showPopup(feature, layer);
                     },
                 });
 
                 geoJsonLayer.addTo(map);
                 activeLayers[checkbox.id] = geoJsonLayer;
                 updateSearchControl();
+
+                hideLoadingSpinner();
             })
             .catch(error => {
                 console.log('Error:', error);
+                hideLoadingSpinner();
             });
     }
 
@@ -960,11 +982,12 @@
 
         searchControl = new L.Control.Search({
             layer: L.featureGroup(allLayers),
-            propertyName: 'KETERANGAN',
+            propertyName: 'cari',
             marker: false,
             moveToLocation: function(latlng, title, map) {
                 map.setView(latlng, 15);
-            }
+            },
+            initial: false,
         });
 
         searchControl.on('search:locationfound', function(e) {
@@ -1477,7 +1500,7 @@
         }
     <?php endforeach; ?>
 </script>
-
+<!-- Script signal status -->
 <script>
     var oldSignalStrength = -1;
 
@@ -1546,5 +1569,4 @@
     setInterval(checkOnlineStatus, 5000);
     checkOnlineStatus();
 </script>
-
 <?php include 'partials/starter-foot.php' ?>

@@ -6,7 +6,7 @@ $page = isset($_POST['page']) ? $_POST['page'] : 1;
 $start = ($page - 1) * $itemsPerPage;
 
 $searchQuery = isset($_POST['search']) ? $_POST['search'] : '';
-$id = isset($_POST['data_pokok_id']) ? $_POST['data_pokok_id'] : ''; // Pastikan Anda mengambil nilai ini dari permintaan AJAX
+$id = isset($_POST['data_pokok_id']) ? $_POST['data_pokok_id'] : '';
 
 $query = "SELECT * FROM atribut_sarana 
 JOIN data_sarana ON atribut_sarana.data_pokok_id = data_sarana.id";
@@ -27,8 +27,7 @@ $query .= " ORDER BY nama ASC LIMIT $start, $itemsPerPage";
 $getdata = query($query);
 
 $output = '';
-$i = $start + 1; // Inisialisasi hitungan untuk nomor baris
-
+$i = $start + 1;
 if (count($getdata) > 0) {
     foreach ($getdata as $a) {
         $output .= '<tr>

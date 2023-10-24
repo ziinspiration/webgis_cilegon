@@ -19,7 +19,7 @@ if (!empty($searchQuery)) {
     $query .= " AND (provinsi LIKE '%$searchQuery%' OR kabupaten LIKE '%$searchQuery%' OR kecamatan LIKE '%$searchQuery%' OR kelurahan LIKE '%$searchQuery%' OR sumber LIKE '%$searchQuery%' OR luas LIKE '%$searchQuery%')";
 }
 
-$totalItems = count(query($query)); // Hitung total item sesuai kondisi
+$totalItems = count(query($query)); 
 
 $query .= " ORDER BY provinsi ASC LIMIT $start, $itemsPerPage";
 
