@@ -15,7 +15,8 @@
         "KELURAHAN": "KEL. SURALAYA",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 704.44545746400001,
-        "color": "#B6FCEC"
+        "color": "#B6FCEC",
+        "cari": "Kelurahan Suralaya"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -726,7 +727,8 @@
         "KELURAHAN": "KEL. BAGENDUNG",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 381.02320213199999,
-        "color": "#F6FCBD"
+        "color": "#F6FCBD",
+        "cari": "Kelurahan Bagendung"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -1775,7 +1777,8 @@
         "KELURAHAN": "KEL. BANJARNEGARA",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 239.21264586000001,
-        "color": "#D4B3FC"
+        "color": "#D4B3FC",
+        "cari": "Kelurahan Banjarnegara"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2644,7 +2647,8 @@
         "KELURAHAN": "KEL. BENDUNGAN",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 97.602024894099998,
-        "color": "#CAEBFC"
+        "color": "#CAEBFC",
+        "cari": "Kelurahan Bendungan"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -2877,7 +2881,8 @@
         "KELURAHAN": "KEL. BULAKAN",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 399.69888908199999,
-        "color": "#FCBCB8"
+        "color": "#FCBCB8",
+        "cari": "Kelurahan Bulakan"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -4105,7 +4110,8 @@
         "KELURAHAN": "KEL. CIBEBER",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 260.96152195399998,
-        "color": "#B3FCC7"
+        "color": "#B3FCC7",
+        "cari": "Kelurahan Cibeber"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -4638,7 +4644,8 @@
         "KELURAHAN": "KEL. CIKERAI",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 329.45539440699997,
-        "color": "#FCCCF0"
+        "color": "#FCCCF0",
+        "cari": "Kelurahan Cikerai"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -5351,7 +5358,8 @@
         "KELURAHAN": "KEL. CITANGKIL",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 193.35534167,
-        "color": "#FCDFC0"
+        "color": "#FCDFC0",
+        "cari": "Kelurahan Citangkil"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -5656,7 +5664,8 @@
         "KELURAHAN": "KEL. CIWADUK",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 113.62691788,
-        "color": "#CCFCEC"
+        "color": "#CCFCEC",
+        "cari": "Kelurahan Ciwaduk"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -5865,7 +5874,8 @@
         "KELURAHAN": "KEL. CIWEDUS",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 150.061864372,
-        "color": "#B8CDFC"
+        "color": "#B8CDFC",
+        "cari": "Kelurahan Ciwedus"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -6303,7 +6313,8 @@
         "KELURAHAN": "KEL. DERINGO",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 237.66713923699999,
-        "color": "#D3FCB6"
+        "color": "#D3FCB6",
+        "cari": "Kelurahan Deringo"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -6925,7 +6936,8 @@
         "KELURAHAN": "KEL. GEDONG DALEM",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 174.48688883,
-        "color": "#FCDCD7"
+        "color": "#FCDCD7",
+        "cari": "Kelurahan Gedong Dalem"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -7433,7 +7445,8 @@
         "KELURAHAN": "KEL. GEREM",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 1192.3976611099999,
-        "color": "#FCB6EA"
+        "color": "#FCB6EA",
+        "cari": "Kelurahan Gerem"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -8414,7 +8427,8 @@
         "KELURAHAN": "KEL. GROGOL",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 368.49786526999998,
-        "color": "#DCCAFC"
+        "color": "#DCCAFC",
+        "cari": "Kelurahan Grogol"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -8637,7 +8651,8 @@
         "KELURAHAN": "KEL. GUNUNG SUGIH",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 746.01243746900002,
-        "color": "#E8FCD7"
+        "color": "#E8FCD7",
+        "cari": "Kelurahan Gunung Sugih"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -9369,7 +9384,8 @@
         "KELURAHAN": "KEL. JOMBANG WETAN",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 138.97145020799999,
-        "color": "#D4DBFC"
+        "color": "#D4DBFC",
+        "cari": "Kelurahan Jombang Wetan"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -9664,7 +9680,8 @@
         "KELURAHAN": "KEL. KALITIMBANG",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 332.712522218,
-        "color": "#FCBDD1"
+        "color": "#FCBDD1",
+        "cari": "Kelurahan Kalitimbang"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -10403,7 +10420,8 @@
         "KELURAHAN": "KEL. KARANGASEM",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 257.120912637,
-        "color": "#EFC2FC"
+        "color": "#EFC2FC",
+        "cari": "Kelurahan Karangasem"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -11055,7 +11073,8 @@
         "KELURAHAN": "KEL. KEBON DALEM",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 265.87113473599999,
-        "color": "#D1FCCA"
+        "color": "#D1FCCA",
+        "cari": "Kelurahan Kebon Dalem"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -11428,7 +11447,8 @@
         "KELURAHAN": "KEL. KEBONSARI",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 212.43612579699999,
-        "color": "#FCF6CC"
+        "color": "#FCF6CC",
+        "cari": "Kelurahan Kebonsari"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -11663,7 +11683,8 @@
         "KELURAHAN": "KEL. KEDALEMAN",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 321.67684451399998,
-        "color": "#BCB8FC"
+        "color": "#BCB8FC",
+        "cari": "Kelurahan Kedaleman"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -12352,7 +12373,8 @@
         "KELURAHAN": "KEL. KEPUH",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 818.73458008,
-        "color": "#B8FCFC"
+        "color": "#B8FCFC",
+        "cari": "Kelurahan Kepuh"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -13202,7 +13224,8 @@
         "KELURAHAN": "KEL. KETILENG",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 88.205294886700003,
-        "color": "#FCD4E2"
+        "color": "#FCD4E2",
+        "cari": "Kelurahan Ketileng"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -13532,7 +13555,8 @@
         "KELURAHAN": "KEL. KOTABUMI",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 411.55810185299998,
-        "color": "#F0D7FC"
+        "color": "#F0D7FC",
+        "cari": "Kelurahan Kotabumi"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -13816,7 +13840,8 @@
         "KELURAHAN": "KEL. KOTASARI",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 356.97615986900001,
-        "color": "#C2FCDB"
+        "color": "#C2FCDB",
+        "cari": "Kelurahan Kotasari"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -14106,7 +14131,8 @@
         "KELURAHAN": "KEL. KUBANGSARI",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 503.92832974499998,
-        "color": "#FCCEBD"
+        "color": "#FCCEBD",
+        "cari": "Kelurahan Kubangsari"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -14901,7 +14927,8 @@
         "KELURAHAN": "KEL. LEBAK DENOK",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 313.28377917699999,
-        "color": "#FCEAB3"
+        "color": "#FCEAB3",
+        "cari": "Kelurahan Lebak Denok"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -15429,7 +15456,8 @@
         "KELURAHAN": "KEL. LEBAKGEDE",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 791.78496211100003,
-        "color": "#F4B3FC"
+        "color": "#F4B3FC",
+        "cari": "Kelurahan Lebakgede"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -16315,7 +16343,8 @@
         "KELURAHAN": "KEL. MASIGIT",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 173.92123677399999,
-        "color": "#BCFCB3"
+        "color": "#BCFCB3",
+        "cari": "Kelurahan Masigit"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -16863,7 +16892,8 @@
         "KELURAHAN": "KEL. MEKARSARI",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 713.555023237,
-        "color": "#FCCCCA"
+        "color": "#FCCCCA",
+        "cari": "Kelurahan Mekarsari"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -17610,7 +17640,8 @@
         "KELURAHAN": "KEL. PABEAN",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 443.91079997600002,
-        "color": "#FCB6D8"
+        "color": "#FCB6D8",
+        "cari": "Kelurahan Pabean"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -18221,7 +18252,8 @@
         "KELURAHAN": "KEL. PANGGUNG RAWI",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 250.46248355200001,
-        "color": "#D7FCF9"
+        "color": "#D7FCF9",
+        "cari": "Kelurahan Panggung Rawi"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -18632,7 +18664,8 @@
         "KELURAHAN": "KEL. PURWAKARTA",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 206.17262385699999,
-        "color": "#C7F5FC"
+        "color": "#C7F5FC",
+        "cari": "Kelurahan Purwakarta"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -19058,7 +19091,8 @@
         "KELURAHAN": "KEL. RAMANUJU",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 160.28478669399999,
-        "color": "#E2FCC0"
+        "color": "#E2FCC0",
+        "cari": "Kelurahan Ramanuju"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -19322,7 +19356,8 @@
         "KELURAHAN": "KEL. RANDAKARI",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 482.93801673199999,
-        "color": "#BBDFFC"
+        "color": "#BBDFFC",
+        "cari": "Kelurahan Randakari"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -20222,7 +20257,8 @@
         "KELURAHAN": "KEL. RAWA ARUM",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 480.48702995000002,
-        "color": "#CCCCFC"
+        "color": "#CCCCFC",
+        "cari": "Kelurahan Rawa Arum"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -20916,7 +20952,8 @@
         "KELURAHAN": "KEL. SAMANGRAYA",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 576.10952055200005,
-        "color": "#D7FCDD"
+        "color": "#D7FCDD",
+        "cari": "Kelurahan Samangraya"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -21546,7 +21583,8 @@
         "KELURAHAN": "KEL. SUKMAJAYA",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 305.12950394400002,
-        "color": "#B3EAFC"
+        "color": "#B3EAFC",
+        "cari": "Kelurahan Sukmajaya"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -22037,7 +22075,8 @@
         "KELURAHAN": "KEL. TAMAN BARU",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 370.72506894700001,
-        "color": "#FCF0D2"
+        "color": "#FCF0D2",
+        "cari": "Kelurahan Taman Baru"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -22763,7 +22802,8 @@
         "KELURAHAN": "KEL. TAMANSARI",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 334.94788798600001,
-        "color": "#D9C0FC"
+        "color": "#D9C0FC",
+        "cari": "Kelurahan Tamansari"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -23837,7 +23877,8 @@
         "KELURAHAN": "KEL. TEGALBUNDER",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 191.06057037100001,
-        "color": "#F3FCCA"
+        "color": "#F3FCCA",
+        "cari": "Kelurahan Tegalbunder"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -24235,7 +24276,8 @@
         "KELURAHAN": "KEL. TEGALRATU",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 579.63787963599998,
-        "color": "#DDD2FC"
+        "color": "#DDD2FC",
+        "cari": "Kelurahan Tegalratu"
       },
       "geometry": {
         "type": "MultiPolygon",
@@ -25052,7 +25094,8 @@
         "KELURAHAN": "KEL. WARNASARI",
         "SUMBER": "Permendagri No: 5 Thn 2016",
         "LUAS": 715.93341589399995,
-        "color": "#D1FCC0"
+        "color": "#D1FCC0",
+        "cari": "Kelurahan Warnasari"
       },
       "geometry": {
         "type": "MultiPolygon",

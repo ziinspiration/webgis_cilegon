@@ -36,12 +36,12 @@ if ($jam >= 3 && $jam < 10) {
                 <!-- Nama -->
                 <div class="mb-3">
                     <label for="nama_pegawai" class="form-label user-label orange ps-1 pe-1">Nama pegawai</label>
-                    <input type="text" name="nama_pegawai" class="form-control username-input border-orange" id="nama_pegawai" placeholder="Masukkan nama pegawai" required />
+                    <input type="text" name="nama_pegawai" class="form-control username-input border-orange" id="nama_pegawai" placeholder="Masukkan Nama Pegawai" required />
                 </div>
                 <!-- NIK -->
                 <div class="mb-3">
                     <label for="nik" class="form-label user-label orange ps-1 pe-1">NIP</label>
-                    <input type="text" name="nik" class="form-control username-input border-orange" id="nik" placeholder="Masukkan NIK" required />
+                    <input type="text" name="nik" class="form-control username-input border-orange" id="nik" placeholder="Masukkan NIP" required />
                     <!-- Tambahkan span untuk menampilkan peringatan -->
                     <span id="nik-error" class="text-danger"></span>
                 </div>
@@ -55,7 +55,7 @@ if ($jam >= 3 && $jam < 10) {
                 <div class="mb-3">
                     <label for="password2" class="form-label password-label orange ps-1 pe-1">Konfirmasi
                         Password</label>
-                    <input type="text" name="password2" class="form-control password-input border-orange" id="password2" placeholder="Masukkan Password" required />
+                    <input type="text" name="password2" class="form-control password-input border-orange" id="password2" placeholder="Konfirmasi Password" required />
                     <span id="password-error" class="text-danger"></span>
                 </div>
                 <button type="submit" name="register" class="btn btn-primary m-auto w-50 p-2">

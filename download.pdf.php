@@ -14,7 +14,6 @@ if (isset($_GET['id'])) {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
 
-        // Path ke file PDF
         $pdf_file = 'assets/publikasi/pdf/' . $row['file_pdf'];
 
         if (file_exists($pdf_file)) {

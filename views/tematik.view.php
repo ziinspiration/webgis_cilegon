@@ -67,20 +67,22 @@
         border-radius: 5px;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
         overflow-y: scroll !important;
-        width: 150px !important;
-        height: 150px !important;
+        width: 200px !important;
+        height: 200px !important;
         font-family: poppins !important;
+        z-index: 9999;
     }
 
     @media screen and (max-width: 550px) {
         .legend {
-            width: 125px !important;
-            height: 125px !important;
+            width: 150px !important;
+            height: 150px !important;
         }
     }
 
     .legend-items {
         display: flex !important;
+        cursor: pointer;
     }
 
     .legend h5 {
@@ -92,14 +94,13 @@
     }
 
     .legend p {
-        font-size: 10px;
-        margin-top: 2px !important;
+        font-size: 13px;
     }
 
     .legend-icon img {
-        width: 13px !important;
-        height: 13px !important;
-        margin-right: 4px !important;
+        width: 22px !important;
+        height: 22px !important;
+        margin-right: 7px !important;
     }
 
     .perhatian {
@@ -113,9 +114,56 @@
     .text-in-legend {
         display: none;
     }
+
+    /* Popup Legenda */
+
+    #legenda-popup {
+        background-color: rgba(0, 0, 0, 0.8);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60%;
+        height: 60%;
+        display: none;
+        padding: 20px;
+        z-index: 9999;
+        text-align: center;
+        border-radius: 15px;
+        border: 2px solid orange;
+    }
+
+    #legenda-popup img {
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
+        margin: 0 auto;
+        margin-top: auto;
+        margin-bottom: 30px;
+    }
+
+    @media screen and (max-width:600px) {
+        #legenda-popup {
+            width: 85%;
+            height: 70%;
+        }
+    }
+
+    .closePreviewLegenda {
+        font-family: Montserrat;
+        font-size: 20px !important;
+        color: white !important;
+        cursor: pointer;
+        margin-bottom: 30px !important;
+    }
+
+    .closePreviewLegenda:hover {
+        color: red !important;
+    }
 </style>
 
 <div class="map-container">
+    <div id="legenda-popup"></div>
     <div id="loading-spinner">
         <img class="load-animation" src="assets/index/loading-animation.gif" alt="">
         <h5 class="text-center text-loading">Sedang memuat...</h5>
@@ -128,7 +176,6 @@
         </p>
         <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" style="border: none; background: none;">
             <i class="bi bi-list"></i>
-            <div id="legend" class="leaflet-control"></div>
         </button>
     </div>
     <div id="map"></div>
@@ -138,7 +185,6 @@
     <div style="background: url(assets/index/batik2remake.jpg);" class="back p-2">
         <a class="back-arrow ms-1 text-decoration-none" href="index"><i class="bi bi-arrow-left me-1"><span>Beranda</span></i></a>
     </div>
-
     <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="sidebarLabel">Layer Service</h5>
         <button type="button" class="btn-c btn-close-canvas" data-bs-dismiss="offcanvas" aria-label="Close"><i class="bi bi-x-circle shake"></i></button>
@@ -1023,24 +1069,39 @@
 
     var info = L.control();
 
-    // FUNGSI MENAMBAHKAN LEGENDA PADA MAP
+    function tampilkanPopupIcon(iconURL) {
+        var kontenPopup =
+            '<div class="closePreviewLegenda" onclick="sembunyikanPopup()"><i class="bi bi-x-circle close-icon"></i> Tutup</div>' +
+            '<img src="' + iconURL + '" alt="Gambar Ikon" width="80%" height="80%">';
+        var legendaPopup = document.getElementById("legenda-popup");
+        legendaPopup.innerHTML = kontenPopup;
+        legendaPopup.style.display = "block";
+    }
+
+    function sembunyikanPopup() {
+        var legendaPopup = document.getElementById("legenda-popup");
+        legendaPopup.style.display = "none";
+    }
+
+
     var legend = L.control({
         position: 'bottomright'
     });
 
     legend.onAdd = function(map) {
-        var div = L.DomUtil.create('div', 'legend');
+        var div = L.DomUtil.create('div', 'legend overflow-auto');
         div.innerHTML = '<h5 class="mb-3">Legenda</h5>' +
-            <?php foreach ($gettematikicon as $a) : ?> '<div class="legend-items"><span class="legend-icon"><img src="assets/icon/tematik/<?= $a['icon']; ?>" id="icon-<?= $a['checkbox_id']; ?>" class="icon-in-legend" alt=""></span><p class="text-in-legend" id="legend-text-<?= $a['checkbox_id']; ?>"><?= $a['nama_tematik']; ?></p></div>' +
+            <?php foreach ($gettematikicon as $a) : ?> '<div class="legend-items" onclick="tampilkanPopupIcon(\'assets/icon/tematik/<?= $a['icon']; ?>\')"><span class="legend-icon"><img src="assets/icon/tematik/<?= $a['icon']; ?>" id="icon-<?= $a['checkbox_id']; ?>" class="icon-in-legend" alt=""></span><p class="text-in-legend" id="legend-text-<?= $a['checkbox_id']; ?>"><?= ucwords($a['nama_tematik']); ?></p></div>' +
             <?php endforeach; ?>
         <?php foreach ($getprasaranaicon as $a) : ?>
-                '<div class="legend-items"><span class="legend-icon"><img src="assets/icon/prasarana/<?= $a['icon']; ?>" id="icon-<?= $a['checkbox_id']; ?>" class="icon-in-legend" alt=""></span><p class="text-in-legend" id="legend-text-<?= $a['checkbox_id']; ?>"><?= $a['nama_prasarana']; ?></p></div>' +
+                '<div class="legend-items" onclick="tampilkanPopupIcon(\'assets/icon/prasarana/<?= $a['icon']; ?>\')"><span class="legend-icon"><img src="assets/icon/prasarana/<?= $a['icon']; ?>" id="icon-<?= $a['checkbox_id']; ?>" class="icon-in-legend" alt=""></span><p class="text-in-legend" id="legend-text-<?= $a['checkbox_id']; ?>" onclick="tampilkanPopupIcon(\'assets/icon/prasarana/<?= $a['icon']; ?>\')"><?= ucwords($a['nama_prasarana']); ?></p></div>' +
             <?php endforeach; ?>
             <?php foreach ($getsaranaicon as $a) : ?>
-                    '<div class="legend-items"><span class="legend-icon"><img src="assets/icon/sarana/<?= $a['icon']; ?>" id="icon-<?= $a['checkbox_id']; ?>" class="icon-in-legend" alt=""></span><p class="text-in-legend" id="legend-text-<?= $a['checkbox_id']; ?>"><?= $a['nama_sarana']; ?></p></div>' +
+                    '<div class="legend-items" onclick="tampilkanPopupIcon(\'assets/icon/sarana/<?= $a['icon']; ?>\')"><span class="legend-icon"><img src="assets/icon/sarana/<?= $a['icon']; ?>" id="icon-<?= $a['checkbox_id']; ?>" class=" icon-in-legend" alt=""></span><p class="text-in-legend" id="legend-text-<?= $a['checkbox_id']; ?>" onclick="tampilkanPopupIcon(\'assets/icon/sarana/<?= $a['icon']; ?>\')"><?= ucwords($a['nama_sarana']); ?></p></div>' +
                 <?php endforeach; ?> '<div><span class="marker-icon"></span></div>';
                 return div;
     };
+
 
     legend.addTo(map);
 

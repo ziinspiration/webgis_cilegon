@@ -102,6 +102,7 @@ form {
                             <label for="checkbox_id" class="form-label orange ps-1 pe-1">Checkbox ID</label>
                             <input type="text" class="form-control p-2" id="checkbox_id" name="checkbox_id"
                                 value="<?= $getdata['checkbox_id']; ?>" required />
+                            <p class="text-danger"><small>*Contoh CheckboxID : NamaDataCheckbox</small></p>
                         </div>
                         <div class="mb-3">
                             <label for="hide" class="form-label orange ps-1 pe-1">Hide status</label>
@@ -140,6 +141,7 @@ form {
                             <label for="icon_id" class="form-label orange ps-1 pe-1">Icon ID</label>
                             <input type="text" class="form-control p-2" id="icon_id" name="icon_id"
                                 value="<?= $getdata['icon_id']; ?>" required />
+                            <p class="text-danger"><small>*Contoh Icon ID : IconNamaData</small></p>
                         </div>
                     </div>
                 </div>
